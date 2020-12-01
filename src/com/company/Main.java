@@ -98,6 +98,29 @@ public class Main {
         System.out.println(enumMap);
     }
 
+    static void testThread(){
+        Test tA=new Test("Thread_A");
+        Test tB=new Test("Thread_B");
+        tA.start();
+        tB.start();
+    }
+
+    static void Te(){
+
+        Ticket t=new Ticket();
+
+        Thread t1=new Thread(t);
+        Thread t2=new Thread(t);
+        Thread t3=new Thread(t);
+        Thread t4=new Thread(t);
+
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+
+    }
+
     /**
      * information for test function.
      * @param args
@@ -107,8 +130,11 @@ public class Main {
         System.out.println("application start.");
         // Fuck();
         // notifyByOrderStatus(OrderStatusEnum.SEND);
-//        infoMS();
-//        enumMapInfo();
+        //infoMS();
+        //enumMapInfo();
+       //testThread();
+        // Te();
+
         System.out.println("application end.");
     }
 

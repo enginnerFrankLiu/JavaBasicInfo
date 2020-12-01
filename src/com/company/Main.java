@@ -3,8 +3,10 @@ package com.company;
 import com.sun.xml.internal.ws.util.StringUtils;
 
 import javax.net.ssl.SSLContext;
+import java.nio.file.NotLinkException;
 import java.util.EnumMap;
 import java.util.EnumSet;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
@@ -189,15 +191,38 @@ public class Main {
 
     }
 
+    public static Object food;
+
+    public static void produceAndConsume() throws Exception{
+
+        Thread consumeThread=new Thread(()-> {
+            if(food==null){
+                System.out.println("wait....");
+                 Thread.currentThread().suspend();
+            }
+            System.out.println("run...(call by main thread.)");
+
+        });
+        consumeThread.start();
+        Thread.sleep(3000L);
+        food=new Object();
+        System.out.println("main thread ready, then call consume thread to run...continue.");
+        consumeThread.resume();
+
+        Thread.sleep(5000L);
+    }
+
     /**
      * information for test function.
      *
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws  Exception {
         System.out.println("application start.");
-        consumer();
-        producer();
+//        consumer();
+//        producer();
+        produceAndConsume();
+
         System.out.println("application end.");
     }
 

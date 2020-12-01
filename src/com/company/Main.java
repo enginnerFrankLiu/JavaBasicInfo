@@ -158,6 +158,13 @@ public class Main {
         // Te();
         // ThreadTest();
         // TestIn();
+
+        //        consumer();
+//        producer();
+        //  produceAndConsume();
+
+//        deadLocker();
+
     }
 
     /**
@@ -219,6 +226,7 @@ public class Main {
         example.threadTwo();
     }
 
+
     /**
      * information for test function.
      *
@@ -226,11 +234,10 @@ public class Main {
      */
     public static void main(String[] args) throws  Exception {
         System.out.println("application start.");
-//        consumer();
-//        producer();
-      //  produceAndConsume();
 
-        deadLocker();
+        ThreadX x=new ThreadX();
+
+        x.waitForever();
 
         System.out.println("application end.");
     }

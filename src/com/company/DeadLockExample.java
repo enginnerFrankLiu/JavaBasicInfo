@@ -156,7 +156,6 @@ public class DeadLockExample {
     }
 
     public void ThreadB(){
-
         Thread thread=new Thread(()-> {
             synchronized (B) {
                 //线程占有资源B，在没有释放资源B的情况下

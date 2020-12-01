@@ -121,6 +121,23 @@ public class Main {
 
     }
 
+    static void ThreadTest(){
+
+        ThreadInfo threadInfo=new ThreadInfo();
+        threadInfo.Write();
+        threadInfo.Read();
+    }
+
+    static void Td(){
+        // Fuck();
+        // notifyByOrderStatus(OrderStatusEnum.SEND);
+        //infoMS();
+        //enumMapInfo();
+        //testThread();
+        // Te();
+        // ThreadTest();
+    }
+
     /**
      * information for test function.
      * @param args
@@ -128,12 +145,6 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("application start.");
-        // Fuck();
-        // notifyByOrderStatus(OrderStatusEnum.SEND);
-        //infoMS();
-        //enumMapInfo();
-       //testThread();
-        // Te();
 
         System.out.println("application end.");
     }

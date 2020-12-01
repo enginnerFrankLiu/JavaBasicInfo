@@ -1,11 +1,16 @@
 package com.company;
 
+import com.sun.xml.internal.ws.util.StringUtils;
+
 import javax.net.ssl.SSLContext;
 import java.util.EnumMap;
 import java.util.EnumSet;
 import java.util.Map;
 
 public class Main {
+
+    public static String message = null;
+    static Thread consumer;
 
     /**
      *
@@ -98,21 +103,21 @@ public class Main {
         System.out.println(enumMap);
     }
 
-    static void testThread(){
-        Test tA=new Test("Thread_A");
-        Test tB=new Test("Thread_B");
+    static void testThread() {
+        Test tA = new Test("Thread_A");
+        Test tB = new Test("Thread_B");
         tA.start();
         tB.start();
     }
 
-    static void Te(){
+    static void Te() {
 
-        Ticket t=new Ticket();
+        Ticket t = new Ticket();
 
-        Thread t1=new Thread(t);
-        Thread t2=new Thread(t);
-        Thread t3=new Thread(t);
-        Thread t4=new Thread(t);
+        Thread t1 = new Thread(t);
+        Thread t2 = new Thread(t);
+        Thread t3 = new Thread(t);
+        Thread t4 = new Thread(t);
 
         t1.start();
         t2.start();
@@ -121,14 +126,28 @@ public class Main {
 
     }
 
-    static void ThreadTest(){
+    static void ThreadTest() {
 
-        ThreadInfo threadInfo=new ThreadInfo();
+        ThreadInfo threadInfo = new ThreadInfo();
         threadInfo.Write();
         threadInfo.Read();
     }
 
-    static void Td(){
+    /**
+     * 这个其实属于线程同步的问题；
+     * 一个先写，一个后读
+     * 利用时间差的原理
+     * 来“保证”了线程执行的先后顺序，避免临界区的线程安全问题.
+     */
+    static void TestIn() {
+
+        Threads t = new Threads();
+        t.Write();
+        t.Read();
+
+    }
+
+    static void Td() {
         // Fuck();
         // notifyByOrderStatus(OrderStatusEnum.SEND);
         //infoMS();
@@ -136,16 +155,49 @@ public class Main {
         //testThread();
         // Te();
         // ThreadTest();
+        // TestIn();
+    }
+
+    /**
+     * 线程之间的状态的切换问题.
+     * 唤醒的话，也只能让它再执行一次而已巴了.
+     */
+    static void consumer() {
+        consumer = new Thread(() -> {
+            System.out.println("consumer consume meesage:->" + message);
+        });
+        consumer.start();
+        if (message == null) {
+            consumer.suspend();
+        }
+    }
+
+    /**
+     * main thread produce some message
+     */
+    static void producer() {
+        try {
+            while (true) {
+                Thread.sleep(1000L);
+                message = Thread.currentThread().getId() + " new message.";
+                System.out.println("共享内存的方式，来进行message的share.");
+                consumer.resume();
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
     }
 
     /**
      * information for test function.
+     *
      * @param args
      */
     public static void main(String[] args) {
-
         System.out.println("application start.");
-
+        consumer();
+        producer();
         System.out.println("application end.");
     }
 

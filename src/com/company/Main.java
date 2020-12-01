@@ -212,6 +212,13 @@ public class Main {
         Thread.sleep(5000L);
     }
 
+    public static void deadLocker(){
+
+        DeadLockExample example=new DeadLockExample();
+        example.threadOne();
+        example.threadTwo();
+    }
+
     /**
      * information for test function.
      *
@@ -221,7 +228,9 @@ public class Main {
         System.out.println("application start.");
 //        consumer();
 //        producer();
-        produceAndConsume();
+      //  produceAndConsume();
+
+        deadLocker();
 
         System.out.println("application end.");
     }

@@ -9,6 +9,10 @@ import java.nio.file.Paths;
  * 共享文件的方式去做
  * 但是这个是有一定的的先后顺序的操作；
  *
+ * 线程之间的协同工作
+ * 线程之间的信息共享(通信机制)
+ * 非常的相似的一个东西
+ *
  */
 public class ThreadInfo {
 

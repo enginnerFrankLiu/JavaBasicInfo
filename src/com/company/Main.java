@@ -260,9 +260,11 @@ public class Main {
 
         //test();
 
-        ThreadX x=new ThreadX();
-        x.consumeInfo();
+//        ThreadX x=new ThreadX();
+//        x.consumeInfo();
 
+        ThreadX x=new ThreadX();
+        x.Info();
 
         Thread.currentThread().join();
         System.out.println("application end.");

@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.concurrent.FutureTask;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.ConsoleHandler;
 
@@ -75,8 +76,6 @@ public class ThreadX {
         });
 
         consumeThread.start();
-
-
         Thread.sleep(2000L);
         System.out.println("producer produce some food>>>>>>>");
         Thread.sleep(2000L);
@@ -88,4 +87,30 @@ public class ThreadX {
 
     }
 
+    public static Object lock=new Object();
+
+    /**
+     *
+     * new
+     * |
+     * start    <-|
+     *            |
+     * run  ----block
+     *
+     * over
+     *
+     */
+    public void Info() throws  Exception{
+
+        FutureTask<String> task=new FutureTask<>(()-> {
+            Thread.sleep(1000L);
+            return "result";
+        });
+
+        Thread thread=new Thread(task);
+        thread.start();
+        String taskResult=task.get();
+        System.out.println(taskResult);
+
+    }
 }

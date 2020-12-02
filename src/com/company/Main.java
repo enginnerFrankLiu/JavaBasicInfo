@@ -226,6 +226,29 @@ public class Main {
         example.threadTwo();
     }
 
+    /**
+     *
+     */
+    public static void test() throws  Exception{
+
+        Thread thread=new Thread(()->{
+
+            System.out.println("sub thread is running.....");
+
+        });
+
+        System.out.println("main thread is running....");
+
+        System.out.println("main thread wait sub about 5 m...");
+
+
+        Thread.currentThread().join(5000L);
+
+        System.out.println("over..");
+
+
+    }
+
 
     /**
      * information for test function.
@@ -235,11 +258,15 @@ public class Main {
     public static void main(String[] args) throws  Exception {
         System.out.println("application start.");
 
+        //test();
+
         ThreadX x=new ThreadX();
+        x.consumeInfo();
 
-        x.waitForever();
 
+        Thread.currentThread().join();
         System.out.println("application end.");
+
     }
 
 }

@@ -8,6 +8,8 @@ import java.util.EnumMap;
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Callable;
+import java.util.concurrent.FutureTask;
 
 public class Main {
 
@@ -158,7 +160,13 @@ public class Main {
         // Te();
         // ThreadTest();
         // TestIn();
+        //test();
 
+//        ThreadX x=new ThreadX();
+//        x.consumeInfo();
+
+//        ThreadX x=new ThreadX();
+//        x.Info();
         //        consumer();
 //        producer();
         //  produceAndConsume();
@@ -230,25 +238,50 @@ public class Main {
      *
      */
     public static void test() throws  Exception{
-
         Thread thread=new Thread(()->{
-
             System.out.println("sub thread is running.....");
-
         });
-
         System.out.println("main thread is running....");
-
         System.out.println("main thread wait sub about 5 m...");
-
-
         Thread.currentThread().join(5000L);
-
         System.out.println("over..");
-
-
     }
 
+    /**
+     * different way to start new thread.
+     */
+    public static void startNewThread() throws Exception{
+
+        System.out.println("1. 继承Thread--------------------");
+        RequestThread a=new RequestThread();
+        RequestThread b=new RequestThread();
+        RequestThread c=new RequestThread();
+
+        a.start();
+        b.start();
+        c.start();
+
+        Thread.sleep(5000L);
+        System.out.println("2.继承Runnable--------------------");
+        ResponseThread r1=new ResponseThread();
+        Thread t1=new Thread(r1,"thread 1");
+        Thread t2=new Thread(r1,"thread 2");
+        Thread t3=new Thread(r1,"thread 3");
+        t1.start();
+        t2.start();
+        t3.start();
+
+        Thread.sleep(5000L);
+        System.out.println("3.继承Callable--------------------");
+
+        Callable<String> callable=new IOThread();
+        FutureTask<String> futureTask=new FutureTask<>(callable);
+        Thread t=new Thread(futureTask);
+        t.start();
+        String result=futureTask.get();
+        System.out.println(result);
+
+    }
 
     /**
      * information for test function.
@@ -258,15 +291,8 @@ public class Main {
     public static void main(String[] args) throws  Exception {
         System.out.println("application start.");
 
-        //test();
+        startNewThread();
 
-//        ThreadX x=new ThreadX();
-//        x.consumeInfo();
-
-        ThreadX x=new ThreadX();
-        x.Info();
-
-        Thread.currentThread().join();
         System.out.println("application end.");
 
     }

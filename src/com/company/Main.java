@@ -316,6 +316,7 @@ public class Main {
         FutureTask<String> futureTask=new FutureTask<>(callable);
         Thread t=new Thread(futureTask);
         t.start();
+        System.out.println(futureTask.isDone());
         String result=futureTask.get();
         System.out.println(result);
 

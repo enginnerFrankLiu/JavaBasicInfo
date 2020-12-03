@@ -9,6 +9,8 @@ import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
 
 public class Main {
@@ -248,6 +250,42 @@ public class Main {
     }
 
     /**
+     * use thread pool to create thread
+     */
+    public static void useThreadPool(){
+        //这个仅仅是控制线程的数量
+        ExecutorService exe= Executors.newFixedThreadPool(3);
+        for(int i=0;i<5;i++) {
+            exe.submit(new Runnable() {
+                @Override
+                public void run() {
+                    Long threadId = Thread.currentThread().getId();
+                    System.out.println("thread id:"+threadId);
+                }
+            });
+        }
+        exe.shutdown();
+    }
+
+    /**
+     *
+     */
+    public static void useSingleThreadPool(){
+
+        ExecutorService exe=Executors.newSingleThreadExecutor();
+        for(int i=0;i<5;i++) {
+            exe.submit(new Runnable() {
+                @Override
+                public void run() {
+                    Long threadId = Thread.currentThread().getId();
+                    System.out.println("thread id:"+threadId);
+                }
+            });
+        }
+        exe.shutdown();
+    }
+
+    /**
      * different way to start new thread.
      */
     public static void startNewThread() throws Exception{
@@ -280,6 +318,15 @@ public class Main {
         t.start();
         String result=futureTask.get();
         System.out.println(result);
+
+        Thread.sleep(5000L);
+        System.out.println("4.use Thread pool--------------------");
+
+        useThreadPool();
+
+        Thread.sleep(5000L);
+        System.out.println("5.use Thread pool(保证线程的执行顺序?)--------------------");
+        useSingleThreadPool();
 
     }
 

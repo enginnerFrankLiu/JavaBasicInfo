@@ -1,12 +1,8 @@
 package com.company;
 
-import com.sun.xml.internal.ws.util.StringUtils;
-
-import javax.net.ssl.SSLContext;
-import java.nio.file.NotLinkException;
 import java.util.EnumMap;
 import java.util.EnumSet;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
@@ -159,21 +155,18 @@ public class Main {
         //infoMS();
         //enumMapInfo();
         //testThread();
-        // Te();
-        // ThreadTest();
-        // TestIn();
-        //test();
-
-//        ThreadX x=new ThreadX();
-//        x.consumeInfo();
-
-//        ThreadX x=new ThreadX();
-//        x.Info();
-        //        consumer();
-//        producer();
-        //  produceAndConsume();
-
-//        deadLocker();
+        //Te();
+        //ThreadTest();
+        //TestIn();
+        //Test();
+//      ThreadX x=new ThreadX();
+//      x.consumeInfo();
+//      ThreadX x=new ThreadX();
+//      x.Info();
+//      consumer();
+//      producer();
+//      produceAndConsume();
+//      deadLocker();
 
     }
 
@@ -330,6 +323,20 @@ public class Main {
         useSingleThreadPool();
 
     }
+    public static void infomationTest(){
+
+        HashSet<String> set = new HashSet<String>();
+        set.add(new String("a"));
+        set.add(new String("b"));
+        set.add(new String("c"));
+
+        //一旦创建，无法修改原来的值，想修改它的值，都是copy 原来的值，进行修改，然后返回一个新的对象；
+        //并不能改变原来的值
+        for(String a: set) {
+            a="ddd";
+        }
+        System.out.println(set);
+   }
 
     /**
      * information for test function.
@@ -339,7 +346,7 @@ public class Main {
     public static void main(String[] args) throws  Exception {
         System.out.println("application start.");
 
-        startNewThread();
+        infomationTest();
 
         System.out.println("application end.");
 

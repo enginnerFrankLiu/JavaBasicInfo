@@ -8,7 +8,6 @@ public class Fuck {
      * 后面的代码执行并没有特定的顺序，都是抢占是执行的
      */
     public void main(){
-
         Thread read= new Thread(()->{
             try {
                 System.out.println("read get lock");
@@ -27,12 +26,8 @@ public class Fuck {
 
             }
         });
-
         Thread writeIn=new Thread(()->{
-
             try {
-
-
                 System.out.println("writeIn get lock");
                 synchronized (locker) {
                     System.out.println("writeIn send signal....");
@@ -52,10 +47,8 @@ public class Fuck {
                 System.out.println("难道说，要整理的方法执行完毕之后，才会通知我们那边的方法");
             }
             catch (Exception ex){
-
             }
         });
-
         read.start();
         writeIn.start();
     }

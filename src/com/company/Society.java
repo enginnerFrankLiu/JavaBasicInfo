@@ -8,9 +8,10 @@ public class Society {
      * 2.线程协作
      */
     public void main(){
-        Object locker=new Object();
-        Person personTask=new Person(locker);
-        Animal animalTask=new Animal(locker);
+        Signal signal=new Signal(new Object(),false);
+        Person personTask=new Person(signal);
+        Animal animalTask=new Animal(signal);
+
         Thread personThread=new Thread(personTask);
         Thread animalThread=new Thread(animalTask);
         personThread.start();

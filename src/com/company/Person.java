@@ -33,16 +33,47 @@ public class Person implements  Runnable {
      *
      * 2.还有一种方式，就设置等待的超时机制，避免线程永远，无限制的的等待下去.
      *
+     * 正确的顺序:
+     *
+     * A run
+     * A get lock
+     * A wait
+     * A release lock
+     *
+     * B get lock
+     *
+     * B do something
+     * .
+     * .
+     * .
+     * B notify
+     * B release lock
+     *
+     * A get lock
+     * A continue
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
      */
     public void run() {
         synchronized (this.signal.getLocker()){
             try {
                 //如果对方已经发出过信息好了，我们就不执行等待；
-                if(!this.signal.getWasSingle()) {
+                while (!this.signal.getWasSingle()) {
+                    //为了避免高评率的等待
+                    Thread.sleep(9900L);
                     System.out.println("Person A wait.....");
-                    this.signal.getLocker().wait(6000L);
+                    this.signal.getLocker().wait(200L);
                     System.out.println("Person A run......");
                 }
+                //clear signal and continue running.
                 this.signal.setWasSingle(false);
             }catch (Exception ex){
                 ex.printStackTrace();

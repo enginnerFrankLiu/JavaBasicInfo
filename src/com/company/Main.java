@@ -345,9 +345,14 @@ public class Main {
      */
     public static void main(String[] args) throws  Exception {
         System.out.println("application start.");
+//
+//        Society s=new Society();
+//        s.main();
 
-        Society s=new Society();
-        s.main();
+        Fuck fuck=new Fuck();
+        fuck.main();
+
+        Thread.currentThread().join();
 
         System.out.println("application end.");
 

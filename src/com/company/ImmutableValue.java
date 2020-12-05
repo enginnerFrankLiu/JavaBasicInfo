@@ -49,6 +49,9 @@ public class ImmutableValue {
      *
      * immutable objects are always thread-safe,but it reference may not be.
      *
+     * 100
+     * 110
+     * 90
      *
      */
     public ImmutableValue add(int num){

@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.IO.Pipe;
+
 import java.util.EnumMap;
 import java.util.EnumSet;
 import java.util.HashSet;
@@ -175,6 +177,9 @@ public class Main {
 //        fuck.main();
 //
 //        Thread.currentThread().join();
+//        testInfo();
+//        Apple apple=new Apple();
+//        apple.subThread();
 
 
     }
@@ -371,10 +376,8 @@ public class Main {
      */
     public static void main(String[] args) throws  Exception {
         System.out.println("application start.");
-        testInfo();
-        Apple apple=new Apple();
-        apple.subThread();
-
+        Pipe p=new Pipe();
+        p.mian();
         Thread.currentThread().join();
         System.out.println("application end.");
 

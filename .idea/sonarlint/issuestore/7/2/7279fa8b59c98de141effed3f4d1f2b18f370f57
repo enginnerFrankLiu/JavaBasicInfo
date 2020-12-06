@@ -1,0 +1,14 @@
+
+n
+java:S1104"QMake count a static final constant or non-public and provide accessors if needed.(“ÿ±8‘Άια.
+Z	java:S106 "9Replace this use of System.out or System.err by a logger.(®ύαλϋÿÿÿÿ8Δ“·ια.
+j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Χ—€Ι8λυ¨ια.
+@
+java:S1148$"#Use a logger to log this exception.(Η’Ηκ8–‹«ια.
+X
+java:S2696"6Make the enclosing method "static" or remove this set.(λζϋÿÿÿÿÿ8ΟΡ¦ια.
+H
+java:S1444"+Make this "public static count" field final(“ÿ±8‘Άια.
+j	java:S100
+"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(πσ·”8νϊ£ια.
+J	java:S108")Either remove or fill this block of code.(±—±ÿÿÿÿÿ8ΘΚ¤ια.

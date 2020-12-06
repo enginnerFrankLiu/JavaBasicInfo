@@ -167,6 +167,15 @@ public class Main {
 //      producer();
 //      produceAndConsume();
 //      deadLocker();
+        ////
+////        Society s=new Society();
+////        s.main();
+//
+//        Fuck fuck=new Fuck();
+//        fuck.main();
+//
+//        Thread.currentThread().join();
+
 
     }
 
@@ -338,6 +347,23 @@ public class Main {
         System.out.println(set);
    }
 
+   private static String locker="application-lock-apple";
+    public static void testInfo(){
+        Thread thread=new Thread(()->{
+            try {
+                synchronized (locker){
+
+                    System.out.println("main method lock resource.");
+                    Thread.sleep(5000L);
+                    System.out.println("main method release lock.");
+                }
+            }catch (Exception ex){
+                ex.printStackTrace();
+            }
+        });
+        thread.start();
+    }
+
     /**
      * information for test function.
      *
@@ -345,15 +371,11 @@ public class Main {
      */
     public static void main(String[] args) throws  Exception {
         System.out.println("application start.");
-//
-//        Society s=new Society();
-//        s.main();
-
-        Fuck fuck=new Fuck();
-        fuck.main();
+        testInfo();
+        Apple apple=new Apple();
+        apple.subThread();
 
         Thread.currentThread().join();
-
         System.out.println("application end.");
 
     }

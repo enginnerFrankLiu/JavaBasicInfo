@@ -1,0 +1,37 @@
+
+G
+java:S1444Z"*Make this "public static lock" field final(Èñˆ8¦ß÷â.
+T	java:S106B"9Replace this use of System.out or System.err by a logger.(ıËßf8‹ç¹‰â.
+m
+java:S1104Z"PMake lock a static final constant or non-public and provide accessors if needed.(Èñˆ8¦ß÷â.
+L
+java:S1444"*Make this "public static food" field final(„©È¿ùÿÿÿÿ8…‡›óá.
+U	java:S106G"9Replace this use of System.out or System.err by a logger.(¯Ëõ”8Ë»‰â.
+X
+java:S2696R"6Make the enclosing method "static" or remove this set.(âå„ıûÿÿÿÿ8¶”Ä‰â.
+X
+java:S2696."6Make the enclosing method "static" or remove this set.(âå„ıûÿÿÿÿ8ª—£óá.
+Y
+java:S1128"=Remove this unused import 'java.util.logging.ConsoleHandler'.(±ìÍ 8öç·‰â.
+r
+java:S1104"PMake food a static final constant or non-public and provide accessors if needed.(„©È¿ùÿÿÿÿ8…‡›óá.
+Q
+java:S1874'"/Remove this use of "suspend"; it is deprecated.(’´ñÏùÿÿÿÿ8àÊ¸óá.
+b	java:S112g"FDefine and throw a dedicated exception instead of using a generic one.(óÒëĞ8Šû˜â.
+K
+java:S18740".Remove this use of "resume"; it is deprecated.(ÕÖÿ¦8İ£¦óá.
+U	java:S106P"9Replace this use of System.out or System.err by a logger.(çÇ¬º8¥•Ğ‰â.
+Z	java:S106 "9Replace this use of System.out or System.err by a logger.(›‚–—ıÿÿÿÿ8ŠÆœóá.
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Šè—³8®¢óá.
+@
+java:S1148I"#Use a logger to log this exception.(òçøì8—öİ‰â.
+U	java:S106q"9Replace this use of System.out or System.err by a logger.(§£„€8ÿ£œâ.
+U	java:S106/"9Replace this use of System.out or System.err by a logger.(²šŸû8úŠ§óá.
+@
+java:S1148%"#Use a logger to log this exception.(Ç’Çê8ßùŸóá.
+Z	java:S106)"9Replace this use of System.out or System.err by a logger.(‚Óœßıÿÿÿÿ8äå óá.
+h
+java:S2142$"FEither re-interrupt this method or rethrow the "InterruptedException".(è®ã¶øÿÿÿÿ8ßùŸóá.
+Z	java:S106T"9Replace this use of System.out or System.err by a logger.(…±ºİüÿÿÿÿ8¿–Å‰â.
+j	java:S100g"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óÒëĞ8é§öâ.
+a	java:S112<"FDefine and throw a dedicated exception instead of using a generic one.(ÚØ’j8¡èÂ‰â.

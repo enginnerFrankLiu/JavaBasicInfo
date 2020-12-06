@@ -2,10 +2,7 @@ package com.company.IO;
 
 import sun.awt.SunGraphicsCallback;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.*;
 import java.lang.reflect.Field;
 
 public class FileInfo {
@@ -216,5 +213,37 @@ public class FileInfo {
         String dirPath = projectPath + "\\resource";
         File file=new File(dirPath);
         getSomeInAllFile(file,"fs");
+    }
+
+    /**
+     * 读取文件中的所有内容.
+     * 这几个对象，要搞清楚的呀；
+     * 就是更io stream reader 相关的各种东西；
+     * 整体效果，还算，可以的；
+     *
+     * @throws Exception
+     */
+    public void readAllFileInfo() throws Exception{
+        String projectPath = System.getProperty("user.dir");
+        String filePath = projectPath + "\\test.log";
+        File file=new File(filePath);
+
+        FileInputStream fileInputStream=new FileInputStream(file);
+        ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
+        int len=0;
+        byte [] buffer=new byte[1024];
+        while ((len=fileInputStream.read(buffer))!=-1){
+            byteArrayOutputStream.write(buffer,0,len);
+        }
+
+        byte [] txt=byteArrayOutputStream.toByteArray();
+        BufferedReader reader=new BufferedReader(new InputStreamReader(new ByteArrayInputStream(txt),"utf-8"));
+        String lineContent=null;
+        int line=0;
+        while ((lineContent=reader.readLine())!=null){
+            line++;
+            String message="第【"+line+"】行的内容为:"+lineContent;
+            System.out.println(message);
+        }
     }
 }

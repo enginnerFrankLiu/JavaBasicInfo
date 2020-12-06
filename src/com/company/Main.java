@@ -388,7 +388,8 @@ public class Main {
        // f.createDir();
        // f.copyFile();
        // f.testGetFiles();
-        f.wordCount();
+        // f.wordCount();
+        f.readAllFileInfo();
         System.out.println("application end.");
 
     }

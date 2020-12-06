@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.IO.FileInfo;
 import com.company.IO.Pipe;
 
 import java.util.EnumMap;
@@ -376,9 +377,14 @@ public class Main {
      */
     public static void main(String[] args) throws  Exception {
         System.out.println("application start.");
-        Pipe p=new Pipe();
-        p.mian();
-        Thread.currentThread().join();
+//        Pipe p=new Pipe();
+//        p.arrayRead();
+
+        FileInfo f=new FileInfo();
+      //  f.pathInfo();
+      // f.createFile();
+      //f.createFileBaseOnDir();
+        f.fileType();
         System.out.println("application end.");
 
     }

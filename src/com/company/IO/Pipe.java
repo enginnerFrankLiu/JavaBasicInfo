@@ -1,7 +1,6 @@
 package com.company.IO;
 
-import java.io.PipedInputStream;
-import java.io.PipedOutputStream;
+import java.io.*;
 
 
 /**
@@ -45,6 +44,22 @@ public class Pipe {
         b.start();
     }
 
+    public void arrayRead() throws Exception{
+
+        OutputStream output=new ByteArrayOutputStream();
+
+        output.write("stay calm,listen music and wiriting code.".getBytes());
+
+//        byte [] bytes=output.toByteArray();
+//        InputStream input=new ByteArrayInputStream(bytes);
+//
+//        int data=input.read();
+//        while (data!=-1){
+//            char c=(char)data;
+//            System.out.println(c);
+//            data=input.read();
+//        }
+    }
 
 
 }

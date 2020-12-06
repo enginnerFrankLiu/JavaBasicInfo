@@ -384,7 +384,11 @@ public class Main {
       //  f.pathInfo();
       // f.createFile();
       //f.createFileBaseOnDir();
-        f.fileType();
+        //f.fileType();
+       // f.createDir();
+       // f.copyFile();
+       // f.testGetFiles();
+        f.wordCount();
         System.out.println("application end.");
 
     }

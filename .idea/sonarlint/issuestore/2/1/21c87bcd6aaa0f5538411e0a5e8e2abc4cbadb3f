@@ -1,8 +1,8 @@
 
+U	java:S1063"9Replace this use of System.out or System.err by a logger.(ù§é8ñµüèá.
 @
 java:S1148$"#Use a logger to log this exception.(Ç’Çê8ñµüèá.
-j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğó·”8°ÄËèá.
 j	java:S100,"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×—€É8ñµüèá.
 @
 java:S11486"#Use a logger to log this exception.(Ç’Çê8ñµüèá.
-U	java:S1063"9Replace this use of System.out or System.err by a logger.(ù§é8ñµüèá.
+j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğó·”8°ÄËèá.

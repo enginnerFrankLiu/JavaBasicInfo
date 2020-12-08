@@ -383,12 +383,18 @@ public class Main {
         thread.start();
     }
 
-    static void testStream(){
+    static void testStream() throws Exception{
 
         StreamInfo streamInfo=new StreamInfo();
-        streamInfo.inputStream();
-        System.out.println("---------------------");
-        streamInfo.inputReader();
+//        streamInfo.inputStream();
+//        System.out.println("---------------------");
+//        streamInfo.inputReader();
+//        System.out.println("---------------------");
+//        streamInfo.txtOutPutTest();
+//        System.out.println("文件的追加效果---------------------");
+//        streamInfo.txtOutputAppend();
+        //streamInfo.readFileTxt();
+        streamInfo.performanceTest();
     }
 
     /**

@@ -50,3 +50,7 @@ L
 src/com/company/IO/Pipe.java,4\1\4160d29a538d02ddb58d646a83a822992e2320dd
 P
  src/com/company/IO/FileInfo.java,f\9\f9c7817fcf4c4df2d147315ff5b6e60ebe8ea617
+6
+io.log,5\1\515df1225ff55551f13ab26831e86a3e8878f830
+V
+&src/com/company/stream/StreamInfo.java,b\f\bf3f0e58008420f646fd4dcd90b3a0e4a1de3ffb

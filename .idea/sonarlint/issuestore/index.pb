@@ -44,3 +44,9 @@ K
 src/com/company/Animal.java,e\d\ed8c2beca2662f9014f7bfee0190adea0752244d
 I
 src/com/company/Fuck.java,1\8\1894c20080dc27e83eec0b8023b08470d63ad651
+J
+src/com/company/Apple.java,1\8\1849351d24a08aac01b329f050d5afb04e877b01
+L
+src/com/company/IO/Pipe.java,4\1\4160d29a538d02ddb58d646a83a822992e2320dd
+P
+ src/com/company/IO/FileInfo.java,f\9\f9c7817fcf4c4df2d147315ff5b6e60ebe8ea617

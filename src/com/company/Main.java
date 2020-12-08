@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.IO.FileInfo;
 import com.company.IO.Pipe;
+import com.company.stream.StreamInfo;
 
 import java.util.EnumMap;
 import java.util.EnumSet;
@@ -181,7 +182,19 @@ public class Main {
 //        testInfo();
 //        Apple apple=new Apple();
 //        apple.subThread();
+//        Pipe p=new Pipe();
+//        p.arrayRead();
 
+//        FileInfo f=new FileInfo();
+//      //  f.pathInfo();
+//      // f.createFile();
+//      //f.createFileBaseOnDir();
+//        //f.fileType();
+//       // f.createDir();
+//       // f.copyFile();
+//       // f.testGetFiles();
+//        // f.wordCount();
+//        f.readAllFileInfo();
 
     }
 
@@ -370,6 +383,14 @@ public class Main {
         thread.start();
     }
 
+    static void testStream(){
+
+        StreamInfo streamInfo=new StreamInfo();
+        streamInfo.inputStream();
+        System.out.println("---------------------");
+        streamInfo.inputReader();
+    }
+
     /**
      * information for test function.
      *
@@ -377,19 +398,7 @@ public class Main {
      */
     public static void main(String[] args) throws  Exception {
         System.out.println("application start.");
-//        Pipe p=new Pipe();
-//        p.arrayRead();
-
-        FileInfo f=new FileInfo();
-      //  f.pathInfo();
-      // f.createFile();
-      //f.createFileBaseOnDir();
-        //f.fileType();
-       // f.createDir();
-       // f.copyFile();
-       // f.testGetFiles();
-        // f.wordCount();
-        f.readAllFileInfo();
+        testStream();
         System.out.println("application end.");
 
     }

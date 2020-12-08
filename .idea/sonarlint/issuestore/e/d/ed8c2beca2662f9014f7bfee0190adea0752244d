@@ -1,7 +1,7 @@
 
 U	java:S106"9Replace this use of System.out or System.err by a logger.(ϋόό8Τα‡γ.
+@
+java:S1148"#Use a logger to log this exception.(Η’Ηκ8Τα‡γ.
 U	java:S106"9Replace this use of System.out or System.err by a logger.(ΩΣΏψ8¦γι‡γ.
 M
 java:S2446"0"notify" may not wake up the appropriate thread.(ΙΨ›Ξ8αϋ‹γ.
-@
-java:S1148"#Use a logger to log this exception.(Η’Ηκ8Τα‡γ.

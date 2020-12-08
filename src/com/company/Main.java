@@ -394,7 +394,8 @@ public class Main {
 //        System.out.println("文件的追加效果---------------------");
 //        streamInfo.txtOutputAppend();
         //streamInfo.readFileTxt();
-        streamInfo.performanceTest();
+//        streamInfo.performanceTest();
+        streamInfo.code();
     }
 
     /**

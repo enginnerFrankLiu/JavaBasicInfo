@@ -1,6 +1,9 @@
 package com.company.stream;
 
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+
 import java.io.*;
+import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -231,6 +234,48 @@ public class StreamInfo {
         end = System.currentTimeMillis();
         System.out.println("【buffer+Temp】共耗时" + (end - start) + "毫秒");
 
+
     }
 
+    /**
+     *  字符流 = 字节流 + 编码
+     *  字符流的操作可以简单的看成是我们的 字节流 加 编码
+     *  字节流vs字符流
+     *
+     *  关于编码的和解码的话，我们后面可以花点时间再研究这些理论知识；
+     *
+     *  目前我们只是出于不断的熟悉api的过程中，目前来看，效果还算面前过的去的吧.
+     *
+     *  就是各种文件的各种操作；
+     *
+     *  各种文件的各种骚操作
+     *
+     */
+    public void code() throws Exception{
+
+        String message="我";
+        String info="d";
+
+        System.out.println("UTF-8");
+        byte [] messageUtfBytes=message.getBytes("UTF-8");
+        byte [] messageGbkBytes=message.getBytes("GBK");
+        byte [] messageUnicodeBytes=message.getBytes("Unicode");
+
+        System.out.println(Arrays.toString(messageUtfBytes));
+        System.out.println(Arrays.toString(messageGbkBytes));
+        System.out.println(Arrays.toString(messageUnicodeBytes));
+
+
+
+    }
+
+    /**
+     * close 和 flush 的区别;
+     * close ： 关闭流对象，但是要先刷一次缓冲区，关闭之后，对象流就不能再继续使用.
+     * flush :  仅仅是刷新缓冲区，刷新之后，流对象还可以继续使用滴呀；
+     */
+    public void infoD(){
+
+
+    }
 }

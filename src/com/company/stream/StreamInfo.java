@@ -9,6 +9,11 @@ import java.util.concurrent.ExecutionException;
 /**
  * 这种就是，字符流的各种读取方式
  * just one time can read all data into temp byte/char array.
+ *
+ * Hi colleague
+ * after read this wiki which is about MDO/MDI setup,I still fell a lit confused.
+ *
+ *
  */
 public class StreamInfo {
 

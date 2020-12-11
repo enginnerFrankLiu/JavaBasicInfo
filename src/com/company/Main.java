@@ -395,7 +395,11 @@ public class Main {
 //        streamInfo.txtOutputAppend();
         //streamInfo.readFileTxt();
 //        streamInfo.performanceTest();
-        streamInfo.code();
+//        streamInfo.code();
+
+        FileInfo fileInfo=new FileInfo();
+//        fileInfo.dataOutputStreamInfo();
+        fileInfo.dataInputStreamInfo();
     }
 
     /**

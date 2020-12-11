@@ -1,9 +1,7 @@
 package com.company.IO;
 
-import sun.awt.SunGraphicsCallback;
 
 import java.io.*;
-import java.lang.reflect.Field;
 
 public class FileInfo {
 
@@ -115,35 +113,35 @@ public class FileInfo {
 
     }
 
-    public void createDir(){
+    public void createDir() {
         String projectPath = System.getProperty("user.dir");
         //String targetFolder=projectPath+"\\resource\\shit";
         //同济，或者，叫单一的目录下，如果不存在，我们就会创建其中的folder，效果整体来说，还是比较明显的
-        String targetFolder=projectPath+"\\shit";
+        String targetFolder = projectPath + "\\shit";
         System.out.println(targetFolder);
-        File dir=new File(targetFolder);
-        if(!dir.exists()){
+        File dir = new File(targetFolder);
+        if (!dir.exists()) {
             dir.mkdir();
         }
         System.out.println("folder created successful.");
     }
 
     /**
-     *这个是只是单纯的copy 某个文件吧了
+     * 这个是只是单纯的copy 某个文件吧了
      * 整体效果还算是比较ok的腊；
      */
-    public void copyFile() throws Exception{
+    public void copyFile() throws Exception {
 
         String projectPath = System.getProperty("user.dir");
         String dirPath = projectPath + "\\resource\\fuck.txt";
-        String targetPath=projectPath+"\\target\\fuckCopy.txt";
-        FileInputStream ins=new FileInputStream(dirPath);
-        FileOutputStream outs=new FileOutputStream(targetPath);
+        String targetPath = projectPath + "\\target\\fuckCopy.txt";
+        FileInputStream ins = new FileInputStream(dirPath);
+        FileOutputStream outs = new FileOutputStream(targetPath);
 
-        byte [] b=new byte[1024];
-        int n=0;
-        while ((n=ins.read(b))!=-1){
-            outs.write(b,0,n);
+        byte[] b = new byte[1024];
+        int n = 0;
+        while ((n = ins.read(b)) != -1) {
+            outs.write(b, 0, n);
 
         }
         ins.close();
@@ -152,26 +150,27 @@ public class FileInfo {
 
     }
 
-    private void listAllFile(File file){
-        File [] files=file.listFiles();
+    private void listAllFile(File file) {
+        File[] files = file.listFiles();
         for (File f : files) {
-            if(f.isDirectory()){
+            if (f.isDirectory()) {
                 listAllFile(f);
-            }else{
+            } else {
 
                 System.out.println(f.getAbsolutePath());
             }
         }
     }
 
-    public void testGetFiles(){
+    public void testGetFiles() {
         String projectPath = System.getProperty("user.dir");
         String dirPath = projectPath + "\\resource";
-        File file=new File(dirPath);
+        File file = new File(dirPath);
         listAllFile(file);
     }
 
-    public static int size=1;
+    public static int size = 1;
+
     /**
      * 递归寻找整个目录，然后找到匹配的值
      * 后面可以后优化成多线程的统计
@@ -180,24 +179,24 @@ public class FileInfo {
      * 后面我们再优化成我们的map reduce 的方式去实现我们的各种统计
      * 居然在我们的文件统计中找到了
      */
-    private void getSomeInAllFile(File file,String content) throws Exception{
+    private void getSomeInAllFile(File file, String content) throws Exception {
 
-        File [] files=file.listFiles();
+        File[] files = file.listFiles();
         for (File f : files) {
-            if(f.isDirectory()){
-                getSomeInAllFile(f,content);
-            }else{
-                String path=f.getPath();
-                FileInputStream fileInputStream=new FileInputStream(f);
-                ByteArrayOutputStream outputStream=new ByteArrayOutputStream();
-                byte [] buffer=new byte[1024]; //每次读取1M 到我们buffer中进行计算;
-                int len=0;
-                while ((len=fileInputStream.read(buffer))!=-1){
-                    outputStream.write(buffer,0,len);
+            if (f.isDirectory()) {
+                getSomeInAllFile(f, content);
+            } else {
+                String path = f.getPath();
+                FileInputStream fileInputStream = new FileInputStream(f);
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                byte[] buffer = new byte[1024]; //每次读取1M 到我们buffer中进行计算;
+                int len = 0;
+                while ((len = fileInputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, len);
                 }
-                String str=new String(outputStream.toByteArray(),"utf-8");
-                if(str.contains(content)){
-                    String message="第【"+size+"】个文件匹配到内容,路径为:"+f.getPath();
+                String str = new String(outputStream.toByteArray(), "utf-8");
+                if (str.contains(content)) {
+                    String message = "第【" + size + "】个文件匹配到内容,路径为:" + f.getPath();
                     System.out.println(message);
                     size++;
                 }
@@ -208,11 +207,11 @@ public class FileInfo {
     /**
      *
      */
-    public void wordCount() throws  Exception{
+    public void wordCount() throws Exception {
         String projectPath = System.getProperty("user.dir");
         String dirPath = projectPath + "\\resource";
-        File file=new File(dirPath);
-        getSomeInAllFile(file,"fs");
+        File file = new File(dirPath);
+        getSomeInAllFile(file, "fs");
     }
 
     /**
@@ -223,27 +222,85 @@ public class FileInfo {
      *
      * @throws Exception
      */
-    public void readAllFileInfo() throws Exception{
+    public void readAllFileInfo() throws Exception {
         String projectPath = System.getProperty("user.dir");
         String filePath = projectPath + "\\test.log";
-        File file=new File(filePath);
+        File file = new File(filePath);
 
-        FileInputStream fileInputStream=new FileInputStream(file);
-        ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
-        int len=0;
-        byte [] buffer=new byte[1024];
-        while ((len=fileInputStream.read(buffer))!=-1){
-            byteArrayOutputStream.write(buffer,0,len);
+        FileInputStream fileInputStream = new FileInputStream(file);
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        int len = 0;
+        byte[] buffer = new byte[1024];
+        while ((len = fileInputStream.read(buffer)) != -1) {
+            byteArrayOutputStream.write(buffer, 0, len);
         }
 
-        byte [] txt=byteArrayOutputStream.toByteArray();
-        BufferedReader reader=new BufferedReader(new InputStreamReader(new ByteArrayInputStream(txt),"utf-8"));
-        String lineContent=null;
-        int line=0;
-        while ((lineContent=reader.readLine())!=null){
+        byte[] txt = byteArrayOutputStream.toByteArray();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(txt), "utf-8"));
+        String lineContent = null;
+        int line = 0;
+        while ((lineContent = reader.readLine()) != null) {
             line++;
-            String message="第【"+line+"】行的内容为:"+lineContent;
+            String message = "第【" + line + "】行的内容为:" + lineContent;
             System.out.println(message);
+        }
+    }
+
+    /**
+     *
+     */
+    public void dataOutputStreamInfo() throws Exception {
+
+        String projectPath = System.getProperty("user.dir");
+        String filePath = projectPath + "\\test.log";
+        File file = new File(filePath);
+
+        DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream(file));
+        double prices[] = {10, 100, 730};
+        int[] num = {10, 28, 10};
+        String desc[] = {"fuck", "love", "peace"};
+
+        for (int i = 0; i < 3; i++) {
+            dataOutputStream.writeDouble(prices[i]);
+            dataOutputStream.writeChar('\t');
+            dataOutputStream.writeInt(num[i]);
+            dataOutputStream.writeChar('\t');
+            dataOutputStream.writeChars(desc[i]);
+            dataOutputStream.writeChar('\n');
+        }
+
+
+    }
+
+    public void dataInputStreamInfo() throws Exception {
+
+        String projectPath = System.getProperty("user.dir");
+        String filePath = projectPath + "\\test.log";
+        File file = new File(filePath);
+
+        DataInputStream dataInputStream = new DataInputStream(new BufferedInputStream(new FileInputStream(file)));
+
+        double prices;
+        int num;
+        StringBuffer desc;
+
+        for (int i = 0; i < 3; i++) {
+
+            prices = dataInputStream.readDouble(); //读出价格
+
+            dataInputStream.readChar();//跳出tab
+
+            num = dataInputStream.readInt();//读出数目
+
+            dataInputStream.readChar();
+
+            char ch;
+
+            desc = new StringBuffer();
+
+            while (((ch = dataInputStream.readChar()) != '\n')) desc.append(ch);//读取字符串
+
+            System.out.println("价格" + prices + "   数目" + num + "  名称" + desc);
         }
     }
 }

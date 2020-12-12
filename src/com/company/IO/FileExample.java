@@ -6,14 +6,21 @@ public class FileExample {
 
     /**
      * 复制单级文件 下的所有文件
-     *
+     * 重要的事情说三遍！
+     * 同级别目录下的数据！
+     * 同级别目录下的数据！
+     * 同级别目录下的数据！
+     * 同级别目录下的数据！
+     * 同级别目录下的数据！
      */
     public void copyFileDemo() throws Exception{
-        File resourceFile=new File(".\\resource");
-        File targetFile=new File(".\\resource\\CopyFileDemo");
+        String projectPath = System.getProperty("user.dir");
+        File resourceFile=new File(projectPath+"\\sameRootFile");
+        File targetFile=new File(projectPath+"\\copyFileDemo");
         if(!targetFile.exists()){
             targetFile.mkdirs();
         }
+
         //get all resource
         File [] files=resourceFile.listFiles();
         for (File file : files) {
@@ -21,7 +28,6 @@ public class FileExample {
             File newFile=new File(targetFile,fileName);
             copyFile(file,newFile);
         }
-
     }
 
     /**
@@ -34,7 +40,7 @@ public class FileExample {
         BufferedOutputStream bufferedOutputStream=new BufferedOutputStream(new FileOutputStream(targetFile));
         byte [] temp=new byte[1024];
         int len=0;
-        while ((len=bufferedInputStream.read())!=-1){
+        while ((len=bufferedInputStream.read(temp))!=-1){
             System.out.println("每次读取的length:"+len);
             bufferedOutputStream.write(temp,0,len);
         }

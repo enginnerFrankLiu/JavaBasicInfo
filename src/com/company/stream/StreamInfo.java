@@ -270,8 +270,6 @@ public class StreamInfo {
         System.out.println(Arrays.toString(messageGbkBytes));
         System.out.println(Arrays.toString(messageUnicodeBytes));
 
-
-
     }
 
     /**

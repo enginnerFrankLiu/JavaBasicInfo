@@ -411,7 +411,7 @@ public class Main {
 //        stream.markInfo();
     }
 
-    private void testFileInfo() throws  Exception{
+    static void testFileInfo() throws  Exception{
 
         FileExample fileExample=new FileExample();
         fileExample.copyFileDemo();
@@ -428,6 +428,7 @@ public class Main {
 //        FileInfo file=new FileInfo();
 //        //this way we can show all file info.
 //        file.showAllFile();
+        testFileInfo();
         System.out.println("application end.");
 
     }

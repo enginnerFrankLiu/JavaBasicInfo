@@ -303,4 +303,6 @@ public class FileInfo {
             System.out.println("价格" + prices + "   数目" + num + "  名称" + desc);
         }
     }
+
+
 }

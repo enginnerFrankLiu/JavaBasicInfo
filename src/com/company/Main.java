@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.IO.FileInfo;
+import com.company.IO.ObjectStream;
 import com.company.IO.Pipe;
 import com.company.stream.StreamInfo;
 
@@ -396,10 +397,15 @@ public class Main {
         //streamInfo.readFileTxt();
 //        streamInfo.performanceTest();
 //        streamInfo.code();
+//
+//        FileInfo fileInfo=new FileInfo();
+////        fileInfo.dataOutputStreamInfo();
+//        fileInfo.dataInputStreamInfo();
 
-        FileInfo fileInfo=new FileInfo();
-//        fileInfo.dataOutputStreamInfo();
-        fileInfo.dataInputStreamInfo();
+
+        ObjectStream stream=new ObjectStream();
+        stream.objectOutSteam();
+        stream.objectInputStream();
     }
 
     /**

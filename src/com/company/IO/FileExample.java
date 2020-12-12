@@ -1,6 +1,4 @@
 package com.company.IO;
-
-import javax.naming.Name;
 import java.io.*;
 
 public class FileExample {
@@ -21,7 +19,6 @@ public class FileExample {
         if(!targetFile.exists()){
             targetFile.mkdirs();
         }
-
         //get all resource
         File [] files=resourceFile.listFiles();
         for (File file : files) {
@@ -45,6 +42,8 @@ public class FileExample {
             System.out.println("每次读取的length:"+len);
             bufferedOutputStream.write(temp,0,len);
         }
+        bufferedInputStream.close();
+        bufferedOutputStream.close();
     }
 
     /**
@@ -57,12 +56,10 @@ public class FileExample {
      *
      */
     public void copySpecifyFile() throws  Exception{
-
         String projectPath = System.getProperty("user.dir");
         File resourceFile=new File(projectPath+"\\fileResource");
         String targetDir=projectPath+"\\fileTarget";
         File targetFile=new File(targetDir);
-
         if(!targetFile.exists()){
             targetFile.mkdirs();
         }
@@ -84,4 +81,40 @@ public class FileExample {
 
     }
 
+    /**
+     * 这个就是多级文件复制；
+     * 数据源:resource
+     * 目标:resource-copy
+     *
+     * 判断文件是否file->如果是file，就直接进行copy操作
+     * 判断文件是否file->如果是file，如果不是
+     *                           在目标目录下创建folder
+     *                           获取该file的所有对象(file,folder)
+     *                           遍历每一个对象
+     *                           递归操作以上流畅
+     *
+     * 明天把它优化成-> 忽略根目录->也就是根目录下的所有东西(但又不好包含根目录的)
+     */
+    public void copyAllFileInfo() throws Exception{
+        String projectPath = System.getProperty("user.dir");
+        File resourceFile=new File(projectPath+"\\resource");
+        String targetDir=projectPath+"\\resource-copy";
+        File targetFile=new File(targetDir);
+        copyFolder(resourceFile,targetFile);
+    }
+
+    private void copyFolder(File srcFile,File targetFile) throws Exception{
+         if(srcFile.isDirectory()){
+             File newFolder=new File(targetFile,srcFile.getName());
+                 newFolder.mkdirs();
+
+             File [] allResourceFile=srcFile.listFiles();
+             for (File oldFile : allResourceFile) {
+                  copyFolder(oldFile,newFolder);
+             }
+         }else{
+             File newFile=new File(targetFile,srcFile.getName());
+             copyFile(srcFile,newFile);
+         }
+    }
 }

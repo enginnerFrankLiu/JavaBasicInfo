@@ -415,8 +415,8 @@ public class Main {
 
         FileExample fileExample=new FileExample();
 //        fileExample.copyFileDemo();
-        fileExample.copySpecifyFile();
-
+//        fileExample.copySpecifyFile();
+//        fileExample.copyAllFileInfo();
     }
 
     /**

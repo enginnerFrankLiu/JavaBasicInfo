@@ -402,10 +402,12 @@ public class Main {
 ////        fileInfo.dataOutputStreamInfo();
 //        fileInfo.dataInputStreamInfo();
 
-
-        ObjectStream stream=new ObjectStream();
-        stream.objectOutSteam();
-        stream.objectInputStream();
+//
+//        ObjectStream stream=new ObjectStream();
+////        stream.objectInfo();
+//       // stream.readFromByteArrayInputStream();
+//       // stream.byteArrayInputStream();
+//        stream.markInfo();
     }
 
     /**
@@ -415,7 +417,9 @@ public class Main {
      */
     public static void main(String[] args) throws  Exception {
         System.out.println("application start.");
-        testStream();
+        FileInfo file=new FileInfo();
+        //this way we can show all file info.
+        file.showAllFile();
         System.out.println("application end.");
 
     }

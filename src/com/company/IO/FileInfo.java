@@ -304,5 +304,30 @@ public class FileInfo {
         }
     }
 
+    private void recursionFile(String path) throws Exception{
 
+        if(path==null){
+            return;
+        }
+        File [] files=new File(path).listFiles();
+        if(files==null){
+            return;
+        }
+        for (File file : files) {
+
+            if(file.isFile()){
+                System.out.println(file.getName());
+            }else if(file.isDirectory()){
+                recursionFile(file.getPath());
+            }else{
+                System.out.println("error");
+            }
+        }
+    }
+
+    public void showAllFile() throws Exception{
+        String filePath=".\\resource";
+        recursionFile(filePath);
+
+    }
 }

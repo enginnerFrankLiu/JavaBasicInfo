@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.IO.FileExample;
 import com.company.IO.FileInfo;
 import com.company.IO.ObjectStream;
 import com.company.IO.Pipe;
@@ -410,6 +411,13 @@ public class Main {
 //        stream.markInfo();
     }
 
+    private void testFileInfo() throws  Exception{
+
+        FileExample fileExample=new FileExample();
+        fileExample.copyFileDemo();
+
+    }
+
     /**
      * information for test function.
      *
@@ -417,9 +425,9 @@ public class Main {
      */
     public static void main(String[] args) throws  Exception {
         System.out.println("application start.");
-        FileInfo file=new FileInfo();
-        //this way we can show all file info.
-        file.showAllFile();
+//        FileInfo file=new FileInfo();
+//        //this way we can show all file info.
+//        file.showAllFile();
         System.out.println("application end.");
 
     }

@@ -1,5 +1,6 @@
 package com.company.IO;
 
+import javax.naming.Name;
 import java.io.*;
 
 public class FileExample {
@@ -45,4 +46,42 @@ public class FileExample {
             bufferedOutputStream.write(temp,0,len);
         }
     }
+
+    /**
+     * 需求：
+     * 复制指定目录下的指定文件，并且修改后缀名;
+     *
+     * 指定文件
+     * 指定文件 .txt
+     * 指定新的后缀名 .bin
+     *
+     */
+    public void copySpecifyFile() throws  Exception{
+
+        String projectPath = System.getProperty("user.dir");
+        File resourceFile=new File(projectPath+"\\fileResource");
+        String targetDir=projectPath+"\\fileTarget";
+        File targetFile=new File(targetDir);
+
+        if(!targetFile.exists()){
+            targetFile.mkdirs();
+        }
+
+        File [] filesEndWithTxTs=resourceFile.listFiles(new FilenameFilter() {
+            @Override
+            public boolean accept(File dir, String name) {
+                return new File(dir,name).isFile() && name.endsWith(".txt");
+            }
+        });
+
+        for (File filesEndWithTxT : filesEndWithTxTs) {
+            //再次获取指定的文件对象;
+            String resourceFileName=filesEndWithTxT.getName();
+            String resourceFileNewName= resourceFileName.replace(".txt",".bin");
+            File newFile=new File(targetDir,resourceFileNewName);
+            copyFile(filesEndWithTxT,newFile);
+        }
+
+    }
+
 }

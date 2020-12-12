@@ -414,7 +414,8 @@ public class Main {
     static void testFileInfo() throws  Exception{
 
         FileExample fileExample=new FileExample();
-        fileExample.copyFileDemo();
+//        fileExample.copyFileDemo();
+        fileExample.copySpecifyFile();
 
     }
 

@@ -418,7 +418,8 @@ public class Main {
 //        fileExample.copySpecifyFile();
 //        fileExample.copyAllFileInfo();
 //        fileExample.copyAllFileInfoV2();
-        fileExample.getLuckBoy();
+//        fileExample.getLuckBoy();
+        fileExample.inputStudentInfo();
     }
 
     /**

@@ -1,10 +1,10 @@
 package com.company.IO;
+import com.company.model.Student;
 import sun.rmi.log.LogInputStream;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
+import java.util.concurrent.ExecutionException;
 
 public class FileExample {
 
@@ -140,6 +140,10 @@ public class FileExample {
         String projectPath = System.getProperty("user.dir");
         String resourceFilePath=projectPath+"\\lucky\\luckBoys.txt";
         BufferedReader reader=new BufferedReader(new InputStreamReader( new FileInputStream(resourceFilePath),"UTF-8"));
+
+        //如果直接使用 BufferedReader + FileReader 会导致乱码；
+        // BufferedReader br = new BufferedReader(new FileReader(path));
+
         List<String> luckBoys=new ArrayList<>();
         String line;
         while ((line=reader.readLine())!=null){
@@ -152,6 +156,66 @@ public class FileExample {
         String luckBoy=luckBoys.get(index);
         System.out.println(luckBoy);
 
+    }
+
+    /**
+     * 录入学生信息；
+     * 并且根据分数排名
+     */
+    public void inputStudentInfo() throws  Exception {
+
+        TreeSet<Student> students=new TreeSet<>(new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return o2.getSum()-o1.getSum();
+            }
+        });
+
+        String targetFile="students.txt";
+
+        for(int i=1;i<=3;i++){
+            Scanner scanner=new Scanner(System.in);
+            System.out.println("请输入第"+i+"个学生成绩信息");
+            System.out.println("姓名");
+            String name= scanner.nextLine();
+            System.out.println("语文成绩: ");
+            int chinese=scanner.nextInt();
+            System.out.println("数学成绩: ");
+            int math=scanner.nextInt();
+            System.out.println("英语成绩: ");
+            int english=scanner.nextInt();
+
+            Student student=new Student();
+            student.setName(name);
+            student.setChinese(chinese);
+            student.setMath(math);
+            student.setEnglish(english);
+            students.add(student);
+
+            BufferedWriter writer=new BufferedWriter(new FileWriter(targetFile));
+            writer.write("学生成绩如下");
+            writer.newLine();
+            writer.flush();
+            writer.write("姓名-语文-数学-英语");
+            writer.newLine();
+            writer.flush();
+            for (Student stu : students) {
+                StringBuilder sb=new StringBuilder();
+                sb.append(stu.getName());
+                sb.append("-");
+                sb.append(stu.getChinese());
+                sb.append("-");
+                sb.append(stu.getMath());
+                sb.append("-");
+                sb.append(stu.getEnglish());
+                writer.write(sb.toString());
+                writer.newLine();
+                writer.flush();
+            }
+            writer.close();
+            System.out.println("学生成绩录入完毕");
+
+        }
     }
 
 

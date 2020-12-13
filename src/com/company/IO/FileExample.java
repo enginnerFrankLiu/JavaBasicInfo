@@ -1,5 +1,10 @@
 package com.company.IO;
+import sun.rmi.log.LogInputStream;
+
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class FileExample {
 
@@ -103,6 +108,19 @@ public class FileExample {
         copyFolder(resourceFile,targetFile);
     }
 
+    public void copyAllFileInfoV2() throws Exception{
+
+        String projectPath = System.getProperty("user.dir");
+        File resourceFile=new File(projectPath+"\\resource");
+        String targetDir=projectPath+"\\resource-copy";
+        File targetFile=new File(targetDir);
+
+        File [] allResourceFile=resourceFile.listFiles();
+        for (File file : allResourceFile) {
+            copyFolder(file,targetFile);
+        }
+    }
+
     private void copyFolder(File srcFile,File targetFile) throws Exception{
          if(srcFile.isDirectory()){
              File newFolder=new File(targetFile,srcFile.getName());
@@ -117,4 +135,24 @@ public class FileExample {
              copyFile(srcFile,newFile);
          }
     }
+
+    public void getLuckBoy() throws Exception{
+        String projectPath = System.getProperty("user.dir");
+        String resourceFilePath=projectPath+"\\lucky\\luckBoys.txt";
+        BufferedReader reader=new BufferedReader(new InputStreamReader( new FileInputStream(resourceFilePath),"UTF-8"));
+        List<String> luckBoys=new ArrayList<>();
+        String line;
+        while ((line=reader.readLine())!=null){
+            luckBoys.add(line);
+        }
+        reader.close();
+        Random r=new Random();
+        int index=r.nextInt(luckBoys.size());
+
+        String luckBoy=luckBoys.get(index);
+        System.out.println(luckBoy);
+
+    }
+
+
 }

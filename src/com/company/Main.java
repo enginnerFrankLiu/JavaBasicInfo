@@ -417,6 +417,8 @@ public class Main {
 //        fileExample.copyFileDemo();
 //        fileExample.copySpecifyFile();
 //        fileExample.copyAllFileInfo();
+//        fileExample.copyAllFileInfoV2();
+        fileExample.getLuckBoy();
     }
 
     /**

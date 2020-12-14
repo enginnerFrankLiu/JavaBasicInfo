@@ -1,10 +1,8 @@
 package com.company.IO;
 import com.company.model.Student;
-import sun.rmi.log.LogInputStream;
 
 import java.io.*;
 import java.util.*;
-import java.util.concurrent.ExecutionException;
 
 public class FileExample {
 
@@ -222,9 +220,30 @@ public class FileExample {
      * 实现一个登陆注册功能；
      * 将注册后的信息放入在本地的加密TXT文件中
      * 登陆的时候，从这个文件中读取，然后进行匹配
+     *
+     * 想当于把本地的txt 当成数据库，或者叫数据源吧
      */
     public void Info(){
-
+        String projectPath = System.getProperty("user.dir");
+        File resourceFile=new File(projectPath+"\\resource");
+        recursiveListFile(resourceFile);
+    }
+    /**
+     *
+     * 循环迭代的列出文档的所有文件的名称；
+     * 整体效果还算ok的腊；
+     * @param file
+     */
+    private void recursiveListFile(File file){
+        if(file.isDirectory()){
+            File files []=file.listFiles();
+            for (File f : files) {
+                System.out.println(f.getAbsolutePath());
+                if(f.isDirectory()){
+                    recursiveListFile(f);
+                }
+            }
+        }
     }
 
 

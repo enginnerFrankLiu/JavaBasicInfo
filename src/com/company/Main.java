@@ -420,7 +420,8 @@ public class Main {
 //        fileExample.copyAllFileInfoV2();
 //        fileExample.getLuckBoy();
 //        fileExample.inputStudentInfo();
-        fileExample.Info();
+//        fileExample.Info();
+        fileExample.inputStream();
     }
 
     /**

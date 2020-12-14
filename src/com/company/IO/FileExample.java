@@ -246,5 +246,48 @@ public class FileExample {
         }
     }
 
+    /**
+     *也就是总的来说：
+     *inputStreamReader
+     *outputSteamWriter
+     *是转换流
+     * 字符流 和 字节流之前的桥梁.
+     * info
+     * @throws Exception
+     */
+    public void inputStreamReader() throws Exception{
+        String projectPath = System.getProperty("user.dir");
+        File resourceFile=new File(projectPath+"\\students.txt");
+        FileInputStream inputStream=new FileInputStream(resourceFile);
+        InputStreamReader inputStreamReader=new InputStreamReader(inputStream);
+        System.out.println(inputStreamReader.getEncoding());
+        int t;
+        System.out.println(inputStreamReader.ready());
+        while ((t=inputStreamReader.read())!=-1){
+
+            char c=(char) t;
+            System.out.println(c);
+            System.out.println(inputStreamReader.ready());
+
+        }
+
+        inputStreamReader.close();
+        inputStream.close();
+    }
+
+    public void inputStream() throws Exception{
+
+        String projectPath = System.getProperty("user.dir");
+        String path=projectPath+"\\students.txt";
+        File file=new File(path);
+        //默认，使用的是系统的utf-8
+        InputStreamReader reader=new InputStreamReader(new FileInputStream(file));
+        int temp;
+        while ((temp=reader.read())!=-1){
+            char charInfo=(char)temp;
+            System.out.println(charInfo);
+        }
+        reader.close();
+    }
 
 }

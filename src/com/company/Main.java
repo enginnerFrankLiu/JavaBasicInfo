@@ -6,6 +6,7 @@ import com.company.IO.ObjectStream;
 import com.company.IO.Pipe;
 import com.company.stream.StreamInfo;
 
+import java.lang.reflect.Field;
 import java.util.EnumMap;
 import java.util.EnumSet;
 import java.util.HashSet;
@@ -421,7 +422,9 @@ public class Main {
 //        fileExample.getLuckBoy();
 //        fileExample.inputStudentInfo();
 //        fileExample.Info();
-        fileExample.inputStream();
+        //fileExample.inputStream();
+        //fileExample.fileOutputStream2();
+         fileExample.pipeInfo();
     }
 
     /**

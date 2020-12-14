@@ -3,8 +3,9 @@ import com.company.model.Student;
 
 import java.io.*;
 import java.util.*;
+import java.util.concurrent.ExecutionException;
 
-public class FileExample {
+public class FileExample  {
 
     /**
      * 复制单级文件 下的所有文件
@@ -288,6 +289,81 @@ public class FileExample {
             System.out.println(charInfo);
         }
         reader.close();
+    }
+
+    /**
+     * 写进去时候没有乱码，
+     * 默认文件的 编码格式就是使用我们的utf-8
+     * 总体效果还算不错的啊;
+     * @throws Exception
+     */
+    public void fileOutputStream() throws Exception{
+
+        String projectPath = System.getProperty("user.dir");
+        String path=projectPath+"\\message.txt";
+
+        File file=new File(path);
+        OutputStream outputStream=new FileOutputStream(file);
+        String message="我是小明,我喜欢写代码用java";
+        outputStream.write(message.getBytes());
+        outputStream.close();
+    }
+
+    /**
+     * 直接就可以开始写我们的字符串流；而不需要各种系统文件的默认格式
+     * 如果默认格式不正确(不是utf-8)，就在写的时候，就容易造成一定的乱码；
+     * 效果是非常不好的啊.
+     * @throws Exception
+     */
+    public void fileOutputStream2() throws Exception{
+
+        String projectPath = System.getProperty("user.dir");
+        String path=projectPath+"\\message.txt";
+        File file=new File(path);
+        OutputStreamWriter writer=new OutputStreamWriter(new FileOutputStream(file),"utf-8");
+        String message="我是小明,我喜欢写代码用java,我非常的喜欢写代码，非常的喜欢，卧槽";
+        writer.write(message);
+        writer.close();
+    }
+
+
+
+    /**
+     * 可以简答的使用和配合着使用我们的基本
+     * 管道的使用
+     * 其中的效果，整体来说，还算是比较ok的腊
+     *
+     */
+    public void pipeInfo() throws Exception{
+
+        final PipedOutputStream output=new PipedOutputStream();
+        final PipedInputStream input=new PipedInputStream(output);
+
+         Thread threadA=new Thread(()->{
+             try {
+                 Thread.sleep(5000L);
+                 output.write("love java a a a a a ".getBytes());
+                 output.close();
+             }catch (Exception ex){
+                 ex.printStackTrace();
+             }
+         });
+
+
+        Thread threadB=new Thread(()->{
+            try {
+               int data;
+               while ((data=input.read())!=-1){
+                   char c=(char)data;
+                   System.out.print(c);
+               }
+               input.close();
+            }catch (Exception ex){
+                ex.printStackTrace();
+            }
+        });
+        threadA.start();
+        threadB.start();
     }
 
 }

@@ -1,0 +1,68 @@
+
+d	java:S100å"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“úò†
+O	java:S106º"9Replace this use of System.out or System.err by a logger.(€‡ú­
+l
+java:S2095+"QUse try-with-resources or close this "BufferedInputStream" in a "finally" clause.(Ä†„ñúÿÿÿÿ
+a	java:S112¦"FDefine and throw a dedicated exception instead of using a generic one.(¢îãüÿÿÿÿ
+[	java:S106‘"9Replace this use of System.out or System.err by a logger.(Ùƒäşøÿÿÿÿ8ûÿµŠæ.
+O	java:S106ô"9Replace this use of System.out or System.err by a logger.(º‚É¦
+h	java:S112Ó"FDefine and throw a dedicated exception instead of using a generic one.(ñ½£ÿÿÿÿÿ8úÙ¦‹æ.
+T
+java:S1197ò"8Move the array designator from the variable to the type.(ê²§ôÿÿÿÿÿ
+W	java:S125’"<This block of commented-out lines of code should be removed.(Ã£Ş÷ûÿÿÿÿ
+r
+java:S2095Ÿ"OUse try-with-resources or close this "InputStreamReader" in a "finally" clause.(…¿ºİøÿÿÿÿ8úÈæŠæ.
+h	java:S112À"FDefine and throw a dedicated exception instead of using a generic one.(‡ïËÿÿÿÿÿ8î¤‡‹æ.
+A
+java:S1148Ş"#Use a logger to log this exception.(Ç’Çê8šŒ¬‹æ.
+O	java:S106³"9Replace this use of System.out or System.err by a logger.(£ªÕ
+T	java:S106¸"9Replace this use of System.out or System.err by a logger.(ª„ŞÅøÿÿÿÿ
+q
+java:S2095´"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(Ñ´ÇÒøÿÿÿÿ8¹õùŠæ.
+a
+java:S1128"DRemove this unused import 'java.util.concurrent.ExecutionException'.(¡£ØÍ8ÏÀ«‹æ.
+>
+java:S1604I"(Make this anonymous inner class a lambda(àÓéœ
+P
+java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(Ã‹‡”
+N	java:S106"9Replace this use of System.out or System.err by a logger.(•­‹r
+T	java:S106¶"9Replace this use of System.out or System.err by a logger.(‚‘›˜úÿÿÿÿ
+[	java:S106£"9Replace this use of System.out or System.err by a logger.(ŒêÌ¾ùÿÿÿÿ8„ïáŠæ.
+`
+java:S1192"JDefine a constant instead of duplicating this literal "user.dir" 10 times.(âçğ–
+r
+java:S2095‰"OUse try-with-resources or close this "InputStreamReader" in a "finally" clause.(©ˆúŒüÿÿÿÿ8ÎË­Šæ.
+c	java:S112…"FDefine and throw a dedicated exception instead of using a generic one.(‡°›Æ8çØ¤Šæ.
+V	java:S125Q"<This block of commented-out lines of code should be removed.(ÅÚ™³şÿÿÿÿ
+O	java:S106Ù"9Replace this use of System.out or System.err by a logger.(Ğ±ô€
+a
+java:S1192j"KDefine a constant instead of duplicating this literal "\\resource" 3 times.(Øæ
+[	java:S112*"FDefine and throw a dedicated exception instead of using a generic one.(ç¦¾
+a	java:S112Œ"FDefine and throw a dedicated exception instead of using a generic one.(±¤Š¨şÿÿÿÿ
+N	java:S1060"9Replace this use of System.out or System.err by a logger.(½ş¥
+5
+java:S2119š"Save and re-use this "Random".(¡Å”¦
+h	java:S112™"FDefine and throw a dedicated exception instead of using a generic one.(ˆ‘Ôˆûÿÿÿÿ8Ê®ÔŠæ.
+[	java:S106Œ"9Replace this use of System.out or System.err by a logger.(Ùƒäşøÿÿÿÿ8Ş¬·Šæ.
+[	java:S106è"9Replace this use of System.out or System.err by a logger.(–í˜úÿÿÿÿ8Ïî²‹æ.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(²€ Œşÿÿÿÿ
+D
+java:S1604¨"(Make this anonymous inner class a lambda(÷ÃØöûÿÿÿÿ
+V	java:S106"9Replace this use of System.out or System.err by a logger.(Áß‡Ü8ûÿµŠæ.
+A
+java:S1148ì"#Use a logger to log this exception.(Ç’Çê8İ×­‹æ.
+h
+java:S2095,"RUse try-with-resources or close this "BufferedOutputStream" in a "finally" clause.(‹şÃß
+O	java:S106´"9Replace this use of System.out or System.err by a logger.(ïÛÃ
+\
+java:S4719Å"9Replace charset name argument with StandardCharsets.UTF_8(ü¶Ôöúÿÿÿÿ8»‰–‹æ.
+l
+java:S2095Ö"NUse try-with-resources or close this "PipedInputStream" in a "finally" clause.(·ÊŸÆ8úÙ¦‹æ.
+c
+java:S2095Ä"LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(öÊ£€
+c
+java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(Ã‹‡”
+h	java:S112®"FDefine and throw a dedicated exception instead of using a generic one.(İÙˆùÿÿÿÿ8‰òõŠæ.
+s
+java:S2095Å"PUse try-with-resources or close this "OutputStreamWriter" in a "finally" clause.(ü¶Ôöúÿÿÿÿ8»‰–‹æ.
+V	java:S106Š"9Replace this use of System.out or System.err by a logger.(§ê•º8óã®Šæ.

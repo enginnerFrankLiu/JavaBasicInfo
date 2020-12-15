@@ -5,6 +5,8 @@ import java.io.*;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 
+import static jdk.nashorn.internal.runtime.JSType.*;
+
 public class FileExample  {
 
     /**
@@ -364,6 +366,22 @@ public class FileExample  {
         });
         threadA.start();
         threadB.start();
+    }
+
+    /**
+     *
+     * Hard to read and hard to speak to
+       But don't take my word
+       Cause I am honestly so bored of being
+       Misunderstood I am not
+       So clear and transparent
+       we will try but can't promise
+     *
+     *
+     */
+    public void clear(){
+
+
     }
 
 }

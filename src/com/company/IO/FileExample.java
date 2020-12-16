@@ -2,6 +2,8 @@ package com.company.IO;
 import com.company.model.Student;
 
 import java.io.*;
+import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
 import java.util.*;
 
 public class FileExample  {
@@ -377,6 +379,7 @@ public class FileExample  {
      * 字节 字符 编码 解码
      * 这个JAVA IO 流操作的基本单位，整体效果还算比较ok的
      *
+     * 昨天就没有push代码，卧槽
      */
     public void clear() throws Exception{
 
@@ -405,4 +408,33 @@ public class FileExample  {
         inputStreamReader.close();
         System.out.println(sbBuffer.toString());
     }
+
+    /**
+     * 在内存中金子那个字符和字节的编码和解码
+     *
+     */
+    public void encodeAndDecodeInMemeory() throws Exception{
+
+        String message="人生如戏啊，兄弟";
+        byte [] bytes= message.getBytes("UTF-8");
+        System.out.println(bytes);
+
+        String result=new String(bytes,"UTF-8");
+        System.out.println(result);
+    }
+
+    /**
+     *
+     */
+    public void charsetInfo(){
+
+        Charset charset=Charset.forName("UTF-8");
+        String message="好好写代码，天天写代码";
+        ByteBuffer byteBuffer=charset.encode(message);
+
+
+
+    }
+
+
 }

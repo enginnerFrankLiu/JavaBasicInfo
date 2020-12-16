@@ -425,7 +425,7 @@ public class Main {
         //fileExample.inputStream();
         //fileExample.fileOutputStream2();
 //         fileExample.pipeInfo();
-        fileExample.clear();
+//        fileExample.encodeAndDecodeInMemeory();
     }
 
     /**

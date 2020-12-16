@@ -424,7 +424,8 @@ public class Main {
 //        fileExample.Info();
         //fileExample.inputStream();
         //fileExample.fileOutputStream2();
-         fileExample.pipeInfo();
+//         fileExample.pipeInfo();
+        fileExample.clear();
     }
 
     /**

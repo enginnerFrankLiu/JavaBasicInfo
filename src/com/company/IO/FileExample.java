@@ -374,22 +374,35 @@ public class FileExample  {
        So clear and transparent
        we will try but can't promise
      *
+     * 字节 字符 编码 解码
+     * 这个JAVA IO 流操作的基本单位，整体效果还算比较ok的
      *
      */
     public void clear() throws Exception{
 
-        System.out.println("将字符->字节流");
+        System.out.println("字符->字节流");
 
         String projectPath = System.getProperty("user.dir");
         String path=projectPath+"\\clear.txt";
         FileOutputStream fileOutputStream=new FileOutputStream(path);
         OutputStreamWriter outputStreamWriter=new OutputStreamWriter(fileOutputStream,"UTF-8");
-        String message="";
+        String message="改变一些东西";
+        outputStreamWriter.write(message);
+        outputStreamWriter.close();
 
+        System.out.println("写入完成");
+        System.out.println("字节流->字符流");
 
-
-
-
+        FileInputStream fileInputStream=new FileInputStream(path);
+        InputStreamReader inputStreamReader=new InputStreamReader(fileInputStream,"UTF-8");
+        StringBuffer sbBuffer=new StringBuffer();
+        char [] buffer=new char[64];
+        int count=0;
+        while ((count=inputStreamReader.read(buffer))!=-1){
+            System.out.println("每次读取的数量:->"+count);
+            sbBuffer.append(buffer,0,count);
+        }
+        inputStreamReader.close();
+        System.out.println(sbBuffer.toString());
     }
-
 }

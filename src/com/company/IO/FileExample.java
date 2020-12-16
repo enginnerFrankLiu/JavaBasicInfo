@@ -3,9 +3,6 @@ import com.company.model.Student;
 
 import java.io.*;
 import java.util.*;
-import java.util.concurrent.ExecutionException;
-
-import static jdk.nashorn.internal.runtime.JSType.*;
 
 public class FileExample  {
 
@@ -379,7 +376,18 @@ public class FileExample  {
      *
      *
      */
-    public void clear(){
+    public void clear() throws Exception{
+
+        System.out.println("将字符->字节流");
+
+        String projectPath = System.getProperty("user.dir");
+        String path=projectPath+"\\clear.txt";
+        FileOutputStream fileOutputStream=new FileOutputStream(path);
+        OutputStreamWriter outputStreamWriter=new OutputStreamWriter(fileOutputStream,"UTF-8");
+        String message="";
+
+
+
 
 
     }

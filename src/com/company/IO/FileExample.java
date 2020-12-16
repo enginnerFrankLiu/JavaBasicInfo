@@ -1,7 +1,9 @@
 package com.company.IO;
 import com.company.model.Student;
+import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader;
 
 import java.io.*;
+import java.nio.charset.Charset;
 import java.util.*;
 
 public class FileExample  {
@@ -404,5 +406,80 @@ public class FileExample  {
         }
         inputStreamReader.close();
         System.out.println(sbBuffer.toString());
+    }
+
+    /**
+     * offset 指定 字节偏移的量，整体效果还算是比较ok的哈
+     * 其实主要就是和我们的字节和字符大打交道；整体来说，效果还算是比较ok的样子
+     *
+     * @throws Exception
+     */
+    public void fileInfoD() throws Exception {
+
+        String message="abc";
+        byte [] bytes=message.getBytes("UTF-8");
+        int len=bytes.length;
+
+        String a=new String(bytes);
+
+        System.out.println(a);
+
+        System.out.println(len);
+
+        String b=new String(bytes,len-1,1);
+
+        System.out.println(b);
+
+    }
+
+    /**
+     * infoq的基本使用，整体效果还算是比较ok的哈；
+     * 有时候并不需要我们的while 循环，一次就能够读取我们呢想要的数据大小
+     * 只要我们指定的temp 数据猪足够大
+     * 整体效果还算是比较ok的；
+     *
+     * 默认就是utf-8 没毛病的的哈
+     *
+     * @throws Exception
+     */
+    public void compareInfo() throws Exception{
+
+        String projectPath = System.getProperty("user.dir");
+        String path=projectPath+"\\message.txt";
+
+        File file=new File(path);
+
+
+        //承载他们读取读取的数量不一样的亚；整体效果还算是比较ok的，信息量比较大
+        Charset defaultCharset= Charset.defaultCharset();
+        System.out.println(defaultCharset.name());
+
+        FileInputStream fileInputStream=new FileInputStream(file);
+        byte [] bytes=new byte[1024];
+        fileInputStream.read(bytes);
+        String message=new String(bytes);
+        System.out.println(message);
+
+        System.out.println("----------------------");
+
+        FileReader fileReader=new FileReader(file);
+        char [] chars=new char[1024];
+        fileReader.read(chars);
+        //这个就不需要 我们再指定编码方式了嘛?
+        String data=new String(chars);
+        System.out.println(data);
+
+        //还有一个我们的流转换类
+        System.out.println("-----------最好还是使用他们呢指定编码方式来进行各种常见的读取的亚-----------");
+        //  inputStrewamReaer <- fileinputStream
+        //    中间指定编码方式
+        //   reader <- stream
+        //    一切都很ok了，这样的效果，整体来说，还算是很ok的哈
+        InputStreamReader reader=new InputStreamReader(new FileInputStream(file),"UTF-8");
+        reader.read(chars);
+        String result=new String(chars);
+        System.out.println(result);
+
+
     }
 }

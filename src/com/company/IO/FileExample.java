@@ -1,9 +1,11 @@
 package com.company.IO;
 import com.company.model.Student;
 import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader;
+import org.omg.CORBA.PUBLIC_MEMBER;
 
 import java.io.*;
 import java.nio.charset.Charset;
+import java.security.MessageDigest;
 import java.util.*;
 
 public class FileExample  {
@@ -515,4 +517,59 @@ public class FileExample  {
         System.out.println(chars);
 
     }
+
+    /**
+     *
+     */
+    public void Infomd() throws Exception{
+        String projectPath = System.getProperty("user.dir");
+        String path=projectPath+File.separator+"fuck.txt";
+        File file=new File(path);
+        OutputStream outputStream=new FileOutputStream(file);
+        String message="fuck the work!兄弟，人生如戏啊";
+        outputStream.write(message.getBytes());
+        System.out.println("outputStream successful.");
+
+
+        InputStream inputStream=new FileInputStream(file);
+        Reader reader= new InputStreamReader(inputStream,"UTF-8");
+        char [] chars=new char[1024];
+        reader.read(chars);
+        String result=new String(chars);
+        System.out.println(result);
+        System.out.println("inputStream+streamReader read successful.");
+
+    }
+
+    /**
+     * 流之间的各种转化
+     * 成对的出现
+     */
+    public void md() throws Exception{
+
+        File file=new File("");
+        InputStream inputStream=new FileInputStream(file);
+        InputStreamReader reader=new InputStreamReader(inputStream,"UTF-8");
+        BufferedReader bufferedReader=new BufferedReader(reader);
+
+
+        OutputStream outputStream=new FileOutputStream(file);
+        OutputStreamWriter outputStreamWriter=new OutputStreamWriter(outputStream);
+        BufferedWriter bufferedWriter=new BufferedWriter(outputStreamWriter);
+
+    }
+
+    /**
+     *
+     * 这个就暂时不要转化了
+     *
+     * @throws Exception
+     */
+    public void ma() throws  Exception{
+        File file=new File("");
+        InputStream inputStream=new FileInputStream(file);
+        BufferedInputStream bufferedInputStream=new BufferedInputStream(inputStream);
+
+    }
+
 }

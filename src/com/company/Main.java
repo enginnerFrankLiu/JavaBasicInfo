@@ -427,7 +427,8 @@ public class Main {
 //         fileExample.pipeInfo();
 //        fileExample.clear();
 //         fileExample.compareInfo();
-        fileExample.infoQMs();
+        //fileExample.infoQMs();
+        fileExample.Infomd();
     }
 
     /**

@@ -506,7 +506,9 @@ public class FileExample  {
         //和在一起就是我们的
 
         FileInputStream fileInputStream=new FileInputStream(file);
+        //它变成了两种类型之间的一个桥梁
         Reader reader=new InputStreamReader(fileInputStream,"UTF-8");
+
         BufferedReader bufferedReader=new BufferedReader(reader);
         char [] chars=new char[1024];
         bufferedReader.read(chars);

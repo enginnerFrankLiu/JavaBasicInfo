@@ -426,7 +426,8 @@ public class Main {
         //fileExample.fileOutputStream2();
 //         fileExample.pipeInfo();
 //        fileExample.clear();
-         fileExample.compareInfo();
+//         fileExample.compareInfo();
+        fileExample.infoQMs();
     }
 
     /**

@@ -482,4 +482,35 @@ public class FileExample  {
 
 
     }
+
+    /**
+     *
+     * 基本体系
+     * Io
+     * 网络
+     * 线程
+     */
+    public void infoQMs() throws  Exception{
+
+        String projectPath = System.getProperty("user.dir");
+        String path=projectPath+"\\message.txt";
+        File file=new File(path);
+        InputStream inputStream=new FileInputStream(file);
+        BufferedInputStream bufferedInputStream=new BufferedInputStream(inputStream);
+        byte []  bytes=new byte[1024];
+        bufferedInputStream.read(bytes);
+        System.out.println(bytes);
+
+        System.out.println("--------");
+        //它里面 接受的是 inputstream;字节对象
+        //和在一起就是我们的
+
+        FileInputStream fileInputStream=new FileInputStream(file);
+        Reader reader=new InputStreamReader(fileInputStream,"UTF-8");
+        BufferedReader bufferedReader=new BufferedReader(reader);
+        char [] chars=new char[1024];
+        bufferedReader.read(chars);
+        System.out.println(chars);
+
+    }
 }

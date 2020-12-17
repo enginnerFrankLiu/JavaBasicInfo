@@ -428,7 +428,10 @@ public class Main {
 //        fileExample.clear();
 //         fileExample.compareInfo();
         //fileExample.infoQMs();
-        fileExample.Infomd();
+//        fileExample.mc();
+//        fileExample.infoMD();
+//        fileExample.fuckTheLife();
+        fileExample.infoMDV2();
     }
 
     /**

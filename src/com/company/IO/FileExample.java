@@ -1,12 +1,14 @@
 package com.company.IO;
 import com.company.model.Student;
-import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader;
-import org.omg.CORBA.PUBLIC_MEMBER;
+import com.sun.java.swing.plaf.windows.WindowsTableHeaderUI;
 
 import java.io.*;
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
-import java.security.MessageDigest;
 import java.util.*;
+import java.util.logging.FileHandler;
 
 public class FileExample  {
 
@@ -546,7 +548,6 @@ public class FileExample  {
      * 成对的出现
      */
     public void md() throws Exception{
-
         File file=new File("");
         InputStream inputStream=new FileInputStream(file);
         InputStreamReader reader=new InputStreamReader(inputStream,"UTF-8");
@@ -558,7 +559,6 @@ public class FileExample  {
         BufferedWriter bufferedWriter=new BufferedWriter(outputStreamWriter);
 
     }
-
     /**
      *
      * 这个就暂时不要转化了
@@ -571,5 +571,127 @@ public class FileExample  {
         BufferedInputStream bufferedInputStream=new BufferedInputStream(inputStream);
 
     }
+    /**
+     * char是UNICOEDE字符,为16位的整数；
+     * char []
+     */
+    public void mc(){
+        char [] chars=new char[102];
+
+        Charset charset= Charset.forName("UTF-8");
+        CharBuffer charBuffer= CharBuffer.allocate(chars.length);
+        charBuffer.put(chars);
+//        charBuffer.flip();
+        ByteBuffer byteBuffer=charset.encode(charBuffer);
+        byte [] bytes=byteBuffer.array();
+        System.out.println(bytes);
+
+    }
+    /**
+     * try nio firstly.
+     *
+     */
+    public void infoMD(){
+
+        RandomAccessFile file=null;
+        try {
+            String projectPath=System.getProperty("user.dir");
+            String path=projectPath+File.separator+"fuck.txt";
+            file=new RandomAccessFile(path,"rw");
+            FileChannel fileChannel=file.getChannel();
+            ByteBuffer byteBuffer=ByteBuffer.allocate(1024);
+            int temp=fileChannel.read(byteBuffer);
+            System.out.println(temp);
+            while (temp!=-1){
+                 byteBuffer.flip();
+                while (byteBuffer.hasRemaining()){
+                    System.out.println((char)byteBuffer.get());
+                }
+                byteBuffer.compact();
+                temp=fileChannel.read(byteBuffer);
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }finally {
+            try {
+                if(file!=null){
+                    file.close();
+                }
+            }catch (Exception ex){
+                ex.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * 明天，我们来解决乱码的问题;
+     * 整体效果还是挺好的啊；
+     * 不得不这么说;
+     */
+    public void infoMDV2(){
+        String projectPath=System.getProperty("user.dir");
+        String path=projectPath+File.separator+"fuck.txt";
+
+        try(
+                RandomAccessFile file=new RandomAccessFile(path,"rw");
+                FileChannel fileChannel=file.getChannel();
+                )
+        {
+            ByteBuffer byteBuffer=ByteBuffer.allocate(1024);
+            int len;
+            while ((len= fileChannel.read(byteBuffer))!=-1){
+                byteBuffer.flip();
+                while (byteBuffer.hasRemaining()){
+
+                       System.out.println((char)byteBuffer.get());
+                }
+                byteBuffer.compact();
+            }
+        }
+        catch (Exception exception){
+
+            exception.printStackTrace();
+        }
+
+
+    }
+
+    /**
+     * fuck the life.
+     */
+    public void fuckTheLife() {
+        String projectPath = System.getProperty("user.dir");
+        String path = projectPath + File.separator + "fuck.txt";
+        File file = new File(path);
+        try (
+                FileInputStream fileInputStream = new FileInputStream(file);
+                InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream, "UTF-8");
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        ) {
+            char[] chars = new char[1024];
+            int len;
+            while ((len = bufferedReader.read(chars)) != -1) {
+                System.out.println(chars);
+            }
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

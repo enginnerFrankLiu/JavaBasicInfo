@@ -1,12 +1,14 @@
 package com.company.IO;
 import com.company.model.Student;
 import com.sun.java.swing.plaf.windows.WindowsTableHeaderUI;
+import sun.util.locale.provider.FallbackLocaleProviderAdapter;
 
 import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
+import java.nio.charset.CharsetDecoder;
 import java.util.*;
 import java.util.logging.FileHandler;
 
@@ -652,7 +654,42 @@ public class FileExample  {
 
             exception.printStackTrace();
         }
+    }
 
+    /**
+     *
+     * 用这种方式来解决乱码的问题
+     *
+     */
+    public void infoMDV3(){
+
+        String projectPath=System.getProperty("user.dir");
+        String path=projectPath+File.separator+"fuck.txt";
+        Charset charset=Charset.forName("UTF-8");
+        CharsetDecoder charsetDecoder=charset.newDecoder();
+
+        try(
+                RandomAccessFile file=new RandomAccessFile(path,"rw");
+                FileChannel fileChannel=file.getChannel();
+        ){
+            ByteBuffer byteBuffer=ByteBuffer.allocate(1024);
+            CharBuffer charBuffer=CharBuffer.allocate(1024);
+            int len=0;
+            while ((len=fileChannel.read(byteBuffer))!=-1){
+                byteBuffer.flip();
+                charsetDecoder.decode(byteBuffer,charBuffer, false);
+                charBuffer.flip();
+                while (charBuffer.hasRemaining()){
+                    System.out.println(charBuffer.get());
+                }
+                System.out.println();
+                byteBuffer.clear();
+                charBuffer.clear();
+            }
+
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
 
     }
 

@@ -1,134 +1,135 @@
 
-U	java:S106^"9Replace this use of System.out or System.err by a logger.(Â©‰¯8Ï¼á.
+[	java:S106"9Replace this use of System.out or System.err by a logger.(¢«ãøÿÿÿÿ8×Ä¿ˆâ.
+[	java:S106"9Replace this use of System.out or System.err by a logger.(‡àâ­ÿÿÿÿÿ8®Ò¡Šæ.
+U	java:S106."9Replace this use of System.out or System.err by a logger.(˜ı€8®Ò¡Šæ.
+h	java:S112Š"FDefine and throw a dedicated exception instead of using a generic one.(ŒÓ„üÿÿÿÿ8ìÀˆâ.
 i
 java:S1192_"LDefine a constant instead of duplicating this literal "-----------" 3 times.(‚ÎšÛ8œå‘¼á.
-Z	java:S106`"9Replace this use of System.out or System.err by a logger.(ÇÔæ§ÿÿÿÿÿ8Ï¼á.
-Y	java:S125¢"<This block of commented-out lines of code should be removed.(ÚÃ´˜8®Ò¡Šæ.
-[	java:S106Ò"9Replace this use of System.out or System.err by a logger.(“Ò¬áıÿÿÿÿ8ñí­ëá.
-Z	java:S1063"9Replace this use of System.out or System.err by a logger.(İ½²˜üÿÿÿÿ8ş¢Œ¹á.
-h	java:S112»"FDefine and throw a dedicated exception instead of using a generic one.(ûç­úÿÿÿÿ8ğÉØ¯â.
+Z	java:S106$"9Replace this use of System.out or System.err by a logger.(ğ³æÂûÿÿÿÿ8é¶ı¸á.
 [	java:S106½"9Replace this use of System.out or System.err by a logger.(¼î¥¤üÿÿÿÿ8ğÉØ¯â.
-V	java:S106â"9Replace this use of System.out or System.err by a logger.(£”Ñâ8ª­¥ëá.
-L
-java:S1874ã".Remove this use of "resume"; it is deprecated.(ä•‡Š8ª­¥ëá.
-o	java:S100z"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½ŞØïúÿÿÿÿ8 ™¾á.
-j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’©Öµ8ûşí¸á.
-M
-java:S1874Ö"/Remove this use of "suspend"; it is deprecated.(Å“‰—8ª­¥ëá.
-Y	java:S125˜"<This block of commented-out lines of code should be removed.(ØÈÑÀ8®Ò¡Šæ.
-J
-java:S1602‹",Remove useless curly braces around statement(®Ì»ê8×Ä¿ˆâ.
-U	java:S106a"9Replace this use of System.out or System.err by a logger.(‚ÎšÛ8œå‘¼á.
-^	java:S125µ"<This block of commented-out lines of code should be removed.(ŸûÜúÿÿÿÿ8‚¼ğ°ã.
-M
-java:S1444ë"*Make this "public static food" field final(„©È¿ùÿÿÿÿ8Åößëá.
-V	java:S106ô"9Replace this use of System.out or System.err by a logger.(¬ü¼ş8ÃÆèëá.
-[	java:S106ü"9Replace this use of System.out or System.err by a logger.(Ó»°ÿÿÿÿÿ8®Ò¡Šæ.
-T	java:S106M"9Replace this use of System.out or System.err by a logger.(Ë†°8Åƒƒºá.
-U	java:S106P"9Replace this use of System.out or System.err by a logger.(ãŒçÆ8Åƒƒºá.
-U	java:S106d"9Replace this use of System.out or System.err by a logger.(ş¡Û8®Ò¡Šæ.
-V	java:S106Œ"9Replace this use of System.out or System.err by a logger.(Ì÷Äï8×Ä¿ˆâ.
-Z	java:S106+"9Replace this use of System.out or System.err by a logger.(ğ³æÂûÿÿÿÿ8ˆªŠ¹á.
-C
-java:S2129ê" Remove this "String" constructor(È¦şäùÿÿÿÿ8®Ò¡Šæ.
-I
-java:S1860ø"&Synchronize on a new "Object" instead.(ó§Ïóùÿÿÿÿ8¥’ø°ã.
->
-java:S2129é" Remove this "String" constructor(Œ½Ó÷8¯’ ßâ.
-^	java:S125¿"<This block of commented-out lines of code should be removed.(ûÛİ†ıÿÿÿÿ8„åşã.
-p	java:S100—"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ùåû¹ÿÿÿÿÿ8¬¯éá.
-V	java:S106Ÿ"9Replace this use of System.out or System.err by a logger.(ª€“™8± æ¯â.
 D
 java:S1481î"&Remove this unused "a" local variable.(Ë²ç÷8ÀÜ¥ßâ.
-Y	java:S125·"<This block of commented-out lines of code should be removed.(ö›ÃÁ8®Ò¡Šæ.
-^	java:S125 "<This block of commented-out lines of code should be removed.(Ğş·Ùøÿÿÿÿ8ı’éá.
-Q
-java:S1128	"4Remove this unused import 'java.lang.reflect.Field'.(„‡Áú8Ğßµ‹æ.
-U	java:S106p"9Replace this use of System.out or System.err by a logger.(ìÜ¨ô8»Ç·¼á.
-a
-java:S2276û"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(êş¿Ñ8¥’ø°ã.
-h	java:S112Š"FDefine and throw a dedicated exception instead of using a generic one.(ŒÓ„üÿÿÿÿ8ìÀˆâ.
-v
-java:S2293k"YReplace the type specification in this constructor call with the diamond operator ("<>").(€ÃÖ¯8Ò˜­¼á.
-†
-java:S1845Ğ"hRename method "consumer" to prevent any misunderstanding/clash with field "consumer" defined on line 22.(³8ª­¥ëá.
-k	java:S100Ÿ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï¡˜Ò8ı’éá.
-^	java:S125ˆ"<This block of commented-out lines of code should be removed.(Š²‡şÿÿÿÿ8¼¿ïÿã.
-T	java:S106G"9Replace this use of System.out or System.err by a logger.(œı×]8Åƒƒºá.
-A
-java:S1148ÿ"#Use a logger to log this exception.(Ç’Çê8ª­¥ëá.
-F
-java:S1659Y"*Declare "seasonEnums4" on a separate line.(÷à›88¶£†¼á.
-V	java:S106´"9Replace this use of System.out or System.err by a logger.(Ü’ÅÓ8ğÉØ¯â.
-M
-java:S1481‡"/Remove this unused "streamInfo" local variable.(ÑíüÎ8®Ò¡Šæ.
-^	java:S125“"<This block of commented-out lines of code should be removed.(£Ã¯úşÿÿÿÿ8®Ò¡Šæ.
-U	java:S106c"9Replace this use of System.out or System.err by a logger.(‚ÎšÛ8÷¡‘¼á.
-[	java:S106Ù"9Replace this use of System.out or System.err by a logger.(®ıáëûÿÿÿÿ8®Ò¡Šæ.
-Z	java:S106b"9Replace this use of System.out or System.err by a logger.(Ôê¯†ıÿÿÿÿ8Ï¼á.
-A
-java:S1148æ"#Use a logger to log this exception.(Ç’Çê8¥’ø°ã.
-Z	java:S106$"9Replace this use of System.out or System.err by a logger.(ğ³æÂûÿÿÿÿ8é¶ı¸á.
-[	java:S106‘"9Replace this use of System.out or System.err by a logger.(Ğå½òşÿÿÿÿ8®Ò¡Šæ.
-E
-java:S2189ß""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ8ª­¥ëá.
-[	java:S106"9Replace this use of System.out or System.err by a logger.(‡àâ­ÿÿÿÿÿ8®Ò¡Šæ.
-
-java:S1130…"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(¿ÁÇïÿÿÿÿÿ8®Ò¡Šæ.
 >
-java:S2129è" Remove this "String" constructor(†·Ÿ¯8¯’ ßâ.
-F
-java:S1659Y"*Declare "seasonEnums3" on a separate line.(÷à›88¶£†¼á.
-V	java:S106ú"9Replace this use of System.out or System.err by a logger.(šé¿İ8§ğù°ã.
-R
-java:S1874ò"/Remove this use of "suspend"; it is deprecated.(’´ñÏùÿÿÿÿ8óŞçëá.
-h	java:S112…"FDefine and throw a dedicated exception instead of using a generic one.(¿ÁÇïÿÿÿÿÿ8®Ò¡Šæ.
-L
-java:S1874û".Remove this use of "resume"; it is deprecated.(ÕÖÿ¦8Ê”ğëá.
-Y	java:S125¸"<This block of commented-out lines of code should be removed.(…ˆ‘É8‚¼ğ°ã.
-u
-java:S1104"SMake message a static final constant or non-public and provide accessors if needed.(°¿Ôøÿÿÿÿ8ËÆéá.
-Z	java:S1066"9Replace this use of System.out or System.err by a logger.(à„à¢şÿÿÿÿ8˜Œ¹á.
-^	java:S125²"<This block of commented-out lines of code should be removed.(õ÷µƒÿÿÿÿÿ8‚¼ğ°ã.
-U	java:S106Ñ"9Replace this use of System.out or System.err by a logger.(ÉËÅJ8ğÉØ¯â.
-V	java:S106Ç"9Replace this use of System.out or System.err by a logger.(†ÈÉœ8ğÉØ¯â.
-V	java:S106Ü"9Replace this use of System.out or System.err by a logger.(¯İì‡8ğÉØ¯â.
-h	java:S112í"FDefine and throw a dedicated exception instead of using a generic one.(ç©…Üøÿÿÿÿ8ÉÅíëá.
-a
-java:S1226ï">Introduce a new variable instead of reusing the parameter "a".(öœ¼Äøÿÿÿÿ8ÀÜ¥ßâ.
-V	java:S106¹"9Replace this use of System.out or System.err by a logger.(…±•û8£¯µ¹ã.
-U	java:S106×"9Replace this use of System.out or System.err by a logger.(‚Ïú8ğÉØ¯â.
-U	java:S106."9Replace this use of System.out or System.err by a logger.(˜ı€8®Ò¡Šæ.
-I
-java:S1481‹"+Remove this unused "thread" local variable.(®Ì»ê8¬»Éˆâ.
-O
-java:S1602Ñ",Remove useless curly braces around statement(¨à»Ìøÿÿÿÿ8ÌÒ±ëá.
-w
-java:S2293ç"YReplace the type specification in this constructor call with the diamond operator ("<>").(§’Èå8¯’ ßâ.
-U	java:S106_"9Replace this use of System.out or System.err by a logger.(‚ÎšÛ8œå‘¼á.
-Y	java:S125µ"<This block of commented-out lines of code should be removed.(Ê¯›Â8®Ò¡Šæ.
-[	java:S106"9Replace this use of System.out or System.err by a logger.(¢«ãøÿÿÿÿ8×Ä¿ˆâ.
-s
-java:S1104ë"PMake food a static final constant or non-public and provide accessors if needed.(„©È¿ùÿÿÿÿ8Åößëá.
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(ŞÒ—üÿÿÿÿ8·™ñ¸á.
-U	java:S106'"9Replace this use of System.out or System.err by a logger.(–“‚Õ8„ğû¸á.
-[	java:S106ñ"9Replace this use of System.out or System.err by a logger.(›‚–—ıÿÿÿÿ8¿Ñæëá.
-~
-java:S1192$"\Define a constant instead of duplicating this literal "---------------------------" 3 times.(ğ³æÂûÿÿÿÿ8ˆªŠ¹á.
+java:S2129é" Remove this "String" constructor(Œ½Ó÷8¯’ ßâ.
+Y	java:S125Á"<This block of commented-out lines of code should be removed.(ö›ÃÁ8®Ò¡Šæ.
+T	java:S106G"9Replace this use of System.out or System.err by a logger.(œı×]8Åƒƒºá.
+U	java:S106c"9Replace this use of System.out or System.err by a logger.(‚ÎšÛ8÷¡‘¼á.
 F
 java:S1659Y"*Declare "seasonEnums2" on a separate line.(÷à›88¶£†¼á.
-Z	java:S106J"9Replace this use of System.out or System.err by a logger.(š© ıÿÿÿÿ8Åƒƒºá.
-p	java:S100Š"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔáÜÿÿÿÿÿ8ÉŒ‚éá.
-V	java:S106ú"9Replace this use of System.out or System.err by a logger.(ßÔÛë8¶¨òëá.
-Z	java:S1062"9Replace this use of System.out or System.err by a logger.(ğ³æÂûÿÿÿÿ8ŸÉ†¹á.
-V	java:S106±"9Replace this use of System.out or System.err by a logger.(ª€“™8ÎÿÌ¯â.
-E
-java:S1604­"(Make this anonymous inner class a lambda(ü÷ªx8¡ãÌ¯â.
+c	java:S112Ÿ"FDefine and throw a dedicated exception instead of using a generic one.(ùĞ™É8‡ıíØæ.
+p	java:S100—"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ùåû¹ÿÿÿÿÿ8¬¯éá.
+
+java:S1130…"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(¿ÁÇïÿÿÿÿÿ8®Ò¡Šæ.
+M
+java:S1444ë"*Make this "public static food" field final(„©È¿ùÿÿÿÿ8Åößëá.
+^	java:S125µ"<This block of commented-out lines of code should be removed.(ŸûÜúÿÿÿÿ8‚¼ğ°ã.
 E
 java:S1604›"(Make this anonymous inner class a lambda(ü÷ªx8± æ¯â.
-[	java:S106á"9Replace this use of System.out or System.err by a logger.(´²í°ûÿÿÿÿ8èÀà¯â.
+O
+java:S1602Ñ",Remove useless curly braces around statement(¨à»Ìøÿÿÿÿ8ÌÒ±ëá.
+Y	java:S125¢"<This block of commented-out lines of code should be removed.(ÚÃ´˜8®Ò¡Šæ.
+h	java:S112í"FDefine and throw a dedicated exception instead of using a generic one.(ç©…Üøÿÿÿÿ8ÉÅíëá.
+V	java:S106ú"9Replace this use of System.out or System.err by a logger.(šé¿İ8§ğù°ã.
+I
+java:S1860ø"&Synchronize on a new "Object" instead.(ó§Ïóùÿÿÿÿ8¥’ø°ã.
+h	java:S112»"FDefine and throw a dedicated exception instead of using a generic one.(ûç­úÿÿÿÿ8ğÉØ¯â.
+U	java:S106P"9Replace this use of System.out or System.err by a logger.(ãŒçÆ8Åƒƒºá.
+Z	java:S106b"9Replace this use of System.out or System.err by a logger.(Ôê¯†ıÿÿÿÿ8Ï¼á.
+J
+java:S1602‹",Remove useless curly braces around statement(®Ì»ê8×Ä¿ˆâ.
+V	java:S106Œ"9Replace this use of System.out or System.err by a logger.(Ì÷Äï8×Ä¿ˆâ.
+Z	java:S1063"9Replace this use of System.out or System.err by a logger.(İ½²˜üÿÿÿÿ8ş¢Œ¹á.
+V	java:S106±"9Replace this use of System.out or System.err by a logger.(ª€“™8ÎÿÌ¯â.
+V	java:S106¾"9Replace this use of System.out or System.err by a logger.(Ü’ÅÓ8ğÉØ¯â.
+M
+java:S1481‡"/Remove this unused "streamInfo" local variable.(ÑíüÎ8®Ò¡Šæ.
 Z	java:S106,"9Replace this use of System.out or System.err by a logger.(Ë„†şÿÿÿÿ8–íƒ¹á.
+C
+java:S2129ê" Remove this "String" constructor(È¦şäùÿÿÿÿ8®Ò¡Šæ.
+V	java:S106Ÿ"9Replace this use of System.out or System.err by a logger.(ª€“™8± æ¯â.
+^	java:S125“"<This block of commented-out lines of code should be removed.(£Ã¯úşÿÿÿÿ8®Ò¡Šæ.
+L
+java:S1874û".Remove this use of "resume"; it is deprecated.(ÕÖÿ¦8Ê”ğëá.
+o	java:S100z"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½ŞØïúÿÿÿÿ8 ™¾á.
+V	java:S106ñ"9Replace this use of System.out or System.err by a logger.(ç’¤™8ÃÛ¦ßâ.
+U	java:S106d"9Replace this use of System.out or System.err by a logger.(ş¡Û8®Ò¡Šæ.
+U	java:S106a"9Replace this use of System.out or System.err by a logger.(‚ÎšÛ8œå‘¼á.
+u
+java:S1104"SMake message a static final constant or non-public and provide accessors if needed.(°¿Ôøÿÿÿÿ8ËÆéá.
+s
+java:S1104ë"PMake food a static final constant or non-public and provide accessors if needed.(„©È¿ùÿÿÿÿ8Åößëá.
+F
+java:S1659Y"*Declare "seasonEnums3" on a separate line.(÷à›88¶£†¼á.
+^	java:S125¿"<This block of commented-out lines of code should be removed.(ûÛİ†ıÿÿÿÿ8„åşã.
+Z	java:S106+"9Replace this use of System.out or System.err by a logger.(ğ³æÂûÿÿÿÿ8ˆªŠ¹á.
+A
+java:S1148ÿ"#Use a logger to log this exception.(Ç’Çê8ª­¥ëá.
+a
+java:S1226ï">Introduce a new variable instead of reusing the parameter "a".(öœ¼Äøÿÿÿÿ8ÀÜ¥ßâ.
+k	java:S100Ÿ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï¡˜Ò8ı’éá.
+h	java:S112…"FDefine and throw a dedicated exception instead of using a generic one.(¿ÁÇïÿÿÿÿÿ8®Ò¡Šæ.
+j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’©Öµ8ûşí¸á.
+Y	java:S125¿"<This block of commented-out lines of code should be removed.(Ê¯›Â8®Ò¡Šæ.
+Z	java:S106J"9Replace this use of System.out or System.err by a logger.(š© ıÿÿÿÿ8Åƒƒºá.
+V	java:S106Ç"9Replace this use of System.out or System.err by a logger.(†ÈÉœ8ğÉØ¯â.
+[	java:S106ñ"9Replace this use of System.out or System.err by a logger.(›‚–—ıÿÿÿÿ8¿Ñæëá.
+Y	java:S125¸"<This block of commented-out lines of code should be removed.(…ˆ‘É8‚¼ğ°ã.
+V	java:S106Ã"9Replace this use of System.out or System.err by a logger.(…±•û8£¯µ¹ã.
+~
+java:S1192$"\Define a constant instead of duplicating this literal "---------------------------" 3 times.(ğ³æÂûÿÿÿÿ8ˆªŠ¹á.
+p	java:S100Š"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔáÜÿÿÿÿÿ8ÉŒ‚éá.
+E
+java:S2189ß""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ8ª­¥ëá.
+I
+java:S1481‹"+Remove this unused "thread" local variable.(®Ì»ê8¬»Éˆâ.
+R
+java:S1874ò"/Remove this use of "suspend"; it is deprecated.(’´ñÏùÿÿÿÿ8óŞçëá.
+U	java:S106^"9Replace this use of System.out or System.err by a logger.(Â©‰¯8Ï¼á.
+[	java:S106‘"9Replace this use of System.out or System.err by a logger.(Ğå½òşÿÿÿÿ8®Ò¡Šæ.
+w
+java:S2293ç"YReplace the type specification in this constructor call with the diamond operator ("<>").(§’Èå8¯’ ßâ.
+U	java:S106p"9Replace this use of System.out or System.err by a logger.(ìÜ¨ô8»Ç·¼á.
 O
 java:S1444"-Make this "public static message" field final(°¿Ôøÿÿÿÿ8ËÆéá.
+^	java:S125ˆ"<This block of commented-out lines of code should be removed.(Š²‡şÿÿÿÿ8¼¿ïÿã.
+V	java:S106â"9Replace this use of System.out or System.err by a logger.(£”Ñâ8ª­¥ëá.
+Y	java:S125˜"<This block of commented-out lines of code should be removed.(ØÈÑÀ8®Ò¡Šæ.
+[	java:S106á"9Replace this use of System.out or System.err by a logger.(´²í°ûÿÿÿÿ8èÀà¯â.
+Z	java:S1066"9Replace this use of System.out or System.err by a logger.(à„à¢şÿÿÿÿ8˜Œ¹á.
+V	java:S106ô"9Replace this use of System.out or System.err by a logger.(¬ü¼ş8ÃÆèëá.
+T	java:S106M"9Replace this use of System.out or System.err by a logger.(Ë†°8Åƒƒºá.
+Q
+java:S1128	"4Remove this unused import 'java.lang.reflect.Field'.(„‡Áú8Ğßµ‹æ.
+U	java:S106×"9Replace this use of System.out or System.err by a logger.(‚Ïú8ğÉØ¯â.
+v
+java:S2293k"YReplace the type specification in this constructor call with the diamond operator ("<>").(€ÃÖ¯8Ò˜­¼á.
+E
+java:S1604­"(Make this anonymous inner class a lambda(ü÷ªx8¡ãÌ¯â.
+Z	java:S1062"9Replace this use of System.out or System.err by a logger.(ğ³æÂûÿÿÿÿ8ŸÉ†¹á.
+U	java:S106_"9Replace this use of System.out or System.err by a logger.(‚ÎšÛ8œå‘¼á.
+>
+java:S2129è" Remove this "String" constructor(†·Ÿ¯8¯’ ßâ.
+U	java:S106'"9Replace this use of System.out or System.err by a logger.(–“‚Õ8„ğû¸á.
 U	java:S106!"9Replace this use of System.out or System.err by a logger.(¤ñÁß8İó¸á.
-V	java:S106ñ"9Replace this use of System.out or System.err by a logger.(ç’¤™8ÃÛ¦ßâ.
+M
+java:S1874Ö"/Remove this use of "suspend"; it is deprecated.(Å“‰—8ª­¥ëá.
+V	java:S106Ü"9Replace this use of System.out or System.err by a logger.(¯İì‡8ğÉØ¯â.
+a
+java:S2276û"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(êş¿Ñ8¥’ø°ã.
+Z	java:S106`"9Replace this use of System.out or System.err by a logger.(ÇÔæ§ÿÿÿÿÿ8Ï¼á.
+U	java:S106Ñ"9Replace this use of System.out or System.err by a logger.(ÉËÅJ8ğÉØ¯â.
+[	java:S106Ù"9Replace this use of System.out or System.err by a logger.(®ıáëûÿÿÿÿ8®Ò¡Šæ.
+F
+java:S1659Y"*Declare "seasonEnums4" on a separate line.(÷à›88¶£†¼á.
+^	java:S125²"<This block of commented-out lines of code should be removed.(õ÷µƒÿÿÿÿÿ8‚¼ğ°ã.
+[	java:S106ü"9Replace this use of System.out or System.err by a logger.(Ó»°ÿÿÿÿÿ8®Ò¡Šæ.
+[	java:S106Ò"9Replace this use of System.out or System.err by a logger.(“Ò¬áıÿÿÿÿ8ñí­ëá.
+A
+java:S1148æ"#Use a logger to log this exception.(Ç’Çê8¥’ø°ã.
+V	java:S106ú"9Replace this use of System.out or System.err by a logger.(ßÔÛë8¶¨òëá.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ŞÒ—üÿÿÿÿ8·™ñ¸á.
+L
+java:S1874ã".Remove this use of "resume"; it is deprecated.(ä•‡Š8ª­¥ëá.
+^	java:S125 "<This block of commented-out lines of code should be removed.(Ğş·Ùøÿÿÿÿ8ı’éá.
+†
+java:S1845Ğ"hRename method "consumer" to prevent any misunderstanding/clash with field "consumer" defined on line 22.(³8ª­¥ëá.

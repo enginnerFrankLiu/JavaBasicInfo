@@ -66,3 +66,9 @@ L
 message.txt,4\c\4c4f1451283270d6d5eedd61812b7ca05d823a49
 S
 #src/com/company/IO/FileExample.java,9\7\976808769708e6d34984d8cb8c7316815472c6de
+9
+	clear.txt,f\5\f5afd27d8ea1efdec29ca909250b7a6440a6969e
+8
+fuck.txt,e\9\e94c9b4996df27bd44699bb019e61df6d2cb4550
+B
+lucky/luckBoys.txt,6\1\61494a56dbacafaa28977d0e3eeffaded90b7b19

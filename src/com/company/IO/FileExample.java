@@ -1,7 +1,6 @@
 package com.company.IO;
 import com.company.model.Student;
-import com.sun.java.swing.plaf.windows.WindowsTableHeaderUI;
-import sun.util.locale.provider.FallbackLocaleProviderAdapter;
+import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader;
 
 import java.io.*;
 import java.nio.ByteBuffer;
@@ -9,8 +8,8 @@ import java.nio.CharBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
+import java.nio.charset.CharsetEncoder;
 import java.util.*;
-import java.util.logging.FileHandler;
 
 public class FileExample  {
 
@@ -660,6 +659,11 @@ public class FileExample  {
      *
      * 用这种方式来解决乱码的问题
      *
+     * 大概还有
+     *  charset
+     *  buffer 使用，这两种方式比较
+     *  常见的方式去做的，整体效果还算是比较ok的；
+     *
      */
     public void infoMDV3(){
 
@@ -716,19 +720,103 @@ public class FileExample  {
 
     }
 
+    /**
+     * 硬着头皮干..
+     * 硬着头皮干..
+     * 硬着头皮干..
+     *
+     * charBuffer
+     * charsetEncoder->encoder 编码 成byte 类型的
+     * byteBuffer
+     *
+     * char -> byte  encoder
+     *
+     */
+    public void honestly() throws Exception{
 
 
+        Charset charset=Charset.forName("GBK");
+        CharsetEncoder charsetEncoder=charset.newEncoder();
+
+        CharBuffer charBuffer=CharBuffer.allocate(20);
+        charBuffer.put("asdf");
+        charBuffer.flip();
+
+        ByteBuffer byteBuffer=charsetEncoder.encode(charBuffer);
+
+        for(int i=0;i<byteBuffer.limit();i++){
+            System.out.println(byteBuffer.get(i));
+        }
+
+    }
+
+    /**
+     * byteBuffer->charBuffer
+     * decoder 解码
+     * 把 byte 解码成，为我们制定 吗，能够识别的符合；
+     * 这个就是我们的解析额的过程；
+     *
+     * byte -> char decode.
+     */
+    public void byteBufferIntoCharBuffer() throws Exception {
+
+        Charset charset=Charset.forName("GBK");
+        CharsetDecoder  charsetDecoder=charset.newDecoder();
+
+        ByteBuffer byteBuffer=ByteBuffer.allocate(50);
+        byteBuffer.put("asdf".getBytes("GBK"));
+        byteBuffer.flip();
+
+        CharBuffer charBuffer=charsetDecoder.decode(byteBuffer);
+        System.out.println(charBuffer);
 
 
+    }
 
+    /**
+     *
+     * 调用flip 之后，读/写 指针position 就到 缓冲的头部,并设置了最多只能读取之前写入数据长度
+     * 而并不是整个缓冲区的容量；
+     *
+     * 调用flip() 之后，读/写 指针position 指到了缓冲区头部，并且设置了最多只能读取出之前写入的数的长度；
+     *
+     * limit就设置成了position当前的值(即当前写了多少数据)，postion会被置为0，以表示读操作从缓存的头开始读
+     */
+    public void InfoD() throws Exception{
 
+        String projectPath = System.getProperty("user.dir");
+        String path = projectPath + File.separator + "fuck.txt";
+        FileChannel fc=new FileOutputStream(path).getChannel();
+        ByteBuffer byteBuffer=ByteBuffer.wrap("some info".getBytes());
+        fc.write(byteBuffer);
+        fc.close();
 
+        System.out.println("---------------------------");
 
+        fc=new RandomAccessFile(path,"rw").getChannel();
+        System.out.println(fc.position());
 
+        //如果不加这段代码，那么就会覆盖原来的值；因为写的位置；
 
+        fc.position(fc.size());
+        fc.write(ByteBuffer.wrap(" more info".getBytes()));
+        fc.close();
 
+        fc=new FileInputStream(path).getChannel();
+        ByteBuffer buffer=ByteBuffer.allocate(1024);
 
+        fc.read(buffer); //读取到制定大小的 buffer中去的呀；
 
+        //Tells whether there are any elements between the current position and * the limit
+        //这个是一定要设置的
+        buffer.flip();
 
+        while (buffer.hasRemaining()){
 
+            System.out.println((char)buffer.get());
+        }
+
+        fc.close();
+
+    }
 }

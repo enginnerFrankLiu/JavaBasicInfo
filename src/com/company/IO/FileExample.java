@@ -5,10 +5,12 @@ import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader
 import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
+import java.nio.IntBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
 import java.nio.charset.CharsetEncoder;
+import java.security.SecureRandom;
 import java.util.*;
 
 public class FileExample  {
@@ -805,7 +807,14 @@ public class FileExample  {
         fc=new FileInputStream(path).getChannel();
         ByteBuffer buffer=ByteBuffer.allocate(1024);
 
+        //将文件内容读取到制定缓冲区；
         fc.read(buffer); //读取到制定大小的 buffer中去的呀；
+
+        System.out.println("------------------------------");
+
+        //此时buffer中的position即为字节写入后的下一个位置；
+
+        System.out.println(buffer.position());
 
         //Tells whether there are any elements between the current position and * the limit
         //这个是一定要设置的
@@ -819,4 +828,130 @@ public class FileExample  {
         fc.close();
 
     }
+
+    /**
+     *
+     *
+     * 其实关于 file nio 的基本用法，大概就是这个样子的腊；
+     * 下一个我想尝试一个先的 socket 编程的使用
+     *
+     */
+    public void infoGG(){
+        IntBuffer buffer=IntBuffer.allocate(10);
+        for (int i=0;i<5;i++){
+            int randomNumber=new SecureRandom().nextInt(10);
+            buffer.put(randomNumber);
+        }
+        System.out.println(buffer.position());
+        System.out.println("--------------------------");
+        //必须要call 这个方法，不然不好使的呀;
+
+        buffer.flip();
+
+        while (buffer.hasRemaining()){
+            System.out.println(buffer.get());
+        }
+        System.out.println("--------------------------");
+        System.out.println(buffer.position());
+    }
+
+    /**
+     * 我想用一个非常潇洒的方式来实现来写代码；
+     *
+     *
+     */
+    public void someMethod() throws Exception{
+
+//        System.out.println("----reset test------");
+//
+//        IntBuffer buffer=IntBuffer.allocate(20);
+//        System.out.println(buffer.position());
+//        buffer.clear();
+//        System.out.println(buffer.position());
+//        buffer.position(5);
+//        buffer.mark();
+//        buffer.position(10);
+//        buffer.reset();
+//        System.out.println("---information.."+buffer.position());
+//
+//        System.out.println("----reset test------");
+        //clear 有种归为的感觉;
+//        buffer.clear();
+//        buffer.position(10);
+//        buffer.limit(15);
+//
+//        //把position设为0，mark设为-1，不改变limit的值
+//        System.out.println("before rewind:" + buffer);
+//        buffer.rewind();
+//        System.out.println("before rewind:" + buffer);
+
+//        System.out.println("-------test compact----------");
+//
+//        ByteBuffer byteBuffer=ByteBuffer.allocate(10);
+//        byteBuffer.put("abcd".getBytes());
+//        System.out.println("before compact:"+byteBuffer);
+//        System.out.println(new String(byteBuffer.array()));
+//        byteBuffer.flip();
+//        System.out.println("after flip:"+byteBuffer);
+//        System.out.println((char) byteBuffer.get());
+//        System.out.println((char) byteBuffer.get());
+//        System.out.println((char) byteBuffer.get());
+//
+//        System.out.println("after three gets:"+byteBuffer);
+//
+//        System.out.println("\t" + new String(byteBuffer.array()));
+//
+//        //compact 的作用是将： 从 position 到limit中的内容 移动到 0 到 limit-position 的区域中去;
+//        //position 和 limit  的值 变成了 limit-position, capacity中;
+//        byteBuffer.compact();
+//        System.out.println("after compact:"+byteBuffer);
+//        System.out.println("\t" + new String(byteBuffer.array()));
+
+        System.out.println("-----Test get------");
+        ByteBuffer byteBuffer=ByteBuffer.allocate(32);
+
+        byteBuffer.put((byte)'a');
+        byteBuffer.put((byte)'b');
+        byteBuffer.put((byte)'c');
+        byteBuffer.put((byte)'d');
+        byteBuffer.put((byte)'e');
+        byteBuffer.put((byte)'f');
+
+        byteBuffer.flip();
+
+//        System.out.println("before get()"+byteBuffer);
+//        System.out.println((char)byteBuffer.get());
+//        //position 的位置就变了，这个是不可改变的东西，我们整体来说，效果是非常不错的一种方式
+//        //这种方式是非常爽的一种方式；
+//        System.out.println("after get()"+byteBuffer);
+//
+//        byteBuffer.flip();
+
+        //如果我么使用 get(index) 的方式的话，我们将不会改变position的值，这个效果还是相当可以的；
+
+//        System.out.println((char)byteBuffer.get(2));
+//        System.out.println("after get by index :"+byteBuffer);
+//
+//
+//        byte [] bytes=new byte[10];
+//        byteBuffer.get(bytes,0,2);
+//
+//        //这个也是改变原来的值的呀，整体效果还算是很ok的，我们真的，真的;
+//        System.out.println("after get(bytes,0,len):"+ byteBuffer);
+//
+//        System.out.println("\t bytes:"+new String(bytes));
+//        System.out.println("bytebuffer now is :"+byteBuffer);
+//        System.out.println("\t "+new String(byteBuffer.array()));
+
+        System.out.println("-----Test-put-------");
+        ByteBuffer bb=ByteBuffer.allocate(32);
+        System.out.println("before put(byte):"+bb);
+        System.out.println("after put(byte):"+ bb.put((byte) 'z'));
+
+        //这个不会改变position的值；
+        System.out.println("\t" + bb.put(2, (byte) 'c'));
+
+
+    }
+
 }

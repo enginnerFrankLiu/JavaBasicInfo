@@ -434,7 +434,9 @@ public class Main {
 //        fileExample.infoMDV2();
 //        fileExample.infoMDV3();
 //          fileExample.honestly();
-        fileExample.InfoD();
+        //fileExample.InfoD();
+        fileExample.someMethod();
+
     }
 
     /**

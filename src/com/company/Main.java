@@ -435,7 +435,9 @@ public class Main {
 //        fileExample.infoMDV3();
 //          fileExample.honestly();
         //fileExample.InfoD();
-        fileExample.someMethod();
+//        fileExample.charInfoRead();
+        fileExample.charReaderInfo();
+
 
     }
 

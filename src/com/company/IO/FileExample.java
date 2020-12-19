@@ -954,4 +954,77 @@ public class FileExample  {
 
     }
 
+    //等一下，我想玩玩玩java的 soket 编程；效果还是刚刚的;
+    //网络编程是一个很大的概念
+    //网络编程是一个很大的概念，我们可以尝试着不断的 努力的去改变一些东西，和不断的提高自己能力方面性的东西；
+
+    /**
+     * 我觉得这种方式，其实就是不会又异常的;
+     */
+    public void infoLearn() {
+        String projectPath = System.getProperty("user.dir");
+        String path = projectPath + File.separator + "io.log";
+        try (FileInputStream inputStream = new FileInputStream(path)) {
+            byte [] temp=new byte[1024];
+            int len;
+            while ((len=inputStream.read(temp))!=-1){
+                String str=new String(temp,"UTF-8"); //可能使用的是，文件系统中不断默认的编码方式的呀；
+                //整体效果还是比较ok的；
+                System.out.println(str);
+            }
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    /**
+     *
+     * 第一步是要明确你的目的，如果只是单纯的读取文本信息；并且是：中国的客户打开的情况下
+     * 我们整体还是比较建议使用我们的
+     * 那么这种怎么去指定他的编码方式呢；我们也是比较纠结的对象和方法第呀；
+     * FileReader和FileWriter的默认编码都是系统的设置的编码(这个就是我们的重点，整体效果还是算是不错的哈)
+     *
+     *
+     */
+    public void charInfoRead(){
+        String projectPath = System.getProperty("user.dir");
+        String path = projectPath + File.separator + "io.log";
+        //这种应该就是默认使用的是字符串信息来今夕读取
+        try(FileReader reader=new FileReader(path)){
+            char [] temp=new char[1024];
+            int len;
+            while ((len=reader.read(temp))!=-1){
+                String message=new String(temp);
+                System.out.println(message);
+            }
+        }catch (Exception exception){
+            exception.printStackTrace();
+        }
+    }
+
+
+    /**
+     * 这里就是我们想要的基本信息
+     * 如果为了提高效率，我们顶多再加一个 buffer
+     * 进行各种缓冲吧了；
+     * 整体效果还是比较ok的哈;
+     */
+    public void charReaderInfo() {
+        String projectPath = System.getProperty("user.dir");
+        String path = projectPath + File.separator + "io.log";
+        try (FileInputStream fileInputStream = new FileInputStream(path);
+             InputStreamReader reader = new InputStreamReader(fileInputStream, "UTF-8")
+        ) {
+            char[] temp = new char[1024];
+            int len;
+            while ((len=reader.read(temp))!=-1){
+                String message=new String(temp);
+                System.out.println(message);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+
 }

@@ -463,6 +463,8 @@ public class Main {
 
     /**
      * Fucking life information.
+     * 线程同步类的帮助，在做这件事情哈；
+     * 整体来说效果是比较好的哈；
      */
     public static void threadGo() {
         threadInterview threadInterview = new threadInterview();
@@ -470,7 +472,8 @@ public class Main {
 //        threadInterview.interactionPrint();
 //        threadInterview.allInformationTodoSome();
 //          threadInterview.getSubThreadResultInfo();
-        threadInterview.threadWaitEachOther();
+//        threadInterview.threadWaitEachOther();
+         threadInterview.infoSemaphoreTest();
     }
 
     /**

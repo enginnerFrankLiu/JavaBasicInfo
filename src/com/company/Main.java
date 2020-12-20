@@ -1,20 +1,15 @@
 package com.company;
 
 import com.company.IO.FileExample;
-import com.company.IO.FileInfo;
-import com.company.IO.ObjectStream;
-import com.company.IO.Pipe;
 import com.company.stream.StreamInfo;
+import com.company.threadlearn.ExampleInterruptThread;
+import com.company.threadlearn.threadInterview;
 
-import java.lang.reflect.Field;
 import java.util.EnumMap;
 import java.util.EnumSet;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.FutureTask;
+import java.util.concurrent.*;
 
 public class Main {
 
@@ -443,6 +438,35 @@ public class Main {
 
     }
 
+    public static void threadLearnInfo() throws Exception{
+        ExampleInterruptThread exampleInterruptThread =new ExampleInterruptThread();
+        exampleInterruptThread.start();
+        Thread.sleep(1000);
+        exampleInterruptThread.interrupt();//终端某个线程；
+    }
+
+    /**
+     * draft.
+     */
+    public void vv(){
+//        FileInfo file=new FileInfo();
+//        //this way we can show all file info.
+//        file.showAllFile();
+//        testFileInfo();
+//        threadLearnInfo();
+//
+//        Thread.currentThread().join();
+
+    }
+
+    /**
+     *
+     */
+    public static void threadGo(){
+        threadInterview threadInterview=new threadInterview();
+        threadInterview.info();
+    }
+
     /**
      * information for test function.
      *
@@ -450,10 +474,11 @@ public class Main {
      */
     public static void main(String[] args) throws  Exception {
         System.out.println("application start.");
-//        FileInfo file=new FileInfo();
-//        //this way we can show all file info.
-//        file.showAllFile();
-        testFileInfo();
+
+        threadGo();
+
+        Thread.currentThread().join();
+
         System.out.println("application end.");
 
     }

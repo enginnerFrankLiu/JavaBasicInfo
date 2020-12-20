@@ -2,7 +2,12 @@ package com.company.threadlearn;
 
 import org.omg.CORBA.PRIVATE_MEMBER;
 
+import javax.xml.transform.Result;
+import java.util.Random;
+import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.FutureTask;
 import java.util.concurrent.locks.Lock;
 
 public class threadInterview {
@@ -117,5 +122,73 @@ public class threadInterview {
             }
         });
         msThread.start();
+    }
+
+    /**
+     *
+     * information to do something.
+     * 线程同步
+     * 线程通信
+     * 线程安全
+     * 等等等问题的一个基本了解吧；
+     * 后续还设有更多的提，需要我们要不断练习吧；
+     *
+     */
+    public void getSubThreadResultInfo(){
+
+        Callable<Integer> callable=new Callable<Integer>() {
+            @Override
+            public Integer call() throws Exception {
+
+                int result=0;
+                for(int i=0;i<100;i++){
+                    Thread.sleep(100);
+                    result+=i;
+                }
+                return result;
+            }
+        };
+
+        FutureTask<Integer> task=new FutureTask<>(callable);
+        new Thread(task)
+                .start();
+        try {
+            Integer temp=task.get();
+            System.out.println("sub thread count result is :"+temp);
+        }catch (Exception exception){
+            exception.printStackTrace();
+        }
+    }
+
+    /**
+     * information to wait information.
+     */
+    public void threadWaitEachOther(){
+
+        int waiter=3;
+        CyclicBarrier cyclicBarrier=new CyclicBarrier(waiter);
+        final Random random=new Random();
+
+        for(char threadName='A';threadName<='C';threadName++){
+            final String name=String.valueOf(threadName);
+            Thread thread= new  Thread(()->{
+
+                long prepareTime=random.nextInt(10000)+100;
+                System.out.println(name + " need  " +prepareTime +" to prepared some thing.");
+                try {
+                    Thread.sleep(prepareTime);
+                }catch (Exception exception){
+                     exception.printStackTrace();
+                }
+
+                try {
+                    cyclicBarrier.await();
+                }catch (Exception exception){
+                    exception.printStackTrace();
+                }
+                System.out.println(name+" Go.");
+            });
+            thread.start();
+        }
     }
 }

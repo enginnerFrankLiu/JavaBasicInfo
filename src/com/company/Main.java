@@ -229,28 +229,28 @@ public class Main {
 
     public static Object food;
 
-    public static void produceAndConsume() throws Exception{
+    public static void produceAndConsume() throws Exception {
 
-        Thread consumeThread=new Thread(()-> {
-            if(food==null){
+        Thread consumeThread = new Thread(() -> {
+            if (food == null) {
                 System.out.println("wait....");
-                 Thread.currentThread().suspend();
+                Thread.currentThread().suspend();
             }
             System.out.println("run...(call by main thread.)");
 
         });
         consumeThread.start();
         Thread.sleep(3000L);
-        food=new Object();
+        food = new Object();
         System.out.println("main thread ready, then call consume thread to run...continue.");
         consumeThread.resume();
 
         Thread.sleep(5000L);
     }
 
-    public static void deadLocker(){
+    public static void deadLocker() {
 
-        DeadLockExample example=new DeadLockExample();
+        DeadLockExample example = new DeadLockExample();
         example.threadOne();
         example.threadTwo();
     }
@@ -258,8 +258,8 @@ public class Main {
     /**
      *
      */
-    public static void test() throws  Exception{
-        Thread thread=new Thread(()->{
+    public static void test() throws Exception {
+        Thread thread = new Thread(() -> {
             System.out.println("sub thread is running.....");
         });
         System.out.println("main thread is running....");
@@ -271,15 +271,15 @@ public class Main {
     /**
      * use thread pool to create thread
      */
-    public static void useThreadPool(){
+    public static void useThreadPool() {
         //这个仅仅是控制线程的数量
-        ExecutorService exe= Executors.newFixedThreadPool(3);
-        for(int i=0;i<5;i++) {
+        ExecutorService exe = Executors.newFixedThreadPool(3);
+        for (int i = 0; i < 5; i++) {
             exe.submit(new Runnable() {
                 @Override
                 public void run() {
                     Long threadId = Thread.currentThread().getId();
-                    System.out.println("thread id:"+threadId);
+                    System.out.println("thread id:" + threadId);
                 }
             });
         }
@@ -289,15 +289,15 @@ public class Main {
     /**
      *
      */
-    public static void useSingleThreadPool(){
+    public static void useSingleThreadPool() {
 
-        ExecutorService exe=Executors.newSingleThreadExecutor();
-        for(int i=0;i<5;i++) {
+        ExecutorService exe = Executors.newSingleThreadExecutor();
+        for (int i = 0; i < 5; i++) {
             exe.submit(new Runnable() {
                 @Override
                 public void run() {
                     Long threadId = Thread.currentThread().getId();
-                    System.out.println("thread id:"+threadId);
+                    System.out.println("thread id:" + threadId);
                 }
             });
         }
@@ -307,12 +307,12 @@ public class Main {
     /**
      * different way to start new thread.
      */
-    public static void startNewThread() throws Exception{
+    public static void startNewThread() throws Exception {
 
         System.out.println("1. 继承Thread--------------------");
-        RequestThread a=new RequestThread();
-        RequestThread b=new RequestThread();
-        RequestThread c=new RequestThread();
+        RequestThread a = new RequestThread();
+        RequestThread b = new RequestThread();
+        RequestThread c = new RequestThread();
 
         a.start();
         b.start();
@@ -320,10 +320,10 @@ public class Main {
 
         Thread.sleep(5000L);
         System.out.println("2.继承Runnable--------------------");
-        ResponseThread r1=new ResponseThread();
-        Thread t1=new Thread(r1,"thread 1");
-        Thread t2=new Thread(r1,"thread 2");
-        Thread t3=new Thread(r1,"thread 3");
+        ResponseThread r1 = new ResponseThread();
+        Thread t1 = new Thread(r1, "thread 1");
+        Thread t2 = new Thread(r1, "thread 2");
+        Thread t3 = new Thread(r1, "thread 3");
         t1.start();
         t2.start();
         t3.start();
@@ -331,12 +331,12 @@ public class Main {
         Thread.sleep(5000L);
         System.out.println("3.继承Callable--------------------");
 
-        Callable<String> callable=new IOThread();
-        FutureTask<String> futureTask=new FutureTask<>(callable);
-        Thread t=new Thread(futureTask);
+        Callable<String> callable = new IOThread();
+        FutureTask<String> futureTask = new FutureTask<>(callable);
+        Thread t = new Thread(futureTask);
         t.start();
         System.out.println(futureTask.isDone());
-        String result=futureTask.get();
+        String result = futureTask.get();
         System.out.println(result);
 
         Thread.sleep(5000L);
@@ -349,7 +349,8 @@ public class Main {
         useSingleThreadPool();
 
     }
-    public static void infomationTest(){
+
+    public static void infomationTest() {
 
         HashSet<String> set = new HashSet<String>();
         set.add(new String("a"));
@@ -358,32 +359,33 @@ public class Main {
 
         //一旦创建，无法修改原来的值，想修改它的值，都是copy 原来的值，进行修改，然后返回一个新的对象；
         //并不能改变原来的值
-        for(String a: set) {
-            a="ddd";
+        for (String a : set) {
+            a = "ddd";
         }
         System.out.println(set);
-   }
+    }
 
-   private static String locker="application-lock-apple";
-    public static void testInfo(){
-        Thread thread=new Thread(()->{
+    private static String locker = "application-lock-apple";
+
+    public static void testInfo() {
+        Thread thread = new Thread(() -> {
             try {
-                synchronized (locker){
+                synchronized (locker) {
 
                     System.out.println("main method lock resource.");
                     Thread.sleep(5000L);
                     System.out.println("main method release lock.");
                 }
-            }catch (Exception ex){
+            } catch (Exception ex) {
                 ex.printStackTrace();
             }
         });
         thread.start();
     }
 
-    static void testStream() throws Exception{
+    static void testStream() throws Exception {
 
-        StreamInfo streamInfo=new StreamInfo();
+        StreamInfo streamInfo = new StreamInfo();
 //        streamInfo.inputStream();
 //        System.out.println("---------------------");
 //        streamInfo.inputReader();
@@ -407,9 +409,9 @@ public class Main {
 //        stream.markInfo();
     }
 
-    static void testFileInfo() throws  Exception{
+    static void testFileInfo() throws Exception {
 
-        FileExample fileExample=new FileExample();
+        FileExample fileExample = new FileExample();
 //        fileExample.copyFileDemo();
 //        fileExample.copySpecifyFile();
 //        fileExample.copyAllFileInfo();
@@ -433,13 +435,13 @@ public class Main {
 //        fileExample.charInfoRead();
 //        fileExample.charReaderInfo();
 //        fileExample.infoMS();
-          fileExample.fileChannelInfoQ();
+        fileExample.fileChannelInfoQ();
 
 
     }
 
-    public static void threadLearnInfo() throws Exception{
-        ExampleInterruptThread exampleInterruptThread =new ExampleInterruptThread();
+    public static void threadLearnInfo() throws Exception {
+        ExampleInterruptThread exampleInterruptThread = new ExampleInterruptThread();
         exampleInterruptThread.start();
         Thread.sleep(1000);
         exampleInterruptThread.interrupt();//终端某个线程；
@@ -448,7 +450,7 @@ public class Main {
     /**
      * draft.
      */
-    public void vv(){
+    public void vv() {
 //        FileInfo file=new FileInfo();
 //        //this way we can show all file info.
 //        file.showAllFile();
@@ -460,15 +462,15 @@ public class Main {
     }
 
     /**
-     *
      * Fucking life information.
-     *
      */
-    public static void threadGo(){
-        threadInterview threadInterview=new threadInterview();
-       // threadInterview.info();
+    public static void threadGo() {
+        threadInterview threadInterview = new threadInterview();
+        // threadInterview.info();
 //        threadInterview.interactionPrint();
-        threadInterview.allInformationTodoSome();
+//        threadInterview.allInformationTodoSome();
+//          threadInterview.getSubThreadResultInfo();
+        threadInterview.threadWaitEachOther();
     }
 
     /**
@@ -476,7 +478,7 @@ public class Main {
      *
      * @param args
      */
-    public static void main(String[] args) throws  Exception {
+    public static void main(String[] args) throws Exception {
         System.out.println("application start.");
 
         threadGo();

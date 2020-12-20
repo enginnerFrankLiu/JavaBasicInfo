@@ -1106,5 +1106,33 @@ public class FileExample  {
 
     }
 
+    /**
+     * use channel to copy file.
+     * @throws Exception
+     */
+    public void fileChannelInfoQ() throws  Exception{
 
+        String projectPath = System.getProperty("user.dir");
+        String path = projectPath + File.separator + "io.log";
+
+        String targetPath=projectPath + File.separator + "ios.log";
+
+        FileInputStream fileInputStream=new FileInputStream(path);
+        FileOutputStream fileOutputStream=new FileOutputStream(targetPath);
+
+        FileChannel inputChannel=fileInputStream.getChannel();
+        FileChannel outputChannel=fileOutputStream.getChannel();
+
+        ByteBuffer byteBuffer=ByteBuffer.allocate(1024);
+
+        int len=0;
+
+        while ((len=inputChannel.read(byteBuffer))!=-1){
+            byteBuffer.flip();
+            outputChannel.write(byteBuffer);
+            byteBuffer.clear();
+        }
+        inputChannel.close();
+        outputChannel.close();
+    }
 }

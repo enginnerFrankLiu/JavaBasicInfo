@@ -437,7 +437,8 @@ public class Main {
         //fileExample.InfoD();
 //        fileExample.charInfoRead();
 //        fileExample.charReaderInfo();
-        fileExample.infoMS();
+//        fileExample.infoMS();
+          fileExample.fileChannelInfoQ();
 
 
     }

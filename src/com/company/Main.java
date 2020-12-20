@@ -464,7 +464,8 @@ public class Main {
      */
     public static void threadGo(){
         threadInterview threadInterview=new threadInterview();
-        threadInterview.info();
+       // threadInterview.info();
+        threadInterview.interactionPrint();
     }
 
     /**

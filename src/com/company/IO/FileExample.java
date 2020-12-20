@@ -2,6 +2,7 @@ package com.company.IO;
 import com.company.model.Student;
 import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader;
 
+import javax.annotation.processing.SupportedSourceVersion;
 import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
@@ -1024,6 +1025,85 @@ public class FileExample  {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+
+    /**
+     * information to do somethings make life more better.
+     * the best way to improve yourself is read more , practice more and get more.
+     * trust yourself ,you deserve more better life.
+     * I believe I could get more than I image.
+     *
+     * 可以尝试进行各种常见的分类
+     *
+     * 输入流和输出流
+     *
+     * 节点流和处理流
+     *
+     *
+     * 我觉着这种学习，应该是掌握基本的写的技能；
+     * 各种常见的额操作，大家知道就好
+     * 说句比较大的话，大概就是：总要的还是概念上的理解和
+     * 具体的api 我们可以查文档
+     * 常见的操作 和常见的 常见，一边我们都是有 utile 来进行各种协助的哈；
+     *
+     * 至于具体如何操作，那就要砍各种关键性的信息了，我个人，整体上来说，还是比较ok的哈；
+     *
+     * 如各种utile的常见使用
+     * https://www.jianshu.com/p/8eb773f8e552
+     *
+     *
+     *
+     *
+     */
+    public void infoMS() throws Exception{
+
+
+//        //这两个就是相对路径和绝对路径的区别；
+//        String projectPath = System.getProperty("user.dir");
+//        String path = projectPath + File.separator + "io.log";
+//
+//        String path="io.log";
+//
+//        File file=new File(path);
+//        String parentInfo=file.getParent();
+//        System.out.println(parentInfo);
+//
+//        System.out.println(file.getPath());
+//
+//        System.out.println(file.isAbsolute());
+//
+//        System.out.println(file.getAbsolutePath()); //对会文件的绝对路劲，还好吧
+//
+//        System.out.println(file.exists());
+//        System.out.println(file.canRead());
+//        System.out.println(file.canWrite());
+//
+//        System.out.println(file.length());
+
+        //这么写居然是追加的效果，整体来说还算挺OK的哈
+
+        //这个是写入原始的数据类型情况不一样的；
+
+        File f = new File("sunday.txt") ; // 指定要操作的文件
+        RandomAccessFile rdf = null ;       // 声明RandomAccessFile类的对象
+        rdf = new RandomAccessFile(f,"rw") ;// 读写模式，如果文件不存在，会自动创建
+        String name = null ;
+        int age = 0 ;
+        name = "zhangsan1111111111111111111" ;         // 字符串长度为8
+        age = 30 ;                  // 数字的长度为4
+        rdf.write(name.getBytes("UTF-8")); ;      // 将姓名写入文件之中
+        rdf.writeInt(age) ;         // 将年龄写入文件之中
+        name = "lisi      " ;         // 字符串长度为8
+        age = 31 ;                  // 数字的长度为4
+        rdf.write(name.getBytes("UTF-8")) ;      // 将姓名写入文件之中
+        rdf.writeInt(age) ;         // 将年龄写入文件之中
+        name = "wangwu     中文空格" ;         // 字符串长度为8
+        age = 32 ;                  // 数字的长度为4
+        rdf.write(name.getBytes("UTF-8")); ;      // 将姓名写入文件之中
+        rdf.writeInt(age) ;         // 将年龄写入文件之中
+        rdf.close() ;               // 关闭
+
+
     }
 
 

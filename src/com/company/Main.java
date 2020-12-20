@@ -436,7 +436,8 @@ public class Main {
 //          fileExample.honestly();
         //fileExample.InfoD();
 //        fileExample.charInfoRead();
-        fileExample.charReaderInfo();
+//        fileExample.charReaderInfo();
+        fileExample.infoMS();
 
 
     }

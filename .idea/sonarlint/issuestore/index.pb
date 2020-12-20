@@ -72,3 +72,6 @@ S
 fuck.txt,e\9\e94c9b4996df27bd44699bb019e61df6d2cb4550
 B
 lucky/luckBoys.txt,6\1\61494a56dbacafaa28977d0e3eeffaded90b7b19
+:
+
+sunday.txt,a\7\a7a9472a93542ac0508ca2ce7a5f578a4394f4aa

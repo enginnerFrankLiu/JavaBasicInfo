@@ -2,6 +2,7 @@ package com.company.threadlearn;
 
 import org.omg.CORBA.PRIVATE_MEMBER;
 
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.locks.Lock;
 
 public class threadInterview {
@@ -57,6 +58,8 @@ public class threadInterview {
             }
         });
 
+        //也就是说，notify/notifyAll() 的执行只是唤醒沉睡的线程，而不会立即释放锁，锁的释放要看代码块的具体执行情况
+        //代码块执行完之后，才会释放，指定的锁，这个还是可以接受的，吗的比；
         Thread threadB = new Thread(() -> {
 
             synchronized (locker) {
@@ -75,5 +78,44 @@ public class threadInterview {
 
         threadA.start();
         threadB.start();
+    }
+
+    /**
+     * 想要的效果，或者说需求就是：
+     * A B C D 四个线程，
+     * D 要等待 A B C 都是执行完成之后，才开始；
+     * 与此同时，我们额  A  B  C 是同步执行的；
+     * 整体效果还是是很OK 的哈.
+     * 我草，我也是涨见识，还可以这样写for 循环，可以的
+     */
+    public void allInformationTodoSome(){
+        int threadCount=3;
+        CountDownLatch countDownLatch=new CountDownLatch(threadCount);
+        for(char threadName='A';threadName<='C';threadName++){
+
+            String name=String.valueOf(threadName);
+            Thread thread=new Thread(()-> {
+                try {
+                    Thread.sleep(100);
+                    System.out.println(name +" run ->>>>>> over.");
+
+                }catch (Exception exception){
+                     exception.printStackTrace();
+                }
+                countDownLatch.countDown();
+            });
+            thread.start();
+        }
+
+        Thread msThread=new Thread(()-> {
+            try {
+                countDownLatch.await();
+                Thread.sleep(100);
+                System.out.println("D run ->>>>>> over.");
+            }catch (Exception exception){
+                exception.printStackTrace();
+            }
+        });
+        msThread.start();
     }
 }

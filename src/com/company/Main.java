@@ -461,11 +461,14 @@ public class Main {
 
     /**
      *
+     * Fucking life information.
+     *
      */
     public static void threadGo(){
         threadInterview threadInterview=new threadInterview();
        // threadInterview.info();
-        threadInterview.interactionPrint();
+//        threadInterview.interactionPrint();
+        threadInterview.allInformationTodoSome();
     }
 
     /**

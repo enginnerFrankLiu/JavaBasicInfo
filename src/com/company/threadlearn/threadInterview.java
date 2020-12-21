@@ -1,5 +1,9 @@
 package com.company.threadlearn;
 
+import jdk.internal.org.objectweb.asm.TypeReference;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Random;
 import java.util.concurrent.*;
 
@@ -238,5 +242,66 @@ public class threadInterview {
             }
 
         }
+    }
+
+    public void phaserTestInfo() {
+        Phaser phaser = new Phaser(3);
+
+        Thread[] threads = new Thread[3];
+        for (int i = 0; i < 3; i++) {
+
+            threads[i] = new Thread(new PhaserRunable(phaser));
+            threads[i].start();
+        }
+    }
+
+    /**
+     *
+     */
+    public void phaerTestInfo2() {
+
+        final Phaser phaser = new Phaser(2);
+
+        for (int i = 0; i < 5; i++) {
+
+            phaser.register();
+
+            Thread thread = new Thread(new PhaserRunable2(i, phaser));
+
+            thread.start();
+        }
+
+        System.out.println("press enter to continue...");
+
+        BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
+
+        try {
+
+            reader.readLine();
+
+        }catch (Exception exception){
+
+            exception.printStackTrace();
+        }
+        phaser.arriveAndDeregister();
+
+        System.out.println("press enter to continue...");
+
+
+        for (int i = 0; i < 5; i++) {
+
+            phaser.register();  //再次注册
+        }
+
+        try {
+
+            reader.readLine();
+
+        }catch (Exception exception){
+
+            exception.printStackTrace();
+        }
+        phaser.arriveAndDeregister();
+
     }
 }

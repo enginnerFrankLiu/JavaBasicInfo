@@ -474,7 +474,9 @@ public class Main {
 //          threadInterview.getSubThreadResultInfo();
 //        threadInterview.threadWaitEachOther();
 //         threadInterview.infoSemaphoreTest();
-        threadInterview.phaserTest();
+//        threadInterview.phaserTest();
+//        threadInterview.phaserTestInfo();
+        threadInterview.phaerTestInfo2();
     }
 
     /**

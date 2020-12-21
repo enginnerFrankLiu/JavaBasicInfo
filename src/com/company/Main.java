@@ -473,7 +473,8 @@ public class Main {
 //        threadInterview.allInformationTodoSome();
 //          threadInterview.getSubThreadResultInfo();
 //        threadInterview.threadWaitEachOther();
-         threadInterview.infoSemaphoreTest();
+//         threadInterview.infoSemaphoreTest();
+        threadInterview.phaserTest();
     }
 
     /**

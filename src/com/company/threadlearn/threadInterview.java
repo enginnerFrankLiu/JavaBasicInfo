@@ -1,12 +1,7 @@
 package com.company.threadlearn;
 
-import org.omg.CORBA.PRIVATE_MEMBER;
-
-import javax.xml.transform.Result;
-import java.sql.Statement;
 import java.util.Random;
 import java.util.concurrent.*;
-import java.util.concurrent.locks.Lock;
 
 public class threadInterview {
 
@@ -39,7 +34,7 @@ public class threadInterview {
 
     /**
      * 两个线程，交替着执行；
-     *
+     * <p>
      * 两个线程，按照指定的方式，交替着执行；
      * 整体效果还算不错的腊；
      * 慢慢的去学习和改变吧;
@@ -90,36 +85,36 @@ public class threadInterview {
      * 与此同时，我们额  A  B  C 是同步执行的；
      * 整体效果还是是很OK 的哈.
      * 我草，我也是涨见识，还可以这样写for 循环，可以的
-     *
+     * <p>
      * 这个类可以：
      * 使一个线程其他类型的线程各自完成自己的工作后，再执行，
      * 一个线程等待其他线程完成各自的工作后，再次执行；
      */
-    public void allInformationTodoSome(){
-        int threadCount=3;
-        CountDownLatch countDownLatch=new CountDownLatch(threadCount);
-        for(char threadName='A';threadName<='C';threadName++){
+    public void allInformationTodoSome() {
+        int threadCount = 3;
+        CountDownLatch countDownLatch = new CountDownLatch(threadCount);
+        for (char threadName = 'A'; threadName <= 'C'; threadName++) {
 
-            String name=String.valueOf(threadName);
-            Thread thread=new Thread(()-> {
+            String name = String.valueOf(threadName);
+            Thread thread = new Thread(() -> {
                 try {
                     Thread.sleep(100);
-                    System.out.println(name +" run ->>>>>> over.");
+                    System.out.println(name + " run ->>>>>> over.");
 
-                }catch (Exception exception){
-                     exception.printStackTrace();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
                 }
                 countDownLatch.countDown();
             });
             thread.start();
         }
 
-        Thread msThread=new Thread(()-> {
+        Thread msThread = new Thread(() -> {
             try {
                 countDownLatch.await();
                 Thread.sleep(100);
                 System.out.println("D run ->>>>>> over.");
-            }catch (Exception exception){
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
@@ -127,37 +122,35 @@ public class threadInterview {
     }
 
     /**
-     *
      * information to do something.
      * 线程同步
      * 线程通信
      * 线程安全
      * 等等等问题的一个基本了解吧；
      * 后续还设有更多的提，需要我们要不断练习吧；
-     *
      */
-    public void getSubThreadResultInfo(){
+    public void getSubThreadResultInfo() {
 
-        Callable<Integer> callable=new Callable<Integer>() {
+        Callable<Integer> callable = new Callable<Integer>() {
             @Override
             public Integer call() throws Exception {
 
-                int result=0;
-                for(int i=0;i<100;i++){
+                int result = 0;
+                for (int i = 0; i < 100; i++) {
                     Thread.sleep(100);
-                    result+=i;
+                    result += i;
                 }
                 return result;
             }
         };
 
-        FutureTask<Integer> task=new FutureTask<>(callable);
+        FutureTask<Integer> task = new FutureTask<>(callable);
         new Thread(task)
                 .start();
         try {
-            Integer temp=task.get();
-            System.out.println("sub thread count result is :"+temp);
-        }catch (Exception exception){
+            Integer temp = task.get();
+            System.out.println("sub thread count result is :" + temp);
+        } catch (Exception exception) {
             exception.printStackTrace();
         }
     }
@@ -167,60 +160,83 @@ public class threadInterview {
      * 等待，所有方式，都获取到了方式后，
      * CountDownLatch
      * 这样的方式，才可以执行我们的方法；
-     *
      */
-    public void threadWaitEachOther(){
-        int waiter=3;
-        CyclicBarrier cyclicBarrier=new CyclicBarrier(waiter);
-        final Random random=new Random();
-        for(char threadName='A';threadName<='C';threadName++){
-            final String name=String.valueOf(threadName);
-            Thread thread= new  Thread(()->{
+    public void threadWaitEachOther() {
+        int waiter = 3;
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(waiter);
+        final Random random = new Random();
+        for (char threadName = 'A'; threadName <= 'C'; threadName++) {
+            final String name = String.valueOf(threadName);
+            Thread thread = new Thread(() -> {
 
-                long prepareTime=random.nextInt(10000)+100;
-                System.out.println(name + " need  " +prepareTime +" to prepared some thing.");
+                long prepareTime = random.nextInt(10000) + 100;
+                System.out.println(name + " need  " + prepareTime + " to prepared some thing.");
                 try {
                     Thread.sleep(prepareTime);
-                }catch (Exception exception){
-                     exception.printStackTrace();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
                 }
                 try {
                     cyclicBarrier.await();
-                }catch (Exception exception){
+                } catch (Exception exception) {
                     exception.printStackTrace();
                 }
-                System.out.println(name+" Go.");
+                System.out.println(name + " Go.");
             });
             thread.start();
         }
     }
 
     //最多允许三线程同时，在临界区，"办事儿";
-    private static Semaphore semaphore=new Semaphore(3);
-    public void infoSemaphoreTest(){
-        int studentCount=10;
-        for(int i=0;i<studentCount;i++){
-            new SchoolStudent(semaphore,"student "+i).start();
+    private static Semaphore semaphore = new Semaphore(3);
+
+    public void infoSemaphoreTest() {
+        int studentCount = 10;
+        for (int i = 0; i < studentCount; i++) {
+            new SchoolStudent(semaphore, "student " + i).start();
         }
     }
 
     /**
      * 这个就是，我们的基本处理方式，和基本的同步方式，整体来是不错的哈
      * A B C D
-     *
+     * <p>
      * case 1 A B C  都把事情做完后，D 才是开始工作(一个线程，等待多个线程 执行完成后才开始工作)
-     *
+     * <p>
      * case 1 A B C D 四个线程都准备好后才同时开始执行，就像四名运动员同时准备好后，同时执行.
-     *
+     * <p>
      * Semaphore
-     *
+     * <p>
      * 同时允许执行的线程数量
-     *
-     *
+     * <p>
+     * <p>
      * 于此同时，还设有我们的 Phaser 和  Exchanger
-     *
+     * <p>
+     * 支持动态调整注册任务数量；
      */
-    public void summaryInfo(){
+    public void summaryInfo() {
 
+
+    }
+
+    /**
+     * information.
+     * 目前这个例子，也是：
+     * 相当于，等待所有的线程都准备完毕后，所有的线程才是一起执行的；
+     */
+    public void phaserTest() {
+        int count = 5;
+        final Phaser phaser = new Phaser(count);
+        for (int i = 0; i < count; i++) {
+            try {
+                System.out.println("starting thread , id :" + i);
+                Thread.sleep(1000L);
+                Thread thread = new Thread(new phaserTaskInfo(i, phaser));
+                thread.start();
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        }
     }
 }

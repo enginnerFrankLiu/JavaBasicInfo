@@ -16,6 +16,7 @@ public class phaserTaskInfo implements  Runnable {
     @Override
     public void run() {
         phaser.arriveAndAwaitAdvance();
-        System.out.println("phase : "+phaser.getPhase() +" id :"+this.id);
+//        System.out.println("phase : "+phaser.getPhase() +" id :"+this.id);
+        System.out.println(" id :"+this.id);
     }
 }

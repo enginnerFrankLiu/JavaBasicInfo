@@ -87,3 +87,7 @@ _
 /src/com/company/threadlearn/phaserTaskInfo.java,2\4\24423f0468bccdb36cb20e1f6cf9b022fb5e73ae
 `
 0src/com/company/threadlearn/threadInterview.java,8\5\859d8be1bead24f9b85d34c272fbc7b8cf075888
+^
+.src/com/company/threadlearn/PhaserRunable.java,9\0\90957613493d453c753009ccd80ef994dc4bb86c
+_
+/src/com/company/threadlearn/PhaserRunable2.java,3\6\36ab4723eef4740a117f3a9f1d7fe451dd850c25

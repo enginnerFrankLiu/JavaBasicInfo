@@ -476,7 +476,10 @@ public class Main {
 //         threadInterview.infoSemaphoreTest();
 //        threadInterview.phaserTest();
 //        threadInterview.phaserTestInfo();
-        threadInterview.phaerTestInfo2();
+//        threadInterview.phaerTestInfo2();
+//         threadInterview.phaserTest();
+//        threadInterview.phaserMD();
+        threadInterview.phaserJJ();
     }
 
     /**

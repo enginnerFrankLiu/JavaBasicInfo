@@ -1,78 +1,78 @@
 
 o
 java:S2095¿"QUse try-with-resources or close this "BufferedInputStream" in a "finally" clause.(Æåå§8àž‚„ä.
-V	java:S106ä"9Replace this use of System.out or System.err by a logger.(úê½¸8­¶±„ä.
-X
-java:S4719‹":Replace charset name argument with StandardCharsets.UTF_16( ¾é…8îû‡…ä.
-¤
-java:S1186˜"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÅÙÕ®ùÿÿÿÿ8ë×¶…ä.
-]	java:S125K"<This block of commented-out lines of code should be removed.(úÆÐÅøÿÿÿÿ8îþÅÿã.
-f
-java:S1128"IRemove this unused import 'org.omg.PortableInterceptor.SYSTEM_EXCEPTION'.(öØÁ8ÜÀ‚…ä.
-q
-java:S2095“"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(Ë÷øÝûÿÿÿÿ8“ÖÎ€ä.
-u
-java:S2095À"RUse try-with-resources or close this "BufferedOutputStream" in a "finally" clause.(ÒÆ×›øÿÿÿÿ8àž‚„ä.
-j
-java:S2095i"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(“ÌØ”8˜·Úÿã.
-@
-java:S11481"#Use a logger to log this exception.(Ç’Çê8¹«ÿã.
-\
-java:S4719‰"9Replace charset name argument with StandardCharsets.UTF_8(´„äºþÿÿÿÿ8Ý„þ„ä.
 Z	java:S106s"9Replace this use of System.out or System.err by a logger.(Ÿ“…”ûÿÿÿÿ8‘ÞÕÿã.
-T	java:S106."9Replace this use of System.out or System.err by a logger.(ƒÚáB8Î™”ÿã.
-k
-java:S2095†"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ÒÕ½Ë8ŠƒÇ€ä.
-u
-java:S2095£"RUse try-with-resources or close this "BufferedOutputStream" in a "finally" clause.(ÒÆ×›øÿÿÿÿ8ý´Ý€ä.
-T	java:S106"9Replace this use of System.out or System.err by a logger.(ƒÚáB8áÐ‘ÿã.
-q
-java:S2095‡"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(Ë÷øÝûÿÿÿÿ8ŠƒÇ€ä.
-X
-java:S1481Ô":Remove this unused "oneByteTargetFilePath" local variable.(éÃŸ½8ŽàÍ„ä.
-[	java:S106Ž"9Replace this use of System.out or System.err by a logger.(ææ©šüÿÿÿÿ8…¢‰…ä.
-V	java:S106ˆ"9Replace this use of System.out or System.err by a logger.(çž­§8ÜÀ‚…ä.
-^	java:S125Û"<This block of commented-out lines of code should be removed.(Ñ¼Œåþÿÿÿÿ8ŽàÍ„ä.
-D
-java:S1659Ù"!Declare "end" on a separate line.(Øýèÿÿÿÿÿ8ì Â„ä.
-d
-java:S1075Ñ"ARefactor your code to get this URI from a customizable parameter.(Å¨îûÿÿÿÿ8íÛš„ä.
-g	java:S1128"FDefine and throw a dedicated exception instead of using a generic one.(·›¤ûþÿÿÿÿ8„¸¶ÿã.
-X	java:S125m"<This block of commented-out lines of code should be removed.(æ¦äÆ8çðÿÿã.
-[	java:S106ð"9Replace this use of System.out or System.err by a logger.(šƒÝÎýÿÿÿÿ8ë„Æ„ä.
-k
-java:S1192;"IDefine a constant instead of duplicating this literal "\\io.log" 4 times.(òº—ãüÿÿÿÿ8‡úÑÿã.
-Z	java:S106,"9Replace this use of System.out or System.err by a logger.(ß¯”Åûÿÿÿÿ8¬–ïþã.
-V	java:S106"9Replace this use of System.out or System.err by a logger.(ú÷‡ä8…¢‰…ä.
-f
-java:S1192"IDefine a constant instead of duplicating this literal "user.dir" 6 times.(âçð–8ëÞµÿã.
-t
-java:S2095\"RUse try-with-resources or close this "BufferedOutputStream" in a "finally" clause.(ÒÆ×›øÿÿÿÿ8Ó©“€ä.
-[	java:S106ê"9Replace this use of System.out or System.err by a logger.(œ›«Áúÿÿÿÿ8ë„Æ„ä.
-h	java:S112ƒ"FDefine and throw a dedicated exception instead of using a generic one.(Þ¤Šáøÿÿÿÿ8—šÿ„ä.
-k
-java:S2095’"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ÒÕ½Ë8“ÖÎ€ä.
-U	java:S106x"9Replace this use of System.out or System.err by a logger.(žù§é8ÙÍîÿã.
-g	java:S112H"FDefine and throw a dedicated exception instead of using a generic one.(¢ï‚ùÿÿÿÿ8€ÊÀÿã.
 V
 java:S4719w"9Replace charset name argument with StandardCharsets.UTF_8(§âàÒ8¤ý‚€ä.
-a
-java:S1128"DRemove this unused import 'java.util.concurrent.ExecutionException'.(¡£ØÍ8ÅöÐÿã.
+d
+java:S1075Ñ"ARefactor your code to get this URI from a customizable parameter.(Å¨îûÿÿÿÿ8íÛš„ä.
+t
+java:S2095\"RUse try-with-resources or close this "BufferedOutputStream" in a "finally" clause.(ÒÆ×›øÿÿÿÿ8Ó©“€ä.
+V	java:S106"9Replace this use of System.out or System.err by a logger.(ú÷‡ä8…¢‰…ä.
+X	java:S125k"<This block of commented-out lines of code should be removed.(²Ïæ8¢ã€€ä.
+\
+java:S4719‰"9Replace charset name argument with StandardCharsets.UTF_8(´„äºþÿÿÿÿ8Ý„þ„ä.
+q
+java:S2095‡"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(Ë÷øÝûÿÿÿÿ8ŠƒÇ€ä.
+g	java:S112H"FDefine and throw a dedicated exception instead of using a generic one.(¢ï‚ùÿÿÿÿ8€ÊÀÿã.
+V	java:S106ä"9Replace this use of System.out or System.err by a logger.(úê½¸8­¶±„ä.
+[	java:S106ê"9Replace this use of System.out or System.err by a logger.(œ›«Áúÿÿÿÿ8ë„Æ„ä.
 o
 java:S2095¢"QUse try-with-resources or close this "BufferedInputStream" in a "finally" clause.(Æåå§8ÿœ×€ä.
-h
-java:S1192"FDefine a constant instead of duplicating this literal "UTF-8" 3 times.(êÆ½‘ùÿÿÿÿ8÷â„…ä.
-[	java:S106"9Replace this use of System.out or System.err by a logger.(åÝö©øÿÿÿÿ8ñÀˆ…ä.
-g	java:S112f"FDefine and throw a dedicated exception instead of using a generic one.(ˆ¶çãýÿÿÿÿ8ÅöÐÿã.
-L
-java:S1481†")Remove this unused "info" local variable.(ÊƒŽÈùÿÿÿÿ8ñÀˆ…ä.
-X	java:S125k"<This block of commented-out lines of code should be removed.(²Ïæ8¢ã€€ä.
-p
-java:S2095L"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.( þ¿–ÿÿÿÿÿ8ªãÁÿã.
-b	java:S112U"FDefine and throw a dedicated exception instead of using a generic one.(ËòÅ›8€•’€ä.
-@
-java:S1148 "#Use a logger to log this exception.(Ç’Çê8ýÑªÿã.
+V	java:S106ˆ"9Replace this use of System.out or System.err by a logger.(çž­§8ÜÀ‚…ä.
+k
+java:S1192;"IDefine a constant instead of duplicating this literal "\\io.log" 4 times.(òº—ãüÿÿÿÿ8‡úÑÿã.
+k
+java:S2095†"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ÒÕ½Ë8ŠƒÇ€ä.
+q
+java:S2095“"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(Ë÷øÝûÿÿÿÿ8“ÖÎ€ä.
+Z	java:S106,"9Replace this use of System.out or System.err by a logger.(ß¯”Åûÿÿÿÿ8¬–ïþã.
+u
+java:S2095£"RUse try-with-resources or close this "BufferedOutputStream" in a "finally" clause.(ÒÆ×›øÿÿÿÿ8ý´Ý€ä.
 [
 java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(êÆ½‘ùÿÿÿÿ8áÐ‘ÿã.
+k
+java:S2095’"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ÒÕ½Ë8“ÖÎ€ä.
+X
+java:S4719‹":Replace charset name argument with StandardCharsets.UTF_16( ¾é…8îû‡…ä.
 p
 java:S2095<"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(ÑàÑúÿÿÿÿ8íƒµÿã.
+g	java:S1128"FDefine and throw a dedicated exception instead of using a generic one.(·›¤ûþÿÿÿÿ8„¸¶ÿã.
+¤
+java:S1186˜"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÅÙÕ®ùÿÿÿÿ8ë×¶…ä.
+[	java:S106Ž"9Replace this use of System.out or System.err by a logger.(ææ©šüÿÿÿÿ8…¢‰…ä.
+j
+java:S2095i"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(“ÌØ”8˜·Úÿã.
+p
+java:S2095L"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.( þ¿–ÿÿÿÿÿ8ªãÁÿã.
+@
+java:S11481"#Use a logger to log this exception.(Ç’Çê8¹«ÿã.
+g	java:S112f"FDefine and throw a dedicated exception instead of using a generic one.(ˆ¶çãýÿÿÿÿ8ÅöÐÿã.
+h
+java:S1192"FDefine a constant instead of duplicating this literal "UTF-8" 3 times.(êÆ½‘ùÿÿÿÿ8÷â„…ä.
+b	java:S112U"FDefine and throw a dedicated exception instead of using a generic one.(ËòÅ›8€•’€ä.
+X
+java:S1481Ô":Remove this unused "oneByteTargetFilePath" local variable.(éÃŸ½8ŽàÍ„ä.
+T	java:S106."9Replace this use of System.out or System.err by a logger.(ƒÚáB8Î™”ÿã.
+]	java:S125K"<This block of commented-out lines of code should be removed.(úÆÐÅøÿÿÿÿ8îþÅÿã.
+U	java:S106x"9Replace this use of System.out or System.err by a logger.(žù§é8ÙÍîÿã.
+@
+java:S1148 "#Use a logger to log this exception.(Ç’Çê8ýÑªÿã.
+h	java:S112ƒ"FDefine and throw a dedicated exception instead of using a generic one.(Þ¤Šáøÿÿÿÿ8—šÿ„ä.
+f
+java:S1192"IDefine a constant instead of duplicating this literal "user.dir" 6 times.(âçð–8ëÞµÿã.
+T	java:S106"9Replace this use of System.out or System.err by a logger.(ƒÚáB8áÐ‘ÿã.
+D
+java:S1659Ù"!Declare "end" on a separate line.(Øýèÿÿÿÿÿ8ì Â„ä.
+u
+java:S2095À"RUse try-with-resources or close this "BufferedOutputStream" in a "finally" clause.(ÒÆ×›øÿÿÿÿ8àž‚„ä.
+a
+java:S1128"DRemove this unused import 'java.util.concurrent.ExecutionException'.(¡£ØÍ8ÅöÐÿã.
+[	java:S106ð"9Replace this use of System.out or System.err by a logger.(šƒÝÎýÿÿÿÿ8ë„Æ„ä.
+[	java:S106"9Replace this use of System.out or System.err by a logger.(åÝö©øÿÿÿÿ8ñÀˆ…ä.
+^	java:S125Û"<This block of commented-out lines of code should be removed.(Ñ¼Œåþÿÿÿÿ8ŽàÍ„ä.
+L
+java:S1481†")Remove this unused "info" local variable.(ÊƒŽÈùÿÿÿÿ8ñÀˆ…ä.
+f
+java:S1128"IRemove this unused import 'org.omg.PortableInterceptor.SYSTEM_EXCEPTION'.(öØÁ8ÜÀ‚…ä.
+X	java:S125m"<This block of commented-out lines of code should be removed.(æ¦äÆ8çðÿÿã.

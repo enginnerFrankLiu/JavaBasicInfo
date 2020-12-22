@@ -230,11 +230,12 @@ public class threadInterview {
      */
     public void phaserTest() {
         int count = 5;
-        final Phaser phaser = new Phaser(count);
+        final Phaser phaser = new Phaser();
         for (int i = 0; i < count; i++) {
             try {
                 System.out.println("starting thread , id :" + i);
-                Thread.sleep(1000L);
+                Thread.sleep(i*1000L);
+                phaser.register();
                 Thread thread = new Thread(new phaserTaskInfo(i, phaser));
                 thread.start();
             } catch (Exception exception) {
@@ -288,20 +289,38 @@ public class threadInterview {
         System.out.println("press enter to continue...");
 
 
+    }
+
+    /**
+     * 你可以 先不指定我们的数量；
+     * 但是要调用 register 方法进行注册；
+     */
+    public void phaserMD() {
+        Phaser phaser = new Phaser();
         for (int i = 0; i < 5; i++) {
+            phaser.register();
+            new Thread(() -> {
+                System.out.println(phaser.getPhase());
+                phaser.arriveAndAwaitAdvance();
+                System.out.println(phaser.getPhase());
 
-            phaser.register();  //再次注册
+            }).start();
         }
+    }
 
-        try {
-
-            reader.readLine();
-
-        }catch (Exception exception){
-
-            exception.printStackTrace();
+    /**
+     * 你们也可以先call 在构造函数中，先进行各种注册；
+     * 整体效果都是差不多的哈
+     */
+    public void phaserJJ(){
+        Phaser phaser=new Phaser(5);
+        System.out.println("JJ");
+        for (int i=0;i<5;i++){
+            new Thread(()-> {
+                System.out.println(phaser.getPhase());
+                phaser.arriveAndAwaitAdvance();
+                System.out.println(phaser.getPhase());
+            }).start();
         }
-        phaser.arriveAndDeregister();
-
     }
 }

@@ -479,7 +479,8 @@ public class Main {
 //        threadInterview.phaerTestInfo2();
 //         threadInterview.phaserTest();
 //        threadInterview.phaserMD();
-        threadInterview.phaserMD();
+//        threadInterview.phaserMD();
+        threadInterview.OG();
     }
 
     /**

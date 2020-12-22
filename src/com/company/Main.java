@@ -480,7 +480,7 @@ public class Main {
 //         threadInterview.phaserTest();
 //        threadInterview.phaserMD();
 //        threadInterview.phaserMD();
-        threadInterview.OG();
+        threadInterview.phaserMD();
     }
 
     /**

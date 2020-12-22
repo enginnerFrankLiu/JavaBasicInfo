@@ -294,43 +294,19 @@ public class threadInterview {
     /**
      * 你可以 先不指定我们的数量；
      * 但是要调用 register 方法进行注册；
+     *
+     * 如果没有达到，指定的屏障数量，将一直等待；
+     *
      */
     public void phaserMD() {
-        Phaser phaser = new Phaser();
+        Phaser phaser = new Phaser(50);
         for (int i = 0; i < 5; i++) {
-            phaser.register();
             new Thread(() -> {
-
                 //phaser 0
                 System.out.println(phaser.getPhase());
                 phaser.arriveAndAwaitAdvance();
                 //phaser 1
                 System.out.println(phaser.getPhase());
-
-                long threadId = Thread.currentThread().getId();
-
-                try {
-                    System.out.println("thread id:" + threadId + " sleep .");
-                    Thread.sleep(threadId * 1000L);
-
-                } catch (Exception exception) {
-                    exception.printStackTrace();
-                }
-
-                //phaser 1
-                System.out.println(phaser.getPhase());
-                //等待所有的线程，到达屏障，然后有开始重新执行；
-
-                //可以让其中某个线程不用等待，直接闯过；
-
-                if (threadId == 12) {
-                    phaser.arriveAndDeregister();//过滤掉本次等待，开始执行其他的方法.
-                }
-
-                phaser.arriveAndAwaitAdvance();
-                //phaser 2
-                System.out.println("thread id +" + Thread.currentThread().getId() + "    " + phaser.getPhase());
-
             }).start();
         }
     }

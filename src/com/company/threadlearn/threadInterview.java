@@ -300,9 +300,36 @@ public class threadInterview {
         for (int i = 0; i < 5; i++) {
             phaser.register();
             new Thread(() -> {
+
+                //phaser 0
                 System.out.println(phaser.getPhase());
                 phaser.arriveAndAwaitAdvance();
+                //phaser 1
                 System.out.println(phaser.getPhase());
+
+                long threadId=Thread.currentThread().getId();
+
+                try{
+                    System.out.println("thread id:"+threadId+" sleep .");
+                    Thread.sleep(threadId*1000L);
+
+                }catch (Exception exception){
+                    exception.printStackTrace();
+                }
+
+                //phaser 1
+                System.out.println(phaser.getPhase());
+                //等待所有的线程，到达屏障，然后有开始重新执行；
+
+                //可以让其中某个线程不用等待，直接闯过；
+
+                if(threadId==12){
+                    phaser.arriveAndDeregister();//过滤掉本次等待，开始执行其他的方法.
+                }
+
+                phaser.arriveAndAwaitAdvance();
+                //phaser 2
+                System.out.println("thread id +"+ Thread.currentThread().getId()+ "    " + phaser.getPhase());
 
             }).start();
         }
@@ -311,16 +338,37 @@ public class threadInterview {
     /**
      * 你们也可以先call 在构造函数中，先进行各种注册；
      * 整体效果都是差不多的哈
+     *
+     * 理解可能是错的；
      */
     public void phaserJJ(){
         Phaser phaser=new Phaser(5);
-        System.out.println("JJ");
         for (int i=0;i<5;i++){
             new Thread(()-> {
-                System.out.println(phaser.getPhase());
+                try {
+                    System.out.println("Thread id: "+Thread.currentThread().getId()+ "  "+ phaser.getPhase());
+                    long threadId=Thread.currentThread().getId();
+                    if(threadId%2==0){
+                        System.out.println("thread id :"+Thread.currentThread().getId() +"arriveAndDeregister");
+                        phaser.arriveAndDeregister(); //遇到屏障的时候，直接通过，不在等在；s
+                    }else{
+                        Thread.sleep(threadId*5000L);
+                    }
+
+                    phaser.arriveAndAwaitAdvance();
+
+                }catch (Exception exception){
+                        exception.printStackTrace();
+                }
                 phaser.arriveAndAwaitAdvance();
-                System.out.println(phaser.getPhase());
+                System.out.println("Thread id: "+Thread.currentThread().getId()+ "  "+ phaser.getPhase());
+
             }).start();
         }
+    }
+
+    public void OG(){
+
+        
     }
 }

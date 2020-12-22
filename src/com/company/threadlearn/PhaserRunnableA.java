@@ -36,6 +36,7 @@ public class PhaserRunnableA implements Runnable{
         if(threadId%2==0){
             System.out.println(" 完成二阶段的任务后，不在参与集体任务，将退出...."+Thread.currentThread().getName());
             phaser.arriveAndDeregister();
+            return; //尼玛，原来这里还需要return啊，我草；
         }else{
             // phaser 2
             phaser.arriveAndAwaitAdvance();

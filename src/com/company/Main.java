@@ -466,7 +466,7 @@ public class Main {
      * 线程同步类的帮助，在做这件事情哈；
      * 整体来说效果是比较好的哈；
      */
-    public static void threadGo() {
+    public static void threadGo() throws Exception{
         threadInterview threadInterview = new threadInterview();
         // threadInterview.info();
 //        threadInterview.interactionPrint();
@@ -480,7 +480,8 @@ public class Main {
 //         threadInterview.phaserTest();
 //        threadInterview.phaserMD();
 //        threadInterview.phaserMD();
-        threadInterview.phaserMD();
+//        threadInterview.phaserMD();
+        threadInterview.msd();
     }
 
     /**

@@ -359,4 +359,23 @@ public class threadInterview {
             }
         }
     }
+
+    public void msd()  throws Exception{
+        Phaser phaser = new Phaser(1);
+        for (int i = 0; i < 3; i++) {
+            phaser.register();
+            Thread thread = new Thread(() -> {
+                System.out.println(phaser.getPhase());
+                phaser.arriveAndAwaitAdvance();
+                System.out.println(phaser.getPhase());
+            });
+            thread.start();
+        }
+        System.out.println("main line sleep some time.");
+        Thread.sleep(5000L);
+        phaser.arriveAndDeregister();  //减少当前的屏障数量；
+        System.out.println("main thread release info.");
+
+    }
+
 }

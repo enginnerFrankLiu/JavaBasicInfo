@@ -37,14 +37,12 @@ public class PhaserRunnableA implements Runnable{
             System.out.println(" 完成二阶段的任务后，不在参与集体任务，将退出...."+Thread.currentThread().getName());
             phaser.arriveAndDeregister();
             return; //尼玛，原来这里还需要return啊，我草；
+            //这样就大概把我们的屏障原理搞清楚了，我只能说还可以的的
         }else{
             // phaser 2
             phaser.arriveAndAwaitAdvance();
             System.out.println("完成第二阶段任务...."+Thread.currentThread().getName());
         }
-
-
-
 
         //phaser 3
         long duration2=threadId*1700L;

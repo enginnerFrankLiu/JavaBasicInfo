@@ -481,7 +481,9 @@ public class Main {
 //        threadInterview.phaserMD();
 //        threadInterview.phaserMD();
 //        threadInterview.phaserMD();
-        threadInterview.msd();
+//        threadInterview.msd();
+//        threadInterview.mds();
+        threadInterview.oneWaitMany();
     }
 
     /**

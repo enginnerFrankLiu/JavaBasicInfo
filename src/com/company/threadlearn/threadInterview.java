@@ -294,9 +294,8 @@ public class threadInterview {
     /**
      * 你可以 先不指定我们的数量；
      * 但是要调用 register 方法进行注册；
-     *
+     * <p>
      * 如果没有达到，指定的屏障数量，将一直等待；
-     *
      */
     public void phaserMD() {
         Phaser phaser = new Phaser(50);
@@ -360,7 +359,7 @@ public class threadInterview {
         }
     }
 
-    public void msd()  throws Exception{
+    public void msd() throws Exception {
         Phaser phaser = new Phaser(1);
         for (int i = 0; i < 3; i++) {
             phaser.register();
@@ -375,6 +374,63 @@ public class threadInterview {
         Thread.sleep(5000L);
         phaser.arriveAndDeregister();  //减少当前的屏障数量；
         System.out.println("main thread release info.");
+    }
+
+    /**
+     * 这种，有点类似于闭包传递参数的感觉
+     * <p>
+     * parties 表示每次拦截的线程数量，该值在构造时 进行赋值.
+     * count: 内部计数器，它的初始值为parites相同的，以后每一次await 都会调用减去1；
+     * 直到最后减为0;
+     * <p>
+     * 也可以理解为：最后一个线程到达后需要执行的动作；
+     */
+    public void mds() {
+
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(7, () -> {
+            System.out.println("所以的屏障都通过之后，执行的一段代码");
+        });
+        for (int i = 1; i <= 7; i++) {
+            int fi = i;
+            new Thread(() -> {
+                System.out.println("thread id " + Thread.currentThread().getName() + " 收集到第【" + fi + "】颗龙珠.");
+                try {
+                    Thread.sleep(5000l);
+                    cyclicBarrier.await();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }, String.valueOf(i)).start();
+            ; //这个不是传递进去的参数，而是我们的thread 的名称罢了，整体效果还算是ok的
+        }
+
+    }
+
+    /**
+     * 一个线程等待 其他多个线程执行完毕之后才开始
+     */
+    public void oneWaitMany() {
+        CountDownLatch countDownLatch = new CountDownLatch(3);
+        for (int i = 0; i < 3; i++) {
+            int j = i;
+            new Thread(() -> {
+                try {
+                    long waitTime = j * 5000L;
+                    System.out.println("thread id " + Thread.currentThread().getId() + " sleep " + waitTime + " second.");
+                    Thread.sleep(waitTime);
+                    countDownLatch.countDown();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }).start();
+        }
+        try {
+            System.out.println("main thread wait other sub thread....");
+            countDownLatch.await();
+            System.out.println("main thread run again....");
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
 
     }
 

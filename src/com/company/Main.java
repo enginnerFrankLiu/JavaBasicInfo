@@ -487,18 +487,34 @@ public class Main {
         threadInterview.mds();
     }
 
+    public static void lockTest(){
+
+        threadInterview interview=new threadInterview();
+
+        Runnable runnable=()->{
+            System.out.println(Thread.currentThread().getName() + " 启动 ");
+            interview.fuckLife();
+        };
+
+        Thread [] threads=new Thread[5];
+
+        for (int i=0;i<5;i++){
+            threads[i]=new Thread(runnable);
+        }
+        for (int i=0;i<5;i++){
+            threads[i].start();
+        }
+    }
+
     /**
      * information for test function.
-     *
+     * 这个就是所谓的公平锁机制，整体来说还算是比较ok的信息哈；
      * @param args
      */
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");
-
-        threadGo();
-
+        lockTest();
         Thread.currentThread().join();
-
         System.out.println("application end.");
 
     }

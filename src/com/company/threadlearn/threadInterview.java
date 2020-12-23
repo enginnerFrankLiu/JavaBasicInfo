@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Random;
 import java.util.concurrent.*;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class threadInterview {
 
@@ -470,5 +471,26 @@ public class threadInterview {
     }
     //phaser 的基本总结；提供了更为灵活的应用，总体中应用还是挺好的效果；
     //支持在多个点之间同步，并且支持动态的注册和取消任务数量(到达屏障的线程数量的阈值 都是可以进行动态调整的.)
+
+    /**
+     * information to do something.
+     *
+     *  set value as true;
+     *  设置为公平锁.
+     */
+    private ReentrantLock lock=new ReentrantLock(true);
+    public void fuckLife(){
+
+        try{
+            lock.lock();
+            System.out.println(Thread.currentThread().getName()+" 获得了锁.");
+        }catch (Exception exception){
+            exception.printStackTrace();
+        }finally {
+            lock.unlock();
+        }
+    }
+
+
 
 }

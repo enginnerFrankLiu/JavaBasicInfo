@@ -257,6 +257,7 @@ public class threadInterview {
     }
 
     /**
+     *这些目前只是一个些很初步的了解，后面我们深入了解后，我们再进行各种源码级别的深入解刨吧.
      *
      */
     public void phaerTestInfo2() {
@@ -386,28 +387,60 @@ public class threadInterview {
      * 也可以理解为：最后一个线程到达后需要执行的动作；
      */
     public void mds() {
-
         CyclicBarrier cyclicBarrier = new CyclicBarrier(7, () -> {
-            System.out.println("所以的屏障都通过之后，执行的一段代码");
+            System.out.println("每次通过屏障后，都会执行一次的callback函数.");
         });
         for (int i = 1; i <= 7; i++) {
             int fi = i;
             new Thread(() -> {
-                System.out.println("thread id " + Thread.currentThread().getName() + " 收集到第【" + fi + "】颗龙珠.");
                 try {
                     Thread.sleep(5000l);
                     cyclicBarrier.await();
+                    System.out.println("干完第一次");
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+                //他后Ta 有重复执行的能力?
+                try {
+                    Thread.sleep(5000l);
+                    cyclicBarrier.await();
+                    System.out.println("干完第二次");
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+
+                //他后Ta 有重复执行的能力? 它可以循环使用的一种方式.
+
+                try {
+                    Thread.sleep(5000l);
+                    cyclicBarrier.await();
+                    System.out.println("干完第三次");
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }
             }, String.valueOf(i)).start();
-            ; //这个不是传递进去的参数，而是我们的thread 的名称罢了，整体效果还算是ok的
+            //这个不是传递进去的参数，而是我们的thread 的名称罢了，整体效果还算是ok的
         }
-
     }
 
     /**
      * 一个线程等待 其他多个线程执行完毕之后才开始
+     *
+     * 大概有以下的四种方式来实现线程的同步控制，和线程间的交互控制，整体来说，还算比较OK的.
+     *
+     * Semaphore
+     *
+     * Semaphore是一种在多线程环境下使用的设施，该设施负责协调各个线程，以保证它们能够正确、合理的使用公共资源的设施
+     *也是操作系统中用于控制进程同步互斥的量 管理资源能够同时被多少个线程共同访问，但是不能保证线程之间的安全；
+     * 典型的的例子就是：限流操作.
+     *
+     * CountDownLatch
+     *
+     * CyclicBarrier
+     *
+     * Phaser
+     *
+     *
      */
     public void oneWaitMany() {
         CountDownLatch countDownLatch = new CountDownLatch(3);
@@ -418,7 +451,10 @@ public class threadInterview {
                     long waitTime = j * 5000L;
                     System.out.println("thread id " + Thread.currentThread().getId() + " sleep " + waitTime + " second.");
                     Thread.sleep(waitTime);
-                    countDownLatch.countDown();
+                    countDownLatch.countDown();  //每个线程调用一次，就会进行一次减一操作，直到减到为0 然后 唤醒白block的线程;
+                    //后面的代码也会被执行，但是这里一般不执行代码；
+                    //当任务执行完之后，我们call countDown.
+                    System.out.println(" After call countDown.");
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }
@@ -431,7 +467,8 @@ public class threadInterview {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-
     }
+    //phaser 的基本总结；提供了更为灵活的应用，总体中应用还是挺好的效果；
+    //支持在多个点之间同步，并且支持动态的注册和取消任务数量(到达屏障的线程数量的阈值 都是可以进行动态调整的.)
 
 }

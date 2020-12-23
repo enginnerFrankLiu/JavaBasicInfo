@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.IO.FileExample;
+import com.company.lock.ReenternLock;
 import com.company.stream.StreamInfo;
 import com.company.threadlearn.ExampleInterruptThread;
 import com.company.threadlearn.threadInterview;
@@ -506,6 +507,11 @@ public class Main {
         }
     }
 
+    public static void testReEnterLock(){
+
+        ReenternLock.testReEnterLock();
+    }
+
     /**
      * information for test function.
      * 这个就是所谓的公平锁机制，整体来说还算是比较ok的信息哈；
@@ -513,7 +519,9 @@ public class Main {
      */
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");
-        lockTest();
+
+        testReEnterLock();
+
         Thread.currentThread().join();
         System.out.println("application end.");
 

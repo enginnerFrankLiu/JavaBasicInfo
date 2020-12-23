@@ -477,6 +477,9 @@ public class threadInterview {
      *
      *  set value as true;
      *  设置为公平锁.
+     *
+     *  非公平锁的缺点：队列中的某些线程可能一直或者长时间的获取不到锁，；；
+     *
      */
     private ReentrantLock lock=new ReentrantLock(true);
     public void fuckLife(){

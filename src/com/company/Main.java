@@ -519,7 +519,8 @@ public class Main {
     public static void lockInfoTest() throws Exception{
         LockInfo lock=new LockInfo();
 //        lock.testInteruptely();
-        lock.mdc();
+//        lock.mdc();
+        lock.threadDataExchange();
     }
 
     /**

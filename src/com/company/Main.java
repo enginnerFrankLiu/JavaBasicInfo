@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.IO.FileExample;
+import com.company.lock.LockInfo;
 import com.company.lock.ReenternLock;
 import com.company.stream.StreamInfo;
 import com.company.threadlearn.ExampleInterruptThread;
@@ -513,15 +514,22 @@ public class Main {
     }
 
     /**
+     * lock information to do something.
+     */
+    public static void lockInfoTest() throws Exception{
+        LockInfo lock=new LockInfo();
+//        lock.testInteruptely();
+        lock.mdc();
+    }
+
+    /**
      * information for test function.
      * 这个就是所谓的公平锁机制，整体来说还算是比较ok的信息哈；
      * @param args
      */
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");
-
-        testReEnterLock();
-
+        lockInfoTest();
         Thread.currentThread().join();
         System.out.println("application end.");
 

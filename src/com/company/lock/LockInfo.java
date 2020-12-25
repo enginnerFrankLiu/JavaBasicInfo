@@ -134,6 +134,12 @@ public class LockInfo {
      * java web develop tool/and libary info.
      *
      * 这就这样，简单的拿到了，两个线程之间的数据交互，整体情况还是很不错的；效果 还是很好的.
+     *
+     * 这个其实，相当于把各个知识点都跑一边，并没有真正的去学习到内部，底层的结构。我表示后续还要进行实践的复习
+     * 再准备新的一轮面试的时候，我表示，还好，还好...
+     * 现在的目标，就是狂扫知识点，整体效果，还算ok
+     *
+     *
      */
     public void mdc() throws Exception {
 

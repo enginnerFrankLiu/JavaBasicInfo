@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.IO.FileExample;
+import com.company.lock.Demo;
 import com.company.lock.LockInfo;
 import com.company.lock.ReenternLock;
 import com.company.stream.StreamInfo;
@@ -486,7 +487,9 @@ public class Main {
 //        threadInterview.msd();
 //        threadInterview.mds();
 //        threadInterview.oneWaitMany();
-        threadInterview.mds();
+//        threadInterview.mds();
+//        //        lockInfoTest();
+//        yieldThreadDemo();
     }
 
     public static void lockTest(){
@@ -499,7 +502,6 @@ public class Main {
         };
 
         Thread [] threads=new Thread[5];
-
         for (int i=0;i<5;i++){
             threads[i]=new Thread(runnable);
         }
@@ -515,12 +517,33 @@ public class Main {
 
     /**
      * lock information to do something.
+     * isInterrupted() 方法返回终止标志true或false
      */
     public static void lockInfoTest() throws Exception{
         LockInfo lock=new LockInfo();
 //        lock.testInteruptely();
 //        lock.mdc();
         lock.threadDataExchange();
+    }
+
+
+    public static  void yieldThreadDemo(){
+
+        new Demo("Thread A");
+        new Demo("Thread B");
+        new Demo("Thread C");
+        new Demo("Thread D");
+        new Demo("Thread E");
+
+
+
+    }
+
+    public static void MainInfo() throws Exception{
+
+        threadInterview threadInterview=new threadInterview();
+//        threadInterview.information();
+        threadInterview.interruptedInf();
     }
 
     /**
@@ -530,7 +553,9 @@ public class Main {
      */
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");
-        lockInfoTest();
+
+        MainInfo();
+
         Thread.currentThread().join();
         System.out.println("application end.");
 

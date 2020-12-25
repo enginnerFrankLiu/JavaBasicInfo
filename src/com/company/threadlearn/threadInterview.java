@@ -1,7 +1,4 @@
 package com.company.threadlearn;
-
-import jdk.internal.org.objectweb.asm.TypeReference;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Random;
@@ -494,6 +491,51 @@ public class threadInterview {
         }
     }
 
+    /**
+     * 1.如果线程处于sleep 和 wait 状态 -> call interrupt()-> 会抛出 异常（InterruptedException）
+     *
+     * 2.如果线程未处于睡眠 或者 等待的状态 call interrupt 将正常点行为. 而仅仅是将终端标识设置为 true;
+     *
+     */
+    public void information() throws Exception{
+
+        Thread thread=new Thread(()->{
+           try{
+               System.out.println("sleep。。");
+               Thread.sleep(60000L); // sleep只是个状态。。。睡醒钱被打断了
+               System.out.println("task"); //这里的代码是不会被执行的
+           }catch (InterruptedException exception){
+               System.out.println("interrupted exception.(interrupt exception).");
+           }
+           //这里的代码是可以执行的，整体感觉还不错
+           System.out.println("打只是打断线程的状态(sleep || wait ) 方法. 只是打断状态，依然是可以继续run 的哈..");
+
+        });
+
+        thread.start();
+        Thread.sleep(5000L);
+        thread.interrupt();
+
+    }
+
+    public void interruptedInf(){
+
+        System.out.println("_____________________");
+        Thread thread=new Thread(()->{
+            for(int i=0;i<5;i++){
+                System.out.println(i);
+
+                //这个是静态方法，卧槽；
+                System.out.println(Thread.interrupted());
+            }
+        });
+
+        System.out.println(thread.isInterrupted());
+        thread.start();
+        thread.interrupt();
+        System.out.println(thread.isInterrupted());
+
+    }
 
 
 }

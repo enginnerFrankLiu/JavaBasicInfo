@@ -537,5 +537,36 @@ public class threadInterview {
 
     }
 
+    /**
+     * java 中的守护者线程；
+     * java 中的守护线 是一个服务提供者，线程；向用户线程提供服务，它的寿命收到用户线程控制；
+     * 它的寿命受到用户线程的控制，即当所有用户线程死亡时，JVM 会自动终止线程.
+     *
+     * 有许多自动运行的java 守护线程 例如: GC ，finlizer.
+     *
+     * 守护线程为后台支持任务的用户线程提供服务
+     *
+     * 1.为用户线程提供各种服务
+     * 2.守护线程的寿命取决于用户线程
+     * 3.守护者线程时候低优先级的线程.
+     *
+     * 了解其中的基本概念，后面我们进行 进一步的各种学习；卧槽
+     *
+     */
+    public void mmd(){
+
+        //固定数量的线程池.
+        ExecutorService executorService=Executors.newFixedThreadPool(5);
+
+        for(int i=0;i<10;i++){
+            Runnable runnable=new WorkerThread("" +i);
+            executorService.execute(runnable);
+        }
+        executorService.shutdown();
+        while (!executorService.isTerminated()){
+
+        }
+    }
+
 
 }

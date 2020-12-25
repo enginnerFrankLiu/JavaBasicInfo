@@ -543,7 +543,8 @@ public class Main {
 
         threadInterview threadInterview=new threadInterview();
 //        threadInterview.information();
-        threadInterview.interruptedInf();
+//        threadInterview.interruptedInf();
+        threadInterview.mmd();
     }
 
     /**

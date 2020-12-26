@@ -579,31 +579,75 @@ public class threadInterview {
     public void saturdayLearning() throws Exception{
         ThreadGroupRunable threadGroupRunable=new ThreadGroupRunable();
         ThreadGroup group=new ThreadGroup(" thread group ");
-
         //一组线程的使用
         Thread a=new Thread(group,threadGroupRunable," A ");
         Thread b=new Thread(group,threadGroupRunable," B ");
         Thread c=new Thread(group,threadGroupRunable," C ");
         Thread d=new Thread(group,threadGroupRunable," D ");
-
         a.start();
         b.start();
         c.start();
         d.start();
         //线程组的一些基本操作
         Thread.sleep(1000L);
-
         group.interrupt();
-
         Thread.sleep(1000L);
-
         a.stop();
-
         //stop 之后好，后面的线程就没有再继续执行了
 //        group.stop();
+    }
 
+    /**
+     * information.
+     *
+     * 1.suspend 不会释放掉hold的资源
+     * 2.resume 调用的时机也是一个问题，如果resume call 在 suspend 之前，线程将永远的block 住
+     *
+     * 那，我们用什么代替了
+     * flag 标识 或者 线程同步工具类；
+     *
+     */
+    public void testSyncThis(){
+
+        Book book=new Book();
+        Thread a=new Thread(book::WriteHeader ," A ");
+        Thread b=new Thread(book::WriteBody ," B ");
+
+        a.start();
+        b.start();
 
     }
 
+    /**
+     *
+     * 不是去终止线程本事，
+     * 而是去终止线程在执行的任务！！！！！！
+     *
+     */
+    public void stopThreadTask(){
+        Thread thread = new Thread(() -> {
+            try {
+                for (int i = 0; i < 10000; i++) {
+                    if (!Thread.interrupted()) {
+                        System.out.println(" print task...");
+                    } else {
+                        System.out.println("线程任务被终止");
+                    }
+                }
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            } finally {
+                System.out.println("释放掉资源...文件，db，网咯...");
+            }
+        });
+        thread.start();
+        try {
+            Thread.sleep(1000L);
+            thread.interrupt();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+
+    }
 
 }

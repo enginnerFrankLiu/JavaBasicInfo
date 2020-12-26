@@ -526,7 +526,6 @@ public class Main {
         lock.threadDataExchange();
     }
 
-
     public static  void yieldThreadDemo(){
 
         new Demo("Thread A");
@@ -535,25 +534,24 @@ public class Main {
         new Demo("Thread D");
         new Demo("Thread E");
 
-
-
     }
 
     public static void MainInfo() throws Exception{
-
         threadInterview threadInterview=new threadInterview();
+
 ////        threadInterview.information();
 ////        threadInterview.interruptedInf();
 //        threadInterview.mmd();
+//        threadInterview.saturdayLearning();
+//        threadInterview.testSyncThis();
 
-        threadInterview.saturdayLearning();
-
-
+        threadInterview.stopThreadTask();
     }
 
     /**
      * information for test function.
      * 这个就是所谓的公平锁机制，整体来说还算是比较ok的信息哈；
+     *
      * @param args
      */
     public static void main(String[] args) throws Exception {

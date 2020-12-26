@@ -542,9 +542,13 @@ public class Main {
     public static void MainInfo() throws Exception{
 
         threadInterview threadInterview=new threadInterview();
-//        threadInterview.information();
-//        threadInterview.interruptedInf();
-        threadInterview.mmd();
+////        threadInterview.information();
+////        threadInterview.interruptedInf();
+//        threadInterview.mmd();
+
+        threadInterview.saturdayLearning();
+
+
     }
 
     /**
@@ -554,9 +558,7 @@ public class Main {
      */
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");
-
         MainInfo();
-
         Thread.currentThread().join();
         System.out.println("application end.");
 

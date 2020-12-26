@@ -554,10 +554,8 @@ public class threadInterview {
      *
      */
     public void mmd(){
-
         //固定数量的线程池.
         ExecutorService executorService=Executors.newFixedThreadPool(5);
-
         for(int i=0;i<10;i++){
             Runnable runnable=new WorkerThread("" +i);
             executorService.execute(runnable);
@@ -566,6 +564,45 @@ public class threadInterview {
         while (!executorService.isTerminated()){
 
         }
+    }
+    /**
+     *
+     * saturday learn java programming to make life fucking better
+     *
+     * 可以退线程组中内的一些线程做一些比较同一的各种操作.
+     *
+     * 如： stop suspend resume interrupt destroy 的各种常见操作；
+     *
+     *
+     *
+     */
+    public void saturdayLearning() throws Exception{
+        ThreadGroupRunable threadGroupRunable=new ThreadGroupRunable();
+        ThreadGroup group=new ThreadGroup(" thread group ");
+
+        //一组线程的使用
+        Thread a=new Thread(group,threadGroupRunable," A ");
+        Thread b=new Thread(group,threadGroupRunable," B ");
+        Thread c=new Thread(group,threadGroupRunable," C ");
+        Thread d=new Thread(group,threadGroupRunable," D ");
+
+        a.start();
+        b.start();
+        c.start();
+        d.start();
+        //线程组的一些基本操作
+        Thread.sleep(1000L);
+
+        group.interrupt();
+
+        Thread.sleep(1000L);
+
+        a.stop();
+
+        //stop 之后好，后面的线程就没有再继续执行了
+//        group.stop();
+
+
     }
 
 

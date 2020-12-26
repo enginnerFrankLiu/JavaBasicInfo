@@ -35,6 +35,9 @@ public class Book {
      * 不是去终止线程本事，
      * 而是去终止线程在执行的任务！！！！！！
      *
+     * 立即停止，强行中断，
+     * 对代码逻辑不可控制，暴力中断
+     *
      * try{
      * if(someThread.isInterrupt()){
      *
@@ -52,9 +55,11 @@ public class Book {
      *
      * https://blog.csdn.net/loongshawn/article/details/53034176
      *
+     * 当调用wait 方法的时候，线程会放弃锁对象，进入等待的 此对象的等待锁定池中，之后针对此对象调用notify方法后，本线程
+     * 才会进入对象；
+     *
      */
     public void WriteHeader() {
-
         synchronized (this) {
             try {
                 System.out.println("A start....");
@@ -78,6 +83,12 @@ public class Book {
             }
             System.out.println("B end ...");
         }
+    }
+
+    public void finalize(){
+
+        System.out.println(" garbage collected..");
+
     }
 
 }

@@ -469,7 +469,7 @@ public class Main {
      * 线程同步类的帮助，在做这件事情哈；
      * 整体来说效果是比较好的哈；
      */
-    public static void threadGo() throws Exception{
+    public static void threadGo() throws Exception {
         threadInterview threadInterview = new threadInterview();
         // threadInterview.info();
 //        threadInterview.interactionPrint();
@@ -492,25 +492,25 @@ public class Main {
 //        yieldThreadDemo();
     }
 
-    public static void lockTest(){
+    public static void lockTest() {
 
-        threadInterview interview=new threadInterview();
+        threadInterview interview = new threadInterview();
 
-        Runnable runnable=()->{
+        Runnable runnable = () -> {
             System.out.println(Thread.currentThread().getName() + " 启动 ");
             interview.fuckLife();
         };
 
-        Thread [] threads=new Thread[5];
-        for (int i=0;i<5;i++){
-            threads[i]=new Thread(runnable);
+        Thread[] threads = new Thread[5];
+        for (int i = 0; i < 5; i++) {
+            threads[i] = new Thread(runnable);
         }
-        for (int i=0;i<5;i++){
+        for (int i = 0; i < 5; i++) {
             threads[i].start();
         }
     }
 
-    public static void testReEnterLock(){
+    public static void testReEnterLock() {
 
         ReenternLock.testReEnterLock();
     }
@@ -519,14 +519,14 @@ public class Main {
      * lock information to do something.
      * isInterrupted() 方法返回终止标志true或false
      */
-    public static void lockInfoTest() throws Exception{
-        LockInfo lock=new LockInfo();
+    public static void lockInfoTest() throws Exception {
+        LockInfo lock = new LockInfo();
 //        lock.testInteruptely();
 //        lock.mdc();
         lock.threadDataExchange();
     }
 
-    public static  void yieldThreadDemo(){
+    public static void yieldThreadDemo() {
 
         new Demo("Thread A");
         new Demo("Thread B");
@@ -536,16 +536,20 @@ public class Main {
 
     }
 
-    public static void MainInfo() throws Exception{
-        threadInterview threadInterview=new threadInterview();
-
+    public static void MainInfo() throws Exception {
+        threadInterview threadInterview = new threadInterview();
 ////        threadInterview.information();
 ////        threadInterview.interruptedInf();
 //        threadInterview.mmd();
 //        threadInterview.saturdayLearning();
 //        threadInterview.testSyncThis();
 
-        threadInterview.stopThreadTask();
+//        threadInterview.stopThreadTask();
+//        threadInterview.testCollectGarbage();
+//        threadInterview.threadOrder();
+
+        //一组线程同时开始，的另外一种机制；整体效果还算是比较OK 的哈
+        threadInterview.threadOrderA();
     }
 
     /**

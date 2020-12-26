@@ -265,9 +265,7 @@ public class threadInterview {
         for (int i = 0; i < 5; i++) {
 
             phaser.register();
-
             Thread thread = new Thread(new PhaserRunable2(i, phaser));
-
             thread.start();
         }
 
@@ -623,6 +621,9 @@ public class threadInterview {
      * 不是去终止线程本事，
      * 而是去终止线程在执行的任务！！！！！！
      *
+     * 守护线程 又叫 后台线程，为其他线程提供服务的，
+     * 所有前台线程死亡，后台线程自动死亡。
+     *
      */
     public void stopThreadTask(){
         Thread thread = new Thread(() -> {
@@ -650,4 +651,68 @@ public class threadInterview {
 
     }
 
+    public void testCollectGarbage(){
+        Book book=new Book();
+        Book book1=new Book();
+        book1=null;
+        System.gc();
+        book.WriteBody();
+
+    }
+
+    /**
+     * 1.两个线程，先打印A 再打印 B
+     * 2.屏障机制 countDownLatch/cycileBraria./Phare
+     * 还是有些不是特别靠谱的方法
+     *
+     * 1. thread a call thread.sleep
+     * 2. 设置 thread a 线程的优先级别高
+     * 3. 让thread a 先获取到锁资源，thread B 进入等待状态；
+     *   但是两个线程同时并发，你如何控制锁获取的先后顺序呢？-> 怎么让线程A 先获取到锁呢?
+     *
+     */
+    public void threadOrder() {
+        Thread threadA = new Thread(() -> {
+            System.out.println(" A ");
+        });
+        Thread threadB = new Thread(() -> {
+            try {
+                //阻止当前线程，先 打印A,再打印B
+                threadA.join();
+                System.out.println(" B  ");
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        threadA.start();
+        threadB.start();
+    }
+
+    /**
+     *
+     *
+     *
+     *
+     */
+    public void threadOrderA(){
+
+        Object locker=new Object();
+        LifeRunable lifeRunable=new LifeRunable(locker);
+
+        Thread threadA=new Thread(lifeRunable::runA);
+        Thread threadB=new Thread(lifeRunable::runB);
+        Thread  mainTask =new Thread(lifeRunable::runCNotifyAll);
+
+        threadA.start();
+        threadB.start();
+        try {
+            Thread.sleep(5000L);
+        }catch (Exception exception){
+            exception.printStackTrace();
+        }
+        //其余的子线程，都等待着我们的“主”线程的任务，先干完.
+        mainTask.start();
+
+    }
 }

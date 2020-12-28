@@ -1,6 +1,9 @@
 package com.company.threadlearn;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.*;
 import java.util.concurrent.locks.ReentrantLock;
@@ -255,8 +258,7 @@ public class threadInterview {
     }
 
     /**
-     *这些目前只是一个些很初步的了解，后面我们深入了解后，我们再进行各种源码级别的深入解刨吧.
-     *
+     * 这些目前只是一个些很初步的了解，后面我们深入了解后，我们再进行各种源码级别的深入解刨吧.
      */
     public void phaerTestInfo2() {
 
@@ -421,22 +423,20 @@ public class threadInterview {
 
     /**
      * 一个线程等待 其他多个线程执行完毕之后才开始
-     *
+     * <p>
      * 大概有以下的四种方式来实现线程的同步控制，和线程间的交互控制，整体来说，还算比较OK的.
-     *
+     * <p>
      * Semaphore
-     *
+     * <p>
      * Semaphore是一种在多线程环境下使用的设施，该设施负责协调各个线程，以保证它们能够正确、合理的使用公共资源的设施
-     *也是操作系统中用于控制进程同步互斥的量 管理资源能够同时被多少个线程共同访问，但是不能保证线程之间的安全；
+     * 也是操作系统中用于控制进程同步互斥的量 管理资源能够同时被多少个线程共同访问，但是不能保证线程之间的安全；
      * 典型的的例子就是：限流操作.
-     *
+     * <p>
      * CountDownLatch
-     *
+     * <p>
      * CyclicBarrier
-     *
+     * <p>
      * Phaser
-     *
-     *
      */
     public void oneWaitMany() {
         CountDownLatch countDownLatch = new CountDownLatch(3);
@@ -469,44 +469,43 @@ public class threadInterview {
 
     /**
      * information to do something.
-     *
-     *  set value as true;
-     *  设置为公平锁.
-     *
-     *  非公平锁的缺点：队列中的某些线程可能一直或者长时间的获取不到锁，；；
-     *
+     * <p>
+     * set value as true;
+     * 设置为公平锁.
+     * <p>
+     * 非公平锁的缺点：队列中的某些线程可能一直或者长时间的获取不到锁，；；
      */
-    private ReentrantLock lock=new ReentrantLock(true);
-    public void fuckLife(){
+    private ReentrantLock lock = new ReentrantLock(true);
 
-        try{
+    public void fuckLife() {
+
+        try {
             lock.lock();
-            System.out.println(Thread.currentThread().getName()+" 获得了锁.");
-        }catch (Exception exception){
+            System.out.println(Thread.currentThread().getName() + " 获得了锁.");
+        } catch (Exception exception) {
             exception.printStackTrace();
-        }finally {
+        } finally {
             lock.unlock();
         }
     }
 
     /**
      * 1.如果线程处于sleep 和 wait 状态 -> call interrupt()-> 会抛出 异常（InterruptedException）
-     *
+     * <p>
      * 2.如果线程未处于睡眠 或者 等待的状态 call interrupt 将正常点行为. 而仅仅是将终端标识设置为 true;
-     *
      */
-    public void information() throws Exception{
+    public void information() throws Exception {
 
-        Thread thread=new Thread(()->{
-           try{
-               System.out.println("sleep。。");
-               Thread.sleep(60000L); // sleep只是个状态。。。睡醒钱被打断了
-               System.out.println("task"); //这里的代码是不会被执行的
-           }catch (InterruptedException exception){
-               System.out.println("interrupted exception.(interrupt exception).");
-           }
-           //这里的代码是可以执行的，整体感觉还不错
-           System.out.println("打只是打断线程的状态(sleep || wait ) 方法. 只是打断状态，依然是可以继续run 的哈..");
+        Thread thread = new Thread(() -> {
+            try {
+                System.out.println("sleep。。");
+                Thread.sleep(60000L); // sleep只是个状态。。。睡醒钱被打断了
+                System.out.println("task"); //这里的代码是不会被执行的
+            } catch (InterruptedException exception) {
+                System.out.println("interrupted exception.(interrupt exception).");
+            }
+            //这里的代码是可以执行的，整体感觉还不错
+            System.out.println("打只是打断线程的状态(sleep || wait ) 方法. 只是打断状态，依然是可以继续run 的哈..");
 
         });
 
@@ -516,11 +515,11 @@ public class threadInterview {
 
     }
 
-    public void interruptedInf(){
+    public void interruptedInf() {
 
         System.out.println("_____________________");
-        Thread thread=new Thread(()->{
-            for(int i=0;i<5;i++){
+        Thread thread = new Thread(() -> {
+            for (int i = 0; i < 5; i++) {
                 System.out.println(i);
 
                 //这个是静态方法，卧槽；
@@ -539,49 +538,45 @@ public class threadInterview {
      * java 中的守护者线程；
      * java 中的守护线 是一个服务提供者，线程；向用户线程提供服务，它的寿命收到用户线程控制；
      * 它的寿命受到用户线程的控制，即当所有用户线程死亡时，JVM 会自动终止线程.
-     *
+     * <p>
      * 有许多自动运行的java 守护线程 例如: GC ，finlizer.
-     *
+     * <p>
      * 守护线程为后台支持任务的用户线程提供服务
-     *
+     * <p>
      * 1.为用户线程提供各种服务
      * 2.守护线程的寿命取决于用户线程
      * 3.守护者线程时候低优先级的线程.
-     *
+     * <p>
      * 了解其中的基本概念，后面我们进行 进一步的各种学习；卧槽
-     *
      */
-    public void mmd(){
+    public void mmd() {
         //固定数量的线程池.
-        ExecutorService executorService=Executors.newFixedThreadPool(5);
-        for(int i=0;i<10;i++){
-            Runnable runnable=new WorkerThread("" +i);
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
+        for (int i = 0; i < 10; i++) {
+            Runnable runnable = new WorkerThread("" + i);
             executorService.execute(runnable);
         }
         executorService.shutdown();
-        while (!executorService.isTerminated()){
+        while (!executorService.isTerminated()) {
 
         }
     }
+
     /**
-     *
      * saturday learn java programming to make life fucking better
-     *
+     * <p>
      * 可以退线程组中内的一些线程做一些比较同一的各种操作.
-     *
+     * <p>
      * 如： stop suspend resume interrupt destroy 的各种常见操作；
-     *
-     *
-     *
      */
-    public void saturdayLearning() throws Exception{
-        ThreadGroupRunable threadGroupRunable=new ThreadGroupRunable();
-        ThreadGroup group=new ThreadGroup(" thread group ");
+    public void saturdayLearning() throws Exception {
+        ThreadGroupRunable threadGroupRunable = new ThreadGroupRunable();
+        ThreadGroup group = new ThreadGroup(" thread group ");
         //一组线程的使用
-        Thread a=new Thread(group,threadGroupRunable," A ");
-        Thread b=new Thread(group,threadGroupRunable," B ");
-        Thread c=new Thread(group,threadGroupRunable," C ");
-        Thread d=new Thread(group,threadGroupRunable," D ");
+        Thread a = new Thread(group, threadGroupRunable, " A ");
+        Thread b = new Thread(group, threadGroupRunable, " B ");
+        Thread c = new Thread(group, threadGroupRunable, " C ");
+        Thread d = new Thread(group, threadGroupRunable, " D ");
         a.start();
         b.start();
         c.start();
@@ -597,19 +592,18 @@ public class threadInterview {
 
     /**
      * information.
-     *
+     * <p>
      * 1.suspend 不会释放掉hold的资源
      * 2.resume 调用的时机也是一个问题，如果resume call 在 suspend 之前，线程将永远的block 住
-     *
+     * <p>
      * 那，我们用什么代替了
      * flag 标识 或者 线程同步工具类；
-     *
      */
-    public void testSyncThis(){
+    public void testSyncThis() {
 
-        Book book=new Book();
-        Thread a=new Thread(book::WriteHeader ," A ");
-        Thread b=new Thread(book::WriteBody ," B ");
+        Book book = new Book();
+        Thread a = new Thread(book::WriteHeader, " A ");
+        Thread b = new Thread(book::WriteBody, " B ");
 
         a.start();
         b.start();
@@ -617,15 +611,13 @@ public class threadInterview {
     }
 
     /**
-     *
      * 不是去终止线程本事，
      * 而是去终止线程在执行的任务！！！！！！
-     *
+     * <p>
      * 守护线程 又叫 后台线程，为其他线程提供服务的，
      * 所有前台线程死亡，后台线程自动死亡。
-     *
      */
-    public void stopThreadTask(){
+    public void stopThreadTask() {
         Thread thread = new Thread(() -> {
             try {
                 for (int i = 0; i < 10000; i++) {
@@ -651,10 +643,10 @@ public class threadInterview {
 
     }
 
-    public void testCollectGarbage(){
-        Book book=new Book();
-        Book book1=new Book();
-        book1=null;
+    public void testCollectGarbage() {
+        Book book = new Book();
+        Book book1 = new Book();
+        book1 = null;
         System.gc();
         book.WriteBody();
 
@@ -664,12 +656,11 @@ public class threadInterview {
      * 1.两个线程，先打印A 再打印 B
      * 2.屏障机制 countDownLatch/cycileBraria./Phare
      * 还是有些不是特别靠谱的方法
-     *
+     * <p>
      * 1. thread a call thread.sleep
      * 2. 设置 thread a 线程的优先级别高
      * 3. 让thread a 先获取到锁资源，thread B 进入等待状态；
-     *   但是两个线程同时并发，你如何控制锁获取的先后顺序呢？-> 怎么让线程A 先获取到锁呢?
-     *
+     * 但是两个线程同时并发，你如何控制锁获取的先后顺序呢？-> 怎么让线程A 先获取到锁呢?
      */
     public void threadOrder() {
         Thread threadA = new Thread(() -> {
@@ -691,28 +682,82 @@ public class threadInterview {
 
     /**
      *
-     *
-     *
-     *
      */
-    public void threadOrderA(){
+    public void threadOrderA() {
 
-        Object locker=new Object();
-        LifeRunable lifeRunable=new LifeRunable(locker);
+        Object locker = new Object();
+        LifeRunable lifeRunable = new LifeRunable(locker);
 
-        Thread threadA=new Thread(lifeRunable::runA);
-        Thread threadB=new Thread(lifeRunable::runB);
-        Thread  mainTask =new Thread(lifeRunable::runCNotifyAll);
+        Thread threadA = new Thread(lifeRunable::runA);
+        Thread threadB = new Thread(lifeRunable::runB);
+        Thread mainTask = new Thread(lifeRunable::runCNotifyAll);
 
         threadA.start();
         threadB.start();
         try {
             Thread.sleep(5000L);
-        }catch (Exception exception){
+        } catch (Exception exception) {
             exception.printStackTrace();
         }
         //其余的子线程，都等待着我们的“主”线程的任务，先干完.
         mainTask.start();
-
     }
+
+    /**
+     * information.
+     */
+    public void infoQ() {
+
+        Runtime runtime = Runtime.getRuntime();
+        runtime.addShutdownHook(new ThreadHook());
+        System.out.println(" now main thread is sleeping, press ctrl+c to exist... ");
+
+        try {
+            Thread.sleep(1000L);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    public void hookTest() {
+        Runtime runtime = Runtime.getRuntime();
+        runtime.addShutdownHook(new Thread(() -> {
+            System.out.println("jvm thread hook.");
+        }));
+    }
+
+    /**
+     * 这个有点像，在 cmd 中执行命令...
+     */
+    public void runTimeInfo() {
+        try {
+            Runtime.getRuntime().exec("notepad");
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    /**
+     *  freeMemory()	返回JVM中的可用内存量。
+     *   totalMemory()	返回JVM中的总内存量。
+     */
+    public void runTimeInfoQ(){
+
+        Runtime runtime=Runtime.getRuntime();
+        System.out.println("total memory:"+runtime.totalMemory());
+        System.out.println("free memory:"+runtime.freeMemory());
+
+        List<Book> books=new ArrayList<>();
+
+        for (int i=0;i<10000;i++){
+            books.add(new Book());
+        }
+
+        System.out.println("After creating 10000 instance, Free Memory: "+runtime.freeMemory());
+
+        System.gc();
+
+        System.out.println("After GC(),Free memory "+runtime.freeMemory());
+    }
+
 }

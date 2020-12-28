@@ -1,0 +1,7 @@
+
+@
+java:S1148"#Use a logger to log this exception.(òçøì8 åîĞé.
+M
+java:S1068"+Remove this unused "message" private field.(ù„è¿ûÿÿÿÿ8î¥êĞé.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Çİ†Öùÿÿÿÿ8ì®òĞé.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(£û›É8±¬ğĞé.

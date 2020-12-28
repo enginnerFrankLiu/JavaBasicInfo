@@ -1,0 +1,13 @@
+
+h
+java:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ß•ִרÿÿÿÿ8³™‏וי.
+Z	java:S106
+"9Replace this use of System.out or System.err by a logger.(›׃נ°‏ÿÿÿÿ8ײששוי.
+T	java:S106"9Replace this use of System.out or System.err by a logger.(ֿז±8¡ש×זי.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ַÝ†ײשÿÿÿÿ8ֱ״§זי.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(›¹צûÿÿÿÿ8±׀ÿוי.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(’Ùµוûÿÿÿÿ8׀µ¦זי.
+@
+java:S1148"#Use a logger to log this exception.(עחרל8…©­זי.
+@
+java:S1148"#Use a logger to log this exception.(עחרל8«ֻ¬זי.

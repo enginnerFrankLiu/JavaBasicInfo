@@ -1,3 +1,34 @@
 
-£
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(å˜ÿÿÿÿÿ8œ¸À’é.
+U	java:S106e"9Replace this use of System.out or System.err by a logger.(ª¥£˜8Ö“»Éé.
+V	java:S106¿"9Replace this use of System.out or System.err by a logger.(´éøı8÷õ™Ëé.
+N
+java:S1612M",Replace this lambda with a method reference.(œùÇ€ûÿÿÿÿ8¬œ–Èé.
+h
+java:S2142\"FEither re-interrupt this method or rethrow the "InterruptedException".(ß•Äøÿÿÿÿ8Âå·Éé.
+L
+java:S1068R"*Remove this unused "lcoker" private field.(åğ¤¼şÿÿÿÿ8¤®¨Éé.
+>
+java:S1116N"Remove this empty statement.(Åñ­õşÿÿÿÿ8¤®¨Éé.
+Z	java:S106="9Replace this use of System.out or System.err by a logger.(®Öçµüÿÿÿÿ8¤®¨Éé.
+c	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¦£ÿ´8ÿàÎÉé.
+`
+java:S1128"CRemove this unused import 'java.util.concurrent.ThreadLocalRandom'.(¨ÏÙî8±Ÿ‹Ëé.
+E
+java:S1148@"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ëçÈé.
+A
+java:S1148¶"#Use a logger to log this exception.(òçøì8‹ŒËé.
+Z	java:S106B"9Replace this use of System.out or System.err by a logger.(ÛçÊ‡øÿÿÿÿ8¤®¨Éé.
+U	java:S106X"9Replace this use of System.out or System.err by a logger.(ÉíÁå8ë…´Éé.
+[	java:S106©"9Replace this use of System.out or System.err by a logger.(òêƒ›ûÿÿÿÿ8Ø÷¥Ëé.
+A
+java:S1148Á"#Use a logger to log this exception.(òçøì8èÒ Ëé.
+U	java:S106c"9Replace this use of System.out or System.err by a logger.(¹Ñè‡8Ö“»Éé.
+]
+java:S1128";Remove this unused import 'javax.naming.NamingEnumeration'.(ãÓÅÃıÿÿÿÿ8ŸàÁÉé.
+[	java:S106«"9Replace this use of System.out or System.err by a logger.(‚ºû©üÿÿÿÿ8˜ù¦Ëé.
+f
+java:S1128"IRemove this unused import 'org.omg.PortableInterceptor.SYSTEM_EXCEPTION'.(öØÁ8”›¤Ëé.
+Z	java:S106["9Replace this use of System.out or System.err by a logger.(½ò¾‹øÿÿÿÿ8¿ÀµÉé.
+V	java:S106³"9Replace this use of System.out or System.err by a logger.(´éøı8Œ¹Ëé.
+V	java:S106¨"9Replace this use of System.out or System.err by a logger.(ìÂì8”›¤Ëé.
+Z	java:S106_"9Replace this use of System.out or System.err by a logger.(ÎæØ˜üÿÿÿÿ8ÃÃ¸Éé.

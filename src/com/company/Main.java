@@ -549,7 +549,10 @@ public class Main {
 //        threadInterview.threadOrder();
 
         //一组线程同时开始，的另外一种机制；整体效果还算是比较OK 的哈
-        threadInterview.threadOrderA();
+//        threadInterview.threadOrderA();
+//        threadInterview.infoQ();
+//        threadInterview.runTimeInfo();
+        threadInterview.runTimeInfoQ();
     }
 
     /**
@@ -561,7 +564,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");
         MainInfo();
-        Thread.currentThread().join();
+       // Thread.currentThread().join();
         System.out.println("application end.");
 
     }

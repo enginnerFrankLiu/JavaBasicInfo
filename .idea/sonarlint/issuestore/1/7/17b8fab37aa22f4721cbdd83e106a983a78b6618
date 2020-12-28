@@ -1,0 +1,20 @@
+
+o	java:S100K"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ϊςΪ·όÿÿÿÿ8ΌΈ―μι.
+H
+java:S1174X"&Make this finalize() method protected.(­§σωÿÿÿÿ8ψίοι.
+@
+java:S1148E"#Use a logger to log this exception.(ςηψμ8ΌΈ―μι.
+O
+java:S1113X"-Do not override the Object.finalize() method.(­§σωÿÿÿÿ8ψίοι.
+U	java:S106Z"9Replace this use of System.out or System.err by a logger.(ΠΨ¶“8ψίοι.
+l
+java:S1874X"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(­§σωÿÿÿÿ8ψίοι.
+Z	java:S106N"9Replace this use of System.out or System.err by a logger.(‹¤¬Ϊϊÿÿÿÿ8ΌΈ―μι.
+U	java:S106A"9Replace this use of System.out or System.err by a logger.(Ο‘―Ι8ΌΈ―μι.
+Z	java:S106G"9Replace this use of System.out or System.err by a logger.(¬ªΒ―όÿÿÿÿ8ΌΈ―μι.
+@
+java:S1148R"#Use a logger to log this exception.(ςηψμ8ιμ±μι.
+Z	java:S106T"9Replace this use of System.out or System.err by a logger.(†²ίΐόÿÿÿÿ8ΌΈ―μι.
+`
+java:S2276B"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(Ή’υμ8ΌΈ―μι.
+o	java:S100>"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(βΑςÒϋÿÿÿÿ8³ƒ μι.

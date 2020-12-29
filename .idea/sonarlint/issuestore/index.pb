@@ -107,3 +107,5 @@ U
 %src/com/company/threadlearn/Book.java,1\7\17b8fab37aa22f4721cbdd83e106a983a78b6618
 \
 ,src/com/company/threadlearn/LifeRunable.java,8\8\8867dcff0bad705d6ac90d93b22b29fbcd4d485d
+[
++src/com/company/threadlearn/ThreadHook.java,4\a\4a5b59eae71f5554a20cafaa5a7298c90f1db974

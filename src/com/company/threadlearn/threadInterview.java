@@ -760,4 +760,24 @@ public class threadInterview {
         System.out.println("After GC(),Free memory "+runtime.freeMemory());
     }
 
+    /**
+     * 先做一个整体的了解：
+     * https://juejin.cn/post/6844903973074239496#heading-38
+     * https://blog.csdn.net/justloveyou_/article/details/54972105
+     * https://www.cnblogs.com/HealerJean/p/11829741.html
+     * https://zhuanlan.zhihu.com/p/23488863
+     * https://blog.csdn.net/u011381576/article/details/79876754
+     * https://www.cnblogs.com/jyroy/p/11365935.html
+     * 后面我们在做具体的
+     * 专项了解和调查深入的学习
+     * 突然觉得好累，一大堆东西什么时候才能学完，卧槽.
+     * 形成较为完善的芝士体系，还是比较麻烦的啊
+     * 放慢脚步，慢慢来，慢慢来，知道渴望改变，但是。需要点时间啦
+     * git status
+     * life is fucking moives.
+     */
+    public void summary(){
+
+    }
+
 }

@@ -1,12 +1,12 @@
 
-U	java:S106,"9Replace this use of System.out or System.err by a logger.(±œŠ©8Ÿù¶Öè.
 @
 java:S1148"#Use a logger to log this exception.(òçøì8“¢ÂÕè.
-U	java:S106%"9Replace this use of System.out or System.err by a logger.(¯üãâ8ó§ìÕè.
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(¸™íúÿÿÿÿ8ıõÙÕè.
+@
+java:S11484"#Use a logger to log this exception.(òçøì8ÌÕ÷Õè.
 U	java:S106"9Replace this use of System.out or System.err by a logger.(¬˜è²8¼¥ÛÕè.
 @
 java:S1148!"#Use a logger to log this exception.(òçøì8Â´ÈÕè.
-@
-java:S11484"#Use a logger to log this exception.(òçøì8ÌÕ÷Õè.
 Z	java:S1066"9Replace this use of System.out or System.err by a logger.(’§³ıÿÿÿÿ8òŸúÕè.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(¸™íúÿÿÿÿ8ıõÙÕè.
+U	java:S106%"9Replace this use of System.out or System.err by a logger.(¯üãâ8ó§ìÕè.
+U	java:S106,"9Replace this use of System.out or System.err by a logger.(±œŠ©8Ÿù¶Öè.

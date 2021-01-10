@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.IO.FileExample;
+import com.company.jvm.Client;
 import com.company.lock.Demo;
 import com.company.lock.LockInfo;
 import com.company.lock.ReenternLock;
@@ -556,6 +557,15 @@ public class Main {
     }
 
     /**
+     *
+     */
+    public static void jvmLearnInfo(){
+        Client client=new Client();
+//        client.info();
+        client.testAnonyInit();
+    }
+
+    /**
      * information for test function.
      * 这个就是所谓的公平锁机制，整体来说还算是比较ok的信息哈；
      *
@@ -563,8 +573,9 @@ public class Main {
      */
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");
-        MainInfo();
-       // Thread.currentThread().join();
+
+        jvmLearnInfo();
+
         System.out.println("application end.");
 
     }

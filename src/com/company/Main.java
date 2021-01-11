@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.IO.FileExample;
+import com.company.IO.SerialExample;
 import com.company.jvm.Client;
 import com.company.lock.Demo;
 import com.company.lock.LockInfo;
@@ -538,7 +539,7 @@ public class Main {
     }
 
     public static void MainInfo() throws Exception {
-        threadInterview threadInterview = new threadInterview();
+   //     threadInterview threadInterview = new threadInterview();
 ////        threadInterview.information();
 ////        threadInterview.interruptedInf();
 //        threadInterview.mmd();
@@ -553,7 +554,9 @@ public class Main {
 //        threadInterview.threadOrderA();
 //        threadInterview.infoQ();
 //        threadInterview.runTimeInfo();
-        threadInterview.runTimeInfoQ();
+//        threadInterview.runTimeInfoQ();
+        SerialExample serialExample=new SerialExample();
+        serialExample.testTransient();
     }
 
     /**
@@ -574,7 +577,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");
 
-        jvmLearnInfo();
+        MainInfo();
 
         System.out.println("application end.");
 

@@ -1,9 +1,9 @@
 
-\
-java:S3252-":Use static access with "com.company.jvm.Father" for "age".(««æÍûÿÿÿÿ8çÏçÔí.
-Z	java:S106-"9Replace this use of System.out or System.err by a logger.(««æÍûÿÿÿÿ8ãğÍÔí.
-H
-java:S3599",Use another way to initialize this instance.(³¢º88àõ«×í.
 {
 java:S1171	"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8àõ«×í.
-U	java:S1067"9Replace this use of System.out or System.err by a logger.(»¦ÒÍ8çÎ¯×í.
+Z	java:S106_"9Replace this use of System.out or System.err by a logger.(««æÍûÿÿÿÿ8ãğÍÔí.
+\
+java:S3252_":Use static access with "com.company.jvm.Father" for "age".(««æÍûÿÿÿÿ8çÏçÔí.
+H
+java:S3599",Use another way to initialize this instance.(³¢º88àõ«×í.
+U	java:S106i"9Replace this use of System.out or System.err by a logger.(»¦ÒÍ8çÎ¯×í.

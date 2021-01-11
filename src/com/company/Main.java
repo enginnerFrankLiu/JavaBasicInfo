@@ -556,7 +556,8 @@ public class Main {
 //        threadInterview.runTimeInfo();
 //        threadInterview.runTimeInfoQ();
         SerialExample serialExample=new SerialExample();
-        serialExample.testTransient();
+//        serialExample.testTransient();
+        serialExample.externalizeInfo();
     }
 
     /**

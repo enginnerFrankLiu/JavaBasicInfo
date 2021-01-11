@@ -2,10 +2,7 @@ package com.company.IO;
 
 import com.company.model.Human;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 public class SerialExample {
 
@@ -54,9 +51,38 @@ public class SerialExample {
             System.out.println("read after ser/deser");
             System.out.println(humanDeser.getUserName());
             System.out.println(humanDeser.getPassWord());
+            inputStream.close();
         }catch (Exception exception){
             exception.printStackTrace();
         }
 
+    }
+
+    /**
+     * 我们知道在Java中，对象的序列化可以通过实现两种接口来实现，若实现的是Serializable接口，则所有的序列化将会自动进行，
+     * 若实现的是Externalizable接口，
+     * 则没有任何东西可以自动序列化，
+     * 需要在writeExternal方法中进行手工指定所要序列化的变量，
+     * 这与是否被transient修饰无关。
+     * 因此第二个例子输出的是变量content初始化的内容，而不是null
+     *
+     */
+    public void externalizeInfo(){
+
+        ExternalizableTest et=new ExternalizableTest();
+        try {
+            String projectPath = System.getProperty("user.dir");
+            String filePath = projectPath + "\\ser.txt";
+            ObjectOutputStream outputStream=new ObjectOutputStream(new FileOutputStream(filePath));
+            outputStream.writeObject(et);
+
+            ObjectInput objectInput=new ObjectInputStream( new FileInputStream(filePath));
+            et=(ExternalizableTest)objectInput.readObject();
+            System.out.println(et.content);
+        }
+        catch (Exception exception){
+
+            exception.printStackTrace();
+        }
     }
 }

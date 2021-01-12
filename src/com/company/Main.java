@@ -9,11 +9,10 @@ import com.company.lock.ReenternLock;
 import com.company.stream.StreamInfo;
 import com.company.threadlearn.ExampleInterruptThread;
 import com.company.threadlearn.threadInterview;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
-import java.util.EnumMap;
-import java.util.EnumSet;
-import java.util.HashSet;
-import java.util.Map;
+import java.io.File;
+import java.util.*;
 import java.util.concurrent.*;
 
 public class Main {
@@ -570,15 +569,67 @@ public class Main {
     }
 
     /**
+     *
+     * 这种层次关系被称作为双亲委派模型
+     *
+     */
+    public static void classLoaderInfo(){
+        ClassLoader loader = Main.class.getClassLoader();
+        while (loader != null) {
+            System.out.println(loader.toString());
+            loader = loader.getParent();
+        }
+    }
+
+    /**
      * information for test function.
      * 这个就是所谓的公平锁机制，整体来说还算是比较ok的信息哈；
      *
-     * @param args
+     * 如果一个类加载器收到了加载类的请求，它会先把请求委托给上层加载器去完成，
+     * 上层加载器又会委托上上层加载器，
+     * 一直到最顶层的类加载器；如果上层加载器无法完成类的加载工作时，
+     * 当前类加载器才会尝试自己去加载这个类。
+     *
+     * 准备阶段：
+     * jvm 会为该类变量（静态变量，static修饰的） 分配内存，并初始化每种类型的的默认值.注意，这里说的是默认值；
+     * 如果是静态常量，一旦不知就不会改变的那种，所以，这会为 final static 赋值
+     * 类成员变量 不会分配内存
+     * 类静态变量 分配内存-> null， 具体的值在初始化阶段进行赋值
+     * 类静态常量 一旦赋值就不会被改变了。所以赋值
+     *
+     * 解析阶段：
+     * 将常量次中的符号引用准换成直接引用
+     *
+     * 扩展类加载器，负责加载 java_home/lib/ext/目录下的文件
+     *
+     * Java虚拟机对class文件采用的是按需加载的方式，也就是说当需要使用该类时才会将它的class文件加载到内存生成class对象
+     *
+     *
+     *
      */
+    public static void classLoaderMD(){
+        String s = System.getProperty("java.ext.dirs");
+        File[] dirs;
+        if (s != null) {
+            StringTokenizer st =
+                    new StringTokenizer(s, File.pathSeparator);
+            int count = st.countTokens();
+            dirs = new File[count];
+            for (int i = 0; i < count; i++) {
+                dirs[i] = new File(st.nextToken());
+            }
+        } else {
+            dirs = new File[0];
+        }
+        for (File dir : dirs) {
+            System.out.println(dir.getName());
+        }
+    }
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");
 
-        MainInfo();
+
+        classLoaderMD();
 
         System.out.println("application end.");
 

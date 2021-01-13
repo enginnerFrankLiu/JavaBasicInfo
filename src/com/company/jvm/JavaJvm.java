@@ -45,8 +45,52 @@ public class JavaJvm {
      *
      *
      * 4.
+     *
+     * https://blog.csdn.net/qq_34039868/article/details/103957965
+     *
+     * class 文件中 有一项：constant_pool 常量池，主要存放两大类常量：
+     * 字面量 和 符合引用
+     * 字面量：文本字符串，final 常量值，
+     * 符号引用：
+     * 类和接口的全限定名
+     * 字段的名称和描述
+     * 方法的名称和描述符
+     *
+     * 当jvm运行时，需要从常量池获取对应的符号引用，在创建和运行时解析，翻译得到具体的内存地址；
+     * 字面量就是普通的常量
+     *
+     * ，运行时常量池是class文件中每一个类或接口的常量池表的运行时表示形式
+     *  每一个运行时常量池都在Java虚拟机的方法区中分配
+     *  每一个class都有自己的运行时常量池
+     *
+     *  就是在Java8中宣布取消永久代（方法区是堆的逻辑部分，真正实现的是永久代），用元空间（metaspace）来代替永久代，变
+     *
+     * 移除了永久代（PermGen），替换为元空间（Metaspace）
+     * 永久代中的 class metadata 转移到了 native memory（本地内存，而不是虚拟机）
+     *
+     * 久代中的 interned Strings 和 class static variables 转移到了 Java heap
+     *
+     *https://zhuanlan.zhihu.com/p/111809384
      */
     public void info(){
+
+        String name="jack";
+        String userName=new String("jack");
+        System.out.println(name==userName);
+
+    }
+
+    /**
+     * 他们的过程是不一样的；
+     */
+    public void infoV2(){
+
+        String name="jack";
+        String userName=new String("jack");
+        String user=userName.intern();
+
+        System.out.println(name==user);
+
 
     }
 }

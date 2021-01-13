@@ -3,6 +3,7 @@ package com.company;
 import com.company.IO.FileExample;
 import com.company.IO.SerialExample;
 import com.company.jvm.Client;
+import com.company.jvm.JavaJvm;
 import com.company.lock.Demo;
 import com.company.lock.LockInfo;
 import com.company.lock.ReenternLock;
@@ -625,11 +626,16 @@ public class Main {
             System.out.println(dir.getName());
         }
     }
+
+    public static void testStringIntern(){
+        JavaJvm javaJvm=new JavaJvm();
+        javaJvm.info();
+        javaJvm.infoV2();
+    }
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");
 
-
-        classLoaderMD();
+        testStringIntern();
 
         System.out.println("application end.");
 

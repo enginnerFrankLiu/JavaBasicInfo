@@ -753,6 +753,7 @@ public class threadInterview {
             books.add(new Book());
         }
 
+
         System.out.println("After creating 10000 instance, Free Memory: "+runtime.freeMemory());
 
         System.gc();

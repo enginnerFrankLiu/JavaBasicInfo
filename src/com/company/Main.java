@@ -629,8 +629,10 @@ public class Main {
 
     public static void testStringIntern(){
         JavaJvm javaJvm=new JavaJvm();
-        javaJvm.info();
-        javaJvm.infoV2();
+//        javaJvm.info();
+//        javaJvm.infoV2();
+//        javaJvm.internTest();
+        javaJvm.internTestJJ();
     }
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");

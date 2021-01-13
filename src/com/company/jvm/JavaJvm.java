@@ -71,6 +71,38 @@ public class JavaJvm {
      * 久代中的 interned Strings 和 class static variables 转移到了 Java heap
      *
      *https://zhuanlan.zhihu.com/p/111809384
+     *
+     *
+     *
+     * class 文件中常量池保存的字符串常量，类 和接口名字，字段名，和其他一些在class中引用的常量
+     * 每个class都有一份；
+     *
+     * 运行时常量是从class文件常量池构建的静态常量引用和符号引用每个class都有一份。
+     *
+     * 字符串常量池保存的是“字符实例”，供运行时常量引用；
+     *
+     * String intern 方法会从字符串常量池中查询当前字符串是否存在，如不存在就将当前字符串放在常量池中.
+     *
+     * 如果常量池中存在当前字符串, 就会直接返回当前字符串. 如果常量池中没有此字符串, 会将此字符串放入常量池中后, 再返回
+     *
+     *  JAVA 使用 jni 调用c++实现的StringTable的intern方法
+     *
+     *  String的String Pool是一个固定大小的Hashtable 可能导致的问题;
+     *
+     *  1.string.intern 的性能下降（因为需要一个一个的找）
+     *
+     *  2.String s = new String("abc")这个语句创建了几个对象
+     *
+     *   1.第一个对象是”abc”字符串存储在常量池中
+     *
+     *   2.JAVA Heap中的 String 对象。
+     *
+     *
+     *
+     *
+     *
+     *
+     *
      */
     public void info(){
 
@@ -91,6 +123,53 @@ public class JavaJvm {
 
         System.out.println(name==user);
 
+    }
+
+    /**
+     * https://tech.meituan.com/2014/03/06/in-depth-understanding-string-intern.html
+     * 解析：
+     *  String s = new String("1");
+     *  生成两个对象
+     *
+     *  1.heap 中的String 对象
+     *  2.常量池中 "1"
+     *
+     *  当你调用
+     *  s.intern(); 时候，只是去判断常量池中是否存在“1”，如果不存在，就将值写入到常量池中，并且返回地址
+     *
+     *  String s3 = new String("1") + new String("1");
+     *
+     *  生成两个最终对象：
+     *  1.常量池中的“1”
+     *  2.java heap s3 引用指向的对象
+     *
+     */
+    public void internTest(){
+        String s = new String("1");
+        String s3=s.intern();
+        String s2 = "1";
+        System.out.println(s == s2);
+
+        System.out.println("-----------------");
+
+        //这个返回的就是true
+        System.out.println(s3==s2);
+
+
+    }
+
+    /**
+     *
+     * 可以直接存储堆中的引用。这份引用指向 s3 引用的对象
+     *
+     */
+    public void internTestJJ(){
+
+        String S3=new String("1")+new String("1");
+        //当这个对象去驻留的时候，不会再在常量池中去放 “11” 这个“副本” 而是 “11” 在 heap 中的地址
+        S3.intern();      // "11"-> heap 中的常量池中(java7+) 神奇的事情是 s3保存的是 常量池中地址
+        String s4="11";   // "11" 返回 heap 中常量池的地址.
+        System.out.println(S3==s4);
 
     }
 }

@@ -117,3 +117,11 @@ L
 src/com/company/jvm/Son.java,3\e\3ede0847684edb1a29d73a677096ab7f3fc0a318
 O
 src/com/company/jvm/Client.java,c\c\cc40dfef398354ffb8b397851b7b586497e8431a
+P
+ src/com/company/model/Human.java,3\1\31f36b4673dd00bd2656bd313ab10feed966aa82
+U
+%src/com/company/IO/SerialExample.java,2\7\27ed5dae3180c44d0a62ee9e3b42df8e3ff90f78
+Z
+*src/com/company/IO/ExternalizableTest.java,6\9\69bb431a5c516ffb2929d8b534ce80f29d759ad2
+P
+ src/com/company/jvm/JavaJvm.java,0\2\0233537405124e02f9793e6684a450abd36aa0cc

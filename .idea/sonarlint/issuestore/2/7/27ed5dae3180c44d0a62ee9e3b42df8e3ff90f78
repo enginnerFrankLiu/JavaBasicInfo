@@ -1,0 +1,24 @@
+
+Z	java:S106Q"9Replace this use of System.out or System.err by a logger.(è­üåøÿÿÿÿ8¶ı¶†ï.
+r
+java:S2095L"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(öÀÄñùÿÿÿÿ8»ï®†ï.
+@
+java:S1148U"#Use a logger to log this exception.(òçøì8Ùù»†ï.
+q
+java:S2095O"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÄÇ‰øÿÿÿÿ8òÌ¶†ï.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(â¯îĞ8ÇÊ¡…ï.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(²€ Œşÿÿÿÿ
+r
+java:S2095""PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(Ï¦ÌŸıÿÿÿÿ8ïş¥…ï.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(íƒàğ8©®¡…ï.
+l
+java:S20951"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ºÚºœ8¸·±…ï.
+Z	java:S1064"9Replace this use of System.out or System.err by a logger.(åÛÏœşÿÿÿÿ8í„·…ï.
+Z	java:S1065"9Replace this use of System.out or System.err by a logger.(³Í‚ùÿÿÿÿ8¶Ü·…ï.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(ÓäâÃ8×”Ÿ…ï.
+]	java:S125*"<This block of commented-out lines of code should be removed.(éÌ§ºüÿÿÿÿ8 ×ª…ï.
+@
+java:S1148'"#Use a logger to log this exception.(òçøì8õë¨…ï.
+U	java:S1063"9Replace this use of System.out or System.err by a logger.(÷¹ˆŠ8Ğ¬µ…ï.
+@
+java:S11488"#Use a logger to log this exception.(òçøì8¸·±…ï.

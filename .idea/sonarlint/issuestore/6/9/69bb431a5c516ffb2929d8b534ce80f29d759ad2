@@ -1,4 +1,4 @@
 
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(²€ Œşÿÿÿÿ
 u
 java:S1104A"SMake content a static final constant or non-public and provide accessors if needed.(û©›ıÿÿÿÿ8ıûº†ï.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(²€ Œşÿÿÿÿ

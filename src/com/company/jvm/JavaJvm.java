@@ -98,11 +98,43 @@ public class JavaJvm {
      *   2.JAVA Heap中的 String 对象。
      *
      *
+     * java 类的加载过程可以分为五个阶段：载入，验证，准备，解析，初始化
+     * 载入，验证，准备，解析，初始化
      *
      *
+     * 每个线程都会创建一个操作站，每个栈又包含若干个栈针，每个栈针对应着每个方法每次调用，每个栈针都包含如下的三个部分:
+     * 1.局部变量去，
+     *
+     * 操作栈数 执行过程中产生的中间结果
+     *
+     * 运行环境：动态链接，正确的方法返回信息，异常捕捉.
+     *
+     * 本地方法栈是在程序调用或JVM调用本地方法接口（Native）时候启用。
+     *
+     * 本地方法都不是使用Java语言编写的，比如使用C语言编写的本地方法，本地方法也不由JVM去运行，所以本地方法的运行不受JVM管理。
+     *
+     *  字节码解释器工作时候，就是通过改变这个计数器来的值 来确定下一条需要执行的字节码指令的；
      *
      *
+     *  分支 循环 跳转 异常处理 线程恢复等基础功能都是需要依赖这个计数器来实现的;
      *
+     *
+     *  当线程正在执行一个java方法是，程序计数器记录的正式执行jvm字节码的指令的地址，如果正字执行的是一个native方法，那么计数器的值为 空;
+     *
+     *
+     *  jvm 执行引擎；
+     *
+     *  可能有两种执行方式：
+     *  解释执行，通过解释器执行
+     *  编译执行：通过即使编译执行 通过即时编译产生本地代码
+     *
+     * java native interface
+     * J N I
+     *
+     *
+     * 不再跨平台，要想跨平台，必须在不同的系统环境下程序编译配置本地语言部分
+     *
+     * 程序不再是绝对安全的，本地代码的使用不当可能会导致整个程序崩溃。一个通用规则是，调用本地方法应该集中在少数的几个类当中，这样就降低了Java和其他语言之间的耦合
      */
     public void info(){
 
@@ -171,5 +203,28 @@ public class JavaJvm {
         String s4="11";   // "11" 返回 heap 中常量池的地址.
         System.out.println(S3==s4);
 
+    }
+
+    /**
+     * 1.Java 在编译的时候会直接将代码封装成 Integer i1=Integer.valueOf(10);，从而使用常量池中的对象
+     * 2.information.
+     */
+    public void md(){
+        //每次new 都会创建新对象
+        Integer a=new Integer(10);
+        Integer b=new Integer(10);
+        System.out.println(a==b);
+
+        System.out.println("--------------------");
+
+        Integer c=10;
+        Integer d=10;
+        System.out.println(c==d);
+    }
+
+    public void msInfo(){
+        String str1 = "aaa";
+        String str2 = "aa"+"a";
+        System.out.println(str1==str2);
     }
 }

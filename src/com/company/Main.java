@@ -632,7 +632,9 @@ public class Main {
 //        javaJvm.info();
 //        javaJvm.infoV2();
 //        javaJvm.internTest();
-        javaJvm.internTestJJ();
+//        javaJvm.internTestJJ();
+//        javaJvm.md();
+        javaJvm.msInfo();
     }
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");

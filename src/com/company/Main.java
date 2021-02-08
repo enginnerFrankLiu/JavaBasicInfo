@@ -10,9 +10,11 @@ import com.company.lock.ReenternLock;
 import com.company.stream.StreamInfo;
 import com.company.threadlearn.ExampleInterruptThread;
 import com.company.threadlearn.threadInterview;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.io.File;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -636,10 +638,31 @@ public class Main {
 //        javaJvm.md();
         javaJvm.msInfo();
     }
+
+    //过去的时间；
+    public static void fooInfo(){
+
+        LocalDate date = Instant.now().atZone(ZoneId.of("GMT-12")).toLocalDate();
+        System.out.println(date);
+        LocalDate candidateValidFrom = LocalDate.MIN;
+        System.out.println(candidateValidFrom);
+
+
+    }
+
+    /**
+     * 妈的，有一段时间没有写代码了，卧槽;
+     * 最近发生各种很鸡婆，几把的各种琐事
+     */
+    private void info(){
+
+    }
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");
 
-        testStringIntern();
+//        testStringIntern();
+
+        fooInfo();
 
         System.out.println("application end.");
 

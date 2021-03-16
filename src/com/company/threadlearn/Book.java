@@ -1,7 +1,12 @@
 package com.company.threadlearn;
 
-public class Book {
+import javax.management.relation.Role;
 
+@pen(role="coder")
+@pen(role = "mom")
+@pen(role = "info")
+@pen(role = "md")
+public class Book {
 
     private int header;
     private int body;

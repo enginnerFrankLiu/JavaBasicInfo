@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.IO.FileExample;
 import com.company.IO.SerialExample;
+import com.company.basic.ReflectTest;
 import com.company.jvm.Client;
 import com.company.jvm.JavaJvm;
 import com.company.lock.Demo;
@@ -640,14 +641,16 @@ public class Main {
     }
 
     //过去的时间；
-    public static void fooInfo(){
+    public static void fooInfo() throws Exception{
 
-        LocalDate date = Instant.now().atZone(ZoneId.of("GMT-12")).toLocalDate();
-        System.out.println(date);
-        LocalDate candidateValidFrom = LocalDate.MIN;
-        System.out.println(candidateValidFrom);
+//        LocalDate date = Instant.now().atZone(ZoneId.of("GMT-12")).toLocalDate();
+//        System.out.println(date);
+//        LocalDate candidateValidFrom = LocalDate.MIN;
+//        System.out.println(candidateValidFrom);
 
 
+        ReflectTest reflectTest=new ReflectTest();
+        reflectTest.showAnnotation();
     }
 
     /**
@@ -669,11 +672,8 @@ public class Main {
     }
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");
-
 //        testStringIntern();
-
         fooInfo();
-
         System.out.println("application end.");
 
     }

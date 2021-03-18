@@ -542,7 +542,7 @@ public class Main {
     }
 
     public static void MainInfo() throws Exception {
-   //     threadInterview threadInterview = new threadInterview();
+        //     threadInterview threadInterview = new threadInterview();
 ////        threadInterview.information();
 ////        threadInterview.interruptedInf();
 //        threadInterview.mmd();
@@ -558,7 +558,7 @@ public class Main {
 //        threadInterview.infoQ();
 //        threadInterview.runTimeInfo();
 //        threadInterview.runTimeInfoQ();
-        SerialExample serialExample=new SerialExample();
+        SerialExample serialExample = new SerialExample();
 //        serialExample.testTransient();
         serialExample.externalizeInfo();
     }
@@ -566,18 +566,16 @@ public class Main {
     /**
      *
      */
-    public static void jvmLearnInfo(){
-        Client client=new Client();
+    public static void jvmLearnInfo() {
+        Client client = new Client();
 //        client.info();
         client.testAnonyInit();
     }
 
     /**
-     *
      * 这种层次关系被称作为双亲委派模型
-     *
      */
-    public static void classLoaderInfo(){
+    public static void classLoaderInfo() {
         ClassLoader loader = Main.class.getClassLoader();
         while (loader != null) {
             System.out.println(loader.toString());
@@ -588,30 +586,27 @@ public class Main {
     /**
      * information for test function.
      * 这个就是所谓的公平锁机制，整体来说还算是比较ok的信息哈；
-     *
+     * <p>
      * 如果一个类加载器收到了加载类的请求，它会先把请求委托给上层加载器去完成，
      * 上层加载器又会委托上上层加载器，
      * 一直到最顶层的类加载器；如果上层加载器无法完成类的加载工作时，
      * 当前类加载器才会尝试自己去加载这个类。
-     *
+     * <p>
      * 准备阶段：
      * jvm 会为该类变量（静态变量，static修饰的） 分配内存，并初始化每种类型的的默认值.注意，这里说的是默认值；
      * 如果是静态常量，一旦不知就不会改变的那种，所以，这会为 final static 赋值
      * 类成员变量 不会分配内存
      * 类静态变量 分配内存-> null， 具体的值在初始化阶段进行赋值
      * 类静态常量 一旦赋值就不会被改变了。所以赋值
-     *
+     * <p>
      * 解析阶段：
      * 将常量次中的符号引用准换成直接引用
-     *
+     * <p>
      * 扩展类加载器，负责加载 java_home/lib/ext/目录下的文件
-     *
+     * <p>
      * Java虚拟机对class文件采用的是按需加载的方式，也就是说当需要使用该类时才会将它的class文件加载到内存生成class对象
-     *
-     *
-     *
      */
-    public static void classLoaderMD(){
+    public static void classLoaderMD() {
         String s = System.getProperty("java.ext.dirs");
         File[] dirs;
         if (s != null) {
@@ -630,8 +625,8 @@ public class Main {
         }
     }
 
-    public static void testStringIntern(){
-        JavaJvm javaJvm=new JavaJvm();
+    public static void testStringIntern() {
+        JavaJvm javaJvm = new JavaJvm();
 //        javaJvm.info();
 //        javaJvm.infoV2();
 //        javaJvm.internTest();
@@ -641,7 +636,7 @@ public class Main {
     }
 
     //过去的时间；
-    public static void fooInfo() throws Exception{
+    public static void fooInfo() throws Exception {
 
 //        LocalDate date = Instant.now().atZone(ZoneId.of("GMT-12")).toLocalDate();
 //        System.out.println(date);
@@ -649,30 +644,29 @@ public class Main {
 //        System.out.println(candidateValidFrom);
 
 
-        ReflectTest reflectTest=new ReflectTest();
-        reflectTest.showAnnotation();
+        ReflectTest reflectTest = new ReflectTest();
+//        reflectTest.showAnnotation();
+        reflectTest.testFoo();
     }
 
     /**
      * 妈的，有一段时间没有写代码了，卧槽;
      * 最近发生各种很鸡婆，几把的各种琐事
      * 那就安排一下过年的计划，和变化中的可能的变化
-     *
+     * <p>
      * 1.还是要假吧意思的吃个年夜饭
      * 2.外婆一天
      * 3.大姨妈一天
      * 4.相一两个亲来看看呗，我想也是的
-     *
+     * <p>
      * 又他妈的有一段时间 没有写代码了，前方的路，真的很长.
-     *
-     *  
      */
-    private void info(){
+    private void info() {
 
     }
+
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");
-//        testStringIntern();
         fooInfo();
         System.out.println("application end.");
 

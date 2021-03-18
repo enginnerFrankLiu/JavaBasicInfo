@@ -1,0 +1,15 @@
+
+]
+java:S2259$"@A "NullPointerException" could be thrown; "tm" is nullable here.(Á·ø“8¦¿¶ñƒ/
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(±±÷8ß–ëîƒ/
+L
+java:S3740"/Provide the parametrized type for this generic.(€şï£8ÏÂêîƒ/
+U	java:S106$"9Replace this use of System.out or System.err by a logger.(Á·ø“8¦¿¶ñƒ/
+@
+java:S1148""#Use a logger to log this exception.(Ç’Çê8‰ü¶ñƒ/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(­‘ŸÓ8ÀÎãîƒ/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(‰¥¢¼8Í‚äîƒ/
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(æ¿¹åıÿÿÿÿ8ÃŠŞïƒ/
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(˜üÚûÿÿÿÿ8ÀÎãîƒ/
+U
+java:S1874"3Remove this use of "newInstance"; it is deprecated.(±ââ”ùÿÿÿÿ8©ìîƒ/

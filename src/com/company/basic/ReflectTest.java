@@ -3,7 +3,6 @@ package com.company.basic;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.logging.ConsoleHandler;
 
 @Pro(className = "com.company.basic.Demo1", methodName = "show")
 public class ReflectTest {

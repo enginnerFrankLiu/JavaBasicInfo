@@ -646,7 +646,11 @@ public class Main {
 
         ReflectTest reflectTest = new ReflectTest();
 //        reflectTest.showAnnotation();
-        reflectTest.testFoo();
+//        reflectTest.testFoo();
+//        reflectTest.infoMD();
+//          reflectTest.filedInfo();
+//        reflectTest.fieldInfo();
+        reflectTest.methodInfo();
     }
 
     /**

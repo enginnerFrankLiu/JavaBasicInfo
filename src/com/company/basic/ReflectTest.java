@@ -94,7 +94,6 @@ public class ReflectTest {
      *
      */
     public void methodInfo() {
-
         Class classInfo = Face.class;
         try {
             Method[] methods = classInfo.getMethods();
@@ -110,8 +109,14 @@ public class ReflectTest {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-
     }
 
+    /**
+     * java 中各种异常的处理啊；
+     * 这种也是值得我们去不断学习和成长的.
 
+     */
+    public void infoMQ(){
+
+    }
 }

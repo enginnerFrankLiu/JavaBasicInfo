@@ -13,9 +13,6 @@ import com.company.threadlearn.ExampleInterruptThread;
 import com.company.threadlearn.threadInterview;
 
 import java.io.File;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -654,6 +651,42 @@ public class Main {
     }
 
     /**
+     *
+     *
+     分布式事务的常见实现方式
+     1.两阶段提交
+     2.三阶段提交
+     3.TCC模式
+     4.消息驱动
+     本地消息表
+     MQ消息中间件
+     消息事务RocketMQ
+     5.saga模型
+     6.最大努力通知.
+
+     等等一系列的方法和实现方式
+     1.一旦要考虑实现分布式，那么问题就是接踵而至的到来
+     2.分库分表
+     怎么去分，分了之后，当select * from user where userid=990;
+     我应该从哪个库，哪个表去找数据呢?
+     3.随之带来的分布式事务如何实现呢?
+
+     4.分布式锁又如何实现呢?
+
+     5.分布式session又如何处理呢？
+
+     分布式，事务锁
+     接口幂等性的问题，这些都是我们需要学习和了解的东西.
+
+     看够了，我们就来谢谢代码呗.
+     *
+     *
+     */
+    public void infodddd(){
+
+    }
+
+    /**
      * 妈的，有一段时间没有写代码了，卧槽;
      * 最近发生各种很鸡婆，几把的各种琐事
      * 那就安排一下过年的计划，和变化中的可能的变化
@@ -665,13 +698,22 @@ public class Main {
      * <p>
      * 又他妈的有一段时间 没有写代码了，前方的路，真的很长.
      */
-    private void info() {
+    public static void teee() {
 
+
+        List<String> names=new ArrayList<>();
+        names.add("jack");
+        names.add("tom");
+        names.add("frank");
+
+        names.removeIf(x->x.equals("tom"));
+
+        System.out.println(names);
     }
 
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");
-        fooInfo();
+        teee();
         System.out.println("application end.");
 
     }

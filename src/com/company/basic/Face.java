@@ -32,4 +32,12 @@ public class Face {
     private Face(String name, int age, String address) {
         System.out.println("name ,age ,address.");
     }
+
+    /**
+     *
+     * @param name
+     */
+    public void showName(String name){
+        System.out.println("print name:"+name);
+    }
 }

@@ -713,7 +713,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");
-        teee();
+        fooInfo();
         System.out.println("application end.");
 
     }

@@ -95,6 +95,7 @@ public class ReflectTest {
      */
     public void methodInfo() {
         Class classInfo = Face.class;
+        Face face=new Face();
         try {
             Method[] methods = classInfo.getMethods();
             System.out.println("-----------getMethods-----------");
@@ -106,6 +107,12 @@ public class ReflectTest {
             for (Method declareMethod : declareMethods) {
                 System.out.println(declareMethod);
             }
+
+            System.out.println("-------invoke some method.---------");
+
+            Method method=classInfo.getMethod("showName",String.class);
+            method.invoke(face,"funny name.");
+
         } catch (Exception exception) {
             exception.printStackTrace();
         }
@@ -117,6 +124,7 @@ public class ReflectTest {
 
      */
     public void infoMQ(){
+
 
     }
 }

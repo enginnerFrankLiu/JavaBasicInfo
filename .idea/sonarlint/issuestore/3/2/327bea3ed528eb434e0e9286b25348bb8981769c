@@ -1,0 +1,9 @@
+
+F
+java:S1444	")Make this "public static age" field final(àíãö8ÍÊÔí.
+l
+java:S1104	"OMake age a static final constant or non-public and provide accessors if needed.(àíãö8ÍÊÔí.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ƒ¤×Óÿÿÿÿÿ8š®ÄÔí.
+:
+java:S1118"Hide this public constructor.(¡®Ëõ8š®ÄÔí.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(áıÏ8Ê£ÅÔí.

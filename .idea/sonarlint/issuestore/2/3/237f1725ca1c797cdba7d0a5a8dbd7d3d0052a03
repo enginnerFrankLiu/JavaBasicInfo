@@ -1,0 +1,18 @@
+
+H
+java:S1172"+Remove this unused method parameter "eyes".(îºÁì8–²Å—„/
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(´‹¹öşÿÿÿÿ8‡™È—„/
+B
+java:S1172"&Remove these unused method parameters.(¦³²M8ò¯Ù—„/
+m
+java:S1104"PMake name a static final constant or non-public and provide accessors if needed.( şÍ¾8–•å—„/
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ñûÌÄøÿÿÿÿ8ò¯Ù—„/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(Å‹•8¿İÀ—„/
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(İıÆ¢ÿÿÿÿÿ8–²Å—„/
+B
+java:S1172 "&Remove these unused method parameters.(µÄäW8ò¯Ù—„/
+I
+java:S1068"'Remove this unused "age" private field.(Æ†´¦şÿÿÿÿ8–•å—„/
+J
+java:S1144 ".Remove this unused private "Face" constructor.(µÄäW8ò¯Ù—„/
+U	java:S106!"9Replace this use of System.out or System.err by a logger.(ìæ•8ò¯Ù—„/

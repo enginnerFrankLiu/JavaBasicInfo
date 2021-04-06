@@ -1,6 +1,10 @@
 package com.company;
 
 import com.company.IO.FileExample;
+import com.company.IO.SerialExample;
+import com.company.basic.ReflectTest;
+import com.company.jvm.Client;
+import com.company.jvm.JavaJvm;
 import com.company.lock.Demo;
 import com.company.lock.LockInfo;
 import com.company.lock.ReenternLock;
@@ -8,10 +12,8 @@ import com.company.stream.StreamInfo;
 import com.company.threadlearn.ExampleInterruptThread;
 import com.company.threadlearn.threadInterview;
 
-import java.util.EnumMap;
-import java.util.EnumSet;
-import java.util.HashSet;
-import java.util.Map;
+import java.io.File;
+import java.util.*;
 import java.util.concurrent.*;
 
 public class Main {
@@ -537,7 +539,7 @@ public class Main {
     }
 
     public static void MainInfo() throws Exception {
-      //  threadInterview threadInterview = new threadInterview();
+        //     threadInterview threadInterview = new threadInterview();
 ////        threadInterview.information();
 ////        threadInterview.interruptedInf();
 //        threadInterview.mmd();
@@ -552,23 +554,168 @@ public class Main {
 //        threadInterview.threadOrderA();
 //        threadInterview.infoQ();
 //        threadInterview.runTimeInfo();
-        //threadInterview.runTimeInfoQ();
-        mqRefect mqRefect=new mqRefect();
-//        mqRefect.refectInfo();
-        mqRefect.threeWayToGetClass();
+//        threadInterview.runTimeInfoQ();
+        SerialExample serialExample = new SerialExample();
+//        serialExample.testTransient();
+        serialExample.externalizeInfo();
+    }
+
+    /**
+     *
+     */
+    public static void jvmLearnInfo() {
+        Client client = new Client();
+//        client.info();
+        client.testAnonyInit();
+    }
+
+    /**
+     * 这种层次关系被称作为双亲委派模型
+     */
+    public static void classLoaderInfo() {
+        ClassLoader loader = Main.class.getClassLoader();
+        while (loader != null) {
+            System.out.println(loader.toString());
+            loader = loader.getParent();
+        }
     }
 
     /**
      * information for test function.
      * 这个就是所谓的公平锁机制，整体来说还算是比较ok的信息哈；
-     *
-     * @param args
+     * <p>
+     * 如果一个类加载器收到了加载类的请求，它会先把请求委托给上层加载器去完成，
+     * 上层加载器又会委托上上层加载器，
+     * 一直到最顶层的类加载器；如果上层加载器无法完成类的加载工作时，
+     * 当前类加载器才会尝试自己去加载这个类。
+     * <p>
+     * 准备阶段：
+     * jvm 会为该类变量（静态变量，static修饰的） 分配内存，并初始化每种类型的的默认值.注意，这里说的是默认值；
+     * 如果是静态常量，一旦不知就不会改变的那种，所以，这会为 final static 赋值
+     * 类成员变量 不会分配内存
+     * 类静态变量 分配内存-> null， 具体的值在初始化阶段进行赋值
+     * 类静态常量 一旦赋值就不会被改变了。所以赋值
+     * <p>
+     * 解析阶段：
+     * 将常量次中的符号引用准换成直接引用
+     * <p>
+     * 扩展类加载器，负责加载 java_home/lib/ext/目录下的文件
+     * <p>
+     * Java虚拟机对class文件采用的是按需加载的方式，也就是说当需要使用该类时才会将它的class文件加载到内存生成class对象
      */
+    public static void classLoaderMD() {
+        String s = System.getProperty("java.ext.dirs");
+        File[] dirs;
+        if (s != null) {
+            StringTokenizer st =
+                    new StringTokenizer(s, File.pathSeparator);
+            int count = st.countTokens();
+            dirs = new File[count];
+            for (int i = 0; i < count; i++) {
+                dirs[i] = new File(st.nextToken());
+            }
+        } else {
+            dirs = new File[0];
+        }
+        for (File dir : dirs) {
+            System.out.println(dir.getName());
+        }
+    }
+
+    public static void testStringIntern() {
+        JavaJvm javaJvm = new JavaJvm();
+//        javaJvm.info();
+//        javaJvm.infoV2();
+//        javaJvm.internTest();
+//        javaJvm.internTestJJ();
+//        javaJvm.md();
+        javaJvm.msInfo();
+    }
+
+    //过去的时间；
+    public static void fooInfo() throws Exception {
+
+//        LocalDate date = Instant.now().atZone(ZoneId.of("GMT-12")).toLocalDate();
+//        System.out.println(date);
+//        LocalDate candidateValidFrom = LocalDate.MIN;
+//        System.out.println(candidateValidFrom);
+
+
+        ReflectTest reflectTest = new ReflectTest();
+//        reflectTest.showAnnotation();
+//        reflectTest.testFoo();
+//        reflectTest.infoMD();
+//          reflectTest.filedInfo();
+//        reflectTest.fieldInfo();
+        reflectTest.methodInfo();
+    }
+
+    /**
+     *
+     *
+     分布式事务的常见实现方式
+     1.两阶段提交
+     2.三阶段提交
+     3.TCC模式
+     4.消息驱动
+     本地消息表
+     MQ消息中间件
+     消息事务RocketMQ
+     5.saga模型
+     6.最大努力通知.
+
+     等等一系列的方法和实现方式
+     1.一旦要考虑实现分布式，那么问题就是接踵而至的到来
+     2.分库分表
+     怎么去分，分了之后，当select * from user where userid=990;
+     我应该从哪个库，哪个表去找数据呢?
+     3.随之带来的分布式事务如何实现呢?
+
+     4.分布式锁又如何实现呢?
+
+     5.分布式session又如何处理呢？
+
+     分布式，事务锁
+     接口幂等性的问题，这些都是我们需要学习和了解的东西.
+
+     看够了，我们就来谢谢代码呗.
+     *
+     *
+     */
+    public void infodddd(){
+
+    }
+
+    /**
+     * 妈的，有一段时间没有写代码了，卧槽;
+     * 最近发生各种很鸡婆，几把的各种琐事
+     * 那就安排一下过年的计划，和变化中的可能的变化
+     * <p>
+     * 1.还是要假吧意思的吃个年夜饭
+     * 2.外婆一天
+     * 3.大姨妈一天
+     * 4.相一两个亲来看看呗，我想也是的
+     * <p>
+     * 又他妈的有一段时间 没有写代码了，前方的路，真的很长.
+     */
+    public static void teee() {
+
+
+        List<String> names=new ArrayList<>();
+        names.add("jack");
+        names.add("tom");
+        names.add("frank");
+
+        names.removeIf(x->x.equals("tom"));
+
+        System.out.println(names);
+    }
+
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");
-        MainInfo();
-       // Thread.currentThread().join();
+        fooInfo();
         System.out.println("application end.");
+
     }
 
 }

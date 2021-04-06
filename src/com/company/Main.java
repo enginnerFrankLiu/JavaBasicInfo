@@ -699,21 +699,17 @@ public class Main {
      * 又他妈的有一段时间 没有写代码了，前方的路，真的很长.
      */
     public static void teee() {
-
-
         List<String> names=new ArrayList<>();
         names.add("jack");
         names.add("tom");
         names.add("frank");
-
         names.removeIf(x->x.equals("tom"));
-
         System.out.println(names);
     }
 
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");
-        fooInfo();
+        teee();
         System.out.println("application end.");
 
     }

@@ -537,7 +537,7 @@ public class Main {
     }
 
     public static void MainInfo() throws Exception {
-        threadInterview threadInterview = new threadInterview();
+      //  threadInterview threadInterview = new threadInterview();
 ////        threadInterview.information();
 ////        threadInterview.interruptedInf();
 //        threadInterview.mmd();
@@ -552,7 +552,10 @@ public class Main {
 //        threadInterview.threadOrderA();
 //        threadInterview.infoQ();
 //        threadInterview.runTimeInfo();
-        threadInterview.runTimeInfoQ();
+        //threadInterview.runTimeInfoQ();
+        mqRefect mqRefect=new mqRefect();
+//        mqRefect.refectInfo();
+        mqRefect.threeWayToGetClass();
     }
 
     /**
@@ -566,7 +569,6 @@ public class Main {
         MainInfo();
        // Thread.currentThread().join();
         System.out.println("application end.");
-
     }
 
 }

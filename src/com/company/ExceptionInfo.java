@@ -16,6 +16,7 @@ public class ExceptionInfo {
      * 在运行期间调用任何对象的方法；
      *
      * 那么由此可以获取的类，只有两个类，我真的是醉.
+     * https://zhuanlan.zhihu.com/p/21423208.
      */
     public void infoJ() {
 

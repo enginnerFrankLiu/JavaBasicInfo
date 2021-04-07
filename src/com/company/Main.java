@@ -651,38 +651,34 @@ public class Main {
     }
 
     /**
-     *
-     *
-     分布式事务的常见实现方式
-     1.两阶段提交
-     2.三阶段提交
-     3.TCC模式
-     4.消息驱动
-     本地消息表
-     MQ消息中间件
-     消息事务RocketMQ
-     5.saga模型
-     6.最大努力通知.
-
-     等等一系列的方法和实现方式
-     1.一旦要考虑实现分布式，那么问题就是接踵而至的到来
-     2.分库分表
-     怎么去分，分了之后，当select * from user where userid=990;
-     我应该从哪个库，哪个表去找数据呢?
-     3.随之带来的分布式事务如何实现呢?
-
-     4.分布式锁又如何实现呢?
-
-     5.分布式session又如何处理呢？
-
-     分布式，事务锁
-     接口幂等性的问题，这些都是我们需要学习和了解的东西.
-
-     看够了，我们就来谢谢代码呗.
-     *
-     *
+     * 分布式事务的常见实现方式
+     * 1.两阶段提交
+     * 2.三阶段提交
+     * 3.TCC模式
+     * 4.消息驱动
+     * 本地消息表
+     * MQ消息中间件
+     * 消息事务RocketMQ
+     * 5.saga模型
+     * 6.最大努力通知.
+     * <p>
+     * 等等一系列的方法和实现方式
+     * 1.一旦要考虑实现分布式，那么问题就是接踵而至的到来
+     * 2.分库分表
+     * 怎么去分，分了之后，当select * from user where userid=990;
+     * 我应该从哪个库，哪个表去找数据呢?
+     * 3.随之带来的分布式事务如何实现呢?
+     * <p>
+     * 4.分布式锁又如何实现呢?
+     * <p>
+     * 5.分布式session又如何处理呢？
+     * <p>
+     * 分布式，事务锁
+     * 接口幂等性的问题，这些都是我们需要学习和了解的东西.
+     * <p>
+     * 看够了，我们就来谢谢代码呗.
      */
-    public void infodddd(){
+    public void infodddd() {
 
     }
 
@@ -701,19 +697,37 @@ public class Main {
     public static void teee() {
 
 
-        List<String> names=new ArrayList<>();
+        List<String> names = new ArrayList<>();
         names.add("jack");
         names.add("tom");
         names.add("frank");
 
-        names.removeIf(x->x.equals("tom"));
+        names.removeIf(x -> x.equals("tom"));
 
         System.out.println(names);
     }
 
+    /**
+     * ExceptionInfo
+     */
+    public static void DD() {
+
+        ExceptionInfo exceptionInfo = new ExceptionInfo();
+        exceptionInfo.infoJ();
+
+    }
+
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");
-        fooInfo();
+//
+//        String a="a";
+//        String b="b";
+//        String errorMessage= String.format("Failed to send %s cause by:%s ",a,b);
+//        System.out.println(errorMessage);
+
+
+        DD();
+
         System.out.println("application end.");
 
     }

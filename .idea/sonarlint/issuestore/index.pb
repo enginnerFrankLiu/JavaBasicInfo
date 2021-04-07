@@ -141,3 +141,5 @@ V
 &src/com/company/basic/ReflectTest.java,8\b\8b78f3f218f31a84612854095fb2230f204d084a
 O
 src/com/company/basic/Face.java,2\3\237f1725ca1c797cdba7d0a5a8dbd7d3d0052a03
+R
+"src/com/company/ExceptionInfo.java,b\3\b3ec53372e98da3be4a5696b04224ff9c6fc6278

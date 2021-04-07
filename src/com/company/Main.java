@@ -713,21 +713,16 @@ public class Main {
     public static void DD() {
 
         ExceptionInfo exceptionInfo = new ExceptionInfo();
-        exceptionInfo.infoJ();
+//        exceptionInfo.infoJ();
+//        exceptionInfo.getSuperClassInfo();
+//        exceptionInfo.getInterface();
+        exceptionInfo.getDeclareMethodInfo();
 
     }
 
     public static void main(String[] args) throws Exception {
         System.out.println("application start.");
-//
-//        String a="a";
-//        String b="b";
-//        String errorMessage= String.format("Failed to send %s cause by:%s ",a,b);
-//        System.out.println(errorMessage);
-
-
-        //DD();
-
+        DD();
         System.out.println("application end.");
 
     }

@@ -717,8 +717,8 @@ public class Main {
 //        exceptionInfo.getSuperClassInfo();
 //        exceptionInfo.getInterface();
 //        exceptionInfo.getDeclareMethodInfo();
-        exceptionInfo.arrayInfo();
-
+//        exceptionInfo.arrayInfo();
+          exceptionInfo.dynamicCreateArray();
     }
 
     public static void main(String[] args) throws Exception {

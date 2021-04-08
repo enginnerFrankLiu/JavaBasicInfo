@@ -1,9 +1,14 @@
 package com.company;
 
 import com.company.model.Son;
+import sun.awt.SunHints;
 
+import java.lang.reflect.Array;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.time.temporal.ValueRange;
+import java.util.Arrays;
 
 public class ExceptionInfo {
 
@@ -153,14 +158,13 @@ public class ExceptionInfo {
 
     /**
      * array info..
-     *
+     * <p>
      * 某些xx class 的本质就是数组；
      * 没什么好特别的；
-     *
+     * <p>
      * 如：ByteBuffer
      * 感觉还不错的
      * 文档是这个意思
-     *
      */
     public void arrayInfo() {
 
@@ -168,7 +172,6 @@ public class ExceptionInfo {
         ints[0] = 0;
         ints[1] = 0;
         ints[2] = 0;
-
         Class cla = ints.getClass();
         if (cla.isArray()) {
             System.out.println(" ok...");
@@ -177,7 +180,6 @@ public class ExceptionInfo {
         }
 
         try {
-
             Class cls = Class.forName("java.nio.ByteBuffer");
             Field[] fields = cls.getDeclaredFields();
             for (Field field : fields) {
@@ -192,6 +194,32 @@ public class ExceptionInfo {
                     ).println();
                 }
             }
+        } catch (Exception exception) {
+            System.out.println(exception);
+        }
+    }
+    /**
+     *
+     */
+    public void dynamicCreateArray() {
+        try {
+            Class integerElement = Class.forName("java.math.BigInteger");
+            int arrLen = 3;
+            Object dynamicArray = Array.newInstance(integerElement, arrLen);
+            for (int i = 0; i < 3; i++) {
+                String val = String.valueOf(i * i);
+
+                //获取String 类型的构造函数 来初始化其中的值.
+                Constructor constructor = integerElement.getConstructor(String.class);
+                //构造元素
+                Object element = constructor.newInstance(val);
+
+                //往动态构建的数组中，set值.
+                Array.set(dynamicArray, i, element);
+            }
+            Object[] results = (Object[]) dynamicArray;
+            System.out.println(Arrays.toString(results));
+
         } catch (Exception exception) {
             System.out.println(exception);
         }

@@ -1,3 +1,42 @@
 
-
-java:S1186	"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¼òíÏ8î¼¥ÙŠ/
+L
+java:S3740W"/Provide the parametrized type for this generic.(ˆŞü8¿êŒŞŠ/
+Z	java:S106="9Replace this use of System.out or System.err by a logger.(›êÃ˜øÿÿÿÿ8Ã¬İŠ/
+Q
+java:S1874L"4Remove this use of "isAccessible"; it is deprecated.(»ÌçÂ8ùöÙŞŠ/
+Z
+java:S2133/"=Remove this object instantiation and use "Son.class" instead.(…§ˆ·8Ëü˜İŠ/
+U	java:S106R"9Replace this use of System.out or System.err by a logger.(Ñó”8ñùãİŠ/
+Z	java:S106%"9Replace this use of System.out or System.err by a logger.(½üõ€şÿÿÿÿ8ı¶†İŠ/
+U	java:S106J"9Replace this use of System.out or System.err by a logger.(À¡ô¡8ËáçŞŠ/
+Z	java:S106\"9Replace this use of System.out or System.err by a logger.(„‹š°üÿÿÿÿ8¹¿„ŞŠ/
+9
+java:S1116J"Remove this empty statement.(À¡ô¡8êûèŞŠ/
+X	java:S125"<This block of commented-out lines of code should be removed.(†Ãß8ÈäÇÙŠ/
+Z	java:S106U"9Replace this use of System.out or System.err by a logger.(°é‹Ñÿÿÿÿÿ8ÓÈçİŠ/
+L
+java:S3740F"/Provide the parametrized type for this generic.(Û¯Ë¥8·½İİŠ/
+Q
+java:S37401"/Provide the parametrized type for this generic.(ÇÀ‡Œüÿÿÿÿ8ÊçšİŠ/
+Z
+java:S2133""=Remove this object instantiation and use "Son.class" instead.(…§ˆ·8¸ºİŠ/
+Z
+java:S2133F"=Remove this object instantiation and use "Son.class" instead.(Û¯Ë¥8µÿšŞŠ/
+U	java:S106N"9Replace this use of System.out or System.err by a logger.(»ÌçÂ8ÜŸÚŞŠ/
+U	java:S106L"9Replace this use of System.out or System.err by a logger.(»ÌçÂ8Ó¾ÙŞŠ/
+@
+java:S1148"#Use a logger to log this exception.(òçøì8¿£ÅÙŠ/
+U	java:S1062"9Replace this use of System.out or System.err by a logger.(ÀèÉá8ôç›İŠ/
+U	java:S106P"9Replace this use of System.out or System.err by a logger.(­‰àê8†ååİŠ/
+Q
+java:S1874N"4Remove this use of "isAccessible"; it is deprecated.(»ÌçÂ8ÜŸÚŞŠ/
+U	java:S106X"9Replace this use of System.out or System.err by a logger.(²«…½8Ò÷ŞŠ/
+U	java:S106_"9Replace this use of System.out or System.err by a logger.(à™´8Ú‹ŞŠ/
+Q
+java:S3740#"/Provide the parametrized type for this generic.(×…á…ùÿÿÿÿ8·ĞƒİŠ/
+L
+java:S3740Q"/Provide the parametrized type for this generic.(Œ·œË8ñùãİŠ/
+@
+java:S1148c"#Use a logger to log this exception.(òçøì8ÈôŠŞŠ/
+Z
+java:S2133:"=Remove this object instantiation and use "Son.class" instead.(…§ˆ·8Ü¬©İŠ/

@@ -1,6 +1,16 @@
 package com.company.model;
 
 public class Son extends Parent implements IAction {
+
+    public String version = "1998";
+
+    private String name;
+    private int age;
+
+    public String getName() {
+        return this.name;
+    }
+
     @Override
     public void fuck() {
         System.out.println("implement fuck method info q.");
@@ -15,7 +25,7 @@ public class Son extends Parent implements IAction {
         return val;
     }
 
-    private String getInfo(){
+    private String getInfo() {
         return "information";
     }
 

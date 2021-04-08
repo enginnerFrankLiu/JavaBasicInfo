@@ -1,0 +1,10 @@
+
+x
+java:S1488"[Immediately return this expression instead of assigning it to the temporary variable "val".(ÄÙ·Å8 ÄúİŠ/
+O
+java:S1144"-Remove this unused private "getMoney" method.(ˆ¥»·ıÿÿÿÿ8âÌÔİŠ/
+[
+java:S3400"9Remove this method and declare a constant for this value.(ÇäæÛùÿÿÿÿ8‡ì ŞŠ/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(µ·‚ü8ñ½ıÜŠ/
+I
+java:S1144",Remove this unused private "getInfo" method.(«â×Â8½£ŞŠ/

@@ -716,14 +716,15 @@ public class Main {
 //        exceptionInfo.infoJ();
 //        exceptionInfo.getSuperClassInfo();
 //        exceptionInfo.getInterface();
-        exceptionInfo.getDeclareMethodInfo();
+//        exceptionInfo.getDeclareMethodInfo();
+        exceptionInfo.arrayInfo();
 
     }
 
     public static void main(String[] args) throws Exception {
-        System.out.println("application start.");
+        System.out.format("application start.").println();
         DD();
-        System.out.println("application end.");
+        System.out.format("application end.");
 
     }
 

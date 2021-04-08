@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.model.Son;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 public class ExceptionInfo {
@@ -134,10 +135,10 @@ public class ExceptionInfo {
      * three different way to get class info.
      * 写了这么多，他就是在运行时
      * 1.获取类的哥各种信息: 类基本信息，类名，包名，是否有继承，继承的父类，实现的接口
-     *   获取构造函数的信息 构造函数的参数，信息，并且可以动态的利用构造函数生成对象.
-     *   获取各种字段的信息 包括各种共有，私有，并且可以改变其中的访问修饰符，动态的设置 或者 获取 字段的value.
-     *   获取各种方法的信息，包括方法的参数，返回类型，并且可动态的调用改method
-     *   这个就是对java reflect 的一个基本总结.
+     * 获取构造函数的信息 构造函数的参数，信息，并且可以动态的利用构造函数生成对象.
+     * 获取各种字段的信息 包括各种共有，私有，并且可以改变其中的访问修饰符，动态的设置 或者 获取 字段的value.
+     * 获取各种方法的信息，包括方法的参数，返回类型，并且可动态的调用改method
+     * 这个就是对java reflect 的一个基本总结.
      */
     public void showInfo() {
         Class cla0 = Son.class;
@@ -145,6 +146,52 @@ public class ExceptionInfo {
         try {
             Class cla2 = Class.forName("com.company.model.Son");
             System.out.println(cla2.getName());
+        } catch (Exception exception) {
+            System.out.println(exception);
+        }
+    }
+
+    /**
+     * array info..
+     *
+     * 某些xx class 的本质就是数组；
+     * 没什么好特别的；
+     *
+     * 如：ByteBuffer
+     * 感觉还不错的
+     * 文档是这个意思
+     *
+     */
+    public void arrayInfo() {
+
+        int[] ints = new int[3];
+        ints[0] = 0;
+        ints[1] = 0;
+        ints[2] = 0;
+
+        Class cla = ints.getClass();
+        if (cla.isArray()) {
+            System.out.println(" ok...");
+        } else {
+            System.out.println("not ok..");
+        }
+
+        try {
+
+            Class cls = Class.forName("java.nio.ByteBuffer");
+            Field[] fields = cls.getDeclaredFields();
+            for (Field field : fields) {
+                Class c = field.getType();
+                if (c.isArray()) {
+                    System.out.format("%s%n"
+                                    + "       Field: %s%n"
+                                    + "       Type : %s%n"
+                                    + "      Component Type:%s%n",
+                            field, field.getName(), c, c.getName()
+
+                    ).println();
+                }
+            }
         } catch (Exception exception) {
             System.out.println(exception);
         }

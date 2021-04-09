@@ -8,6 +8,7 @@ import com.company.jvm.JavaJvm;
 import com.company.lock.Demo;
 import com.company.lock.LockInfo;
 import com.company.lock.ReenternLock;
+import com.company.model.RestoreAliases;
 import com.company.stream.StreamInfo;
 import com.company.threadlearn.ExampleInterruptThread;
 import com.company.threadlearn.threadInterview;
@@ -712,13 +713,16 @@ public class Main {
      */
     public static void DD() {
 
-        ExceptionInfo exceptionInfo = new ExceptionInfo();
+       // ExceptionInfo exceptionInfo = new ExceptionInfo();
 //        exceptionInfo.infoJ();
 //        exceptionInfo.getSuperClassInfo();
 //        exceptionInfo.getInterface();
 //        exceptionInfo.getDeclareMethodInfo();
 //        exceptionInfo.arrayInfo();
-          exceptionInfo.dynamicCreateArray();
+//          exceptionInfo.dynamicCreateArray();
+//        exceptionInfo.construct();
+        RestoreAliases restoreAliases=new RestoreAliases();
+        restoreAliases.exe();
     }
 
     public static void main(String[] args) throws Exception {

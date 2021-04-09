@@ -3,10 +3,12 @@ package com.company;
 import com.company.model.Son;
 import sun.awt.SunHints;
 
+import java.io.Console;
 import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.nio.charset.Charset;
 import java.time.temporal.ValueRange;
 import java.util.Arrays;
 
@@ -226,4 +228,37 @@ public class ExceptionInfo {
             System.out.println(exception);
         }
     }
+
+    /**
+     * as the documents mention,there are two way to create instance by constructor call
+     */
+    public void construct(){
+
+        Constructor [] constructors= Console.class.getDeclaredConstructors();
+        Constructor constructor=null;
+        for(int i=0;i<constructors.length;i++){
+            constructor=constructors[i];
+            //获取默认的构造函数；就是构造函数的参数为null时候，然后生成默认的对象，然后获取他的默认值.
+            if(constructor.getGenericParameterTypes().length==0){
+                System.out.println(Arrays.toString(constructor.getGenericParameterTypes()));
+                break;
+            }
+        }
+        try{
+            constructor.setAccessible(true);
+            Console c=(Console)constructor.newInstance();
+            Field f=c.getClass().getDeclaredField("cs");
+            f.setAccessible(true);
+            //获取指定对象的值
+            System.out.println(f.get(c));
+            System.out.println(Charset.defaultCharset());
+
+        }catch (Exception exception){
+            exception.printStackTrace();
+        }
+
+
+    }
+
+
 }

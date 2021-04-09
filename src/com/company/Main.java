@@ -713,7 +713,7 @@ public class Main {
      */
     public static void DD() {
 
-       // ExceptionInfo exceptionInfo = new ExceptionInfo();
+        // ExceptionInfo exceptionInfo = new ExceptionInfo();
 //        exceptionInfo.infoJ();
 //        exceptionInfo.getSuperClassInfo();
 //        exceptionInfo.getInterface();
@@ -721,15 +721,15 @@ public class Main {
 //        exceptionInfo.arrayInfo();
 //          exceptionInfo.dynamicCreateArray();
 //        exceptionInfo.construct();
-        RestoreAliases restoreAliases=new RestoreAliases();
-        restoreAliases.exe();
+        RestoreAliases restoreAliases = new RestoreAliases();
+//        restoreAliases.exe();
+        restoreAliases.reflectInfo();
     }
 
     public static void main(String[] args) throws Exception {
         System.out.format("application start.").println();
         DD();
         System.out.format("application end.");
-
     }
 
 }

@@ -720,10 +720,14 @@ public class Main {
 //        exceptionInfo.getDeclareMethodInfo();
 //        exceptionInfo.arrayInfo();
 //          exceptionInfo.dynamicCreateArray();
-//        exceptionInfo.construct();
-        RestoreAliases restoreAliases = new RestoreAliases();
-//        restoreAliases.exe();
-        restoreAliases.reflectInfo();
+////        exceptionInfo.construct();
+//        RestoreAliases restoreAliases = new RestoreAliases();
+////        restoreAliases.exe();
+//        restoreAliases.reflectInfo();
+
+        ReflectInfoMS reflectInfoMS=new ReflectInfoMS();
+//        reflectInfoMS.showParameterizedType();
+        reflectInfoMS.showGenericArrayType();
     }
 
     public static void main(String[] args) throws Exception {

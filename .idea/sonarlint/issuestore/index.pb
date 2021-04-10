@@ -153,3 +153,9 @@ R
 "src/com/company/model/IAction.java,b\d\bdd317abb69d8c0459fc4fbe16d1473499c4cda3
 N
 src/com/company/model/Son.java,5\2\521a0ca3a7380c3c6b62102a3a706510f9a9c9a9
+W
+'src/com/company/model/EmailAliases.java,b\7\b7ad601e55b009bbd853b4215429cbc6ac1133b1
+S
+#src/com/company/model/Computer.java,9\b\9b2f918081ee453fa208fd6208d84bf61883f51a
+Y
+)src/com/company/model/RestoreAliases.java,b\b\bbce4cc4dea1203218834f95050e2c113b8928e4

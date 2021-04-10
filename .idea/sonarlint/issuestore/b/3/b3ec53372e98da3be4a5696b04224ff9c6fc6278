@@ -1,42 +1,80 @@
 
-L
-java:S3740W"/Provide the parametrized type for this generic.(ˆŞü8¿êŒŞŠ/
-Z	java:S106="9Replace this use of System.out or System.err by a logger.(›êÃ˜øÿÿÿÿ8Ã¬İŠ/
+W
+java:S1191"5Use classes from the Java API instead of Sun classes.(”Š¸Îşÿÿÿÿ8´ŒÛˆ‹/
+g
+java:S2259ø"IA "NullPointerException" could be thrown; "constructor" is nullable here.(”İÙ®8òòÑ ‹/
+Z
+java:S21336"=Remove this object instantiation and use "Son.class" instead.(…§ˆ·8à¿ê„‹/
 Q
-java:S1874L"4Remove this use of "isAccessible"; it is deprecated.(»ÌçÂ8ùöÙŞŠ/
-Z
-java:S2133/"=Remove this object instantiation and use "Son.class" instead.(…§ˆ·8Ëü˜İŠ/
-U	java:S106R"9Replace this use of System.out or System.err by a logger.(Ñó”8ñùãİŠ/
-Z	java:S106%"9Replace this use of System.out or System.err by a logger.(½üõ€şÿÿÿÿ8ı¶†İŠ/
-U	java:S106J"9Replace this use of System.out or System.err by a logger.(À¡ô¡8ËáçŞŠ/
-Z	java:S106\"9Replace this use of System.out or System.err by a logger.(„‹š°üÿÿÿÿ8¹¿„ŞŠ/
-9
-java:S1116J"Remove this empty statement.(À¡ô¡8êûèŞŠ/
-X	java:S125"<This block of commented-out lines of code should be removed.(†Ãß8ÈäÇÙŠ/
-Z	java:S106U"9Replace this use of System.out or System.err by a logger.(°é‹Ñÿÿÿÿÿ8ÓÈçİŠ/
-L
-java:S3740F"/Provide the parametrized type for this generic.(Û¯Ë¥8·½İİŠ/
+java:S3740*"/Provide the parametrized type for this generic.(×…á…ùÿÿÿÿ8·ĞƒİŠ/
+X	java:S125]"<This block of commented-out lines of code should be removed.(ó˜Ô·8Œş„‹/
+[	java:S106ı"9Replace this use of System.out or System.err by a logger.(™â§óøÿÿÿÿ8‘ö× ‹/
+R
+java:S3740š"/Provide the parametrized type for this generic.(™Œã¸úÿÿÿÿ8Ã•…‹/
+]	java:S125X"<This block of commented-out lines of code should be removed.(ŸŠ¾şÿÿÿÿ8Œş„‹/
+[	java:S106á"9Replace this use of System.out or System.err by a logger.(ä¸‚úÿÿÿÿ8Ê¦áˆ‹/
+A
+java:S1148‰"#Use a logger to log this exception.(òçøì8ÈôŠŞŠ/
+[	java:S106È"9Replace this use of System.out or System.err by a logger.(Ú§ÈÖúÿÿÿÿ8‚êá†‹/
 Q
-java:S37401"/Provide the parametrized type for this generic.(ÇÀ‡Œüÿÿÿÿ8ÊçšİŠ/
+java:S37408"/Provide the parametrized type for this generic.(ÇÀ‡Œüÿÿÿÿ8ÊçšİŠ/
+U	java:S1069"9Replace this use of System.out or System.err by a logger.(ÀèÉá8ôç›İŠ/
 Z
-java:S2133""=Remove this object instantiation and use "Son.class" instead.(…§ˆ·8¸ºİŠ/
+java:S2133M"=Remove this object instantiation and use "Son.class" instead.(…§ˆ·8Œş„‹/
+G
+java:S1481—")Remove this unused "cla0" local variable.(¢°æ†8ÑœŒ…‹/
+]	java:S125P"<This block of commented-out lines of code should be removed.(¯§øöúÿÿÿÿ8Œş„‹/
+X	java:S125l"<This block of commented-out lines of code should be removed.(ëéßÒ8Œş„‹/
+\
+java:S1128":Remove this unused import 'java.time.temporal.ValueRange'.(Â³Íúÿÿÿÿ8®Öˆ‹/
+[	java:S106"9Replace this use of System.out or System.err by a logger.(Ú§ÈÖúÿÿÿÿ8ÑœŒ…‹/
+[	java:S106ä"9Replace this use of System.out or System.err by a logger.(Ú§ÈÖúÿÿÿÿ8·­âˆ‹/
+X	java:S125s"<This block of commented-out lines of code should be removed.(ù¬8Œş„‹/
+Z	java:S106D"9Replace this use of System.out or System.err by a logger.(›êÃ˜øÿÿÿÿ8Ã¬İŠ/
+[	java:S106µ"9Replace this use of System.out or System.err by a logger.(ÑÔ»Ùøÿÿÿÿ8æ»Œ‡‹/
+L
+java:S3740N"/Provide the parametrized type for this generic.(üÓö®8·½İİŠ/
+R
+java:S3740˜"/Provide the parametrized type for this generic.(Åï¢­ÿÿÿÿÿ8ÑœŒ…‹/
 Z
-java:S2133F"=Remove this object instantiation and use "Son.class" instead.(Û¯Ë¥8µÿšŞŠ/
-U	java:S106N"9Replace this use of System.out or System.err by a logger.(»ÌçÂ8ÜŸÚŞŠ/
-U	java:S106L"9Replace this use of System.out or System.err by a logger.(»ÌçÂ8Ó¾ÙŞŠ/
+java:S2133)"=Remove this object instantiation and use "Son.class" instead.(…§ˆ·8¸ºİŠ/
+V	java:S106ó"9Replace this use of System.out or System.err by a logger.(¡‚¨8ã¹å ‹/
+R
+java:S3740Ù"/Provide the parametrized type for this generic.(¨®‡ ıÿÿÿÿ8‡¸Ôˆ‹/
+X	java:S125T"<This block of commented-out lines of code should be removed.(´µ£Û8Œş„‹/
+]	java:S125p"<This block of commented-out lines of code should be removed.(¤¦ô¨ùÿÿÿÿ8Œş„‹/
+`
+java:S2133˜"=Remove this object instantiation and use "Son.class" instead.(Åï¢­ÿÿÿÿÿ8ÑœŒ…‹/
+A
+java:S1148"#Use a logger to log this exception.(òçøì8òòÑ ‹/
+[	java:S106³"9Replace this use of System.out or System.err by a logger.(Ü‘–ÿÿÿÿÿ8ú‰Š‡‹/
+L
+java:S3740±"/Provide the parametrized type for this generic.(Ë½¡*8ù ‰‡‹/
+M
+java:S3740Ò"/Provide the parametrized type for this generic.(÷Å­Ö8…µÊˆ‹/
+X	java:S125R"<This block of commented-out lines of code should be removed.(ùÅÏÛ8Œş„‹/
+M
+java:S3740—"/Provide the parametrized type for this generic.(¢°æ†8ÑœŒ…‹/
+M
+java:S3740¼"/Provide the parametrized type for this generic.(‰Óë­8Ø¯Ê†‹/
 @
-java:S1148"#Use a logger to log this exception.(òçøì8¿£ÅÙŠ/
-U	java:S1062"9Replace this use of System.out or System.err by a logger.(ÀèÉá8ôç›İŠ/
-U	java:S106P"9Replace this use of System.out or System.err by a logger.(­‰àê8†ååİŠ/
-Q
-java:S1874N"4Remove this use of "isAccessible"; it is deprecated.(»ÌçÂ8ÜŸÚŞŠ/
-U	java:S106X"9Replace this use of System.out or System.err by a logger.(²«…½8Ò÷ŞŠ/
-U	java:S106_"9Replace this use of System.out or System.err by a logger.(à™´8Ú‹ŞŠ/
-Q
-java:S3740#"/Provide the parametrized type for this generic.(×…á…ùÿÿÿÿ8·ĞƒİŠ/
+java:S1148$"#Use a logger to log this exception.(òçøì8¿£ÅÙŠ/
+]	java:S125d"<This block of commented-out lines of code should be removed.(¶³ÈŒüÿÿÿÿ8Œş„‹/
+O
+java:S1128"-Remove this unused import 'sun.awt.SunHints'.(”Š¸Îşÿÿÿÿ8´ŒÛˆ‹/
+M
+java:S3740¹"/Provide the parametrized type for this generic.(É«Ú²8•ÆÈ†‹/
+[	java:S106…"9Replace this use of System.out or System.err by a logger.(›êÃ˜øÿÿÿÿ8×±€…‹/
 L
-java:S3740Q"/Provide the parametrized type for this generic.(Œ·œË8ñùãİŠ/
-@
-java:S1148c"#Use a logger to log this exception.(òçøì8ÈôŠŞŠ/
+java:S1481˜")Remove this unused "cla1" local variable.(Åï¢­ÿÿÿÿÿ8ÑœŒ…‹/
 Z
-java:S2133:"=Remove this object instantiation and use "Son.class" instead.(…§ˆ·8Ü¬©İŠ/
+java:S2133A"=Remove this object instantiation and use "Son.class" instead.(…§ˆ·8Ü¬©İŠ/
+]	java:S125y"<This block of commented-out lines of code should be removed.(Şù÷‘øÿÿÿÿ8Œş„‹/
+L
+java:S3740î"/Provide the parametrized type for this generic.(Åå¢'8‘éÂ ‹/
+Z	java:S106,"9Replace this use of System.out or System.err by a logger.(½üõ€şÿÿÿÿ8ı¶†İŠ/
+V	java:S106€"9Replace this use of System.out or System.err by a logger.(±£ÚÃ8Î‡ı„‹/
+X	java:S125"<This block of commented-out lines of code should be removed.(†Ãß8ÈäÇÙŠ/
+V	java:S106¾"9Replace this use of System.out or System.err by a logger.(Ò‡×8‹÷Ì†‹/
+[	java:S106›"9Replace this use of System.out or System.err by a logger.(íÖ®şıÿÿÿÿ8Ã•…‹/
+V	java:S106ş"9Replace this use of System.out or System.err by a logger.(‹§§8‰ƒë ‹/

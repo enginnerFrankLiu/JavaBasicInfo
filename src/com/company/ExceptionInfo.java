@@ -256,6 +256,23 @@ public class ExceptionInfo {
         }catch (Exception exception){
             exception.printStackTrace();
         }
+    }
+
+    /**
+     *
+     *
+     * getFields() 方法获取的是这个类的public属性，包括父类，
+     * getDelaredFields() 能够获取到的在本身类中的 所有field，无视权限，但看不到父类.
+     *
+     * java 中的泛型操作.
+     *
+     * java 中的泛型仅仅是给编译器javac 使用的，确保数据的安全性和免去强制类型转换的麻烦，一旦编译生成，
+     * 所有与泛型先关的类型全部擦除，使用泛型直接读取泛型，是读取不到的，因为反射操作是加载以后的类；
+     *
+     *
+     */
+    public void sum(){
+
 
 
     }

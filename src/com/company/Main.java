@@ -9,6 +9,7 @@ import com.company.lock.Demo;
 import com.company.lock.LockInfo;
 import com.company.lock.ReenternLock;
 import com.company.model.RestoreAliases;
+import com.company.reflectz.TypeApplication;
 import com.company.stream.StreamInfo;
 import com.company.threadlearn.ExampleInterruptThread;
 import com.company.threadlearn.threadInterview;
@@ -724,10 +725,14 @@ public class Main {
 //        RestoreAliases restoreAliases = new RestoreAliases();
 ////        restoreAliases.exe();
 //        restoreAliases.reflectInfo();
+//
+//        ReflectInfoMS reflectInfoMS=new ReflectInfoMS();
+////        reflectInfoMS.showParameterizedType();
+//        reflectInfoMS.showGenericArrayType();
 
-        ReflectInfoMS reflectInfoMS=new ReflectInfoMS();
-//        reflectInfoMS.showParameterizedType();
-        reflectInfoMS.showGenericArrayType();
+        TypeApplication<Integer> md=new TypeApplication<>();
+        md.showJJ();
+
     }
 
     public static void main(String[] args) throws Exception {

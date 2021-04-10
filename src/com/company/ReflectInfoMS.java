@@ -10,10 +10,10 @@ import java.util.Map;
 /**
  * java 中的type
  * 原始与基本类型：class
- * 参数化类型:ParameterizedType
- * 泛型数组类型 GenericArrayType
- * 类型变量:TypeVariable
- * 通配符:WildcardType
+ * 参数化类型:ParameterizedType 表示一种参数化的类型如: Collection<String> 可以获取string的信息
+ * 泛型数组类型 GenericArrayType 泛型数组类型
+ * 类型变量:TypeVariable  各种类型变量的公共父接口
+ * 通配符:WildcardType 代表一种通配符类型表达式:-> 比如 extend number? super integer
  *
  * 重点大概就是这两种，
  * 1.ParameterizedType

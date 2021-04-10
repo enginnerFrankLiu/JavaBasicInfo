@@ -730,8 +730,11 @@ public class Main {
 ////        reflectInfoMS.showParameterizedType();
 //        reflectInfoMS.showGenericArrayType();
 
-        TypeApplication<Integer> md=new TypeApplication<>();
-        md.showJJ();
+//        TypeApplication<Integer> md=new TypeApplication<>();
+//        md.showJJ();
+
+        RestoreAliases restoreAliases=new RestoreAliases();
+        restoreAliases.showInfo();
 
     }
 

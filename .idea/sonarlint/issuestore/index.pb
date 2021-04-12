@@ -159,3 +159,7 @@ S
 #src/com/company/model/Computer.java,9\b\9b2f918081ee453fa208fd6208d84bf61883f51a
 Y
 )src/com/company/model/RestoreAliases.java,b\b\bbce4cc4dea1203218834f95050e2c113b8928e4
+R
+"src/com/company/ReflectInfoMS.java,6\b\6bf6458d7c188eca17e61a8c16ef9512a1568cf7
+]
+-src/com/company/reflectz/TypeApplication.java,b\3\b3768667b8b9fdd5a42ace402712fbbe4568a38f

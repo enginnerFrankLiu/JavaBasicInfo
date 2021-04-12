@@ -133,4 +133,17 @@ public class RestoreAliases {
         }
 
     }
+
+    /**
+     * 这个东西不是很好理解的
+     * 1.undo log
+     * 2.read view
+     * mvcc
+     * 如何实现 并发控制的 安全性的，
+     * 正在一步一步的探究中.
+     *
+     */
+    public void DBInfo(){
+
+    }
 }

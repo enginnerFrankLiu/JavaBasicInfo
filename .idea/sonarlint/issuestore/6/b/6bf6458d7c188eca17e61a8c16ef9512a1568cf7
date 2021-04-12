@@ -1,0 +1,24 @@
+
+Z	java:S1064"9Replace this use of System.out or System.err by a logger.(Ú§ÈÖúÿÿÿÿ8™¯è×‹/
+n
+java:S1104"QMake house a static final constant or non-public and provide accessors if needed.(Ü®×Ê8ÜÜØ‹/
+U	java:S1060"9Replace this use of System.out or System.err by a logger.(‰¼Ë8â…ˆØ‹/
+U	java:S106A"9Replace this use of System.out or System.err by a logger.(†’›8­—§Ø‹/
+U	java:S106E"9Replace this use of System.out or System.err by a logger.(£ÓàÅ8ÕÒ»Ø‹/
+s
+java:S1104"QMake field a static final constant or non-public and provide accessors if needed.(°˜¨Ùùÿÿÿÿ8²çÚ×‹/
+Z	java:S106\"9Replace this use of System.out or System.err by a logger.(Ú§ÈÖúÿÿÿÿ8æÒ§Ø‹/
+T	java:S106X"9Replace this use of System.out or System.err by a logger.(À®ù8¸ŠÓØ‹/
+]	java:S125:"<This block of commented-out lines of code should be removed.(ÂëßÖøÿÿÿÿ8ËùİØ‹/
+Z	java:S106)"9Replace this use of System.out or System.err by a logger.(äªëæúÿÿÿÿ8¶éó×‹/
+X	java:S125'"<This block of commented-out lines of code should be removed.(–êœâ8˜Âó×‹/
+Z	java:S106R"9Replace this use of System.out or System.err by a logger.(ÿ»Şøûÿÿÿÿ8ÃúÈØ‹/
+Z	java:S106I"9Replace this use of System.out or System.err by a logger.(úÆ“òşÿÿÿÿ8­ğÃØ‹/
+U	java:S106O"9Replace this use of System.out or System.err by a logger.(Äş­ñ8ˆËÇØ‹/
+Z	java:S106L"9Replace this use of System.out or System.err by a logger.(ø©Â‹ıÿÿÿÿ8ˆËÇØ‹/
+U	java:S106U"9Replace this use of System.out or System.err by a logger.(Å¥ëÏ8ğÜÌØ‹/
+m
+java:S1104"PMake list a static final constant or non-public and provide accessors if needed.(ìşá“8ğ²Ø‹/
+V
+java:S1117#"9Rename "field" which hides the field declared at line 26.(ÏÈ“ß8ËÒç×‹/
+U	java:S106-"9Replace this use of System.out or System.err by a logger.(Äş­ñ8¡Ğ„Ø‹/

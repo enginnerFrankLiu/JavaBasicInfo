@@ -146,4 +146,14 @@ public class RestoreAliases {
     public void DBInfo(){
 
     }
+
+    /**
+     *
+     *今天继续我们的mvvc，卧槽
+     *
+     *
+     */
+    public void mvvcInMySql(){
+
+    }
 }

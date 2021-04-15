@@ -159,7 +159,9 @@ public class RestoreAliases {
 
     /**
      * IO 多路复用
-     * https://mp.weixin.qq.com/s/JHqVY02mMJIpuZ4s9XOrVg
+     * https://mp.weixin.qq.com/s/JHqVY02mMJIpuZ4s9XOrVg]
+     *
+     * TCP IP 多路复用技术
      */
     public void IOMulitUsed(){
 

@@ -156,4 +156,14 @@ public class RestoreAliases {
     public void mvvcInMySql(){
 
     }
+
+    /**
+     * IO 多路复用
+     * https://mp.weixin.qq.com/s/JHqVY02mMJIpuZ4s9XOrVg
+     */
+    public void IOMulitUsed(){
+
+
+    }
+
 }

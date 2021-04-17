@@ -151,7 +151,30 @@ public class RestoreAliases {
      *今天继续我们的mvvc，卧槽
      * mvcc 依赖undo log 好 read view
      * 还有可见性算法，解决了我们RC 和 RR 的问题
-     * 但最终还是没有解决我们的 幻读的问题，辣么，他是怎么解决幻读问题的呢?
+     * 但最终还是没有解决我们的 幻读的问题，辣么，他是怎么解决幻读问题的呢
+     *
+     * 这个就是规则:
+     *
+     * MySQL 会根据以下规则来判断版本链中的哪个版本（记录）是在事务中可见的：
+     *
+     * trx_id < min_trx_id，那么该记录则在当前事务可见，因为修改该版本记录的事务在当前事务生成 Read View 之前就已经提交。
+     *
+     * trx_id in (rw_trx_ids)，那么该记录在当前事务不可见，因为需改该版本记录的事务在当前事务生成 Read View 之前还未提交。
+     *
+     * trx_id > max_trx_id，那么该记录在当前事务不可见，因为修改该版本记录的事务在当前事务生成 Read View 之前还未开启。
+     *
+     * trx_id = curr_trx_id，那么该记录在当前事务可见，因为修改该版本记录的事务就是当前事务。
+     * 作者：Java_隔壁老王
+     * https://www.bilibili.com/read/cv6580973/
+     * 出处： bilibili
+     *
+     * 在 INNODB 使用mvcc 和 next-key-lock 解决幻读的问题
+     *
+     * RC
+     * RR
+     *
+     * 在RR的事务隔离级别下，数据库会使用next-key lock 锁来 锁住本条记录以及索引区间.
+     * select * from table where id>3 锁住的就是id=3这条记录以及id>3这个区间范围，锁住索引记录之间的范围，避免范围间插入记录，以避免产生幻影行记录
      */
     public void mvvcInMySql(){
 
@@ -167,5 +190,6 @@ public class RestoreAliases {
 
 
     }
+
 
 }

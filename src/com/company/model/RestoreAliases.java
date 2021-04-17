@@ -148,10 +148,10 @@ public class RestoreAliases {
     }
 
     /**
-     *
      *今天继续我们的mvvc，卧槽
-     *
-     *
+     * mvcc 依赖undo log 好 read view
+     * 还有可见性算法，解决了我们RC 和 RR 的问题
+     * 但最终还是没有解决我们的 幻读的问题，辣么，他是怎么解决幻读问题的呢?
      */
     public void mvvcInMySql(){
 

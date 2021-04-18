@@ -1,0 +1,22 @@
+
+分布式事务的几种实现方式
+1.https://www.cnblogs.com/chengxy-nds/p/14046856.html
+
+2.基于ROCKMQ的消息事务
+https://juejin.cn/post/6844904106532962311
+
+事务日志,事务基本概念
+3.https://draveness.me/distributed-transaction-principle/
+
+pxoas 算法
+https://www.jdon.com/artichect/paxos.html
+
+
+1.分布式锁的实现
+
+2.幂等性的实现
+
+3.DB 拆分方法 选择性
+
+4.API的认证授权问题
+

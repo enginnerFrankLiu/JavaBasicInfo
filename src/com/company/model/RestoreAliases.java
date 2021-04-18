@@ -207,6 +207,8 @@ public class RestoreAliases {
      *
      * SERIALIZABLE
      *
+     *
+     * 读写之间的并发性控制而言.
      */
     public void mvvcInMySql(){
 

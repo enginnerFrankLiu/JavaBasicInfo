@@ -14,3 +14,23 @@ https://github.com/Beerkay/JavaMultiThreading
 12- Java Multithreading: Semaphores
 13- Java Multithreading: Callable and Future
 14- Java Multithreading: Interrupting Threads
+
+
+分布式事务的几种实现方式
+1.https://www.cnblogs.com/chengxy-nds/p/14046856.html
+
+2.基于ROCKMQ的消息事务
+https://juejin.cn/post/6844904106532962311
+
+事务日志,事务基本概念
+3.https://draveness.me/distributed-transaction-principle/
+
+pxoas 算法
+https://www.jdon.com/artichect/paxos.html
+
+mvcc
+https://www.cnblogs.com/ZhuChangwu/p/14076997.html
+
+IO 多路复用
+https://mp.weixin.qq.com/s/JHqVY02mMJIpuZ4s9XOrVg
+

@@ -278,5 +278,12 @@ public class ExceptionInfo {
 
     }
 
+    /**
+     * 今天去参加公开课堂了
+     */
+    public void english_class(){
+
+    }
+
 
 }

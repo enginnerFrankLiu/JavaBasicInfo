@@ -274,14 +274,19 @@ public class ExceptionInfo {
      */
     public void sum(){
 
-
-
     }
 
     /**
      * 今天去参加公开课堂了
      */
     public void english_class(){
+
+    }
+
+    /**
+     * information tech
+     */
+    public void informationForSomeOne(){
 
     }
 

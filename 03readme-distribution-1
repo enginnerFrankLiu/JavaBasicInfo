@@ -14,7 +14,43 @@ https://www.jdon.com/artichect/paxos.html
 
 1.分布式锁的实现
 
+ 基于MY_SQL 的简单实现
+
+ table-> method name or resource name
+
+ 第一种: 利用DB的唯一性约束
+        往table中插入数据，由于DB的唯一性约束，有且只有一个条insert 语句能够操作成功，
+        操作成功的request，进行后续的业务逻辑，业务执行完毕之后，删除orderId的数据.
+        失败的就直接返回：系统繁忙，稍后再试;
+
+        致命的缺点：
+         1.不具备排队等候性(堵塞性)，其他的request 通通获取资源失败，而抛异常
+         2.不具备超时机制
+         3.没有重入性
+
+第二种实现方式: 利用DB的排它锁来实现(数据库中的排它锁，是不能与任何形式的锁共存的)
+
+connection.setAutoCommit(false)
+  var row= SELECT * FROM TABLE WHERE METHOD_NAME='ADD_MONEY()' FOR UPDATE
+if(row!=null){
+  获取成功之后，执行业务逻辑
+  connection.commit(); //释放锁;
+}
+
+
+第三种实现方式：
+
+
+
+
+以上的方式都是一种“土办法”，都不是一个完整的，较为完美的分布式锁的实现方式;
+分布式锁的原理实际上很容易理解，难的是如何在具体业务场景上选择最合适的方案
+
+
+
 2.幂等性的实现
+
+3.雪花ID(订单ID)的生成和使用滴呀.
 
 3.DB 拆分方法 选择性
 

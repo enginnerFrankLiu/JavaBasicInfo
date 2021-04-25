@@ -18,14 +18,16 @@ https://github.com/Beerkay/JavaMultiThreading
 
 IO 多路复用
 https://mp.weixin.qq.com/s/JHqVY02mMJIpuZ4s9XOrVg
-
 JAVA 反射(c# 中反射和emit)
-
 JAVA NIO
+JAVA 网络编程
+JAVA 8 9 10 11 等等的特性.
 
+
+JAVA面试几乎必问的题：
+1.CLASS LOADER
+2.GC
+3.collection
+4.Thread.
 这里可以进行更为扩展阅读:
 对比JavaScript 中的event loop 和 golang 中的channel.
-
-JAVA 网络编程
-
-JAVA 8 9 10 11 等等的特性.

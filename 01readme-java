@@ -31,3 +31,20 @@ JAVA面试几乎必问的题：
 4.Thread.
 这里可以进行更为扩展阅读:
 对比JavaScript 中的event loop 和 golang 中的channel.
+
+
+
+GC:
+粗略的GC讲解
+https://juejin.cn/post/6844903817012576264
+类加载器子系统 运行时数据区 执行引擎的关系
+https://zhuanlan.zhihu.com/p/92646192
+GC 完整知识体系:
+https://github.com/enginnerFrankLiu/jvm
+https://github.com/cncounter/gc-handbook
+
+
+ Minor GC
+ Major GC
+
+

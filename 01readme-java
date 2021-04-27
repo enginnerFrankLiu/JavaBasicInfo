@@ -31,3 +31,35 @@ JAVA面试几乎必问的题：
 4.Thread.
 这里可以进行更为扩展阅读:
 对比JavaScript 中的event loop 和 golang 中的channel.
+
+
+
+GC:
+粗略的GC讲解
+https://juejin.cn/post/6844903817012576264
+类加载器子系统 运行时数据区 执行引擎的关系
+https://zhuanlan.zhihu.com/p/92646192
+GC 完整知识体系:
+https://github.com/enginnerFrankLiu/jvm
+https://github.com/cncounter/gc-handbook
+
+
+ Minor GC
+ Major GC
+ FULL  GC
+
+ Mark-sweep
+ Mark-sweep-compact
+ Mark-copy
+
+GC 基本概念和常见算法
+
+GC 日志的一些参数
+
+1.不同的场景下，是GC使用不同的算法进行垃圾回收-> 采用最佳的算法.
+
+  本质上就是在减少stop-the-world.的时间
+
+2.避免没必要的内存泄漏
+
+3.硬件上的升级

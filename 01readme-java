@@ -52,4 +52,14 @@ https://github.com/cncounter/gc-handbook
  Mark-sweep-compact
  Mark-copy
 
+GC 基本概念和常见算法
 
+GC 日志的一些参数
+
+1.不同的场景下，是GC使用不同的算法进行垃圾回收-> 采用最佳的算法.
+
+  本质上就是在减少stop-the-world.的时间
+
+2.避免没必要的内存泄漏
+
+3.硬件上的升级

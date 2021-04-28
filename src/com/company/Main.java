@@ -3,6 +3,8 @@ package com.company;
 import com.company.IO.FileExample;
 import com.company.IO.SerialExample;
 import com.company.basic.ReflectTest;
+import com.company.core.SubClass;
+import com.company.core.SuperClass;
 import com.company.jvm.Client;
 import com.company.jvm.JavaJvm;
 import com.company.lock.Demo;
@@ -732,12 +734,24 @@ public class Main {
 
 //        TypeApplication<Integer> md=new TypeApplication<>();
 //        md.showJJ();
+//
+//        RestoreAliases restoreAliases=new RestoreAliases();
+//        restoreAliases.showInfo();
 
-        RestoreAliases restoreAliases=new RestoreAliases();
-        restoreAliases.showInfo();
+//        System.out.println(SubClass.val);
+//
+//        SuperClass [] subs=new SuperClass[10];
+//        System.out.println(subs);
+//        SubClass subClass=new SubClass();
+
+        System.out.println(SubClass.HE);
+
 
     }
 
+    public Main(){
+        System.out.println("main method constructor.");
+    }
     public static void main(String[] args) throws Exception {
         System.out.format("application start.").println();
         DD();

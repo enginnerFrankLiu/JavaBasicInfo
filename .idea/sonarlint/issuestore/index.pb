@@ -11,8 +11,6 @@ K
 src/com/company/Ticket.java,3\b\3b5c14edef949918f7a2c5458b2ba1eed1b9b30e
 I
 src/com/company/Main.java,4\a\4a831b10439099d44774d0ccc387e808deffaeab
-8
-test.log,3\2\324a41b34d2dfa32c804ef7b2ac23fc24200c596
 M
 src/com/company/IOThread.java,4\6\4631dcfe0cd1eb37daf1a24e1862266ab0fc31e9
 T
@@ -47,8 +45,6 @@ L
 src/com/company/IO/Pipe.java,4\1\4160d29a538d02ddb58d646a83a822992e2320dd
 P
  src/com/company/IO/FileInfo.java,f\9\f9c7817fcf4c4df2d147315ff5b6e60ebe8ea617
-6
-io.log,5\1\515df1225ff55551f13ab26831e86a3e8878f830
 V
 &src/com/company/stream/StreamInfo.java,b\f\bf3f0e58008420f646fd4dcd90b3a0e4a1de3ffb
 R
@@ -57,23 +53,10 @@ T
 $src/com/company/IO/ObjectStream.java,0\b\0bf242b96d23dc549e88ef7b19189096d39ff0c9
 L
 src/com/company/IO/Life.java,f\9\f98b735e3c698e6458c6e520b07e6d1857807503
-<
-students.txt,0\a\0a026dfddd63cf4fc2de7a48344758edb5202857
-;
-message.txt,4\c\4c4f1451283270d6d5eedd61812b7ca05d823a49
 S
 #src/com/company/IO/FileExample.java,9\7\976808769708e6d34984d8cb8c7316815472c6de
-9
-	clear.txt,f\5\f5afd27d8ea1efdec29ca909250b7a6440a6969e
-8
-fuck.txt,e\9\e94c9b4996df27bd44699bb019e61df6d2cb4550
 B
 lucky/luckBoys.txt,6\1\61494a56dbacafaa28977d0e3eeffaded90b7b19
-:
-
-sunday.txt,a\7\a7a9472a93542ac0508ca2ce7a5f578a4394f4aa
-7
-ios.log,6\4\64ce20398a719aa2ca5a18e005a3ecefa811a278
 g
 7src/com/company/threadlearn/ExampleInterruptThread.java,9\4\94cdc97d88f4c16c99e9977fbe4827f5e8d502c3
 Z
@@ -166,3 +149,15 @@ R
 02readme-DB,7\c\7cd67e222fa672ccce72b66629e7c9bfce5ec778
 G
 03readme-distribution-1,8\2\82605fd77efa55c9bd0928a195a9d4c059196bfc
+T
+$src/com/company/core/SuperClass.java,3\0\301522605c2d8983e73261e3e699eb5d847d26df
+4
+04MQ,c\6\c6806f02722f25470a7562b4abd1a2317f247008
+8
+Info.txt,6\a\6aa0712a5c9422cf55834593b8c22d9c54024eb8
+R
+"src/com/company/core/SubClass.java,e\9\e9b52934a3aea4af11a6149c45050be86e8622cf
+9
+	draft.txt,7\f\7f953c9ae7f4af451e1e86d26071444f1c29f4c0
+M
+src/com/company/core/Dog.java,5\1\514c7121d1801107fb71ca6350d9eed8c67358cb

@@ -3,14 +3,12 @@ package com.company.core;
 public class Dog {
 
     public void dd(){
-
         String val0="fuck";
         String val1="fuck";
         String val2="fuck";
         System.out.println(val0==val1);
         System.out.println(val0==val2);
         System.out.println(val1==val2);
-
     }
 
     public void dd1(){
@@ -18,14 +16,10 @@ public class Dog {
         String val0=new String("shit");
         String val1=new String("shit");
         String val2=new String("shit");
-
         System.out.println(val0==val1);
         System.out.println(val0==val2);
         System.out.println(val1==val2);
-
-
-
-
+        
     }
     /**
      * 搞懂这两种分配内存的方式，有何不同

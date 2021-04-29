@@ -3,6 +3,7 @@ package com.company;
 import com.company.IO.FileExample;
 import com.company.IO.SerialExample;
 import com.company.basic.ReflectTest;
+import com.company.core.Dog;
 import com.company.core.SubClass;
 import com.company.core.SuperClass;
 import com.company.jvm.Client;
@@ -15,6 +16,7 @@ import com.company.reflectz.TypeApplication;
 import com.company.stream.StreamInfo;
 import com.company.threadlearn.ExampleInterruptThread;
 import com.company.threadlearn.threadInterview;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.io.File;
 import java.util.*;
@@ -744,9 +746,14 @@ public class Main {
 //        System.out.println(subs);
 //        SubClass subClass=new SubClass();
 
-        System.out.println(SubClass.HE);
+//        System.out.println(SubClass.HE);
 
 
+        Dog dog=new Dog();
+//        dog.test();
+        dog.dd();
+        System.out.println("----------------------");
+        dog.dd1();
     }
 
     public Main(){

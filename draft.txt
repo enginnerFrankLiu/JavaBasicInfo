@@ -62,6 +62,12 @@ JRockit从来没有一个叫永久代的东西但是运行良好
 也不需要开发运维人员设置这么一个永久代的大小.
 link:
 https://www.infoq.cn/article/java-permgen-removed
+link:好总结
+https://blog.csdn.net/u011635492/article/details/81046174
+运行时常量池：方法区的一部分，用于存在编译期间生成的各种字面量和符号引用
+在HotSpot上把GC分代收集扩展至方法区
+说使用永久代来实现方法区
+那么取代永久代的就是元空间
 
 
 temp:不同对象的hashCode 也可能是相同的：

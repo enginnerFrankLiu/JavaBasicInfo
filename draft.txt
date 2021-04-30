@@ -31,22 +31,40 @@ java 虚拟机栈是与线程对应的，数据不是线程共享的，因此不
 正在执行的虚拟机字节码指令地址;
 如果正在执行的是本地方法，那么这个计数器
 
-
-方法区 是jvm规范定义的一个概念，用于存储类信息 常量池 静态变量 JIT编译后的代码数据，
-具体放在那里，不同的实现可以放在不同的地方，
-
+第一个是概念上的区分:
+方法区是jvm规范定义的一个概念，用于存储类信息 常量池 静态变量 JIT编译后的代码数据.
 而永久代是Hotpot虚拟机有的一个概念，是方法区的一个体现，别的JVM都没这个东西。
 
 
+JDK之前，类的元数据和常量都放在一个与堆内存相邻的数据区-永久代；
 在Java 8中，永久代被彻底移除，
 取而代之的是另一块与堆不相连的本地内存——元空间（Metaspace）,
 ‑XX:MaxPermSize 参数失去了意义，
 取而代之的是-XX:MaxMetaspaceSize
 
 
+总结出来就两点吧：
+1.加载类的数据时，太大了，会出现了OOM
+2.GC性能的提高
+3.metaspace并不在虚拟机内存中而是使用本地内存.
+
+
+虚拟机加载的类型
+常量池
+静态变量
+即时编译后的代码
+
+
+说去说来，他妈的就这两项吧：
+减少OOM只是表因
+更深层的原因还是要合并HotSpot和JRockit的代码,
+JRockit从来没有一个叫永久代的东西但是运行良好
+也不需要开发运维人员设置这么一个永久代的大小.
+link:
+https://www.infoq.cn/article/java-permgen-removed
+
+
 temp:不同对象的hashCode 也可能是相同的：
 to do links：
 https://www.zhihu.com/question/22739143
 https://blog.csdn.net/fly_fly_fly_pig/article/details/82492491
-
-

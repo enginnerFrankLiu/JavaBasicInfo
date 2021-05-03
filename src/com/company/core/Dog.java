@@ -43,4 +43,26 @@ public class Dog {
 
     }
 
+    public void msInfo() {
+        String s3 = new String("11");
+        s3.intern();
+        String s4 = "11";
+        System.out.println(s3 == s4);
+    }
+
+    public void m1() {
+        String s3 = new String("1") + new String("1");
+        s3.intern();
+        String s4 = "11";
+        System.out.println(s3 == s4);
+    }
+
+    public void m2() {
+        String s3 =new String("11");
+        s3.intern();
+        String s4 = "11";
+        System.out.println(s3 == s4);
+    }
+
+
 }

@@ -750,10 +750,14 @@ public class Main {
 
 
         Dog dog=new Dog();
-//        dog.test();
-        dog.dd();
-        System.out.println("----------------------");
-        dog.dd1();
+////        dog.test();
+//        dog.dd();
+//        System.out.println("----------------------");
+//        dog.dd1();
+       dog.m1();
+
+        //dog.m1();
+        //dog.m2();
     }
 
     public Main(){

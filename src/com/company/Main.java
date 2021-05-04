@@ -749,15 +749,12 @@ public class Main {
 //        System.out.println(SubClass.HE);
 
 
-        Dog dog=new Dog();
-////        dog.test();
-//        dog.dd();
-//        System.out.println("----------------------");
-//        dog.dd1();
-       dog.m1();
+        Dog dog = new Dog();
+        dog.foo0();
+        dog.foo1();
+        dog.foo2();
 
-        //dog.m1();
-        //dog.m2();
+
     }
 
     public Main(){

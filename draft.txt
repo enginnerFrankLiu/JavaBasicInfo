@@ -132,6 +132,14 @@ class文件中的常量池
 运行时常量池
 字符串常量池
 
+
+how manny objected are created?
+
+那么String s=new String("a"+"b");创建了几次对象?
+https://www.jb51.net/article/186259.htm
+如何去理解题中的不可变.
+
+
 https://zhuanlan.zhihu.com/p/161994662
 https://blog.csdn.net/u011635492/article/details/81046174
 target:

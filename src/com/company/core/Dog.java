@@ -43,26 +43,25 @@ public class Dog {
 
     }
 
-    public void msInfo() {
-        String s3 = new String("11");
-        s3.intern();
-        String s4 = "11";
-        System.out.println(s3 == s4);
+    public void foo0() {
+        String s0 =new String("00");
+        s0.intern();
+        String s1 = "00";
+        System.out.println(s0 == s1);
     }
 
-    public void m1() {
-        String s3 = new String("1") + new String("1");
-        s3.intern();
-        String s4 = "11";
-        System.out.println(s3 == s4);
+    public void foo1() {
+        String s0 = new String("11");
+        s0=s0.intern();
+        String s1 = "11";
+        System.out.println(s0==s1);
     }
 
-    public void m2() {
-        String s3 =new String("11");
-        s3.intern();
-        String s4 = "11";
-        System.out.println(s3 == s4);
+    public void foo2() {
+        String s0 =new String("2")+ new String("2");
+        s0.intern();
+        String s1 = "22";
+        System.out.println(s0 == s1);
     }
-
 
 }

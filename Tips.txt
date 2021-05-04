@@ -1,12 +1,12 @@
 Some tips or experience those can applied into work and life.
 
-with developer
+"归根到底是在与人打交道!"
 
+with developer
 A.when there is some argument exist between two developer about technology or principle.
 1 talk is cheap show me the code
 2 show me some official document or stack overflow links.
 3.post your question on Stack Overflow.
-
 
 with pm
 B.when product manager though some task is simple, only need few days to do,
@@ -17,3 +17,5 @@ C.When qa though that is bug,you don't think so.
 D when some bug only appear in qa environment but cannot reproduce in your developing environment.
 
 with self.
+
+

@@ -750,8 +750,9 @@ public class Main {
 
 
         Dog dog = new Dog();
-        dog.foo3();
-        dog.foo4();
+//        dog.foo3();
+//        dog.foo4();
+        dog.tst();
 
     }
 

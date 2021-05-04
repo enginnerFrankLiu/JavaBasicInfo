@@ -49,16 +49,16 @@ public class Dog {
     }
 
     public void foo1() {
-        String s0 = new String("11");
+        String s0 = new String("java.com");
         s0 = s0.intern();
-        String s1 = "11";
+        String s1 = "java.com";
         System.out.println(s0 == s1);
     }
 
     public void foo2() {
-        String s0 = new String("2") + new String("2");
+        String s0 = new String("java") + new String(".com");
         s0.intern();
-        String s1 = "22";
+        String s1 = "java.com";
         System.out.println(s0 == s1);
     }
 
@@ -83,12 +83,22 @@ public class Dog {
         System.out.println(ab0 == ab1);
     }
 
-    public void tst(){
+    /**
+     * if value changed, a new object is created and retruned to you
+     * such as replace() and replace();
+     * StringPool is stored in heap area where object reference data will be stored as we know String is Char[].
+     *
+     * string literals are stroed in string pool and string obejcts are stored in as usual heap object area.
+     *
+     *
+     *
+     **/
+    public void tst() {
 
-        String a="ddd";
-        String b=new String(a);
-
-
-
+        String a = "abc";
+        String b = "afc";
+        String c = b.replace('f', 'b');
+        System.out.println(a == c);
     }
+
 }

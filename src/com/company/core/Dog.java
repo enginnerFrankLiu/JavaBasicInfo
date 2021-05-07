@@ -41,18 +41,18 @@ public class Dog {
         System.out.println(orignalInfo == md);
     }
 
-    public void foo0() {
-        String s0 = new String("00");
-        s0.intern();
-        String s1 = "00";
-        System.out.println(s0 == s1);
-    }
-
     public void foo1() {
         String s0 = new String("java.com");
         s0 = s0.intern();
         String s1 = "java.com";
         System.out.println(s0 == s1);
+    }
+
+    public void foo0() {
+        String s0 = new String("java.com");
+        s0.intern();
+        String s1 = "java.com";
+        System.out.println(s0== s1);
     }
 
     public void foo2() {

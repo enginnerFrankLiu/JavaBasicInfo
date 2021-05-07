@@ -161,3 +161,7 @@ R
 	draft.txt,7\f\7f953c9ae7f4af451e1e86d26071444f1c29f4c0
 M
 src/com/company/core/Dog.java,5\1\514c7121d1801107fb71ca6350d9eed8c67358cb
+=
+interview.txt,d\2\d2eecd1e10ba5411c301afc3679a6ce858c0e757
+8
+Tips.txt,7\4\749a3bab859fade6868698ecd6ce0fc9c6def625

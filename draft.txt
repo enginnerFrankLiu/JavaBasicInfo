@@ -176,12 +176,42 @@ some good person I will meet in some day.
 
 
 
+Eden区被划分为
+多个线程本地分配缓冲区
+多个线程本地分布缓冲区
+多个线程本地分布缓冲区
+
+今天的目标又没有完成，感觉心累啊.
+
+
 明天的target:
 年起代的一些具体细节?
 一个类加载到 JVM 中后对应一个运行时常量池？
 用空再看看:
 https://www.infoq.cn/article/java-permgen-removed
 
+
+新生代的特点：很多对象创建->使用后，就会变成垃圾 存活对象少，垃圾多，-标记-复制
+老年代特点：经历过多次YGC后依然存活下来的对象，存活对象多，垃圾少
+永久代:静态文件
+
+第一个结论就是：
+年龄做够的对象才能被放进老年代，年龄做够的意思就是：在经历了多次YGC（minor gc）之后，依然能够存活的对象.
+Eden SurvivorA SurvivorB
+
+1.首先，Eden区最大，对外提供堆内存。
+当 Eden 区快要满了，则进行 Minor GC，把存活对象放入Survivor A区，清空 Eden 区,Eden区被清空后，继续对外提供堆内存.
+
+
+2.当Eden区再次被填满，此时对Eden区和Survivor A区同时进行 Minor GC，把存活对象放入Survivor B区，同时清空Eden区和Survivor A区
+
+3.Eden区继续对外提供堆内存，并重复上述过程，即在Eden区填满后，把Eden区和某个Survivor区的存活对象放到另一个Survivor区；
+
+何时将对象从年轻代移动到老年代呢?答案就在这里
+当某个Survivor区被填满，且仍有对象未被复制完毕时，或者某些对象在反复Survive 15 次左右时，则把这部分剩余对象放到Old区；
+当 Old 区也被填满时，进行 Major GC，对 Old 区进行垃圾回收
+
+今天的任务还没有完成，卧槽:
 https://zhuanlan.zhihu.com/p/161994662
 https://blog.csdn.net/u011635492/article/details/81046174
 target:

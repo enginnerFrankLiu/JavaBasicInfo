@@ -3,6 +3,7 @@ package com.company;
 import com.company.IO.FileExample;
 import com.company.IO.SerialExample;
 import com.company.basic.ReflectTest;
+import com.company.core.Cat;
 import com.company.core.Dog;
 import com.company.core.SubClass;
 import com.company.core.SuperClass;
@@ -761,7 +762,11 @@ public class Main {
     }
     public static void main(String[] args) throws Exception {
         System.out.format("application start.").println();
-        DD();
+
+//        System.out.println(Cat.info);
+
+        System.out.println(Cat.version);
+
         System.out.format("application end.");
     }
 

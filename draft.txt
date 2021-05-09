@@ -234,6 +234,10 @@ Eden SurvivorA SurvivorB
 
 JIT编译器是在程序运行期间。将java 字节码编译成平台相关的二进制代码；正因为此编译行为发生在程序运行期间，所以该编译器称之为JUST IN TIME.
 
+
+also something that is worth noting  with regards to the behaviors to the behaviours of string is that
+any new assignment or concatenation done on string creates a new object in memory.
+
 今天的任务还没有完成，卧槽:
 https://zhuanlan.zhihu.com/p/161994662
 https://blog.csdn.net/u011635492/article/details/81046174

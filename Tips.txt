@@ -5,12 +5,13 @@ Some tips or experience those can applied into work and life.
 with developer
 A.when there is some argument exist between two developer about technology or principle.
 1 talk is cheap show me the code
-2 show me some official document or stack overflow links.
+2 show me some official document or stack overflow links which have high vote.
 3.post your question on Stack Overflow.
 
 with pm
 B.when product manager though some task is simple, only need few days to do,
 push you so hard.but actually it is complex. how to eliminate the cognitive gap?
+
 
 with qa
 C.When qa though that is bug,you don't think so.

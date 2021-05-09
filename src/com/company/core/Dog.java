@@ -91,14 +91,108 @@ public class Dog {
      * string literals are stroed in string pool and string obejcts are stored in as usual heap object area.
      *
      *
-     *
+     *return false
      **/
     public void tst() {
-
-        String a = "abc";
-        String b = "afc";
-        String c = b.replace('f', 'b');
-        System.out.println(a == c);
+        String a = new String("abc");
+        String b = a.intern();
+        System.out.println(a == b);
     }
 
+    /**
+     * return true.
+     */
+    public void md() {
+        String ab = new String("a") + new String("b");
+        String a = ab.intern();
+        System.out.println(ab == a);
+    }
+
+    /**
+     * 对于Object();
+     * 我们都知道，当我们使用equal 去比较的时候，我们都是去比较他们测content.是否equal
+     * 当我们使用==去比较的时候，我们都是在比较他们的reference 是否相等.
+     *
+     * 这个例子，我们可以反推出，引用不相等;
+     *
+     * a_b 存在于堆中.
+     * ab 存在于常量池中.
+     * print false;
+     */
+    public void bar0(){
+        String a="a";
+        String b="b";
+        String a_b=a+b;
+        String ab="ab";
+        System.out.println(a_b==ab);
+    }
+
+    /**
+     * 这个例子，中我们可以看到，
+     * "a"+"b"; 是编译器做了优化，直接让"ab" 驻留在string pool中.
+     * print true.
+     */
+    public void bar1(){
+        String a_b="a"+"b";
+        String ab="ab";
+        System.out.println(a_b==ab);
+    }
+
+    /**
+     * 这个例子中我们可以推出
+     * "" + new String("");
+     * 这种新创建的对象，存在于堆中(也许string pool 中也存在一份，拼接后的值)
+     * print false
+     */
+    public void bar2(){
+        String a=new String("a");
+        String a_b=a+"b";
+        String ab="ab";
+        System.out.println(a_b==ab);
+    }
+
+    /**
+     * 1.关于intern方法，官方稳定.
+     * when the method is invoked. if the pool already contains a string euqal to this string content.
+     * the string from the pool is returned.
+     * otherwise.
+     * the string objected is added to the pool
+     * a reference to this string objected is returned.
+     *
+     * 所以此处是： a reference to this object is returned.
+     *
+     *  s0 interns itself into string pool table. and return s0 reference.
+     */
+    public void internInfo(){
+
+        String s0 = new String("java") + new String(".com");
+        String d=s0.intern();
+//        String s1 = "java.com";
+//        System.out.println(s0 == s1);
+        System.out.println(d);
+    }
+
+    /**
+     * 这个 返回的是，他在 string pool 中的 reference.
+     *
+     * 所谓的驻留，只是把 引用注册在 string table 中，
+     * 并不是把 字符串 放在 string pool 中
+     *
+     */
+    public void internInfo2(){
+        String s0 = new String("c#.com");
+       String d= s0.intern();
+       System.out.println(d);
+//        String s1 = "java.com";
+//        System.out.println(s0== s1);
+    }
+
+    public void loop(){
+
+        while (true){
+
+            new String ("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+
+        }
+    }
 }

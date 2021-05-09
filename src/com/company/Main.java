@@ -753,7 +753,13 @@ public class Main {
         Dog dog = new Dog();
 //        dog.foo3();
 //        dog.foo4();
-        dog.foo0();
+//        dog.foo0();
+
+//System.out.println(Cat.info);
+//        System.out.println(Cat.version);
+//        dog.md();
+//        dog.bar0();
+         dog.loop();
 
     }
 
@@ -762,11 +768,7 @@ public class Main {
     }
     public static void main(String[] args) throws Exception {
         System.out.format("application start.").println();
-
-//        System.out.println(Cat.info);
-
-        System.out.println(Cat.version);
-
+        DD();
         System.out.format("application end.");
     }
 

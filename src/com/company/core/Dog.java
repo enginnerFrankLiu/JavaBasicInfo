@@ -1,5 +1,7 @@
 package com.company.core;
 
+import javax.print.DocFlavor;
+
 public class Dog {
 
     public void dd(){
@@ -194,5 +196,40 @@ public class Dog {
             new String ("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
 
         }
+    }
+
+    public void ddf(){
+        String s1 = "Rakesh";
+        String s2 = "Rakesh";
+        String s3 = "Rakesh".intern();
+
+        if ( s1 == s2 ){
+            System.out.println("s1 and s2 are same");  // 1.
+        }
+
+        if ( s1 == s3 ){
+            System.out.println("s1 and s3 are same" );  // 2.
+        }
+    }
+
+    /**
+     * intern method is supposed to return the String from the String pool if the String is found in String pool,
+     */
+    public void fuck0(){
+        String b="fuckB";
+        String a=new String ("fuckB");
+        String c= a.intern();
+        System.out.println(a==c);
+    }
+
+    /**
+     *otherwise a new string object will be added in String pool and the reference of this String is returned.
+     *
+     */
+    public void fuck1(){
+
+        String a=new String ("fuckC");
+        String b=a.intern();
+        System.out.println(a==b);
     }
 }

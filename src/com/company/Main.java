@@ -759,7 +759,8 @@ public class Main {
 //        System.out.println(Cat.version);
 //        dog.md();
 //        dog.bar0();
-         dog.loop();
+//         dog.loop();
+          dog.fuck0();
 
     }
 

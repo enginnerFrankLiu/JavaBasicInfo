@@ -72,6 +72,9 @@ public class Cat {
      * 任何形式带有变量的string ("+")操作,都会被编译器处理成 new string buffer 处理
      * 处理的结果都在 heap 区，没有在 heap 区的 string pool 中.
      *
+     * 也就是并非预置入CLass文件中常量池的内容才能进入方法区运行时常量池，运行期间也可能将新的常量放入池中，
+     * 这种特性被开发人员利用比较多的就是String类的intern()方法。
+     *
      */
     public void foo() {
         String s0 = new String("java.com");

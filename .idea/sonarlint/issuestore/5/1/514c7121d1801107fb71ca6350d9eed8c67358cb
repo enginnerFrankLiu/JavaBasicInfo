@@ -1,74 +1,111 @@
 
-[
-java:S4973""9Use the "equals" method if value comparison was intended.(ªáÙ»ıÿÿÿÿ8ŒŞÛ‘/
-V
-java:S4973S"9Use the "equals" method if value comparison was intended.(›Û×Ò8ˆœÃ²“/
-[
-java:S4973"9Use the "equals" method if value comparison was intended.(µÔÜˆûÿÿÿÿ8Šˆ’Ú‘/
-U	java:S106$"9Replace this use of System.out or System.err by a logger.(¢Ôºî8ŒŞÛ‘/
-=
-java:S2129(" Remove this "String" constructor(‹©¤Õ8ŒŞÛ‘/
-V
-java:S4973K"9Use the "equals" method if value comparison was intended.(›Û×Ò8éëÀ²“/
-V
-java:S49730"9Use the "equals" method if value comparison was intended.(Äı8Ã¤‚°“/
+s	java:S117ˆ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éû‰ùıÿÿÿÿ8÷Òèü”/
+n	java:S117•"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äÑñ8Øôü”/
 B
-java:S21294" Remove this "String" constructor(ÈàØËúÿÿÿÿ8Éƒ™Ú’/
-[
-java:S4973
-"9Use the "equals" method if value comparison was intended.(µÔÜˆûÿÿÿÿ8øËÚ‘/
-[
-java:S4973"9Use the "equals" method if value comparison was intended.(ŒÏà‰ùÿÿÿÿ8Šˆ’Ú‘/
-=
-java:S2129;" Remove this "String" constructor(ÙšúÕ8é¨ÿ¯“/
-l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒÂ&8ŒŞÛ‘/
-U
-java:S4973"9Use the "equals" method if value comparison was intended.(øœC8Šˆ’Ú‘/
-U	java:S106K"9Replace this use of System.out or System.err by a logger.(›Û×Ò8™¬À²“/
-U	java:S1060"9Replace this use of System.out or System.err by a logger.(Äı8Ã¤‚°“/
-T	java:S106"9Replace this use of System.out or System.err by a logger.(øœC8Šˆ’Ú‘/
-V
-java:S4973e"9Use the "equals" method if value comparison was intended.(õÁÒ—8€„®º“/
-B
-java:S2129" Remove this "String" constructor(‰ªäúÿÿÿÿ8Œ‘Ú‘/
-V
-java:S4973>"9Use the "equals" method if value comparison was intended.(Äı8ƒğú¯“/
-U	java:S106S"9Replace this use of System.out or System.err by a logger.(›Û×Ò8ˆœÃ²“/
-k
-java:S11924"IDefine a constant instead of duplicating this literal "java.com" 3 times.(ÈàØËúÿÿÿÿ8ç¤Ïº“/
-Z	java:S106
-"9Replace this use of System.out or System.err by a logger.(µÔÜˆûÿÿÿÿ8‘ƒÚ‘/
-B
-java:S2129" Remove this "String" constructor(æ’šŒÿÿÿÿÿ8Œ‘Ú‘/
-=
-java:S2129" Remove this "String" constructor(ñßåÿ8†™ğÙ‘/
-=
-java:S2129-" Remove this "String" constructor(‚ªÓ8Ã¤‚°“/
-T	java:S106"9Replace this use of System.out or System.err by a logger.(øœC8øËÚ‘/
-Z	java:S106""9Replace this use of System.out or System.err by a logger.(ªáÙ»ıÿÿÿÿ8ŒŞÛ‘/
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(ŒÏà‰ùÿÿÿÿ8Šˆ’Ú‘/
-Z	java:S106	"9Replace this use of System.out or System.err by a logger.(ŒÏà‰ùÿÿÿÿ8š¡Ú‘/
-U	java:S106)"9Replace this use of System.out or System.err by a logger.(ò×–’8ŒŞÛ‘/
+java:S2129'" Remove this "String" constructor(‰ö·˜ûÿÿÿÿ8ĞùÙ‘/
+C
+java:S2129”" Remove this "String" constructor(×¹æƒøÿÿÿÿ8Øôü”/
+Y	java:S125ª"<This block of commented-out lines of code should be removed.(ë¬×î8±¯Õı”/
 =
 java:S2129;" Remove this "String" constructor(ÙšúÕ8‰Ôş¯“/
 [
-java:S4973	"9Use the "equals" method if value comparison was intended.(ŒÏà‰ùÿÿÿÿ8š¡Ú‘/
-V
-java:S49737"9Use the "equals" method if value comparison was intended.(Äı8”Œ÷¯“/
-B
-java:S2129'" Remove this "String" constructor(‰ö·˜ûÿÿÿÿ8ĞùÙ‘/
-H
-java:S1481'"&Remove this unused "d" local variable.(‰ö·˜ûÿÿÿÿ8ŒŞÛ‘/
-V
-java:S4973)"9Use the "equals" method if value comparison was intended.(ò×–’8ŒŞÛ‘/
+java:S4973"9Use the "equals" method if value comparison was intended.(µÔÜˆûÿÿÿÿ8Šˆ’Ú‘/
 U
-java:S4973"9Use the "equals" method if value comparison was intended.(øœC8Å’Ú‘/
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(µÔÜˆûÿÿÿÿ8Šˆ’Ú‘/
-U	java:S106!"9Replace this use of System.out or System.err by a logger.(ªåÁÇ8È©óÙ‘/
-B
-java:S2129" Remove this "String" constructor(£­çøÿÿÿÿ8šòÚ‘/
+java:S4973"9Use the "equals" method if value comparison was intended.(øœC8Šˆ’Ú‘/
+V
+java:S4973>"9Use the "equals" method if value comparison was intended.(Äı8ƒğú¯“/
+T	java:S106"9Replace this use of System.out or System.err by a logger.(øœC8øËÚ‘/
 <
 java:S2129" Remove this "String" constructor(ŒÂ&8ŒŞÛ‘/
+Z	java:S106	"9Replace this use of System.out or System.err by a logger.(ŒÏà‰ùÿÿÿÿ8š¡Ú‘/
+B
+java:S2129j" Remove this "String" constructor(Á¥‚“ùÿÿÿÿ8ƒå«Ù”/
+H
+java:S1481'"&Remove this unused "d" local variable.(‰ö·˜ûÿÿÿÿ8ŒŞÛ‘/
+C
+java:S2129·" Remove this "String" constructor(ŒîÁæıÿÿÿÿ8ÒšÊı”/
+[
+java:S4973""9Use the "equals" method if value comparison was intended.(ªáÙ»ıÿÿÿÿ8ŒŞÛ‘/
+U	java:S106l"9Replace this use of System.out or System.err by a logger.(›œ©8ñĞ­Ù”/
+V
+java:S49737"9Use the "equals" method if value comparison was intended.(Äı8ùÕ×º”/
+[
+java:S4973c"9Use the "equals" method if value comparison was intended.(†Á¸ÿÿÿÿÿ8ƒí¢Ù”/
+[
+java:S4973
+"9Use the "equals" method if value comparison was intended.(µÔÜˆûÿÿÿÿ8øËÚ‘/
+=
+java:S2129" Remove this "String" constructor(ñßåÿ8†™ğÙ‘/
+B
+java:S2129-" Remove this "String" constructor(ÈàØËúÿÿÿÿ8‚Ğº”/
+V	java:S106Š"9Replace this use of System.out or System.err by a logger.(‚†‹‚8“©éü”/
+T	java:S106"9Replace this use of System.out or System.err by a logger.(øœC8Šˆ’Ú‘/
+U
+java:S4973"9Use the "equals" method if value comparison was intended.(øœC8Å’Ú‘/
+V	java:S106¹"9Replace this use of System.out or System.err by a logger.(¯ô¢ô8’Û×ı”/
+V
+java:S4973)"9Use the "equals" method if value comparison was intended.(ò×–’8ŒŞÛ‘/
+V
+java:S4973S"9Use the "equals" method if value comparison was intended.(›Û×Ò8ˆœÃ²“/
+B
+java:S2129j" Remove this "String" constructor(Á¥‚“ùÿÿÿÿ8ƒå«Ù”/
+[
+java:S4973	"9Use the "equals" method if value comparison was intended.(ŒÏà‰ùÿÿÿÿ8š¡Ú‘/
+V	java:S106¬"9Replace this use of System.out or System.err by a logger.(¯ô¢ô8²ßÖı”/
+B
+java:S2129a" Remove this "String" constructor(°İ®àıÿÿÿÿ8¾¢Ù”/
+U	java:S1060"9Replace this use of System.out or System.err by a logger.(Äı8‚Ğº”/
+W
+java:S4973—"9Use the "equals" method if value comparison was intended.(‚†‹‚8Øôü”/
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ŒÏà‰ùÿÿÿÿ8Šˆ’Ú‘/
+V	java:S106—"9Replace this use of System.out or System.err by a logger.(‚†‹‚8Øôü”/
+B
+java:S21294" Remove this "String" constructor(ÈàØËúÿÿÿÿ8Ã¤‚°“/
+U	java:S106)"9Replace this use of System.out or System.err by a logger.(ò×–’8ŒŞÛ‘/
+B
+java:S2129" Remove this "String" constructor(£­çøÿÿÿÿ8šòÚ‘/
+B
+java:S2129" Remove this "String" constructor(‰ªäúÿÿÿÿ8Œ‘Ú‘/
+=
+java:S2129(" Remove this "String" constructor(‹©¤Õ8ŒŞÛ‘/
+U	java:S106S"9Replace this use of System.out or System.err by a logger.(›Û×Ò8ˆœÃ²“/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(‚†‹‚8ŒñØü”/
+Y	java:S125º"<This block of commented-out lines of code should be removed.(ë¬×î8ÿÕı”/
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(µÔÜˆûÿÿÿÿ8Šˆ’Ú‘/
+m	java:S117}"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğ×¾8ŒñØü”/
+k
+java:S1192-"IDefine a constant instead of duplicating this literal "java.com" 5 times.(ÈàØËúÿÿÿÿ8ç¤Ïº“/
+E
+java:S2189À""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ8ùÅßÿ”/
+=
+java:S2129;" Remove this "String" constructor(ÙšúÕ8é¨ÿ¯“/
+>
+java:S2129Â" Remove this "String" constructor(’Ü³8ùÅßÿ”/
+V
+java:S4973K"9Use the "equals" method if value comparison was intended.(›Û×Ò8éëÀ²“/
+V
+java:S4973l"9Use the "equals" method if value comparison was intended.(›œ©8ñĞ­Ù”/
+U	java:S106!"9Replace this use of System.out or System.err by a logger.(ªåÁÇ8È©óÙ‘/
+W
+java:S4973Š"9Use the "equals" method if value comparison was intended.(‚†‹‚8¹›êü”/
+V
+java:S4973"9Use the "equals" method if value comparison was intended.(‚†‹‚8¥ÏÙü”/
+V
+java:S49730"9Use the "equals" method if value comparison was intended.(Äı8‚Ğº”/
+B
+java:S2129" Remove this "String" constructor(æ’šŒÿÿÿÿÿ8Œ‘Ú‘/
+U	java:S106$"9Replace this use of System.out or System.err by a logger.(¢Ôºî8ŒŞÛ‘/
+Z	java:S106
+"9Replace this use of System.out or System.err by a logger.(µÔÜˆûÿÿÿÿ8‘ƒÚ‘/
+[
+java:S4973"9Use the "equals" method if value comparison was intended.(ŒÏà‰ùÿÿÿÿ8Šˆ’Ú‘/
+Z	java:S106""9Replace this use of System.out or System.err by a logger.(ªáÙ»ıÿÿÿÿ8ŒŞÛ‘/
+U	java:S1067"9Replace this use of System.out or System.err by a logger.(Äı8Ã¤‚°“/
+U	java:S106K"9Replace this use of System.out or System.err by a logger.(›Û×Ò8™¬À²“/
+>
+java:S2129¨" Remove this "String" constructor(ÙšúÕ8½©ı”/
+>
+java:S2129¨" Remove this "String" constructor(ÙšúÕ8½©ı”/
 U	java:S106>"9Replace this use of System.out or System.err by a logger.(Äı8ƒğú¯“/
-U	java:S106e"9Replace this use of System.out or System.err by a logger.(õÁÒ—8€„®º“/
-U	java:S1067"9Replace this use of System.out or System.err by a logger.(Äı8Éƒ™Ú’/
+l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒÂ&8ŒŞÛ‘/
+Z	java:S106c"9Replace this use of System.out or System.err by a logger.(†Á¸ÿÿÿÿÿ8¾¢Ù”/

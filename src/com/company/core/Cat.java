@@ -56,4 +56,41 @@ public class Cat {
         System.out.println("static block.");
     }
 
+    /**
+     *
+     * 1.s0.intern() can either return an already interned string matching s0
+     * 2.it can intern s0 itself and return that.
+     *
+     * t. In the case of foo1, when you call s0.intern(),
+     * the program looks for a matching interned string, doesn't find one,
+     * so interns s0 itself and returns that. In that case s0 becomes an interned string
+     *
+     *String s0 = new String("java.com"); uses a string literal "java.com" (which is in the string pool)
+     * and separately creates a new string using the new operator, which is not in the string pool.
+     * then you call s0.intern() it will return the string that already exists in the string pool.
+     *
+     * 任何形式带有变量的string ("+")操作,都会被编译器处理成 new string buffer 处理
+     * 处理的结果都在 heap 区，没有在 heap 区的 string pool 中.
+     *
+     */
+    public void foo() {
+        String s0 = new String("java.com");
+        s0 = s0.intern();
+        String s1 = "java.com";
+        System.out.println(s0 == s1);
+    }
+
+    public void foo1() {
+        String s0 = new String("java") + new String(".com");
+        s0.intern();
+        String s1 = "java.com";
+        System.out.println(s0 == s1);
+    }
+    public void foo2() {
+        String s0 = new String("java.com");
+        s0.intern();
+        String s1 = "java.com";
+        System.out.println(s0== s1);
+    }
+
 }

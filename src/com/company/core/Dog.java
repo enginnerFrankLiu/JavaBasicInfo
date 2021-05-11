@@ -300,6 +300,23 @@ public class Dog {
      * 所以返回上面在new str2的时候添加到String Pool中的 “def”引用值，
      * 最后str5在解析的时候就也是指向存在于String Pool中的“def”的引用值，那么这样一分析之后，结果就容易理解了。
      *
+     * After deep search and think.
+     * 1.String pool just implement by HashTable which will not stored instance,means: no "A" stored in string pool.
+     * 2.This hashtable key-> hashcode("A") value-> reference of "A" in heap.
+     * 3.When you call String aInterned=a.intern();  a==aInterned will be true.
+     *
+     * if there is already "A" existed in heap,（ this String object is added to the pool and a reference to this String object is returned.）
+     * String aa="A";
+     * String a=new String("A");
+     * String ab=a.intern();
+     *
+     * aa==ab true
+     * a==ab false
+     *
+     * so there is no duplicate value(string) in heap,no matter what kind of initialization way(literal or new String).  then the string from the pool is returned
+     *
+     *
+     *
      *
      */
     public void infoqd(){

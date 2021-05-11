@@ -277,61 +277,38 @@ public class Dog {
     }
 
 
-    /**
-     *
-     *https://zhuanlan.zhihu.com/p/64839455
-     *
-     * 示例中首先经过编译之后，在该类的class常量池中存放一些符号引用，然后类加载之后，
-     * 将class常量池中存放的符号引用转存到运行时常量池中，然后经过验证，准备阶段之后，
-     * 在堆中生成驻留字符串的实例对象(也就是上例中str1所指向的“abc”实例对象)，
-     * 然后将这个对象的引用存到全局String Pool中，也就是String Pool中，
-     * 最后在解析阶段，要把运行时常量池中的符号引用替换成直接引用，
-     * 那么就直接查询String Pool，
-     * 保证String Pool里的引用值与运行时常量池中的引用值一致，大概整个过程就是这样了。
-     *
-     * 回到示例的那个程序，现在就很容易解释整个程序的内存分配过程了，首先，
-     * 在堆中会有一个“abc”实例，全局String Pool中存放着“abc”的一个引用值，
-     * 然后在运行第二句的时候会生成两个实例，一个是“def”的实例对象，
-     * 并且String Pool中存储一个“def”的引用值，还有一个是new出来的一个“def”的实例对象，
-     * 与上面那个是不同的实例，当在解析str3的时候查找String Pool，里面有“abc”的全局驻留字符串引用，
-     * 所以str3的引用地址与之前的那个已存在的相同，str4是在运行的时候调用intern()函数，
-     * 返回String Pool中“def”的引用值，如果没有就将str2的引用值添加进去，
-     * 在这里，String Pool中已经有了“def”的引用值了，
-     * 所以返回上面在new str2的时候添加到String Pool中的 “def”引用值，
-     * 最后str5在解析的时候就也是指向存在于String Pool中的“def”的引用值，那么这样一分析之后，结果就容易理解了。
-     *
-     * After deep search and think.
-     * 1.String pool just implement by HashTable which will not stored instance,means: no "A" stored in string pool.
-     * 2.This hashtable key-> hashcode("A") value-> reference of "A" in heap.
-     * 3.When you call String aInterned=a.intern();  a==aInterned will be true.
-     *
-     * if there is already "A" existed in heap,（ this String object is added to the pool and a reference to this String object is returned.）
-     * String aa="A";
-     * String a=new String("A");
-     * String ab=a.intern();
-     *
-     * aa==ab true
-     * a==ab false
-     *
-     * so there is no duplicate value(string) in heap,no matter what kind of initialization way(literal or new String).  then the string from the pool is returned
-     *
-     *
-     *
+
+     /**
+     * if there is already a same string existed.
+     * intern() will return “A” reference which has already added into string pool(hashtable)
      *
      */
-    public void infoqd(){
-
-
-        String str1 = "abc";
-        String str2 = new String("def");
-        String str3 = "abc";
-        String str4 = str2.intern();
-        String str5 = "def";
-        System.out.println(str1 == str3);// true
-        System.out.println(str2 == str4);// false
-        System.out.println(str4 == str5);// true
+    public void internInfo0(){
+        String x="kk";
+        String a=new String("kk");
+        String b=a.intern();
+        System.out.println(x==b);  // print true
     }
 
+    /**
+     *  if there is not already a same string existed.
+     *  intern() will will intern a self into string pool
+     *
+     */
+    public void internInfo1(){
+        String a=new String("A")+new String("B");
+        a.intern();
+        String b="AB";
+        System.out.println(a==b); //print true
+    }
+
+    /**
+     * 中越找到了：最总的答案：
+     * https://stackoverflow.com/questions/67463853/how-string-is-stored-when-use-new-string-in-java
+     */
+    public void finalInfo(){
+
+    }
 
 
 }

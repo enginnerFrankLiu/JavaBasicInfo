@@ -760,7 +760,8 @@ public class Main {
 //        dog.md();
 //        dog.bar0();
 //         dog.loop();
-          dog.fuck0();
+         dog.internInfo0();
+         // dog.internInfo1();
 
     }
 

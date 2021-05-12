@@ -165,3 +165,5 @@ M
 interview.txt,d\2\d2eecd1e10ba5411c301afc3679a6ce858c0e757
 8
 Tips.txt,7\4\749a3bab859fade6868698ecd6ce0fc9c6def625
+M
+src/com/company/core/Cat.java,b\8\b804fd57777325c61cd0a1f8f0f6723a9b4f0693

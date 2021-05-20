@@ -762,12 +762,15 @@ public class Main {
 ////         dog.loop();
 //         dog.internInfo0();
 //         // dog.internInfo1();
+//对于 CONSTANT_Class_info（此类型的常量代表一个类或者接口的符号引用）
+//        String fuck=null;
+//
+//        String shit="life";
+//
+//        System.out.println(fuck+shit);
 
-        String fuck=null;
-
-        String shit="life";
-
-        System.out.println(fuck+shit);
+        //System.out.println(Cat.version);
+            System.out.println(Cat.info);
 
     }
 

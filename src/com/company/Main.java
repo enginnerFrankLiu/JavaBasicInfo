@@ -759,9 +759,15 @@ public class Main {
 //        System.out.println(Cat.version);
 //        dog.md();
 //        dog.bar0();
-//         dog.loop();
-         dog.internInfo0();
-         // dog.internInfo1();
+////         dog.loop();
+//         dog.internInfo0();
+//         // dog.internInfo1();
+
+        String fuck=null;
+
+        String shit="life";
+
+        System.out.println(fuck+shit);
 
     }
 

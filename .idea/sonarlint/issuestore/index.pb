@@ -157,8 +157,6 @@ $src/com/company/core/SuperClass.java,3\0\301522605c2d8983e73261e3e699eb5d847d2
 Info.txt,6\a\6aa0712a5c9422cf55834593b8c22d9c54024eb8
 R
 "src/com/company/core/SubClass.java,e\9\e9b52934a3aea4af11a6149c45050be86e8622cf
-9
-	draft.txt,7\f\7f953c9ae7f4af451e1e86d26071444f1c29f4c0
 M
 src/com/company/core/Dog.java,5\1\514c7121d1801107fb71ca6350d9eed8c67358cb
 =
@@ -167,3 +165,9 @@ M
 Tips.txt,7\4\749a3bab859fade6868698ecd6ce0fc9c6def625
 M
 src/com/company/core/Cat.java,b\8\b804fd57777325c61cd0a1f8f0f6723a9b4f0693
+F
+target/Draft/draft.txt,8\7\8765e60381048ecf33d4d37f9ebdeef5740c0301
+P
+ src/com/company/core/Person.java,a\f\af6dfc8a77da1b322968cdf95c39abb0b251f44f
+O
+src/com/company/core/Heart.java,4\5\4523cdc0f51b0a575b5fe8e8b5b26b54498c3d9b

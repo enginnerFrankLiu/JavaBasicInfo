@@ -5,6 +5,7 @@ import com.company.IO.SerialExample;
 import com.company.basic.ReflectTest;
 import com.company.core.Cat;
 import com.company.core.Dog;
+import com.company.core.Person;
 import com.company.core.SubClass;
 import com.company.core.SuperClass;
 import com.company.jvm.Client;
@@ -760,9 +761,21 @@ public class Main {
 //        System.out.println(Cat.version);
 //        dog.md();
 //        dog.bar0();
-//         dog.loop();
-         dog.internInfo0();
-         // dog.internInfo1();
+////         dog.loop();
+//         dog.internInfo0();
+//         // dog.internInfo1();
+//对于 CONSTANT_Class_info（此类型的常量代表一个类或者接口的符号引用）
+//        String fuck=null;
+//
+//        String shit="life";
+//
+//        System.out.println(fuck+shit);
+
+        //System.out.println(Cat.version);
+//            System.out.println(Cat.info);
+        //父类中定义的静态语句块要优先于子类变量的赋值操作
+        System.out.println(Person.B);
+
 
     }
 

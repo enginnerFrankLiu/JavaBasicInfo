@@ -96,4 +96,23 @@ public class Book {
 
     }
 
+    /**
+     * 类的每个实例 本质上都是唯一的
+     * 某些类 没有必要提供 “逻辑相等”
+     * 超类已经覆盖的equal 方法 超类的行为对于这个类也是适合的
+     * 类是私有的 或者 包 是 私有的可以很确定的 equal 方法永远是不会被调用的.
+     * 1.引用相等
+     * 2."逻辑相等"
+     * 3."值相等"
+     *
+     */
+    public void testE(){
+
+        Thread thread=new Thread();
+        Thread otherThread=new Thread();
+        thread.equals(otherThread);
+
+    }
+
+
 }

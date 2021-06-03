@@ -11,32 +11,33 @@ public class Person extends Heart {
 
         ParentClass parent = new ParentClass();
         SonClass son = new SonClass();
-
-        boolean a = (parent instanceof ParentClass);
-        System.out.print("parent instance of parentClass->");
-        System.out.println(a);
-        System.out.println();
-
-        boolean b = (son instanceof SonClass);
-        System.out.print("son instance of sonClass->");
-        System.out.println(b);
-        System.out.println();
-
-        //父类实例和 子类的关系
-        boolean c=(parent instanceof SonClass);
-        System.out.print("parent instance of sonClass->");
-        System.out.println(c);
-        System.out.println();
-
-        //子类实例 和 父类的关系
-        boolean d=(son instanceof ParentClass);
-        System.out.print("son instance of parentClass->");
-        System.out.println(c);
-        System.out.println();
+//
+//        boolean a = (parent instanceof ParentClass);
+//        System.out.print("parent instance of parentClass->");
+//        System.out.println(a);
+//        System.out.println();
+//
+//        boolean b = (son instanceof SonClass);
+//        System.out.print("son instance of sonClass->");
+//        System.out.println(b);
+//        System.out.println();
+//
+//        //父类实例和 子类的关系
+//        boolean c=(parent instanceof SonClass);
+//        System.out.print("parent instance of sonClass->");
+//        System.out.println(c);
+//        System.out.println();
+//
+//        //子类实例 和 父类的关系
+//        boolean d=(son instanceof ParentClass);
+//        System.out.print("son instance of parentClass->");
+//        System.out.println(c);
+//        System.out.println();
 
         System.out.println("--------------------------------");
 
         //但是这样的情况就会出现问题
+        //都是true，所以不好区分，如果要区分，我们就应该使用 getclass
         ParentClass parentClassOfNewSon=new SonClass();
         boolean e=parentClassOfNewSon instanceof ParentClass;
         System.out.print("子类实例化父类的时候，实例出来的对象是 父类的呢，还是子类的呢->");
@@ -67,10 +68,14 @@ public class Person extends Heart {
      * 当我们想区分一个对象，是自己的类实例化出来的对象
      * 还是子类实例化出来的对象的时候，我们就不能使用 instanceof 方法
      *
+     * 一个类的实例包括本身的实例 以及所有直接或者间接子类的实例
+     *
+     * 换成object 一样的效果
+     *
      * 我们就要使用的是：getclass 方法
      */
     public void getClassInfo(){
-        ParentClass parentClassOfNewSon=new SonClass();
+        Object parentClassOfNewSon=new SonClass();
         boolean a=parentClassOfNewSon.getClass().equals(ParentClass.class);
         boolean b=parentClassOfNewSon.getClass().equals(SonClass.class);
         System.out.println("子类实例化父类的实例 call getClass equals ->");
@@ -79,6 +84,14 @@ public class Person extends Heart {
         System.out.println(b);
         //这样就很清晰了
         System.out.println(parentClassOfNewSon.getClass());
+
+    }
+
+    public void objectInfo(){
+
+        Object obj=new SonClass();
+        System.out.println(obj instanceof Object);
+
 
     }
 }

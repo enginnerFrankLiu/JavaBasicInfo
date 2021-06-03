@@ -782,7 +782,7 @@ public class Main {
     public static void doInfo(){
 
         Person p=new Person();
-        p.getClassInfo();
+        p.compare();
 
     }
 

@@ -55,4 +55,30 @@ public class Person extends Heart {
          *  A instanceof 子类 true
          */
     }
+
+    /**
+     * getClass will be useful when you want to make sure your instance is not subClass of the
+     * class you are comparing with.
+     *
+     * 当一个类有继承类的时候，
+     * 我们可以通过子类实例化父类，但是
+     * 实例化出来的对象 本质上还是 子类的，
+     * 只不过 它可以通过 父类 进行 申明，
+     * 当我们想区分一个对象，是自己的类实例化出来的对象
+     * 还是子类实例化出来的对象的时候，我们就不能使用 instanceof 方法
+     *
+     * 我们就要使用的是：getclass 方法
+     */
+    public void getClassInfo(){
+        ParentClass parentClassOfNewSon=new SonClass();
+        boolean a=parentClassOfNewSon.getClass().equals(ParentClass.class);
+        boolean b=parentClassOfNewSon.getClass().equals(SonClass.class);
+        System.out.println("子类实例化父类的实例 call getClass equals ->");
+        System.out.println(a);
+        System.out.println("子类实例化父类的实例 本质上还是子类的实例，只是我们可以使用父类进行申明->");
+        System.out.println(b);
+        //这样就很清晰了
+        System.out.println(parentClassOfNewSon.getClass());
+
+    }
 }

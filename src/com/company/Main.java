@@ -779,12 +779,19 @@ public class Main {
 
     }
 
+    public static void doInfo(){
+
+        Person p=new Person();
+        p.compare();
+
+    }
+
     public Main(){
         System.out.println("main method constructor.");
     }
     public static void main(String[] args) throws Exception {
         System.out.format("application start.").println();
-        DD();
+        doInfo();
         System.out.format("application end.");
     }
 

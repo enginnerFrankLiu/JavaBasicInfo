@@ -88,9 +88,17 @@ public class Person extends Heart {
     }
 
     public void objectInfo(){
-
         Object obj=new SonClass();
         System.out.println(obj instanceof Object);
+    }
+
+    /**
+     * 自反性:contains(this) return false
+     * 对称性:caseInsensitiveString vs String 的实现方式 两个不同类对象之间的对等
+     * 传递性:
+     * 一直性:
+     */
+    public void equalInfo(){
 
 
     }

@@ -96,7 +96,13 @@ public class Person extends Heart {
      * 自反性:contains(this) return false
      * 对称性:caseInsensitiveString vs String 的实现方式 两个不同类对象之间的对等
      * 传递性:
+     * 传递性出现的问题，一般存在于父类和继承类之间关系；
+     * 无法在扩展可实例化的类的同时 既增加新的组件类 同时又保留equals的约定
+     * 无法在扩展可实例化的类的同时 既增加新的组件类 同时又保留equals的约定
+     * 无法在阔韩可实例化的类的同时
      * 一直性:
+     *
+     * go to sleep.
      */
     public void equalInfo(){
 

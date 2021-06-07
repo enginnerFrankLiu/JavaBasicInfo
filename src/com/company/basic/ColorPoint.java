@@ -9,6 +9,7 @@ package com.company.basic;
  * 原则：只要不可能创建超类的实例前面提到过的问题都不会发生.
  *
  * 可变对象在不同的时候可以与不同的对象相等 而不可变对象则不会这样
+ * 
  */
 public class ColorPoint {
     private final Point point;

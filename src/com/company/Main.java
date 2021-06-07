@@ -2,6 +2,8 @@ package com.company;
 
 import com.company.IO.FileExample;
 import com.company.IO.SerialExample;
+import com.company.basic.Face;
+import com.company.basic.Point;
 import com.company.basic.ReflectTest;
 import com.company.core.Cat;
 import com.company.core.Dog;
@@ -781,8 +783,11 @@ public class Main {
 
     public static void doInfo(){
 
-        Person p=new Person();
-        p.compare();
+//        Person p=new Person();
+//        p.compare();
+
+        Face f=new Face();
+        f.showInfo();
 
     }
 

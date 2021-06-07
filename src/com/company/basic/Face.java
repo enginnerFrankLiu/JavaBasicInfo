@@ -57,6 +57,8 @@ public class Face {
      * 2.如果两个对象的 hashCode 返回值相同，调用它们 equals 方法不一返回 true 。
      * 反过来推 ；就不合逻辑了
      *
+     * add link:https://juejin.cn/post/6844903587764518920
+     *
      */
     public void showInfo(){
 

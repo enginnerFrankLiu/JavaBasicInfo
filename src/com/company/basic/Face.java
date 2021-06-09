@@ -59,6 +59,18 @@ public class Face {
      *
      * add link:https://juejin.cn/post/6844903587764518920
      *
+     * 1.能够将数据压缩
+     * 2.针对同一个输入具有唯一输出
+     * 3.存在数据冲突（碰撞）
+     *
+     * 理想的情况是：
+     * 散列函数应该把集合中不相等的实例均匀的腹部到所有的int值上
+     * 理想的情况是：散列函数应该把集合中不相等的实例均匀的分布到所有可能的int值上
+     *
+     * 最近的目标就是；看完object 中原生对象提供的各种方法
+     *
+     *
+     *
      */
     public void showInfo(){
 
@@ -79,6 +91,8 @@ public class Face {
 
         String info = ps.get(p1);
         System.out.println(info);
+
+        Object obj=new Object();
 
     }
 }

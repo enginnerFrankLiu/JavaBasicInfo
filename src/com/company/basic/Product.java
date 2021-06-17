@@ -1,6 +1,6 @@
 package com.company.basic;
 
-public class Product implements Cloneable {
+public class Product implements Comparable<Product> {
 
     private int id;
 
@@ -53,5 +53,34 @@ public class Product implements Cloneable {
 
     public Product deepClone(){
         return null;
+    }
+
+    /**
+     *
+     * 1.小于 -1
+     * 2.等于 0
+     * 3.大于 1
+     *
+     * 按照这样的一个规则进行的比较；
+     * 比较的结果也无非就这三种吧了，整体效果还算是比较好的啦
+     *
+     *
+     *
+     *
+     *
+     * @param o
+     * @return
+     */
+    @Override
+    public int compareTo(Product o) {
+//        if(this.getId()==o.getId()){
+//            return 0;
+//        }else if(this.getId()>o.getId()){
+//            return 1;
+//        }else{
+//            return-1;
+//        }
+
+        return this.getId()-o.getId();
     }
 }

@@ -782,7 +782,7 @@ public class Main {
 
     }
 
-    public static void doInfo(){
+    public static void doInfo() {
 //        Person p=new Person();
 //        p.compare();
 //
@@ -800,25 +800,80 @@ public class Main {
 //        System.out.println(product==productClone);
 //        System.out.println(product.getPoint()==productClone.getPoint());
 
-        /**
-         * 这种简单的排序功能，能够更好的升华我们的品质
-         */
-        int [] ints=new int[3];
-        ints[0]=3;
-        ints[1]=2;
-        ints[2]=1;
-        Arrays.sort(ints);
+//        /**
+//         * 这种简单的排序功能，能够更好的升华我们的品质
+//         */
+//        int[] ints = new int[3];
+//        ints[0] = 3;
+//        ints[1] = 2;
+//        ints[2] = 1;
+//        Arrays.sort(ints);
+//
+//        for (int anInt : ints) {
+//            System.out.println(anInt);
+//        }
 
-        for (int anInt : ints) {
-            System.out.println(anInt);
-        }
+
+        /**
+         * 这样就自带了 去除重复和 排序的功能
+         * 整体效果是非常棒的一种实现，非常好的额；
+         * 因为它实现了compareable 接口
+         */
+//        Set<String> sets=new HashSet<>();
+//        sets.add("z");
+//        sets.add("z");
+//        sets.add("b");
+//        sets.add("a");
+//        sets.add("c");
+//        System.out.println(sets);
+//
+//        Product product0=new Product();
+//        product0.setId(0);
+//
+//        Product product1=new Product();
+//        product1.setId(0);
+//
+//        Product product2=new Product();
+//        product2.setId(1);
+//
+//        Product product3=new Product();
+//        product3.setId(2);
+//
+//        Set<Product> products=new HashSet<>();
+//        products.add(product0);
+//        products.add(product3);
+//        products.add(product1);
+//        products.add(product2);
+////
+////        System.out.println(products.size());
+////        for (Product product : products) {
+////            System.out.println(product.getId());
+////        }
+////
+//
+//        System.out.println(product0.compareTo(product2));
+//
+//        System.out.println(product0.compareTo(product1));
+//
+//        System.out.println(product2.compareTo(product0));
+//
+//
+//
+
+        /**
+         * 它的比较 是直接计算出差值得啊，卧跟我想的有点不一样的啊；
+         */
+        String a = "a";
+        String b = "z";
+        System.out.println(a.compareTo(b));
 
 
     }
 
-    public Main(){
+    public Main() {
         System.out.println("main method constructor.");
     }
+
     public static void main(String[] args) throws Exception {
         System.out.format("application start.").println();
         doInfo();

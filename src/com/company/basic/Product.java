@@ -73,14 +73,12 @@ public class Product implements Comparable<Product> {
      */
     @Override
     public int compareTo(Product o) {
-//        if(this.getId()==o.getId()){
-//            return 0;
-//        }else if(this.getId()>o.getId()){
-//            return 1;
-//        }else{
-//            return-1;
-//        }
-
-        return this.getId()-o.getId();
+        if(this.getId()==o.getId()){
+            return 0;
+        }else if(this.getId()>o.getId()){
+            return 1;
+        }else{
+            return-1;
+        }
     }
 }

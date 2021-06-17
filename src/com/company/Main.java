@@ -26,6 +26,7 @@ import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import java.io.File;
 import java.util.*;
 import java.util.concurrent.*;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -827,29 +828,34 @@ public class Main {
 //        sets.add("c");
 //        System.out.println(sets);
 //
-//        Product product0=new Product();
-//        product0.setId(0);
-//
-//        Product product1=new Product();
-//        product1.setId(0);
-//
-//        Product product2=new Product();
-//        product2.setId(1);
-//
-//        Product product3=new Product();
-//        product3.setId(2);
+        Product product0=new Product();
+        product0.setId(0);
+
+        Product product1=new Product();
+        product1.setId(0);
+
+        Product product2=new Product();
+        product2.setId(1);
+
+        Product product3=new Product();
+        product3.setId(2);
 //
 //        Set<Product> products=new HashSet<>();
-//        products.add(product0);
-//        products.add(product3);
-//        products.add(product1);
-//        products.add(product2);
-////
-////        System.out.println(products.size());
-////        for (Product product : products) {
-////            System.out.println(product.getId());
-////        }
-////
+
+        List<Product> products=new ArrayList<>();
+        products.add(product0);
+        products.add(product3);
+        products.add(product1);
+        products.add(product2);
+
+//
+//        Collections.sort(products);
+
+        System.out.println(products.size());
+        for (Product product : products) {
+            System.out.println(product.getId());
+        }
+//
 //
 //        System.out.println(product0.compareTo(product2));
 //
@@ -861,11 +867,13 @@ public class Main {
 //
 
         /**
+         * https://www.imooc.com/article/33074
+         * https://juejin.cn/post/6844903769835044872
          * 它的比较 是直接计算出差值得啊，卧跟我想的有点不一样的啊；
-         */
-        String a = "a";
-        String b = "z";
-        System.out.println(a.compareTo(b));
+//         */
+//        String a = "a";
+//        String b = "z";
+//        System.out.println(a.compareTo(b));
 
 
     }

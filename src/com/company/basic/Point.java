@@ -16,9 +16,4 @@ public class Point {
         Point otherObj = (Point) obj;
         return otherObj.x == this.x && otherObj.y == this.y;
     }
-
-    @Override
-    public int hashCode() {
-       return 1;
-    }
 }

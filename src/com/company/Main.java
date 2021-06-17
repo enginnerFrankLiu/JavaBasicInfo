@@ -4,6 +4,7 @@ import com.company.IO.FileExample;
 import com.company.IO.SerialExample;
 import com.company.basic.Face;
 import com.company.basic.Point;
+import com.company.basic.Product;
 import com.company.basic.ReflectTest;
 import com.company.core.Cat;
 import com.company.core.Dog;
@@ -782,12 +783,36 @@ public class Main {
     }
 
     public static void doInfo(){
-
 //        Person p=new Person();
 //        p.compare();
+//
+//        Face f=new Face();
+//        f.showInfo();
+//
+//        Product product=new Product();
+//        Point point=new Point(1,2);
+//        product.setId(2);
+//        product.setName("tom");
+//        product.setPoint(point);
+//
+//        Product productClone=product.shallowClone();
+//
+//        System.out.println(product==productClone);
+//        System.out.println(product.getPoint()==productClone.getPoint());
 
-        Face f=new Face();
-        f.showInfo();
+        /**
+         * 这种简单的排序功能，能够更好的升华我们的品质
+         */
+        int [] ints=new int[3];
+        ints[0]=3;
+        ints[1]=2;
+        ints[2]=1;
+        Arrays.sort(ints);
+
+        for (int anInt : ints) {
+            System.out.println(anInt);
+        }
+
 
     }
 

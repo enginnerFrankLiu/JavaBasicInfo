@@ -7,11 +7,8 @@ import com.company.basic.Face;
 import com.company.basic.Point;
 import com.company.basic.Product;
 import com.company.basic.ReflectTest;
-import com.company.core.Cat;
-import com.company.core.Dog;
+import com.company.core.*;
 import com.company.core.Person;
-import com.company.core.SubClass;
-import com.company.core.SuperClass;
 import com.company.jvm.Client;
 import com.company.jvm.JavaJvm;
 import com.company.lock.Demo;
@@ -835,6 +832,9 @@ public class Main {
          * 这样就自带了 去除重复和 排序的功能
          * 整体效果是非常棒的一种实现，非常好的额；
          * 因为它实现了compareable 接口
+         *
+         * 如果你想再set中 自动去除自定义的类对象，
+         * 那么你就要重写对象的equals 和 hashcode的方法，整体效果还算是可以的；
          */
 //        Set<String> sets=new HashSet<>();
 //        sets.add("z");
@@ -844,34 +844,34 @@ public class Main {
 //        sets.add("c");
 //        System.out.println(sets);
 //
-        Product product0=new Product();
-        product0.setId(0);
-
-        Product product1=new Product();
-        product1.setId(0);
-
-        Product product2=new Product();
-        product2.setId(1);
-
-        Product product3=new Product();
-        product3.setId(2);
+//        Product product0=new Product();
+//        product0.setId(0);
 //
-//        Set<Product> products=new HashSet<>();
-
-        List<Product> products=new ArrayList<>();
-        products.add(product0);
-        products.add(product3);
-        products.add(product1);
-        products.add(product2);
-
+//        Product product1=new Product();
+//        product1.setId(0);
 //
-//        Collections.sort(products);
-
-        System.out.println(products.size());
-        for (Product product : products) {
-            System.out.println(product.getId());
-        }
+//        Product product2=new Product();
+//        product2.setId(1);
 //
+//        Product product3=new Product();
+//        product3.setId(2);
+////
+////        Set<Product> products=new HashSet<>();
+//
+//        List<Product> products=new ArrayList<>();
+//        products.add(product0);
+//        products.add(product3);
+//        products.add(product1);
+//        products.add(product2);
+//
+////
+////        Collections.sort(products);
+//
+//        System.out.println(products.size());
+//        for (Product product : products) {
+//            System.out.println(product.getId());
+//        }
+////
 //
 //        System.out.println(product0.compareTo(product2));
 //
@@ -891,6 +891,7 @@ public class Main {
 //        String b = "z";
 //        System.out.println(a.compareTo(b));
 
+        Console.log();
 
     }
 

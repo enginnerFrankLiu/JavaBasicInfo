@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.IO.FileExample;
 import com.company.IO.SerialExample;
+import com.company.basic.Rate;
 import com.company.basic.ReflectTest;
 import com.company.core.Cat;
 import com.company.core.Dog;
@@ -23,6 +24,7 @@ import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import java.io.File;
 import java.util.*;
 import java.util.concurrent.*;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -750,8 +752,8 @@ public class Main {
 
 //        System.out.println(SubClass.HE);
 
-
-        Dog dog = new Dog();
+//
+//        Dog dog = new Dog();
 //        dog.foo3();
 //        dog.foo4();
 //        dog.foo0();
@@ -773,7 +775,22 @@ public class Main {
         //System.out.println(Cat.version);
 //            System.out.println(Cat.info);
         //父类中定义的静态语句块要优先于子类变量的赋值操作
-        System.out.println(Person.B);
+//        System.out.println(Person.B);
+
+
+        List<Rate> rateList=new ArrayList<>();
+        Rate rate=new Rate();
+        rate.setId("");
+        rateList.add(rate);
+
+        Rate rate1=new Rate();
+        rate1.setId("adf");
+        rateList.add(rate1);
+
+        rateList.stream().filter(x->"".equals(x.getId())).forEach(x->{
+            x.setId(null);
+        });
+
 
 
     }

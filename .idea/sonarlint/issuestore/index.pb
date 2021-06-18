@@ -171,3 +171,5 @@ P
  src/com/company/core/Person.java,a\f\af6dfc8a77da1b322968cdf95c39abb0b251f44f
 O
 src/com/company/core/Heart.java,4\5\4523cdc0f51b0a575b5fe8e8b5b26b54498c3d9b
+O
+src/com/company/basic/Rate.java,4\e\4e95d7168659a8cb861c2e48ab367cfd14b2e1f1

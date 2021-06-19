@@ -106,7 +106,6 @@ public class Rate {
      *
      */
     public void doAnonymousClass(){
-
        IComputer method =()-> System.out.println("print ifno");
        method.doCal();
     }

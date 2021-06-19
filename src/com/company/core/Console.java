@@ -1,10 +1,12 @@
 package com.company.core;
 
+import com.company.basic.LengthComparator;
 import com.company.basic.Market;
 import com.company.basic.Product;
 import com.company.basic.Rate;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
@@ -63,6 +65,18 @@ public class Console {
 
         rate.doAnonymousClass();
 
+    }
+
+    public void lengthCompare(){
+        String [] strings=new String[3];
+        strings[0]="aaa";
+        strings[1]="aa";
+        strings[2]="aaaa";
+        Arrays.sort(strings, new  LengthComparator());
+
+        for (String string : strings) {
+            System.out.println(string);
+        }
     }
 
 }

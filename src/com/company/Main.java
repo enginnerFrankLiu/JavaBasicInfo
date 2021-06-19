@@ -893,7 +893,7 @@ public class Main {
 
 
         Console console=new Console();
-         console.innerClass();
+         console.lengthCompare();
 
 
 

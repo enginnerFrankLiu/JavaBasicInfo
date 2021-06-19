@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Console {
     public static void log() {
@@ -74,9 +75,32 @@ public class Console {
         strings[2]="aaaa";
         Arrays.sort(strings, new  LengthComparator());
 
+        Arrays.sort(strings, Comparator.comparingInt(String::length));
+
         for (String string : strings) {
             System.out.println(string);
         }
+    }
+
+    /**
+     * 有时候：已经有方法可以完成你想要传递到其他代码的动作；
+     * 有时候，已经有方法可以完成你想要传递到其他代码的动作；
+     * object::instanceMethod
+     * Class::staticMethod
+     * Class::instanceMethod
+     *
+     * 通常可能想在lambda表达式中访问外围方法或类中的变量
+     */
+    public void info(){
+
+        String [] strings=new String[3];
+        strings[0]="aaa";
+        strings[1]="aa";
+        strings[2]="aaaa";
+
+       List<String> list= Arrays.stream(strings).filter(String::isEmpty).collect(Collectors.toList());
+
+
     }
 
 }

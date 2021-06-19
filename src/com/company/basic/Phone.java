@@ -11,6 +11,18 @@ package com.company.basic;
  * 3.想定义一个回调函数且不像编写大量的代码是；使用匿名类 比较便捷；
  * 其实：我的理解：
  *  1.是在为 “函数式编程“ 和 ”lambda表达式“ ”函数式接口做铺垫“
+ *
+ *
+ *  如果一个对象调用clone，但是这个对象类并没有实现cloneable接口，object 的clone方法就会抛出一个
+ *  CloneNotSupportedExcption
+ *
+ *  对于只有一个抽象方法的接口，需要这种接口的对象时，
+ *  就可以提供一个lambda表达式，这种接口；函数式接口
+ *
+ *  对lambda表达式所能做的也只是能转换为函数式接口
+ *
  */
 public class Phone {
+
+
 }

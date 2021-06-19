@@ -57,8 +57,11 @@ public class Console {
 //
 //
 //        log.info();
-        rate.writeInfo();
+//        rate.writeInfo();
+//
+//        rate.foo(100,120,true);
 
+        rate.doAnonymousClass();
 
     }
 

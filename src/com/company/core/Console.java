@@ -1,9 +1,6 @@
 package com.company.core;
 
-import com.company.basic.LengthComparator;
-import com.company.basic.Market;
-import com.company.basic.Product;
-import com.company.basic.Rate;
+import com.company.basic.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -93,14 +90,31 @@ public class Console {
      */
     public void info(){
 
-        String [] strings=new String[3];
-        strings[0]="aaa";
-        strings[1]="aa";
-        strings[2]="aaaa";
+//        String [] strings=new String[3];
+//        strings[0]="aaa";
+//        strings[1]="aa";
+//        strings[2]="aaaa";
+//
+//       List<String> list= Arrays.stream(strings).filter(String::isEmpty).collect(Collectors.toList());
 
-       List<String> list= Arrays.stream(strings).filter(String::isEmpty).collect(Collectors.toList());
 
+    }
 
+    public void buildInfo(){
+        Label label=new Label
+                .Builder(1,"jack")
+                .Remark("rest")
+                .build();
+
+        /**
+         * 只构建必须的属性；
+         */
+        Label apple=new Label
+                .Builder(1,"tom")
+                .build();
+        System.out.println(label);
+
+        System.out.println(apple);
     }
 
 }

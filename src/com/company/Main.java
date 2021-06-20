@@ -893,7 +893,9 @@ public class Main {
 
 
         Console console=new Console();
-         console.lengthCompare();
+//         console.lengthCompare();
+
+        console.buildInfo();
 
 
 

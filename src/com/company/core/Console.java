@@ -100,6 +100,10 @@ public class Console {
 
     }
 
+    /**
+     * 尝试去实现一个
+     * 给予枚举实现的单例模式.
+     */
     public void buildInfo(){
         Label label=new Label
                 .Builder(1,"jack")

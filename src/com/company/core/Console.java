@@ -118,4 +118,16 @@ public class Console {
         System.out.println(apple);
     }
 
+    /**
+     * 具名：静态工厂方法有名次
+     * 环保：不必每次创建心的对象
+     * 多子：可以返回原返回类型的任何子类型
+     * valueOf/Of——类型转换，返回的实例和入参具有相同的值，比如Boolean.valueOf()、EnumSet.valueOf()
+     * getInstance——返回一个预先创建好的实例
+     * newInstance——返回一个新的实例
+     */
+    public void methodInfo(){
+
+    }
+
 }

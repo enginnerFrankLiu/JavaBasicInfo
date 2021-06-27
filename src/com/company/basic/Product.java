@@ -127,4 +127,15 @@ public class Product implements Comparable<Product> {
     public void showInfo(){
         new coreEntity().actionPerformed(null);
     }
+
+    public class woman{
+
+        public static final int version=123;
+
+    }
+
+    private class man{
+        public final static int version=23;
+    }
+
 }

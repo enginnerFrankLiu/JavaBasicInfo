@@ -6,7 +6,7 @@ package com.company.basic;
  * 使用TreeSet和Tree Map
  *
  */
-public class Apple implements Comparable<Apple> {
+public  class Apple implements Comparable<Apple> {
     private String variety;
     private Color color;
     private int weight;

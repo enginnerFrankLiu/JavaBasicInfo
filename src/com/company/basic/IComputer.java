@@ -11,6 +11,11 @@ package com.company.basic;
  *
  *
  */
-public interface IFuck {
+public interface IComputer {
      int version=12121212;
+
+     void doCal();
+
+//     void printInfo(String name);
+
 }

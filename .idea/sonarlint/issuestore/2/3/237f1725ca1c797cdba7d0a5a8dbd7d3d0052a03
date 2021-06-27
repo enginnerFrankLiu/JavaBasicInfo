@@ -1,19 +1,28 @@
 
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(´‹¹öşÿÿÿÿ8‡™È—„/
-U	java:S106"9Replace this use of System.out or System.err by a logger.(Å‹•8¿İÀ—„/
-I
-java:S1068"'Remove this unused "age" private field.(Æ†´¦şÿÿÿÿ8–•å—„/
-U	java:S106!"9Replace this use of System.out or System.err by a logger.(ìæ•8ò¯Ù—„/
+L
+java:S3740Q"/Provide the parametrized type for this generic.(”¤ğ8ø«¯ä¡/
+Z	java:S106Y"9Replace this use of System.out or System.err by a logger.(©‰üùÿÿÿÿ8ø«¯ä¡/
 H
-java:S1172"+Remove this unused method parameter "eyes".(îºÁì8–²Å—„/
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(İıÆ¢ÿÿÿÿÿ8–²Å—„/
-U	java:S106)"9Replace this use of System.out or System.err by a logger.(ŒĞÄß8ÀÁÿÜ‡/
+java:S1172"+Remove this unused method parameter "eyes".(îºÁì8–²Å—„/
+I
+java:S1068"'Remove this unused "age" private field.(Æ†´¦şÿÿÿÿ8–•å—„/
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(İıÆ¢ÿÿÿÿÿ8‡™È—„/
+U	java:S106]"9Replace this use of System.out or System.err by a logger.(™Ãø¤8ø«¯ä¡/
 J
-java:S1144 ".Remove this unused private "Face" constructor.(µÄäW8ò¯Ù—„/
-B
-java:S1172"&Remove these unused method parameters.(¦³²M8ò¯Ù—„/
+java:S1144$".Remove this unused private "Face" constructor.(µÄäW8ò¯Ù—„/
+U	java:S106-"9Replace this use of System.out or System.err by a logger.(ŒĞÄß8ÀÁÿÜ‡/
 m
-java:S1104"PMake name a static final constant or non-public and provide accessors if needed.( şÍ¾8–•å—„/
+java:S1104	"PMake name a static final constant or non-public and provide accessors if needed.( şÍ¾8–•å—„/
+Z	java:S106X"9Replace this use of System.out or System.err by a logger.(¶Çòßùÿÿÿÿ8ø«¯ä¡/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(Å‹•8–²Å—„/
+Z	java:S106!"9Replace this use of System.out or System.err by a logger.(ñûÌÄøÿÿÿÿ8ò¯Ù—„/
 B
-java:S1172 "&Remove these unused method parameters.(µÄäW8ò¯Ù—„/
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(ñûÌÄøÿÿÿÿ8ò¯Ù—„/
+java:S1172$"&Remove these unused method parameters.(µÄäW8ø«¯ä¡/
+B
+java:S1172 "&Remove these unused method parameters.(¦³²M8ò¯Ù—„/
+U	java:S106%"9Replace this use of System.out or System.err by a logger.(ìæ•8ø«¯ä¡/
+Z	java:S106V"9Replace this use of System.out or System.err by a logger.(Êô²ºúÿÿÿÿ8ø«¯ä¡/
+U	java:S106Z"9Replace this use of System.out or System.err by a logger.(¶¿øµ8ø«¯ä¡/
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(´‹¹öşÿÿÿÿ8ò¯Ù—„/
+J
+java:S1481_"(Remove this unused "obj" local variable.(§ùÿÿÿÿ8ø«¯ä¡/

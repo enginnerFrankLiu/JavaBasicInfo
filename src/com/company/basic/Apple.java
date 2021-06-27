@@ -21,4 +21,8 @@ public class Apple implements Comparable<Apple> {
         }
         return 1;
     }
+    private int a;
+    protected int b;
+    public int c;
+    int d;
 }

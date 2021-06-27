@@ -1,12 +1,12 @@
 
-g	java:S112/"FDefine and throw a dedicated exception instead of using a generic one.(±¼”úÿÿÿÿ8Ü¶ˆ³ã.
-]	java:S1255"<This block of commented-out lines of code should be removed.(²ëóÒıÿÿÿÿ8Å‹Ã³ã.
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(‘ÀÕ8ıÊ“²ã.
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(²€ Œşÿÿÿÿ
 ]	java:S1258"<This block of commented-out lines of code should be removed.(­´üÿÿÿÿ8Å‹Ã³ã.
+g	java:S112/"FDefine and throw a dedicated exception instead of using a generic one.(±¼”úÿÿÿÿ8Ü¶ˆ³ã.
+]	java:S1255"<This block of commented-out lines of code should be removed.(²ëóÒıÿÿÿÿ8Å‹Ã³ã.
 Z	java:S106""9Replace this use of System.out or System.err by a logger.(É¸¦ûÿÿÿÿ8¶—“²ã.
 J	java:S108")Either remove or fill this block of code.(±Ÿ—±ÿÿÿÿÿ8¶—“²ã.
-k
-java:S2095"NUse try-with-resources or close this "PipedInputStream" in a "finally" clause.(·£·‰8¶—“²ã.
 Z	java:S106!"9Replace this use of System.out or System.err by a logger.(æÆÚåıÿÿÿÿ8¿ç¹²ã.
 J	java:S108&")Either remove or fill this block of code.(±Ÿ—±ÿÿÿÿÿ8¶—“²ã.
-b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(‘ÀÕ8ıÊ“²ã.
+k
+java:S2095"NUse try-with-resources or close this "PipedInputStream" in a "finally" clause.(·£·‰8¶—“²ã.

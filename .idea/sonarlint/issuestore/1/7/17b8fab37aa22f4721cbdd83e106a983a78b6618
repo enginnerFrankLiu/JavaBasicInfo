@@ -1,22 +1,22 @@
 
 @
 java:S1148J"#Use a logger to log this exception.(òçøì8éì±ìé.
-@
-java:S1148W"#Use a logger to log this exception.(òçøì8¼¸¯ìé.
-`
-java:S2276G"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(¹’õì8¼¸¯ìé.
-Z	java:S106L"9Replace this use of System.out or System.err by a logger.(¬ªÂ¯üÿÿÿÿ8¼¸¯ìé.
+X
+java:S1128";Remove this unused import 'javax.management.relation.Role'.(ëÎåè8ÕÁîÜŠ/
 H
 java:S1174]"&Make this finalize() method protected.(­§óùÿÿÿÿ8øßïé.
 o	java:S100C"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âÁòÒûÿÿÿÿ8³ƒ ìé.
+o	java:S100P"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úòÚ·üÿÿÿÿ8¼¸¯ìé.
+`
+java:S2276G"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(¹’õì8¼¸¯ìé.
+l
+java:S1874]"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(­§óùÿÿÿÿ8øßïé.
+Z	java:S106Y"9Replace this use of System.out or System.err by a logger.(†²ßÀüÿÿÿÿ8¼¸¯ìé.
 Z	java:S106S"9Replace this use of System.out or System.err by a logger.(‹¤¬Úúÿÿÿÿ8¼¸¯ìé.
 U	java:S106F"9Replace this use of System.out or System.err by a logger.(Ï‘¯É8¼¸¯ìé.
 U	java:S106_"9Replace this use of System.out or System.err by a logger.(ĞØ¶“8øßïé.
-Z	java:S106Y"9Replace this use of System.out or System.err by a logger.(†²ßÀüÿÿÿÿ8¼¸¯ìé.
-o	java:S100P"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úòÚ·üÿÿÿÿ8¼¸¯ìé.
+Z	java:S106L"9Replace this use of System.out or System.err by a logger.(¬ªÂ¯üÿÿÿÿ8¼¸¯ìé.
 O
 java:S1113]"-Do not override the Object.finalize() method.(­§óùÿÿÿÿ8øßïé.
-l
-java:S1874]"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(­§óùÿÿÿÿ8øßïé.
-X
-java:S1128";Remove this unused import 'javax.management.relation.Role'.(ëÎåè8ÕÁîÜŠ/
+@
+java:S1148W"#Use a logger to log this exception.(òçøì8¼¸¯ìé.

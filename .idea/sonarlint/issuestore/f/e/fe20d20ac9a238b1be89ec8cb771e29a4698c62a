@@ -1,0 +1,8 @@
+
+M
+java:S1068
+"+Remove this unused "variety" private field.(Áó «şÿÿÿÿ8§ÆÆä¡/
+F
+java:S1068")Remove this unused "color" private field.(Ë²‘8§ÆÆä¡/
+v
+java:S1210"YOverride "equals(Object obj)" to comply with the contract of the "compareTo(T o)" method.(š‡Õ‘8µÉä¡/

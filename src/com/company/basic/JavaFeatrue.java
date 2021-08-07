@@ -55,6 +55,16 @@ public class JavaFeatrue {
         list.stream().filter(Objects::nonNull).forEach(System.out::println);
     }
 
+    /**
+     *
+     * Functional interface
+     * T apply(T t)           UnaryOperator<T>
+     * T apply(T t1,T t2)     BinaryOperation<T>
+     * R apply(T t)           Function<T t>
+     * boolean test(T t,U t)  Predicate<T,U>
+     * T get()                Supplier<T>
+     * void accept(T t)       Consumer<T>
+     */
     public void infod(){
         List<String> list=new ArrayList<>();
         list.add("A");

@@ -2,29 +2,22 @@ package com.company;
 
 import com.company.IO.FileExample;
 import com.company.IO.SerialExample;
-import com.company.basic.Rate;
-import com.company.basic.Face;
-import com.company.basic.Point;
-import com.company.basic.Product;
+import com.company.basic.JavaFeatrue;
 import com.company.basic.ReflectTest;
 import com.company.core.*;
-import com.company.core.Person;
 import com.company.jvm.Client;
 import com.company.jvm.JavaJvm;
 import com.company.lock.Demo;
 import com.company.lock.LockInfo;
 import com.company.lock.ReenternLock;
-import com.company.model.RestoreAliases;
-import com.company.reflectz.TypeApplication;
 import com.company.stream.StreamInfo;
 import com.company.threadlearn.ExampleInterruptThread;
 import com.company.threadlearn.threadInterview;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+
 
 import java.io.File;
 import java.util.*;
 import java.util.concurrent.*;
-import java.util.stream.Collectors;
 
 public class Main {
 
@@ -887,24 +880,22 @@ public class Main {
          * https://juejin.cn/post/6844903769835044872
          * 它的比较 是直接计算出差值得啊，卧跟我想的有点不一样的啊；
 //         */
-//        String a = "a";
-//        String b = "z";
-//        System.out.println(a.compareTo(b));
-
-
-        Console console=new Console();
-//         console.lengthCompare();
-
-        console.buildInfo();
-
-
 
 
     }
 
+    public static void showInfo(){
+        JavaFeatrue javaFeatrue=new JavaFeatrue();
+//        javaFeatrue.doFilter();
+//        System.out.println("__________________");
+//        javaFeatrue.doFilter2();
+
+        javaFeatrue.infod();
+    }
+
     public static void main(String[] args) throws Exception {
         System.out.format("application start.").println();
-        doInfo();
+        showInfo();
         System.out.format("application end.");
     }
 

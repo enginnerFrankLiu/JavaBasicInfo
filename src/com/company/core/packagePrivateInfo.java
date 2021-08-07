@@ -1,6 +1,6 @@
 package com.company.core;
 
-class packagePrivateInfo {
+public class packagePrivateInfo {
 
     public int a;
 }

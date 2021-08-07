@@ -1,8 +1,12 @@
 
+v
+java:S1210"YOverride "equals(Object obj)" to comply with the contract of the "compareTo(T o)" method.(š‡Õ‘8µÉä¡/
+F
+java:S1068")Remove this unused "color" private field.(Ë²‘8§ÆÆä¡/
+G
+java:S1068"%Remove this unused "a" private field.(Ş‹®øÿÿÿÿ8Ñ’áÜ¤/
 M
 java:S1068
 "+Remove this unused "variety" private field.(Áó «şÿÿÿÿ8§ÆÆä¡/
-F
-java:S1068")Remove this unused "color" private field.(Ë²‘8§ÆÆä¡/
-v
-java:S1210"YOverride "equals(Object obj)" to comply with the contract of the "compareTo(T o)" method.(š‡Õ‘8µÉä¡/
+j
+java:S1104"MMake c a static final constant or non-public and provide accessors if needed.(¥Öí‡8Ñ’áÜ¤/

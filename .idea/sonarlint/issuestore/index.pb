@@ -189,9 +189,9 @@ Q
 !src/com/company/basic/Market.java,8\2\82799fa1877c6f4c9017e165691f10a60390f18a
 R
 "src/com/company/core/SonClass.java,9\7\97d386a0f4f79d6ba836cf371d020bf0e8e625c2
-P
- src/com/company/basic/IFuck.java,5\a\5af45fe92a1e67a1e8d707a911fbffbcff214435
 Q
 !src/com/company/core/Console.java,e\4\e41f4af15ac518189a82654708bb42a645d6eed2
 R
 "src/com/company/basic/Product.java,2\a\2a5b4588a5d4ac11717f435f63c716e7f3d574e7
+\
+,src/com/company/core/packagePrivateInfo.java,6\d\6de48bf477961af83c9b24cb2a19523fa9c65628

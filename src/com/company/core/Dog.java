@@ -1,9 +1,5 @@
 package com.company.core;
 
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-
-import javax.print.DocFlavor;
-
 public class Dog {
 
     public void dd(){

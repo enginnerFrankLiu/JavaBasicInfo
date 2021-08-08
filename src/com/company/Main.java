@@ -890,7 +890,18 @@ public class Main {
 //        System.out.println("__________________");
 //        javaFeatrue.doFilter2();
 
-        javaFeatrue.infod();
+////        javaFeatrue.infod();
+//
+//        javaFeatrue.listToMap();
+
+//        javaFeatrue.sortList();
+//        javaFeatrue.listToMap();
+//        javaFeatrue.functionInfo();
+//        javaFeatrue.listStringToMapInfo();
+//        javaFeatrue.listStringToMapInfo();
+        javaFeatrue.listStringToMapInfoV2();
+
+
     }
 
     public static void main(String[] args) throws Exception {

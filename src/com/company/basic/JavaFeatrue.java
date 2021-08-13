@@ -3,6 +3,7 @@ package com.company.basic;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class JavaFeatrue {
 
@@ -215,5 +216,53 @@ public class JavaFeatrue {
         return result;
     }
 
+    /**
+     *
+     */
+    public void streamInfoQ(){
 
+        String [] arr={"hello","java","stream"};
+        Stream<String> stream=Arrays.stream(arr);
+        List<String> list =stream.map(x->x+"ddd").collect(Collectors.toList());
+        for (String s : arr) {
+            System.out.println(s);
+        }
+
+        System.out.println("-----------------------");
+        for (String s : list) {
+            System.out.println(s);
+        }
+    }
+
+    /**
+     *
+     * java 8 Collection<E> 说明只要是Collection<E>的实现都可以创建流。
+     *
+     */
+    public void createStreamFromCollection(){
+
+        Collection<String> strings=Arrays.asList("hello","java","stream");
+
+        Stream<String> stream=strings.stream();
+
+        Stream<String> stringStream=strings.parallelStream();
+
+    }
+
+    public void createStreamFromArray(){
+
+//        //方式一:
+//        Stream<String> streamFromArray=Stream.of("hello","java","stream");
+//
+//        //方式二: 从已经有（存在）的 array 中创建
+//        String [] arr={"hello","java","stream"};
+//        Stream<String> stream=Arrays.stream(arr);
+//
+//        Stream<String> streamOfArrPart=Arrays.stream(arr,1,2);
+//
+//
+        Stream<String> stream=Stream.generate(()-> "fuck").limit(2);
+        stream.forEach(System.out::println);
+
+    }
 }

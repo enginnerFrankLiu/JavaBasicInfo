@@ -899,8 +899,10 @@ public class Main {
 //        javaFeatrue.functionInfo();
 //        javaFeatrue.listStringToMapInfo();
 //        javaFeatrue.listStringToMapInfo();
-        javaFeatrue.listStringToMapInfoV2();
+//        javaFeatrue.listStringToMapInfoV2();
+//        javaFeatrue.streamInfoQ();
 
+        javaFeatrue.createStreamFromArray();
 
     }
 

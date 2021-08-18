@@ -1,6 +1,7 @@
 package com.company.basic;
 
 import java.util.*;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -263,6 +264,69 @@ public class JavaFeatrue {
 //
         Stream<String> stream=Stream.generate(()-> "fuck").limit(2);
         stream.forEach(System.out::println);
+
+    }
+
+    /**
+     * 整体效果还算比较ok的.
+     *
+     */
+    public void consumerInfo(){
+        Consumer<Integer> consumer=(x)->{
+
+            int num=x*2;
+            System.out.println(num);
+
+        };
+
+
+        Consumer<Integer> consumer1=(x)->{
+
+            int num=x*3;
+            System.out.println(num);
+
+        };
+
+        consumer.andThen(consumer1).accept(10);
+    }
+
+    /**
+     *
+     */
+    public void streamInfo(){
+
+//
+//        Stream<String> stringStream=Stream.of("a","b","c");
+//        List<String> list=stringStream
+//                .map(x-> x+"d")
+//                .collect(Collectors.toList());
+//
+//        System.out.println(list);
+
+    }
+
+    /**
+     *
+     *     <R> R collect(Supplier<R> supplier,
+     *                   BiConsumer<R, ? super T> accumulator,
+     *                   BiConsumer<R, R> combiner);
+     *
+     *                   首先泛型模板参数：R
+     *                   函数 返回值也是 R
+     *                   第一个函数是一个supplier，一个supplier函数，之后返回值，返回的也是R
+     *
+     *                    BiConsumer 是一个consumer 类型的函数，也就是说是一个 消费类型的函数，没有返回值， 对集合R 进行操作，操作的参数 T
+     *
+     *                    BiConsumer 也是一个consumer 它的两个参数 都是 R  知名为 combiner
+     */
+    public void ms() {
+        Stream<String> stringStream = Stream.of("a", "b", "c");
+        String result = stringStream.collect(() -> new StringBuilder(), (l, x) -> l.append(x), (r1, r2) -> r1.append(r2)).toString();
+        System.out.println(result);
+
+        Stream<String> stringStream1 = Stream.of("a", "b", "c");
+        String re=stringStream1.collect(StringBuilder::new,StringBuilder::append,StringBuilder::append).toString();
+        System.out.println(re);
 
     }
 }

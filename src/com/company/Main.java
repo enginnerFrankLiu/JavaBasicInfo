@@ -902,7 +902,11 @@ public class Main {
 //        javaFeatrue.listStringToMapInfoV2();
 //        javaFeatrue.streamInfoQ();
 
-        javaFeatrue.createStreamFromArray();
+//        javaFeatrue.createStreamFromArray();
+
+//        javaFeatrue.consumerInfo();
+
+        javaFeatrue.ms();
 
     }
 

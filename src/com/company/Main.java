@@ -906,7 +906,8 @@ public class Main {
 
 //        javaFeatrue.consumerInfo();
 
-        javaFeatrue.ms();
+//        javaFeatrue.ms();
+        javaFeatrue.joinInfo();
 
     }
 

@@ -329,4 +329,27 @@ public class JavaFeatrue {
         System.out.println(re);
 
     }
+
+    public void joinInfo(){
+
+        List<String> names=new ArrayList<>();
+        names.add("jack");
+        names.add("tom");
+        names.add("frank");
+
+        String result=names.stream().collect(Collectors.joining());
+        System.out.println(result);
+
+        String val=names.stream().collect(Collectors.joining(","));
+        System.out.println(val);
+
+        //prefix and suffix;
+        String temp=names.stream().collect(Collectors.joining(",","(",")"));
+        System.out.println(temp);
+
+        //先转成大写，然后再join起来
+        String joinResult=names.stream().collect(Collectors.collectingAndThen(Collectors.joining(","),String::toUpperCase));
+        System.out.println(joinResult);
+
+    }
 }

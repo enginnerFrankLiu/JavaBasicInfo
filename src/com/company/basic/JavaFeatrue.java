@@ -3,6 +3,7 @@ package com.company.basic;
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -199,20 +200,20 @@ public class JavaFeatrue {
         });
     }
 
-    public void listStringToMapInfoV2(){
+    public void listStringToMapInfoV2() {
 
         List<String> list = Arrays.asList("java", "c#", "javascript");
-        Map<String,Integer> map=convertListMap(list,x->x.length());
-        map.forEach((key,val)->{
+        Map<String, Integer> map = convertListMap(list, x -> x.length());
+        map.forEach((key, val) -> {
             System.out.println("Key :" + key + " val: " + val);
         });
 
     }
 
-    public <T,R> Map<T,R> convertListMap(List<T> list,Function<T,R> fn){
-        Map<T,R> result=new HashMap<>();
+    public <T, R> Map<T, R> convertListMap(List<T> list, Function<T, R> fn) {
+        Map<T, R> result = new HashMap<>();
         for (T t : list) {
-            result.put(t,fn.apply(t));
+            result.put(t, fn.apply(t));
         }
         return result;
     }
@@ -220,11 +221,11 @@ public class JavaFeatrue {
     /**
      *
      */
-    public void streamInfoQ(){
+    public void streamInfoQ() {
 
-        String [] arr={"hello","java","stream"};
-        Stream<String> stream=Arrays.stream(arr);
-        List<String> list =stream.map(x->x+"ddd").collect(Collectors.toList());
+        String[] arr = {"hello", "java", "stream"};
+        Stream<String> stream = Arrays.stream(arr);
+        List<String> list = stream.map(x -> x + "ddd").collect(Collectors.toList());
         for (String s : arr) {
             System.out.println(s);
         }
@@ -236,21 +237,19 @@ public class JavaFeatrue {
     }
 
     /**
-     *
      * java 8 Collection<E> 说明只要是Collection<E>的实现都可以创建流。
-     *
      */
-    public void createStreamFromCollection(){
+    public void createStreamFromCollection() {
 
-        Collection<String> strings=Arrays.asList("hello","java","stream");
+        Collection<String> strings = Arrays.asList("hello", "java", "stream");
 
-        Stream<String> stream=strings.stream();
+        Stream<String> stream = strings.stream();
 
-        Stream<String> stringStream=strings.parallelStream();
+        Stream<String> stringStream = strings.parallelStream();
 
     }
 
-    public void createStreamFromArray(){
+    public void createStreamFromArray() {
 
 //        //方式一:
 //        Stream<String> streamFromArray=Stream.of("hello","java","stream");
@@ -262,27 +261,26 @@ public class JavaFeatrue {
 //        Stream<String> streamOfArrPart=Arrays.stream(arr,1,2);
 //
 //
-        Stream<String> stream=Stream.generate(()-> "fuck").limit(2);
+        Stream<String> stream = Stream.generate(() -> "fuck").limit(2);
         stream.forEach(System.out::println);
 
     }
 
     /**
      * 整体效果还算比较ok的.
-     *
      */
-    public void consumerInfo(){
-        Consumer<Integer> consumer=(x)->{
+    public void consumerInfo() {
+        Consumer<Integer> consumer = (x) -> {
 
-            int num=x*2;
+            int num = x * 2;
             System.out.println(num);
 
         };
 
 
-        Consumer<Integer> consumer1=(x)->{
+        Consumer<Integer> consumer1 = (x) -> {
 
-            int num=x*3;
+            int num = x * 3;
             System.out.println(num);
 
         };
@@ -293,7 +291,7 @@ public class JavaFeatrue {
     /**
      *
      */
-    public void streamInfo(){
+    public void streamInfo() {
 
 //
 //        Stream<String> stringStream=Stream.of("a","b","c");
@@ -306,18 +304,17 @@ public class JavaFeatrue {
     }
 
     /**
-     *
-     *     <R> R collect(Supplier<R> supplier,
-     *                   BiConsumer<R, ? super T> accumulator,
-     *                   BiConsumer<R, R> combiner);
-     *
-     *                   首先泛型模板参数：R
-     *                   函数 返回值也是 R
-     *                   第一个函数是一个supplier，一个supplier函数，之后返回值，返回的也是R
-     *
-     *                    BiConsumer 是一个consumer 类型的函数，也就是说是一个 消费类型的函数，没有返回值， 对集合R 进行操作，操作的参数 T
-     *
-     *                    BiConsumer 也是一个consumer 它的两个参数 都是 R  知名为 combiner
+     * <R> R collect(Supplier<R> supplier,
+     * BiConsumer<R, ? super T> accumulator,
+     * BiConsumer<R, R> combiner);
+     * <p>
+     * 首先泛型模板参数：R
+     * 函数 返回值也是 R
+     * 第一个函数是一个supplier，一个supplier函数，之后返回值，返回的也是R
+     * <p>
+     * BiConsumer 是一个consumer 类型的函数，也就是说是一个 消费类型的函数，没有返回值， 对集合R 进行操作，操作的参数 T
+     * <p>
+     * BiConsumer 也是一个consumer 它的两个参数 都是 R  知名为 combiner
      */
     public void ms() {
         Stream<String> stringStream = Stream.of("a", "b", "c");
@@ -325,31 +322,128 @@ public class JavaFeatrue {
         System.out.println(result);
 
         Stream<String> stringStream1 = Stream.of("a", "b", "c");
-        String re=stringStream1.collect(StringBuilder::new,StringBuilder::append,StringBuilder::append).toString();
+        String re = stringStream1.collect(StringBuilder::new, StringBuilder::append, StringBuilder::append).toString();
         System.out.println(re);
 
     }
 
-    public void joinInfo(){
+    public void joinInfo() {
 
-        List<String> names=new ArrayList<>();
+        List<String> names = new ArrayList<>();
         names.add("jack");
         names.add("tom");
         names.add("frank");
 
-        String result=names.stream().collect(Collectors.joining());
+        String result = names.stream().collect(Collectors.joining());
         System.out.println(result);
 
-        String val=names.stream().collect(Collectors.joining(","));
+        String val = names.stream().collect(Collectors.joining(","));
         System.out.println(val);
 
         //prefix and suffix;
-        String temp=names.stream().collect(Collectors.joining(",","(",")"));
+        String temp = names.stream().collect(Collectors.joining(",", "(", ")"));
         System.out.println(temp);
 
         //先转成大写，然后再join起来
-        String joinResult=names.stream().collect(Collectors.collectingAndThen(Collectors.joining(","),String::toUpperCase));
+        String joinResult = names.stream().collect(Collectors.collectingAndThen(Collectors.joining(","), String::toUpperCase));
         System.out.println(joinResult);
 
     }
+
+    /**
+     * 最常用的之一：group by -> key List
+     */
+    public void groupBy() {
+
+        List<String> names = new ArrayList<>();
+        names.add("jack");
+        names.add("tom");
+        names.add("frank");
+        names.add("jack");
+
+        Map<Integer, List<String>> map = names.stream().collect(Collectors.groupingBy(String::length));
+
+        map.forEach((key, val) -> {
+            for (String s : val) {
+                System.out.println("key:" + key + "  val: " + s);
+            }
+        });
+
+    }
+
+    /**
+     * 最常用的方式之二：group by -> key Set
+     * no duplicate.
+     */
+    public void groupBySet() {
+
+        List<String> names = new ArrayList<>();
+        names.add("jack");
+        names.add("tom");
+        names.add("frank");
+        names.add("jack");
+
+        Map<Integer, Set<String>> noDuplicateNames = names
+                .stream()
+                .collect(Collectors.groupingBy(String::length, Collectors.toSet()));
+
+        noDuplicateNames.forEach((key, val) -> {
+            for (String s : val) {
+                System.out.println("key:" + key + "  val: " + s);
+            }
+        });
+    }
+
+    /**
+     * 线程同步的集合
+     * 线程同步的集合
+     * 效果还算可以的
+     */
+    public void syncGroupBy() {
+
+        List<String> names = new ArrayList<>();
+        names.add("jack");
+        names.add("tom");
+        names.add("frank");
+        names.add("jack");
+
+        Supplier<Map<Integer, Set<String>>> mapSupplier = () -> Collections.synchronizedMap(new HashMap<>());
+
+        Map<Integer, Set<String>> collect = names
+                .stream()
+                .collect(Collectors.groupingBy(String::length, mapSupplier, Collectors.toSet()));
+        collect.forEach((key, val) -> {
+            for (String s : val) {
+                System.out.println("key:" + key + "  val: " + s);
+            }
+        });
+    }
+
+    /**
+     * collections 是 java util 下的类，是针对集合类的一个工具类，它提供一系列静态方法，主要实现对集合的：
+     * 查找 排序 替换 线程安全转换，将非同步集合转换成同步 的
+     *
+     * collection 是 java util 下的接口，它是各种集合接口的父级接口，继承与它的集合主要由 Set 和 List
+     * 提供关于集合的一些基本操作 ： 插入 删除 判断一个元素是否是其成员 ，遍历等
+     *
+     * collector的简单场景 一般在流处理完毕，想要收集对象的收尾工作；
+     * 这个收集器主要是把流水线上的每个小部件 进行收集，并进行专项：
+     *
+     * https://blog.csdn.net/sl1992/article/details/99774223
+     *
+     * 关于我们的collector 的具体信息的解读，整体效果还算很ok的效果，不错
+     *
+     * https tcp ip 这两点是是必然会考，会问的话题
+     *
+     * 然后是我们的 常见的数据结构 和 算法的 考核
+     *
+     * 这个 绝对就少不了我们的 各种集合的 认知 和了解地呀
+     *
+     *
+     */
+    public void partitioningBy(){
+
+    }
+
+
 }

@@ -907,7 +907,10 @@ public class Main {
 //        javaFeatrue.consumerInfo();
 
 //        javaFeatrue.ms();
-        javaFeatrue.joinInfo();
+//        javaFeatrue.joinInfo();
+//        javaFeatrue.groupBy();
+//          javaFeatrue.groupBySet();
+        javaFeatrue.syncGroupBy();
 
     }
 

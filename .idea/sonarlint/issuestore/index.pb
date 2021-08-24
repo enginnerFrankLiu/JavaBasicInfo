@@ -195,3 +195,5 @@ R
 "src/com/company/basic/Product.java,2\a\2a5b4588a5d4ac11717f435f63c716e7f3d574e7
 \
 ,src/com/company/core/packagePrivateInfo.java,6\d\6de48bf477961af83c9b24cb2a19523fa9c65628
+V
+&src/com/company/basic/JavaFeatrue.java,7\a\7a359d937e9406981402d3533d57d574f63498d3

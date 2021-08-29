@@ -910,7 +910,8 @@ public class Main {
 //        javaFeatrue.joinInfo();
 //        javaFeatrue.groupBy();
 //          javaFeatrue.groupBySet();
-        javaFeatrue.syncGroupBy();
+//        javaFeatrue.syncGroupBy();
+        javaFeatrue.partitioningBy();
 
     }
 

@@ -435,15 +435,46 @@ public class JavaFeatrue {
      *
      * https tcp ip 这两点是是必然会考，会问的话题
      *
-     * 然后是我们的 常见的数据结构 和 算法的 考核
-     *
-     * 这个 绝对就少不了我们的 各种集合的 认知 和了解地呀
-     *
-     *
      */
     public void partitioningBy(){
 
+        Stream<Integer> grades=Stream.of(10,20,30,60,70,100);
+
+        Map<Boolean,List<Integer>> group=grades.collect(Collectors.partitioningBy(x->x>=60));
+
+        List<Integer> low=group.get(Boolean.TRUE);
+
+        List<Integer> high=group.get(Boolean.FALSE);
+
+        System.out.println(low);
+        System.out.println(high);
+
     }
+
+    /**
+     * 先过滤再分组
+     *
+     * 先分组再过滤
+     *
+     */
+    public void infoq(){
+
+        Stream<Integer> numbers = Stream.of(1, 2, 3, 5, 5);
+
+        Map<Integer,Long> result=numbers.filter(x-> x>3)
+                .collect(Collectors.groupingBy(i-> i,Collectors.counting()));
+        System.out.println(result);
+
+        //java 9 的新特性.
+//
+//        Map<Integer,Long> temp=numbers.collect(Collectors.groupingBy(i->i,
+//                Collectors.
+//                ))
+//
+//
+
+    }
+
 
 
 }

@@ -330,4 +330,11 @@ public class FileInfo {
         recursionFile(filePath);
 
     }
+
+    /**
+     * 四次挥手.
+     */
+    public void logFour(){
+
+    }
 }

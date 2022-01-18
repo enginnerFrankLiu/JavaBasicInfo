@@ -3,7 +3,9 @@ package com.company;
 import com.company.IO.FileExample;
 import com.company.IO.SerialExample;
 import com.company.basic.JavaFeatrue;
+import com.company.basic.Point;
 import com.company.basic.ReflectTest;
+import com.company.basic.UserModel;
 import com.company.core.*;
 import com.company.jvm.Client;
 import com.company.jvm.JavaJvm;
@@ -911,13 +913,28 @@ public class Main {
 //        javaFeatrue.groupBy();
 //          javaFeatrue.groupBySet();
 //        javaFeatrue.syncGroupBy();
-        javaFeatrue.partitioningBy();
+//        javaFeatrue.partitioningBy();
+
+    }
+
+    public static void mxx(){
+
+//        UserModel userModel=new UserModel();
+////        userModel.version=90;
+//        UserModel.count=100;
+
+
+        //对象引用不可变 和 对象（内容、状态）不可变是两回事儿吧
+//        UserModel.point=new Point(12,12);
+          UserModel.point.setX(100);
+        UserModel.point.setX(30000);
 
     }
 
     public static void main(String[] args) throws Exception {
         System.out.format("application start.").println();
-        showInfo();
+
+
         System.out.format("application end.");
     }
 

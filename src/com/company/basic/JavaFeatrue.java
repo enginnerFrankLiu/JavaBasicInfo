@@ -503,8 +503,6 @@ public class JavaFeatrue {
      * 是发出去的包丢了
      * 还是接口回应的ack包丢了
      *
-     *
-     * 四次挥手.
      */
     public void tcp(){
 

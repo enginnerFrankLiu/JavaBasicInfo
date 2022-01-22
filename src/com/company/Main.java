@@ -14,6 +14,8 @@ import com.company.lock.LockInfo;
 import com.company.lock.ReenternLock;
 import com.company.stream.StreamInfo;
 import com.company.threadlearn.ExampleInterruptThread;
+import com.company.threadlearn.callable;
+import com.company.threadlearn.runThread.run;
 import com.company.threadlearn.threadInterview;
 
 
@@ -788,7 +790,6 @@ public class Main {
 //        });
 
 
-
     }
 
     public static void doInfo() {
@@ -881,13 +882,13 @@ public class Main {
          * https://www.imooc.com/article/33074
          * https://juejin.cn/post/6844903769835044872
          * 它的比较 是直接计算出差值得啊，卧跟我想的有点不一样的啊；
-//         */
+         //         */
 
 
     }
 
-    public static void showInfo(){
-        JavaFeatrue javaFeatrue=new JavaFeatrue();
+    public static void showInfo() {
+        JavaFeatrue javaFeatrue = new JavaFeatrue();
 //        javaFeatrue.doFilter();
 //        System.out.println("__________________");
 //        javaFeatrue.doFilter2();
@@ -917,23 +918,33 @@ public class Main {
 
     }
 
-    public static void mxx(){
+    public static void mxx() {
 
 //        UserModel userModel=new UserModel();
 ////        userModel.version=90;
 //        UserModel.count=100;
 
-
-        //对象引用不可变 和 对象（内容、状态）不可变是两回事儿吧
-//        UserModel.point=new Point(12,12);
-          UserModel.point.setX(100);
-        UserModel.point.setX(30000);
+//
+//        //对象引用不可变 和 对象（内容、状态）不可变是两回事儿吧
+////        UserModel.point=new Point(12,12);
+//          UserModel.point.setX(100);
+//        UserModel.point.setX(30000);
+        try {
+//            callable.doCall();
+//            callable.doCall2();
+//            run.way3();
+//            run.stopThread();
+            run.stopThreadV2();
+        } catch (Exception exception) {
+            System.out.println(exception);
+        }
 
     }
 
     public static void main(String[] args) throws Exception {
         System.out.format("application start.").println();
 
+        mxx();
 
         System.out.format("application end.");
     }

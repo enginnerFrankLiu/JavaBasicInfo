@@ -1,10 +1,10 @@
 package com.company.threadlearn.runThread;
 
-import javax.xml.transform.OutputKeys;
+import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.TimeUnit;
 
-public class DRunnable implements Runnable {
+    public class DRunnable implements Runnable {
 
     private CyclicBarrier cyclicBarrier;
 
@@ -17,7 +17,7 @@ public class DRunnable implements Runnable {
         try {
             System.out.println("D into barrier--1.");
             cyclicBarrier.await();
-            System.out.println("D  同时出发一起干事情.");
+            System.out.println("D  一起开始.");
 
             TimeUnit.SECONDS.sleep(9);
             System.out.println("D  干完了");
@@ -26,8 +26,12 @@ public class DRunnable implements Runnable {
             cyclicBarrier.await();
             System.out.println("D 一起结束.");
 
-        } catch (Exception exception) {
-            System.out.println(exception);
+        }  catch (InterruptedException e) {
+            System.out.println("D has already interrupt.");
+
+        } catch (BrokenBarrierException e) {
+            System.out.println("D has already broken.");
+
         }
     }
 }

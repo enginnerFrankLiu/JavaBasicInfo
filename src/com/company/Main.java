@@ -932,7 +932,7 @@ public class Main {
         try {
 //
 //            run.waitAllThreadCompletion();
-              run.waitAll();
+              run.waitAll3();
 
         } catch (Exception exception) {
             System.out.println(exception);
@@ -942,10 +942,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         System.out.format("application start.").println();
-
         mxx();
-
-        System.out.format("application end.");
     }
 
 }

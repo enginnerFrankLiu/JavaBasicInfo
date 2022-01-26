@@ -932,7 +932,7 @@ public class Main {
         try {
 //
 //            run.waitAllThreadCompletion();
-              run.waitAll3();
+              run.resetInfo();
 
         } catch (Exception exception) {
             System.out.println(exception);

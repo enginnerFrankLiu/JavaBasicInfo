@@ -235,8 +235,43 @@ public class run {
      * 那么E 自己会抛出异常。
      * D 在事情干完后，进入到await的时候，那么会抛出brokenException.屏障就失效了。
      *
+     * 总结出来就是这四句话：
+     *
+     * 当前线程被中断，则抛出InterruptedException异常，并停止等待，继续执行。
+     *
+     * 当前线程等待超时，则抛出TimeoutException异常，并停止等待，继续执行。
+     *
+     * 其他等待的线程被中断，则当前线程抛出BrokenBarrierException异常，并停止等待，继续执行。
+     *
+     * 其他等待的线程超时，则当前线程抛出BrokenBarrierException异常，并停止等待，继续执行。
      */
     public void info(){
+
+    }
+
+
+    /**
+     * 其他线程调用CyclicBarrier.reset()方法，则当前线程抛出BrokenBarrierException异常，并停止等待，继续执行。
+     * //reset 之后，等待的线程会抛出异常。
+     * 还没有call await方法的，等到可以call之后，会处于等待状态。
+     *
+     * 如果其中一个发生了异常，可以尝试 重异常中恢复，reset
+     */
+    public static void resetInfo() throws Exception{
+
+        AggRunnable aggRunnable=new AggRunnable();
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(2);
+        Thread threadD = new Thread(new DRunnable(cyclicBarrier)); //9
+        Thread threadE = new Thread(new ERunnable(cyclicBarrier)); //3
+        threadD.start();
+        threadE.start();
+
+        TimeUnit.SECONDS.sleep(4);
+        threadE.interrupt();
+
+
+        TimeUnit.SECONDS.sleep(1);
+        System.out.println(cyclicBarrier.isBroken());
 
     }
 

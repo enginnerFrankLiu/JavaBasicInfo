@@ -17,6 +17,8 @@ import com.company.threadlearn.ExampleInterruptThread;
 import com.company.threadlearn.callable;
 import com.company.threadlearn.runThread.run;
 import com.company.threadlearn.threadInterview;
+import com.company.threadlearn.threadtest.ThreadExecutorFactory;
+import com.company.threadlearn.threadtest.ThreadExecutorFactoryV2;
 
 
 import java.io.File;
@@ -930,9 +932,9 @@ public class Main {
 //          UserModel.point.setX(100);
 //        UserModel.point.setX(30000);
         try {
-//
-//            run.waitAllThreadCompletion();
-              run.resetInfo();
+
+            ThreadExecutorFactoryV2 v2=new ThreadExecutorFactoryV2();
+            v2.run();
 
         } catch (Exception exception) {
             System.out.println(exception);

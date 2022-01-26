@@ -2,6 +2,7 @@ package com.company.threadlearn.runThread;
 
 import sun.awt.windows.ThemeReader;
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
@@ -47,8 +48,19 @@ public class run {
 //            future.cancel(true);
 //            System.out.println("c");
 
+            TimeUnit.SECONDS.sleep(3);
             thread.interrupt();
-            System.out.println(Thread.interrupted());
+            System.out.println(thread.isInterrupted());
+            System.out.println(thread.isInterrupted());
+            System.out.println(thread.isInterrupted());
+            System.out.println(thread.isInterrupted());
+            System.out.println(thread.isInterrupted());
+            System.out.println(thread.isInterrupted());
+            System.out.println(thread.isInterrupted());
+            System.out.println(thread.isInterrupted());
+            System.out.println(thread.isInterrupted());
+            System.out.println(thread.isInterrupted());
+
         } catch (Exception exception) {
             System.out.println(exception);
         }
@@ -81,18 +93,93 @@ public class run {
         printRunnable.cancel();
     }
 
+    /**
+     * @throws Exception
+     */
     public static void stopThreadV2() throws Exception {
-        printRunnableV2 printRunnablev2 = new printRunnableV2();
-        Thread thread = new Thread(printRunnablev2);
+//        printRunnableV2 printRunnablev2 = new printRunnableV2();
+//        Thread thread = new Thread(printRunnablev2);
+//        thread.start();
+//        TimeUnit.SECONDS.sleep(3);
+//        thread.interrupt();
+//        System.out.println(thread.isInterrupted());
+//        System.out.println(thread.isInterrupted());
+//        System.out.println(thread.isInterrupted());
+//        System.out.println(thread.isInterrupted());
+//        System.out.println(thread.isInterrupted());
+//        System.out.println(thread.isInterrupted());
+//        System.out.println(thread.isInterrupted());
+//        System.out.println(thread.isInterrupted());
+//        System.out.println(thread.isInterrupted());
+//        System.out.println(thread.isInterrupted());
+//        System.out.println(thread.isInterrupted());
+//        System.out.println(thread.isInterrupted());
+//        System.out.println(thread.isInterrupted());
+//        System.out.println(thread.isInterrupted());
+
+        SleepRunnalbe sleepRunnalbe = new SleepRunnalbe();
+        Thread thread = new Thread(sleepRunnalbe);
         thread.start();
         TimeUnit.SECONDS.sleep(2);
         thread.interrupt();
-        System.out.println(thread.isInterrupted());
-
-
-
-
-
+        System.out.println("interrupt.....");
 
     }
+
+    //构造函数中的permits，只是初始的线程可以进入临界区的数量
+    public static void test() {
+        Semaphore semaphore = new Semaphore(1);
+
+        semaphore.release();
+        semaphore.release();
+        semaphore.release();
+        semaphore.release();
+        System.out.println(semaphore.availablePermits());
+
+    }
+
+    /**
+     * 两个线程同时开始，等待两个线程都完成了任务我才继续下面的任务
+     */
+
+    public static void waitAllThreadCompletion() throws Exception {
+
+        CountDownLatch countDownLatch = new CountDownLatch(2);
+        Thread threadA = new Thread(new ARunnable(countDownLatch));
+        Thread threadB = new Thread(new BRunnable(countDownLatch));
+        threadA.start();
+        threadB.start();
+
+        countDownLatch.await();
+        System.out.println("all thread task done.");
+    }
+
+    /**
+     * 这个是堵塞调用它的主线程；
+     * 整体效果还算比较OK的啦.
+     * <p>
+     * 如果都同时放在同一个主线程中，就没有多大的意义了。
+     * 总体来说，效果还是可以的；
+     *
+     * @throws Exception
+     */
+    public static void waitAllStepCompletion() throws Exception {
+        CountDownLatch countDownLatch = new CountDownLatch(3);
+        Thread thread = new Thread(new CRunnable(countDownLatch));
+        thread.start();
+
+        countDownLatch.await();
+
+        System.out.println("all step done.");
+    }
+
+    public static void waitAll() {
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(2);
+        Thread threadA = new Thread(new DRunnable(cyclicBarrier));
+        Thread threadB = new Thread(new ERunnable(cyclicBarrier));
+        threadA.start();
+        threadB.start();
+
+    }
+
 }

@@ -930,11 +930,10 @@ public class Main {
 //          UserModel.point.setX(100);
 //        UserModel.point.setX(30000);
         try {
-//            callable.doCall();
-//            callable.doCall2();
-//            run.way3();
-//            run.stopThread();
-            run.stopThreadV2();
+//
+//            run.waitAllThreadCompletion();
+              run.waitAll();
+
         } catch (Exception exception) {
             System.out.println(exception);
         }

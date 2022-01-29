@@ -17,9 +17,7 @@ import com.company.threadlearn.ExampleInterruptThread;
 import com.company.threadlearn.callable;
 import com.company.threadlearn.runThread.run;
 import com.company.threadlearn.threadInterview;
-import com.company.threadlearn.threadtest.PrintTask002;
-import com.company.threadlearn.threadtest.ThreadExecutorFactory;
-import com.company.threadlearn.threadtest.ThreadExecutorFactoryV2;
+import com.company.threadlearn.threadtest.*;
 
 
 import java.io.File;
@@ -934,11 +932,17 @@ public class Main {
 //        UserModel.point.setX(30000);
         try {
 
-//            ThreadExecutorFactoryV2 v2=new ThreadExecutorFactoryV2();
-//            v2.run();
+//            printTask003 print=new printTask003();
+//            print.demo();
+//            printTask004 task=new printTask004();
+//            task.testDD();
+//
+//            Task006 task=new Task006();
+//            task.demoInfo();
 
-            PrintTask002 print=new PrintTask002();
-            print.printTask();
+            ThreadNotify threadNotify=new ThreadNotify();
+            threadNotify.demo();
+
 
         } catch (Exception exception) {
             System.out.println(exception);

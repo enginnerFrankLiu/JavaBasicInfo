@@ -938,10 +938,12 @@ public class Main {
 //            task.testDD();
 //
 //            Task006 task=new Task006();
-//            task.demoInfo();
-
-            ThreadNotify threadNotify=new ThreadNotify();
-            threadNotify.demo();
+////            task.demoInfo();
+//
+//            ThreadNotify threadNotify=new ThreadNotify();
+//            threadNotify.demo();
+            Task007 task=new Task007();
+            task.demo();
 
 
         } catch (Exception exception) {

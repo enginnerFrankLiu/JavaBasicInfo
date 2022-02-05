@@ -84,6 +84,7 @@ public class printTask005 {
      * 他们之间是需要互相通知的；所以需要两个信号对象
      * 当producer 把queue装满了，会进入等待的状态，通知消费者继续消费.
      * 当consumer 把queue消费完了，会进入等待的状态，并且通知生产者继续消费。
+     * public
      */
     public void testFuck() {
 

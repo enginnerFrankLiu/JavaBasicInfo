@@ -43,7 +43,6 @@ public class ThreadNotify {
                     System.out.println(exception);
                 }
             }
-
         }
     }
 

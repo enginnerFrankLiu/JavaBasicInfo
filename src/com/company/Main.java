@@ -937,13 +937,16 @@ public class Main {
 //            printTask004 task=new printTask004();
 //            task.testDD();
 //
-//            Task006 task=new Task006();
-////            task.demoInfo();
-//
+            Task006 task=new Task006();
+            task.demoInfo();
+
 //            ThreadNotify threadNotify=new ThreadNotify();
 //            threadNotify.demo();
-            Task007 task=new Task007();
-            task.demo();
+
+//            ThreadNotify threadNotify=new ThreadNotify();
+//            threadNotify.demo();
+//            Task007 task=new Task007();
+//            task.demo();
 
 
         } catch (Exception exception) {

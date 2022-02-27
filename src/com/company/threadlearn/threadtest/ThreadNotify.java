@@ -22,6 +22,8 @@ public class ThreadNotify {
                 System.out.println("producer try to sleep 3s");
 
                 System.out.println("consumer will not be awaken until producer release locker.");
+
+                System.out.println("也就是说当producer call 了 notify 之后，并不意味着 它会马上释放锁滴呀；.");
                 try {
                     TimeUnit.SECONDS.sleep(6);
                 } catch (Exception exception) {

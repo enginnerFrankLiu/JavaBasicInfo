@@ -31,6 +31,7 @@ public class Task006 {
                 synchronized (locker) {
                     while (list.size() == max) {
                         try {
+                            locker.notify();
                             locker.wait();
                         }catch (InterruptedException exception){
                             System.out.println(exception);
@@ -42,9 +43,11 @@ public class Task006 {
                         TimeUnit.SECONDS.sleep(3);
                         System.out.println("ppppppp生产了一个数据pppppppp");
                         list.add(1);
-                        locker.notify(); //这个相当于添加了一个元素后，就可是通知 consumer 可以消费了，并没有等到，list 填满。
+
+                        //这个相当于添加了一个元素后，就可是通知 consumer 可以消费了，并没有等到，list 填满。
                         //它这个notify了之后，通知consumer 有可以消费的产品，consumer 就开始了消费；
                         //但是notify 并不block producer 线程的执行，可以再继续的加值
+                        //notify 并不会释放放松
 
                     }catch (Exception exception){
                         System.out.println(exception);
@@ -67,8 +70,10 @@ public class Task006 {
         public void run() {
             while (isContinueConsume){
                 synchronized (locker){
+                    //当数据元素为空之后，我们再马上通知生产者 继续生产
                     while (list.size()==0){
                         try {
+                            locker.notify();
                             locker.wait();
                         }catch (InterruptedException interruptedException){
                             System.out.println(interruptedException);
@@ -77,7 +82,7 @@ public class Task006 {
                     }
                     System.out.println("ccccccccc消费了一个数据ccccccccc");
                     list.removeFirst();
-                    locker.notify();//消费了一个元素之后就再进行 通知
+
                 }
             }
         }

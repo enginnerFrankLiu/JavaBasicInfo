@@ -14,6 +14,7 @@ import com.company.lock.LockInfo;
 import com.company.lock.ReenternLock;
 import com.company.stream.StreamInfo;
 import com.company.threadlearn.ExampleInterruptThread;
+import com.company.threadlearn.XRunner;
 import com.company.threadlearn.callable;
 import com.company.threadlearn.runThread.run;
 import com.company.threadlearn.threadInterview;
@@ -937,7 +938,7 @@ public class Main {
 //            printTask004 task=new printTask004();
 //            task.testDD();
 //
-            Task006 task=new Task006();
+            Task006 task = new Task006();
             task.demoInfo();
 
 //            ThreadNotify threadNotify=new ThreadNotify();
@@ -955,9 +956,42 @@ public class Main {
 
     }
 
+    private static void fu() {
+        int order = 10;
+        CountDownLatch begin = new CountDownLatch(1);
+        CountDownLatch end = new CountDownLatch(order);
+        for (int i = 0; i < order; i++) {
+            new Thread(new XRunner(i, begin, end)).start();
+        }
+        try {
+
+            Thread.sleep(5000);
+            System.out.println("各就各位：pa");
+            begin.countDown();
+
+            System.out.println("裁判等待所有人都跑完（最后一个人都跑完了）");
+            end.await();
+            System.out.println("judge say : all arrived !");
+
+        } catch (Exception exception) {
+            System.out.println(exception);
+        }
+    }
+
+    public void fuckthelife(){
+
+        System.out.println("info q.");
+    }
+
+    public void infoms(){
+        System.out.println("log data into database.");
+    }
+
     public static void main(String[] args) throws Exception {
         System.out.format("application start.").println();
-        mxx();
+
+        fu();
+
     }
 
 }

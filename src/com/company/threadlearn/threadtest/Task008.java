@@ -5,6 +5,9 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 //关于锁的降级操作我们就用这个例子来实现吧
+//任意时刻内 监视者对象只属于一个活动线程
+//任意时刻内 监视者对象只属于一个活动线程
+//任意时刻内 监视者对象只属于一个活动线程
 public class Task008 {
 
     private boolean cacheOk;
